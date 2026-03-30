@@ -260,3 +260,119 @@ setInterval(() => {
   i = (i + 1) % icons.length;
   document.getElementById("iconSwap").src = icons[i];
 }, 2000);
+
+document.addEventListener("DOMContentLoaded", () => {
+  const slider = document.querySelector(".testimonial-slider");
+  const slides = document.querySelectorAll(".testimonial");
+  const prevBtn = document.querySelector(".test.prev");
+  const nextBtn = document.querySelector(".test.next");
+
+  if (!slider || slides.length === 0) {
+    console.error("Slider or testimonials not found");
+    return;
+  }
+
+  let index = 0;
+  const gap = 40;
+
+  function updateSlider() {
+    const slideWidth = slides[0].offsetWidth + gap;
+    slider.style.transform = `translateX(-${index * slideWidth}px)`;
+  }
+
+  nextBtn?.addEventListener("click", () => {
+    index = (index + 1) % slides.length;
+    updateSlider();
+  });
+
+  prevBtn?.addEventListener("click", () => {
+    index = (index - 1 + slides.length) % slides.length;
+    updateSlider();
+  });
+
+  // AUTO SCROLL (slow & premium)
+  setInterval(() => {
+    index = (index + 1) % slides.length;
+    updateSlider();
+  }, 8000);
+
+  window.addEventListener("resize", updateSlider);
+});
+
+window.addEventListener("load", () => {
+
+  const counters = document.querySelectorAll(".stat-card h3");
+
+  counters.forEach(counter => {
+    const text = counter.textContent.trim();
+    const number = parseInt(text.replace(/\D/g, ""));
+    const suffix = text.replace(/[0-9]/g, "");
+    let current = 0;
+
+    const increment = Math.max(1, Math.floor(number / 80));
+
+    const updateCount = () => {
+      current += increment;
+
+      if (current < number) {
+        counter.textContent = current + suffix;
+        requestAnimationFrame(updateCount);
+      } else {
+        counter.textContent = number + suffix;
+      }
+    };
+
+    updateCount();
+  });
+
+});
+
+
+// Function to accept disclaimer
+function acceptDisclaimer() {
+    localStorage.setItem("disclaimerAccepted", "yes"); // store in localStorage
+    document.getElementById("disclaimerOverlay").style.display = "none"; // hide popup
+}
+
+// Function to close popup without accepting
+function closeDisclaimer() {
+    document.getElementById("disclaimerOverlay").style.display = "none";
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const grid = document.getElementById("advocatesGrid");
+    const cards = document.querySelectorAll(".advocate-card");
+    const prevBtn = document.querySelector(".adv-prev");
+    const nextBtn = document.querySelector(".adv-next");
+
+    let currentIndex = 0;
+    const gap = 24;
+    const autoDelay = 5000; // 5 seconds per slide
+    let autoScrollInterval;
+
+    function updateSlider() {
+        const cardWidth = cards[0].offsetWidth + gap;
+        grid.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+    }
+
+    function moveNext() {
+        const visibleCards = window.innerWidth > 968 ? 3 : (window.innerWidth > 768 ? 2 : 1);
+        if (currentIndex < cards.length - visibleCards) {
+            currentIndex++;
+        } else {
+            currentIndex = 0; // Loop back to the first advocate
+        }
+        updateSlider();
+    }
+
+    function movePrev() {
+        if (currentIndex > 0) {
+            currentIndex--;
+        } else {
+            const visibleCards = window.innerWidth > 968 ? 3 : (window.innerWidth > 768 ? 2 : 1);
+            currentIndex = cards.length - visibleCards;
+        }
+        updateSlider();
+    }
+
+  }); 

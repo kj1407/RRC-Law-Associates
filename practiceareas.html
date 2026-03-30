@@ -1,1042 +1,1123 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Practice Areas | Law Firm</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Practice Areas | Law Firm</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" href="style.css">
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+            crossorigin="anonymous">
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
 
-        :root {
-            --gold: #c9a24d;
-            --cream: #f9f7f3;
-            --dark: #1a1a1a;
-            --white: #ffffff;
-            --light-gold: #d4b366;
-        }
+            :root {
+                --gold: #c9a24d;
+                --cream: #f9f7f3;
+                --dark: #1a1a1a;
+                --white: #ffffff;
+                --light-gold: #d4b366;
+            }
 
-        body {
-            font-family: Arial, sans-serif;
-            background-color: var(--cream);
-            color: var(--dark);
-            overflow-x: hidden;
-        }
+            body {
+                font-family: Arial, sans-serif;
+                background-color: var(--cream);
+                color: var(--dark);
+                overflow-x: hidden;
+            }
 
-         .header-content {
-  position: relative;
-  width: 100%;
-  margin-top: 3rem;
-  height: 400px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(
-      rgba(11, 28, 45, 0.70),
-      rgba(11, 28, 45, 0.75)
-    ),
-    url('assets/images/pa.jpeg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-}
+            .header-content {
+                position: relative;
+                width: 100%;
+                margin-top: 3rem;
+                height: 400px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: linear-gradient(rgba(11, 28, 45, 0.70), rgba(11, 28, 45, 0.75)), url("assets/images/pa.jpeg");
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            }
 
-.header-text h1 {
-  color: var(--gold);
-  font-size: clamp(2rem, 6vw, 3.5rem);
-  font-weight: 800;
-  margin-bottom: 1rem;
-  letter-spacing: 2px;
-  animation: fadeInDown 1s ease;
-}
+            .header-text h1 {
+                color: var(--gold);
+                font-size: clamp(2rem, 6vw, 3.5rem);
+                font-weight: 800;
+                margin-bottom: 1rem;
+                letter-spacing: 2px;
+                animation: fadeInDown 1s ease;
+            }
 
-.header-text p {
-  color: var(--cream);
-  font-size: clamp(1rem, 2.5vw, 1.3rem);
-  font-style: italic;
-  animation: fadeInUp 1s ease 0.2s backwards;
-}
+            .header-text p {
+                color: var(--cream);
+                font-size: clamp(1rem, 2.5vw, 1.3rem);
+                font-style: italic;
+                animation: fadeInUp 1s ease 0.2s backwards;
+            }
 
-        @keyframes fadeInUp {
-            from {
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            /* Mobile Devices */
+            @media (max-width: 768px) {
+                .header-content {
+                    height: 500px;
+                    margin-top: 4rem;
+                    background: linear-gradient(rgba(11, 28, 45, 0.78), rgba(11, 28, 45, 0.85)), url("assets/images/pa.jpeg");
+                    background-size: cover;
+                    background-position: center;
+                    background-attachment: scroll;
+                }
+
+                .header-text {
+                    max-width: 600px;
+                    padding: 0 15px;
+                    margin-top: 80px;
+                }
+
+                .header-text h1 {
+                    font-size: clamp(1.6rem, 8vw, 2.5rem);
+                    letter-spacing: 1.2px;
+                    margin-bottom: 0.8rem;
+                    margin-top: 26px;
+                    line-height: 1.15;
+                }
+
+                .header-text p {
+                    font-size: clamp(0.9rem, 3.5vw, 1.1rem);
+                    line-height: 1.5;
+                    margin-top: 10px;
+                }
+            }
+
+            /* Small Mobile Devices */
+            @media (max-width: 480px) {
+                .header-content {
+                    height: 250px;
+                    margin-top: 60px;
+                    background: linear-gradient(rgba(11, 28, 45, 0.82), rgba(11, 28, 45, 0.88)), url("assets/images/pa.jpeg");
+                    background-size: cover;
+                    background-position: center;
+                }
+
+                .header-text {
+                    max-width: 100%;
+                    padding: 0 12px;
+                }
+
+                .header-text h1 {
+                    font-size: clamp(1.4rem, 9vw, 2rem);
+                    letter-spacing: 1px;
+                    margin-bottom: 0.7rem;
+                    margin-top: 14px;
+                    word-spacing: 0.1rem;
+                }
+
+                .header-text p {
+                    font-size: clamp(0.85rem, 4vw, 1rem);
+                    line-height: 1.4;
+                    margin-top: 5px;
+                }
+
+                /* Reduce animation distance on mobile */
+                @keyframes fadeInDown {
+                    from {
+                        opacity: 0;
+                        transform: translateY(-20px);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+
+                @keyframes fadeInUp {
+                    from {
+                        opacity: 0;
+                        transform: translateY(20px);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+            }
+
+            /* Extra Small Devices */
+            @media (max-width: 360px) {
+                .header-content {
+                    height: 350px;
+                    margin-top: 50px;
+                }
+
+                .header-text {
+                    padding: 0 10px;
+                }
+
+                .header-text h1 {
+                    font-size: clamp(1.2rem, 10vw, 1.6rem);
+                    letter-spacing: 0.8px;
+                    margin-top: 7px;
+                    margin-bottom: 0.6rem;
+                }
+
+                .header-text p {
+                    font-size: clamp(0.8rem, 4.5vw, 0.95rem);
+                    line-height: 1.35;
+                    margin-top: 3px;
+                }
+            }
+
+            /* Landscape Orientation on Mobile */
+            @media (max-height: 600px) and (orientation: landscape) {
+                .header-content {
+                    height: 250px;
+                    margin-top: 1rem;
+                }
+
+                .header-text {
+                    padding: 0 15px;
+                }
+
+                .header-text h1 {
+                    font-size: clamp(1.3rem, 5vw, 2rem);
+                    margin-bottom: 0.5rem;
+                }
+
+                .header-text p {
+                    font-size: clamp(0.85rem, 2.5vw, 1rem);
+                    line-height: 1.3;
+                }
+            }
+
+            /* Very Small Height Devices (iPhone SE landscape, etc.) */
+            @media (max-height: 450px) {
+                .header-content {
+                    height: 200px;
+                }
+
+                .header-text h1 {
+                    font-size: clamp(1.1rem, 4vw, 1.5rem);
+                    margin-bottom: 0.4rem;
+                }
+
+                .header-text p {
+                    font-size: clamp(0.75rem, 2vw, 0.9rem);
+                }
+            }
+
+            /* Container */
+            .container {
+                max-width: 1400px;
+                margin: 0 auto;
+                padding: 4rem 2rem;
+            }
+
+            .intro-section {
+                text-align: center;
+                margin-bottom: 4rem;
                 opacity: 0;
                 transform: translateY(30px);
+                transition: all 0.8s ease;
             }
-            to {
+
+            .intro-section.reveal {
                 opacity: 1;
                 transform: translateY(0);
             }
-        }
-        /* Mobile Devices */
-@media (max-width: 768px) {
-  .header-content {
-    height: 500px;
-    margin-top: 4rem;
-    background: linear-gradient(
-        rgba(11, 28, 45, 0.78),
-        rgba(11, 28, 45, 0.85)
-      ),
-      url('assets/images/pa.jpeg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: scroll;
-  }
 
-  .header-text {
-    max-width: 600px;
-    padding: 0 15px;
-    margin-top: 80px;
-  }
-
-  .header-text h1 {
-    font-size: clamp(1.6rem, 8vw, 2.5rem);
-    letter-spacing: 1.2px;
-    margin-bottom: 0.8rem;
-    margin-top: 26px;
-    line-height: 1.15;
-  }
-
-  .header-text p {
-    font-size: clamp(0.9rem, 3.5vw, 1.1rem);
-    line-height: 1.5;
-    margin-top: 10px;
-  }
-}
-
-/* Small Mobile Devices */
-@media (max-width: 480px) {
-  .header-content {
-    height: 250px;
-    margin-top: 60px;
-    background: linear-gradient(
-        rgba(11, 28, 45, 0.82),
-        rgba(11, 28, 45, 0.88)
-      ),
-      url('assets/images/pa.jpeg');
-    background-size: cover;
-    background-position: center;
-  }
-
-  .header-text {
-    max-width: 100%;
-    padding: 0 12px;
-  }
-
-  .header-text h1 {
-    font-size: clamp(1.4rem, 9vw, 2rem);
-    letter-spacing: 1px;
-    margin-bottom: 0.7rem;
-    margin-top: 14px;
-    word-spacing: 0.1rem;
-  }
-
-  .header-text p {
-    font-size: clamp(0.85rem, 4vw, 1rem);
-    line-height: 1.4;
-    margin-top: 5px;
-  }
-
-  /* Reduce animation distance on mobile */
-  @keyframes fadeInDown {
-    from {
-      opacity: 0;
-      transform: translateY(-20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-}
-
-/* Extra Small Devices */
-@media (max-width: 360px) {
-  .header-content {
-    height: 350px;
-    margin-top: 50px
-  }
-
-  .header-text {
-    padding: 0 10px;
-  }
-
-  .header-text h1 {
-    font-size: clamp(1.2rem, 10vw, 1.6rem);
-    letter-spacing: 0.8px;
-    margin-top: 7px;
-    margin-bottom: 0.6rem;
-  }
-
-  .header-text p {
-    font-size: clamp(0.8rem, 4.5vw, 0.95rem);
-    line-height: 1.35;
-    margin-top: 3px;
-  }
-}
-
-/* Landscape Orientation on Mobile */
-@media (max-height: 600px) and (orientation: landscape) {
-  .header-content {
-    height: 250px;
-    margin-top: 1rem;
-  }
-
-  .header-text {
-    padding: 0 15px;
-  }
-
-  .header-text h1 {
-    font-size: clamp(1.3rem, 5vw, 2rem);
-    margin-bottom: 0.5rem;
-  }
-
-  .header-text p {
-    font-size: clamp(0.85rem, 2.5vw, 1rem);
-    line-height: 1.3;
-  }
-}
-
-/* Very Small Height Devices (iPhone SE landscape, etc.) */
-@media (max-height: 450px) {
-  .header-content {
-    height: 200px;
-  }
-
-  .header-text h1 {
-    font-size: clamp(1.1rem, 4vw, 1.5rem);
-    margin-bottom: 0.4rem;
-  }
-
-  .header-text p {
-    font-size: clamp(0.75rem, 2vw, 0.9rem);
-  }
-}
-
-        /* Container */
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-        }
-
-        .intro-section {
-            text-align: center;
-            margin-bottom: 4rem;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
-        }
-
-        .intro-section.reveal {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .intro-section h2 {
-            color: var(--gold);
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .intro-section p {
-            color: #2d2d2d;
-            font-size: 1.1rem;
-            max-width: 800px;
-            margin: 0 auto;
-            line-height: 1.8;
-        }
-
-        /* Practice Area Card */
-        .practice-area {
-            width: 397px;
-            height: 1030px;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            padding: 0px;
-            background: var(--white);
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.8s ease;
-            margin: auto;
-            transition: all 0.8s ease;
-        }
-
-        .practice-area.reveal {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .practice-area:nth-child(even) .practice-content {
-            order: 2;
-        }
-
-        .practice-area:nth-child(even) .practice-image {
-            order: 1;
-        }
-
-        .practice-image {
-            width: 100%;
-            height: 250px; /* Fixed height for the "Image Cap" */
-            overflow: hidden;
-        }
-
-        .practice-image img {
-            display: block;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s ease;
-        }
-
-        .practice-area:hover .practice-image img {
-            transform: scale(1.05);
-        }
-        .practice-content {
-            padding: 3rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .practice-icon {
-            font-size: 2rem;
-            color: var(--gold);
-            margin-top: 0rem;
-            margin-bottom: 1.5rem;
-            animation: pulse 2s infinite;
-        }
-
-        .practice-content h3 {
-            color: var(--dark);
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            position: relative;
-            display: inline-block;
-        }
-
-        .practice-content h3::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 60px;
-            height: 3px;
-            background: var(--gold);
-        }
-
-        .practice-content p {
-            color: #555;
-            line-height: 1.8;
-            margin-top: 1.0rem;
-            font-size: 1.05rem;
-        }
-
-        .practice-features {
-            margin-top: 0.6rem;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.8rem;
-        }
-
-        .feature-tag {
-            background: var(--cream);
-            color: var(--dark);
-            padding: 0.5rem 1rem;
-            border-radius: 25px;
-            font-size: 0.9rem;
-            border: 2px solid var(--gold);
-            transition: all 0.3s ease;
-        }
-
-        .feature-tag:hover {
-            background: var(--gold);
-            color: var(--white);
-            transform: translateY(-3px);
-        }
-
-        /* Animations */
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
+            .intro-section h2 {
+                color: var(--gold);
+                font-size: 2.5rem;
+                margin-bottom: 1rem;
             }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
+            .intro-section p {
+                color: #2d2d2d;
+                font-size: 1.1rem;
+                max-width: 800px;
+                margin: 0 auto;
+                line-height: 1.8;
             }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
 
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.1);
-            }
-        }
-
-        /* Scroll Progress Bar */
-        .progress-bar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 0%;
-            height: 4px;
-            background: var(--gold);
-            z-index: 9999;
-            transition: width 0.1s ease;
-        }
-
-        /* Responsive */
-        @media (max-width: 968px) {
+            /* Practice Area Card */
             .practice-area {
-                grid-template-columns: 1fr;
+                width: 397px;
+                height: 1030px;
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+                padding: 0;
+                background: var(--white);
+                border-radius: 15px;
+                overflow: hidden;
+                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+                opacity: 0;
+                transform: translateY(50px);
+                transition: all 0.8s ease;
+                margin: auto;
+                transition: all 0.8s ease;
             }
 
-            .practice-area:nth-child(even) .practice-content,
+            .practice-area.reveal {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            .practice-area:nth-child(even) .practice-content {
+                order: 2;
+            }
+
             .practice-area:nth-child(even) .practice-image {
-                order: initial;
+                order: 1;
             }
 
             .practice-image {
-                min-height: 80px;
+                width: 100%;
+                height: 250px;
+                /* Fixed height for the "Image Cap" */
+                overflow: hidden;
+            }
+
+            .practice-image img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.6s ease;
+            }
+
+            .practice-area:hover .practice-image img {
+                transform: scale(1.05);
+            }
+            .practice-content {
+                padding: 3rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .practice-icon {
+                font-size: 2rem;
+                color: var(--gold);
+                margin-top: 0;
+                margin-bottom: 1.5rem;
+                animation: pulse 2s infinite;
+            }
+
+            .practice-content h3 {
+                color: var(--dark);
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+                position: relative;
+                display: inline-block;
+            }
+
+            .practice-content h3::after {
+                content: '';
+                position: absolute;
+                bottom: -10px;
+                left: 0;
+                width: 60px;
+                height: 3px;
+                background: var(--gold);
             }
 
             .practice-content p {
                 color: #555;
-                line-height: 1.4;
+                line-height: 1.8;
+                margin-top: 1.0rem;
+                font-size: 1.05rem;
             }
 
-            .header-content h1 {
-                font-size: 2rem;
+            .practice-features {
+                margin-top: 0.6rem;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.8rem;
             }
 
-            .intro-section h2 {
-                font-size: 2rem;
+            .feature-tag {
+                background: var(--cream);
+                color: var(--dark);
+                padding: 0.5rem 1rem;
+                border-radius: 25px;
+                font-size: 0.9rem;
+                border: 2px solid var(--gold);
+                transition: all 0.3s ease;
             }
-        }
-        /* Scroll to Top Button */
-        /* Scroll to Top Button */
-.scroll-top {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 50px;
-    height: 50px;
-    background: var(--gold);
-    color: var(--white);
-    border: none;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    font-weight: bold;
-    cursor: pointer;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(20px);
-    transition: all 0.3s ease;
-    z-index: 1000;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
 
-.scroll-top.visible {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
+            .feature-tag:hover {
+                background: var(--gold);
+                color: var(--white);
+                transform: translateY(-3px);
+            }
 
-.scroll-top:hover {
-    background: var(--dark);
-    transform: translateY(-5px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
-}
+            /* Animations */
+            @keyframes fadeInDown {
+                from {
+                    opacity: 0;
+                    transform: translateY(-30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
 
-.scroll-top:active {
-    transform: translateY(-3px);
-}
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
 
-/* Mobile Responsive */
-@media (max-width: 768px) {
-    .scroll-top {
-        bottom: 20px;
-        right: 20px;
-        width: 45px;
-        height: 45px;
-        font-size: 20px;
-    }
-}
+            @keyframes pulse {
+                0%,
+                100% {
+                    transform: scale(1);
+                }
+                50% {
+                    transform: scale(1.1);
+                }
+            }
 
-@media (max-width: 480px) {
-    .scroll-top {
-        bottom: 15px;
-        right: 15px;
-        width: 40px;
-        height: 40px;
-        font-size: 18px;
-    }
-}
-        /* Loading Animation */
-        .loading-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--dark);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 10000;
-            transition: opacity 0.5s ease, visibility 0.5s ease;
-        }
+            /* Scroll Progress Bar */
+            .progress-bar {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 0;
+                height: 4px;
+                background: var(--gold);
+                z-index: 9999;
+                transition: width 0.1s ease;
+            }
 
-        .loading-overlay.hidden {
-            opacity: 0;
-            visibility: hidden;
-        }
+            /* Responsive */
+            @media (max-width: 968px) {
+                .practice-area {
+                    grid-template-columns: 1fr;
+                }
 
-        .loader {
-            border: 5px solid var(--cream);
-            border-top: 5px solid var(--gold);
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            animation: spin 1s linear infinite;
-        }
+                .practice-area:nth-child(even) .practice-content,
+                .practice-area:nth-child(even) .practice-image {
+                    order: initial;
+                }
 
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-    </style>
-</head>
+                .practice-image {
+                    min-height: 80px;
+                }
 
-<script>
-// Scroll to Top Button Functionality
-document.addEventListener('DOMContentLoaded', function() {
-    
-    const scrollTopBtn = document.getElementById('scrollTop');
-    
-    // Show/hide button on scroll
-    window.addEventListener('scroll', function() {
-        if (window.pageYOffset > 300) {
-            scrollTopBtn.classList.add('visible');
-        } else {
-            scrollTopBtn.classList.remove('visible');
-        }
-    });
-    
-    // Scroll to top when clicked
-    scrollTopBtn.addEventListener('click', function() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+                .practice-content p {
+                    color: #555;
+                    line-height: 1.4;
+                }
+
+                .header-content h1 {
+                    font-size: 2rem;
+                }
+
+                .intro-section h2 {
+                    font-size: 2rem;
+                }
+            }
+            /* Scroll to Top Button */
+            /* Scroll to Top Button */
+            .scroll-top {
+                position: fixed;
+                bottom: 30px;
+                right: 30px;
+                width: 50px;
+                height: 50px;
+                background: var(--gold);
+                color: var(--white);
+                border: none;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 24px;
+                font-weight: bold;
+                cursor: pointer;
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(20px);
+                transition: all 0.3s ease;
+                z-index: 1000;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            }
+
+            .scroll-top.visible {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+
+            .scroll-top:hover {
+                background: var(--dark);
+                transform: translateY(-5px);
+                box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+            }
+
+            .scroll-top:active {
+                transform: translateY(-3px);
+            }
+
+            /* Mobile Responsive */
+            @media (max-width: 768px) {
+                .scroll-top {
+                    bottom: 30px;
+                    right: 30px;
+                    width: 45px;
+                    height: 45px;
+                    font-size: 20px;
+                }
+            }
+
+            @media (max-width: 480px) {
+                .scroll-top {
+                    bottom: 30px;
+                    right: 30px;
+                    width: 40px;
+                    height: 40px;
+                    font-size: 18px;
+                }
+            }
+            /* Loading Animation */
+            .loading-overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: var(--dark);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 10000;
+                transition: opacity 0.5s ease, visibility 0.5s ease;
+            }
+
+            .loading-overlay.hidden {
+                opacity: 0;
+                visibility: hidden;
+            }
+
+            .loader {
+                border: 5px solid var(--cream);
+                border-top: 5px solid var(--gold);
+                border-radius: 50%;
+                width: 60px;
+                height: 60px;
+                animation: spin 1s linear infinite;
+            }
+
+            @keyframes spin {
+                0% {
+                    transform: rotate(0deg);
+                }
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+        </style>
+    </head>
+
+    <script>
+        // Scroll to Top Button Functionality
+        document.addEventListener('DOMContentLoaded', function () {
+
+            const scrollTopBtn = document.getElementById('scrollTop');
+
+            // Show/hide button on scroll
+            window.addEventListener('scroll', function () {
+                if (window.pageYOffset > 300) {
+                    scrollTopBtn
+                        .classList
+                        .add('visible');
+                } else {
+                    scrollTopBtn
+                        .classList
+                        .remove('visible');
+                }
+            });
+
+            // Scroll to top when clicked
+            scrollTopBtn.addEventListener('click', function () {
+                window.scrollTo({top: 0, behavior: 'smooth'});
+            });
+
         });
-    });
-    
-});
-</script>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  
-  const menuToggle = document.querySelector('.menu-toggle');
-  const mobileMenu = document.querySelector('.mobile-menu');
-  const header = document.querySelector('.header');
-  
-  // Toggle mobile menu
-  menuToggle.addEventListener('click', function(e) {
-    e.stopPropagation(); // Prevent document click from firing
-    mobileMenu.classList.toggle('open');
-    
-    // Change icon
-    if (mobileMenu.classList.contains('open')) {
-      menuToggle.innerHTML = '✕';
-      menuToggle.style.fontSize = '28px';
-    } else {
-      menuToggle.innerHTML = '☰';
-      menuToggle.style.fontSize = '24px';
-    }
-  });
-  
-  // Handle all navigation buttons (Desktop + Mobile)
-  const allNavButtons = document.querySelectorAll('[data-link], .mobile-menu button');
-  
-  allNavButtons.forEach(button => {
-    button.addEventListener('click', function() {
-      let link;
-      
-      // Get link from data-link attribute or button text
-      if (this.hasAttribute('data-link')) {
-        link = this.getAttribute('data-link');
-      } else {
-        // Map mobile menu buttons to pages
-        const text = this.textContent.trim().toLowerCase();
-        const linkMap = {
-          'home': 'index.html',
-          'practiceareas': 'practiceareas.html',
-          'blog': 'lawfirm-blog.html',
-          'contact': '#contact'
-        };
-        link = linkMap[text] || '#';
-      }
-      
-      // Close mobile menu if open
-      if (mobileMenu.classList.contains('open')) {
-        mobileMenu.classList.remove('open');
-        menuToggle.innerHTML = '☰';
-        menuToggle.style.fontSize = '24px';
-      }
-      
-      // Navigate
-      if (link.startsWith('#')) {
-        // Smooth scroll to section on same page
-        const target = document.querySelector(link);
-        if (target) {
-          target.scrollIntoView({ 
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      } else {
-        // Navigate to different page
-        window.location.href = link;
-      }
-    });
-  });
-  
-  // Book Consultation button
-  const bookBtn = document.querySelector('.btn-gold');
-  if (bookBtn) {
-    bookBtn.addEventListener('click', function() {
-      const contactSection = document.querySelector('#contact');
-      if (contactSection) {
-        contactSection.scrollIntoView({ 
-          behavior: 'smooth',
-          block: 'start'
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+            const menuToggle = document.querySelector('.menu-toggle');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const header = document.querySelector('.header');
+
+            // Toggle mobile menu
+            menuToggle.addEventListener('click', function (e) {
+                e.stopPropagation(); // Prevent document click from firing
+                mobileMenu
+                    .classList
+                    .toggle('open');
+
+                // Change icon
+                if (mobileMenu.classList.contains('open')) {
+                    menuToggle.innerHTML = '✕';
+                    menuToggle.style.fontSize = '28px';
+                } else {
+                    menuToggle.innerHTML = '☰';
+                    menuToggle.style.fontSize = '24px';
+                }
+            });
+
+            // Handle all navigation buttons (Desktop + Mobile)
+            const allNavButtons = document.querySelectorAll(
+                '[data-link], .mobile-menu button'
+            );
+
+            allNavButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    let link;
+
+                    // Get link from data-link attribute or button text
+                    if (this.hasAttribute('data-link')) {
+                        link = this.getAttribute('data-link');
+                    } else {
+                        // Map mobile menu buttons to pages
+                        const text = this
+                            .textContent
+                            .trim()
+                            .toLowerCase();
+                        const linkMap = {
+                            'home': 'index.html',
+                            'practiceareas': 'practiceareas.html',
+                            'blog': 'lawfirm-blog.html',
+                            'contact': '#contact'
+                        };
+                        link = linkMap[text] || '#';
+                    }
+
+                    // Close mobile menu if open
+                    if (mobileMenu.classList.contains('open')) {
+                        mobileMenu
+                            .classList
+                            .remove('open');
+                        menuToggle.innerHTML = '☰';
+                        menuToggle.style.fontSize = '24px';
+                    }
+
+                    // Navigate
+                    if (link.startsWith('#')) {
+                        // Smooth scroll to section on same page
+                        const target = document.querySelector(link);
+                        if (target) {
+                            target.scrollIntoView({behavior: 'smooth', block: 'start'});
+                        }
+                    } else {
+                        // Navigate to different page
+                        window.location.href = link;
+                    }
+                });
+            });
+
+            // Book Consultation button
+            const bookBtn = document.querySelector('.btn-gold');
+            if (bookBtn) {
+                bookBtn.addEventListener('click', function () {
+                    const contactSection = document.querySelector('#contact');
+                    if (contactSection) {
+                        contactSection.scrollIntoView({behavior: 'smooth', block: 'start'});
+                    } else {
+                        // If contact section doesn't exist, go to contact page
+                        window.location.href = 'contact.html';
+                    }
+                });
+            }
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function (event) {
+                if (!header.contains(event.target) && mobileMenu.classList.contains('open')) {
+                    mobileMenu
+                        .classList
+                        .remove('open');
+                    menuToggle.innerHTML = '☰';
+                    menuToggle.style.fontSize = '24px';
+                }
+            });
+
+            // Prevent clicks inside menu from closing it
+            mobileMenu.addEventListener('click', function (e) {
+                e.stopPropagation();
+            });
+
+            // Header scroll effect
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 50) {
+                    header
+                        .classList
+                        .add('scrolled');
+                } else {
+                    header
+                        .classList
+                        .remove('scrolled');
+                }
+            });
+
+            // Close mobile menu on window resize to desktop
+            window.addEventListener('resize', function () {
+                if (window.innerWidth > 968 && mobileMenu.classList.contains('open')) {
+                    mobileMenu
+                        .classList
+                        .remove('open');
+                    menuToggle.innerHTML = '☰';
+                    menuToggle.style.fontSize = '24px';
+                }
+            });
+
         });
-      } else {
-        // If contact section doesn't exist, go to contact page
-        window.location.href = 'contact.html';
-      }
-    });
-  }
-  
-  // Close mobile menu when clicking outside
-  document.addEventListener('click', function(event) {
-    if (!header.contains(event.target) && mobileMenu.classList.contains('open')) {
-      mobileMenu.classList.remove('open');
-      menuToggle.innerHTML = '☰';
-      menuToggle.style.fontSize = '24px';
-    }
-  });
-  
-  // Prevent clicks inside menu from closing it
-  mobileMenu.addEventListener('click', function(e) {
-    e.stopPropagation();
-  });
-  
-  // Header scroll effect
-  window.addEventListener('scroll', function() {
-    if (window.scrollY > 50) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
-  });
-  
-  // Close mobile menu on window resize to desktop
-  window.addEventListener('resize', function() {
-    if (window.innerWidth > 968 && mobileMenu.classList.contains('open')) {
-      mobileMenu.classList.remove('open');
-      menuToggle.innerHTML = '☰';
-      menuToggle.style.fontSize = '24px';
-    }
-  });
-  
-});
-</script>
-<body>
-    <!-- Loading Overlay -->
-    <div class="loading-overlay">
-        <div class="loader"></div>
-    </div>
+    </script>
+    <body>
+        <!-- Loading Overlay -->
+        <div class="loading-overlay">
+            <div class="loader"></div>
+        </div>
 
-    <!-- Progress Bar -->
-    <div class="progress-bar"></div>
+        <!-- Progress Bar -->
+        <div class="progress-bar"></div>
 
-    <!-- Header -->
-    <header class="header">
-  <nav class="nav-bar">
-    <div class="logo-icon">
-      <a href="index.html">
-        <img src="assets/images/law3.png" alt="Logo" class="logo-img">
-        
-      </a>
-    </div>
+        <!-- Header -->
+        <header class="header">
+            <nav class="nav-bar">
+                <div class="logo-icon">
+                    <a href="index.html">
+                        <img src="assets/images/law3.png" alt="Logo" class="logo-img">
 
-    <!-- Desktop Navigation -->
-    <div class="desktop-nav">
-      <button type="button" data-link="index.html">Home</button>
-      <button type="button" data-link="practiceareas.html">Practice Areas</button>
-      <button type="button" data-link="lawfirm-blog.html">Blog</button>
-      <button type="button" data-link="index.html#contact">Contact</button>
-    </div>
+                    </a>
+                </div>
 
-    <!-- CTA Section -->
-    <div class="cta">
-      <button class="btn-gold" data-link="index.html#contact">Book Consultation</button>
-      
-      <!-- Mobile Toggle Button -->
-      <button class="menu-toggle">☰</button>
-    </div>
-  </nav>
-  <!-- Mobile Menu -->
-  <div class="mobile-menu">
-    <button type="button" data-link="index.html">Home</button>
-    <button type="button" data-link="practiceareas.html">About</button>
-    <button type="button" data-link="lawfirm-blog.html">Services</button>
-    <button type="button" data-link="index.html#contact">Contact</button>
-  </div>
-</header>
-<br>
-<br>
+                <!-- Desktop Navigation -->
+                <div class="desktop-nav">
+                    <button type="button" data-link="index.html">Home</button>
+                    <button type="button" data-link="practiceareas.html">Practice Areas</button>
+                    <button type="button" data-link="lawfirm-blog.html">Blog</button>
+                    <button type="button" data-link="index.html#contact">Contact</button>
+                </div>
+
+                <!-- CTA Section -->
+                <div class="cta">
+                    <button class="btn-gold" data-link="index.html#contact">Book Consultation</button>
+
+                    <!-- Mobile Toggle Button -->
+                    <button class="menu-toggle">☰</button>
+                </div>
+            </nav>
+            <!-- Mobile Menu -->
+            <div class="mobile-menu">
+                <button type="button" data-link="index.html">Home</button>
+                <button type="button" data-link="practiceareas.html">About</button>
+                <button type="button" data-link="lawfirm-blog.html">Services</button>
+                <button type="button" data-link="index.html#contact">Contact</button>
+            </div>
+        </header>
+        <br>
+        <br>
         <div class="header-content">
             <div class="header-text">
                 <h1>Our Practice Areas</h1>
                 <p>Expertise You Can Trust, Service You Deserve</p>
             </div>
         </div>
-    <!-- Main Container -->
-    <div class="container align-items-center">
-        <!-- Intro Section -->
-        <div class="intro-section">
-            <h2>Comprehensive Legal Solutions</h2>
-            <p>Our firm provides exceptional legal services across multiple practice areas. With years of experience and a commitment to excellence, we deliver results that matter to our clients.</p>
-        </div>
-        <div class="row gap-3">
-           <!-- Civil Law -->
-        <div class="col-4 practice-area">
-            <div>
-                <div class="practice-image">
-                    <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&h=600&fit=crop" alt="Civil Law">
+        <!-- Main Container -->
+        <div class="container align-items-center">
+            <!-- Intro Section -->
+            <div class="intro-section">
+                <h2>Comprehensive Legal Solutions</h2>
+                <p>Our firm provides exceptional legal services across multiple practice areas.
+                    With years of experience and a commitment to excellence, we deliver results that
+                    matter to our clients.</p>
+            </div>
+            <div class="row gap-3">
+                <!-- Civil Law -->
+                <div class="col-4 practice-area">
+                    <div>
+                        <div class="practice-image">
+                            <img
+                                src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&h=600&fit=crop"
+                                alt="Civil Law">
+                        </div>
+                        <div class="practice-content">
+                            <i class="fas fa-balance-scale practice-icon"></i>
+                            <h3>Civil & Constitutional Litigation</h3>
+                            <p>Civil law practice serving individuals and organizations. Handles contract
+                                disputes, property disagreements, tort claims, and civil rights violations.
+                                Experienced attorneys protect your interests. Resolves matters through
+                                negotiation, mediation, or litigation. Committed to achieving the best possible
+                                outcome.
+                            </p>
+                            <div class="practice-features">
+                                <span class="feature-tag">Contract Disputes</span>
+                                <span class="feature-tag">Tort Claims</span>
+                                <span class="feature-tag">Property Disputes</span>
+                                <span class="feature-tag">Civil Litigation</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="practice-content">
-                    <i class="fas fa-balance-scale practice-icon"></i>
-                    <h3>Civil & Constitutional Litigation</h3>
-                    <p>Civil law practice serving individuals and organizations. Handles contract disputes, property disagreements, tort claims, and civil rights violations. Experienced attorneys protect your interests. Resolves matters through negotiation, mediation, or litigation. Committed to achieving the best possible outcome. </p>
-                    <div class="practice-features">
-                        <span class="feature-tag">Contract Disputes</span>
-                        <span class="feature-tag">Tort Claims</span>
-                        <span class="feature-tag">Property Disputes</span>
-                        <span class="feature-tag">Civil Litigation</span>
+
+                <!-- Corporate Law -->
+                <div class="col-4 practice-area ">
+                    <div>
+                        <div class="practice-image">
+                            <img
+                                src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop"
+                                alt="Corporate Law">
+                        </div>
+                        <div class="practice-content">
+                            <i class="fas fa-building practice-icon"></i>
+                            <h3>Corporate & Commercial Law</h3>
+                            <p>Comprehensive legal support for businesses of all sizes. Services include
+                                business formation, mergers and acquisitions, contract drafting, corporate
+                                governance, compliance, and commercial transactions. Experienced guidance from
+                                startups to established corporations. Navigating complex regulations with
+                                strategic counsel. Positioning your company for growth and success.</p>
+                            <div class="practice-features">
+                                <span class="feature-tag">Business Formation</span>
+                                <span class="feature-tag">M&A</span>
+                                <span class="feature-tag">Corporate Governance</span>
+                                <span class="feature-tag">Compliance</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property Law -->
+                <div class="col-4 practice-area">
+                    <div>
+                        <div class="practice-image">
+                            <img
+                                src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop"
+                                alt="Property Law">
+                        </div>
+                        <div class="practice-content">
+                            <i class="fas fa-home practice-icon"></i>
+                            <h3>Real Estate & Property Law</h3>
+                            <p>Our property law experts handle all aspects of real estate transactions and
+                                disputes. We assist with property purchases and sales, lease agreements, title
+                                disputes, zoning issues, property development, and landlord-tenant matters.
+                                Whether you're buying your first home or managing a commercial real estate
+                                portfolio, we ensure your property interests are fully protected.</p>
+                            <div class="practice-features">
+                                <span class="feature-tag">Real Estate Transactions</span>
+                                <span class="feature-tag">Title Disputes</span>
+                                <span class="feature-tag">Zoning</span>
+                                <span class="feature-tag">Landlord-Tenant</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Consumer Protection Law -->
+                <div class="col-4 practice-area">
+                    <div>
+                        <div class="practice-image">
+                            <img
+                                src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop"
+                                alt="Consumer Protection Law">
+                        </div>
+                        <div class="practice-content">
+                            <i class="fas fa-shield-alt practice-icon"></i>
+                            <h3>Cyber Crime & Digital Law</h3>
+                            <p>Cyber threats are one of the fastest-growing legal concerns today. We serve
+                                individuals, businesses, startups, and corporations. Comprehensive legal
+                                services in Cyber Crime & Digital Law. Strategic advice, preventive compliance,
+                                and strong courtroom representation.</p>
+                            <div class="practice-features">
+                                <span class="feature-tag">Cyber Crime Litigation</span>
+                                <span class="feature-tag">Data Protection</span>
+                                <span class="feature-tag">Online Defamation</span>
+                                <span class="feature-tag">Technology Law</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Criminal Law -->
+                <div class="col-4 practice-area">
+                    <div>
+                        <div class="practice-image">
+                            <img
+                                src="https://images.unsplash.com/photo-1479142506502-19b3a3b7ff33?w=800&h=600&fit=crop"
+                                alt="Criminal Law">
+                        </div>
+                        <div class="practice-content">
+                            <i class="fas fa-gavel practice-icon"></i>
+                            <h3>Criminal Defense & Appellate Practice</h3>
+                            <p>Facing criminal charges can be overwhelming. Our experienced criminal defense
+                                attorneys provide aggressive representation for clients accused of crimes
+                                ranging from misdemeanors to serious felonies. We handle DUI cases, drug
+                                offenses, assault charges, white-collar crimes, and more. We protect your rights
+                                at every stage and fight for the best possible outcome.</p>
+                            <div class="practice-features">
+                                <span class="feature-tag">Criminal Defense</span>
+                                <span class="feature-tag">DUI/DWI</span>
+                                <span class="feature-tag">White Collar Crimes</span>
+                                <span class="feature-tag">Appeals</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Labour and Employment Law -->
+                <div class="col-4 practice-area">
+                    <div>
+                        <div class="practice-image">
+                            <img
+                                src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&h=600&fit=crop"
+                                alt="Labour and Employment Law">
+                        </div>
+                        <div class="practice-content">
+                            <i class="fas fa-users practice-icon"></i>
+                            <h3>Employment & Immigration Law</h3>
+                            <p>Representing employers and employees in workplace legal matters. Services
+                                include contract negotiations, wrongful termination, discrimination claims, wage
+                                disputes, workers' compensation, and labor union negotiations. Ensuring fair
+                                treatment and resolving employment conflicts efficiently.</p>
+                            <div class="practice-features">
+                                <span class="feature-tag">Employment Contracts</span>
+                                <span class="feature-tag">Discrimination</span>
+                                <span class="feature-tag">Wrongful Termination</span>
+                                <span class="feature-tag">Wage Disputes</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- Scroll to Top Button -->
+        <div class="scroll-top" id="scrollTop">↑</div>
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-contain">
 
-        <!-- Corporate Law -->
-        <div class="col-4 practice-area ">
-            <div>
-            <div class="practice-image">
-                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop" alt="Corporate Law">
-            </div>
-            <div class="practice-content">
-                <i class="fas fa-building practice-icon"></i>
-                <h3>Corporate & Commercial Law</h3>
-                <p>Comprehensive legal support for businesses of all sizes. Services include business formation, mergers and acquisitions, contract drafting, corporate governance, compliance, and commercial transactions. Experienced guidance from startups to established corporations. Navigating complex regulations with strategic counsel. Positioning your company for growth and success.</p>
-                <div class="practice-features">
-                    <span class="feature-tag">Business Formation</span>
-                    <span class="feature-tag">M&A</span>
-                    <span class="feature-tag">Corporate Governance</span>
-                    <span class="feature-tag">Compliance</span>
+                <div class="footer-grid">
+
+                    <!-- Brand -->
+                    <div class="footer-brand">
+                        <div class="logo-icon">
+                            <a href="index.html">
+                                <img src="assets/images/logo.png" alt="Law Firm Logo" class="logo-img">
+
+                                <div>
+                                    <strong>RRC</strong>
+                                    <span>Law Associates</span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <p>
+                            Providing trusted legal solutions with integrity since 2008. Your reliable
+                            partner for all legal matters in Tamil Nadu.
+                        </p>
+
+                        <div class="social"></div>
+                    </div>
+
+                    <!-- Practice Areas -->
+                    <div>
+                        <h4>Practice Areas</h4>
+                        <ul>
+                            <li>
+                                <a href="practiceareas.html">Civil Litigation</a>
+                            </li>
+                            <li>
+                                <a href="practiceareas.html">Family Law</a>
+                            </li>
+                            <li>
+                                <a href="practiceareas.html">Corporate Law</a>
+                            </li>
+                            <li>
+                                <a href="practiceareas.html">Criminal Defense</a>
+                            </li>
+                            <li>
+                                <a href="practiceareas.html">Property Law</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div>
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li>
+                                <a href="index.html">Home</a>
+                            </li>
+                            <li>
+                                <a href="practiceareas.html">Practice Areas</a>
+                            </li>
+                            <li>
+                                <a href="lawfirm-blog.html">Blog</a>
+                            </li>
+                            <li>
+                                <a href="#contact">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Contact -->
+                    <div>
+                        <h4>Contact Us</h4>
+                        <ul class="contact">
+                            <li>
+                                <span>Address</span>
+                                123 Justice Avenue,<br>
+                                Chennai, Tamil Nadu 600001
+                            </li>
+                            <li>
+                                <span>Phone</span>
+                                <a href="tel:+919876543210">+91 98765 43210</a>
+                            </li>
+                            <li>
+                                <span>Email</span>
+                                <a href="mailto:contact@advocatelawfirm.com">
+                                    contact@advocatelawfirm.com
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
                 </div>
-            </div>
-            </div>
-        </div>
 
-        <!-- Property Law -->
-        <div class="col-4 practice-area">
-            <div>
-              <div class="practice-image">
-                <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop" alt="Property Law">
-            </div>
-            <div class="practice-content">
-                <i class="fas fa-home practice-icon"></i>
-                <h3>Real Estate & Property Law</h3>
-                <p>Our property law experts handle all aspects of real estate transactions and disputes. We assist with property purchases and sales, lease agreements, title disputes, zoning issues, property development, and landlord-tenant matters. Whether you're buying your first home or managing a commercial real estate portfolio, we ensure your property interests are fully protected.</p>
-                <div class="practice-features">
-                    <span class="feature-tag">Real Estate Transactions</span>
-                    <span class="feature-tag">Title Disputes</span>
-                    <span class="feature-tag">Zoning</span>
-                    <span class="feature-tag">Landlord-Tenant</span>
+                <!-- Bottom -->
+                <div class="footer-bottom">
+                    <p>©
+                        <span id="year">2026</span>
+                        Branzyne. All rights reserved.</p>
+                    <div class="legal">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms</a>
+                        <a href="#">Disclaimer</a>
+                    </div>
                 </div>
+
             </div>
-            </div>
-        </div>
-
-        <!-- Consumer Protection Law -->
-        <div class="col-4 practice-area">
-            <div>
-              <div class="practice-image">
-                <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop" alt="Consumer Protection Law">
-            </div>
-            <div class="practice-content">
-                <i class="fas fa-shield-alt practice-icon"></i>
-                <h3>Cyber Crime & Digital Law</h3>
-                <p>Cyber threats are one of the fastest-growing legal concerns today. We serve individuals, businesses, startups, and corporations. Comprehensive legal services in Cyber Crime & Digital Law. Strategic advice, preventive compliance, and strong courtroom representation.</p>
-                <div class="practice-features">
-                    <span class="feature-tag">Cyber Crime Litigation</span>
-                    <span class="feature-tag">Data Protection</span>
-                    <span class="feature-tag">Online Defamation</span>
-                    <span class="feature-tag">Technology Law</span>
-                </div>
-            </div>
-            </div>
-        </div>
-
-        <!-- Criminal Law -->
-        <div class="col-4 practice-area">
-            <div>
-              <div class="practice-image">
-                <img src="https://images.unsplash.com/photo-1479142506502-19b3a3b7ff33?w=800&h=600&fit=crop" alt="Criminal Law">
-            </div>
-            <div class="practice-content">
-                <i class="fas fa-gavel practice-icon"></i>
-                <h3>Criminal Defense & Appellate Practice</h3>
-                <p>Facing criminal charges can be overwhelming. Our experienced criminal defense attorneys provide aggressive representation for clients accused of crimes ranging from misdemeanors to serious felonies. We handle DUI cases, drug offenses, assault charges, white-collar crimes, and more. We protect your rights at every stage and fight for the best possible outcome.</p>
-                <div class="practice-features">
-                    <span class="feature-tag">Criminal Defense</span>
-                    <span class="feature-tag">DUI/DWI</span>
-                    <span class="feature-tag">White Collar Crimes</span>
-                    <span class="feature-tag">Appeals</span>
-                </div>
-            </div>
-            </div>
-        </div>
-
-        <!-- Labour and Employment Law -->
-        <div class="col-4 practice-area">
-            <div>
-              <div class="practice-image">
-                <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&h=600&fit=crop" alt="Labour and Employment Law">
-            </div>
-            <div class="practice-content">
-                <i class="fas fa-users practice-icon"></i>
-                <h3>Employment & Immigration Law</h3>
-                <p>Representing employers and employees in workplace legal matters. Services include contract negotiations, wrongful termination, discrimination claims, wage disputes, workers' compensation, and labor union negotiations. Ensuring fair treatment and resolving employment conflicts efficiently.</p>
-                <div class="practice-features">
-                    <span class="feature-tag">Employment Contracts</span>
-                    <span class="feature-tag">Discrimination</span>
-                    <span class="feature-tag">Wrongful Termination</span>
-                    <span class="feature-tag">Wage Disputes</span>
-                </div>
-            </div>
-            </div>
-        </div>
-        </div>
-    </div>
- <!-- Scroll to Top Button -->
-    <div class="scroll-top" id="scrollTop">↑</div>
-    <!-- Footer -->
-   <footer class="footer">
-  <div class="footer-contain">
-
-    <div class="footer-grid">
-
-      <!-- Brand -->
-      <div class="footer-brand">
-         <div class="logo-icon">
-            <a href="index.html">
-             <img src="assets/images/logo.png" alt="Law Firm Logo" class="logo-img">
-             
-           <div>
-            <strong>RRC</strong>
-            <span>Law Associates</span>
-          </div>
-          </div>
-          </a>
-
-        <p>
-          Providing trusted legal solutions with integrity since 2008.
-          Your reliable partner for all legal matters in Tamil Nadu.
-        </p>
-
-        <div class="social">
-          
-          
-        </div>
-      </div>
-
-      <!-- Practice Areas -->
-      <div>
-        <h4>Practice Areas</h4>
-        <ul>
-          <li><a href="practiceareas.html">Civil Litigation</a></li>
-          <li><a href="practiceareas.html">Family Law</a></li>
-          <li><a href="practiceareas.html">Corporate Law</a></li>
-          <li><a href="practiceareas.html">Criminal Defense</a></li>
-          <li><a href="practiceareas.html">Property Law</a></li>
-        </ul>
-      </div>
-
-      <!-- Quick Links -->
-      <div>
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="practiceareas.html">Practice Areas</a></li>
-          <li><a href="lawfirm-blog.html">Blog</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-
-      <!-- Contact -->
-      <div>
-        <h4>Contact Us</h4>
-        <ul class="contact">
-          <li>
-            <span>Address</span>
-            123 Justice Avenue,<br>
-            Chennai, Tamil Nadu 600001
-          </li>
-          <li>
-            <span>Phone</span>
-            <a href="tel:+919876543210">+91 98765 43210</a>
-          </li>
-          <li>
-            <span>Email</span>
-            <a href="mailto:contact@advocatelawfirm.com">
-              contact@advocatelawfirm.com
-            </a>
-          </li>
-        </ul>
-      </div>
-
-    </div>
-
-    <!-- Bottom -->
-    <div class="footer-bottom">
-      <p>© <span id="year">2026</span> Branzyne. All rights reserved.</p>
-      <div class="legal">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms</a>
-        <a href="#">Disclaimer</a>
-      </div>
-    </div>
-
-  </div>
-</footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-    <script>
-        // Loading Screen
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                document.querySelector('.loading-overlay').classList.add('hidden');
-            }, 1000);
-        });
-
-        // Scroll Progress Bar
-        window.addEventListener('scroll', () => {
-            const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolled = (window.scrollY / windowHeight) * 100;
-            document.querySelector('.progress-bar').style.width = scrolled + '%';
-        });
-
-        // Scroll Reveal Animation
-        function reveal() {
-            const reveals = document.querySelectorAll('.practice-area, .intro-section');
-            
-            reveals.forEach(element => {
-                const windowHeight = window.innerHeight;
-                const elementTop = element.getBoundingClientRect().top;
-                const elementVisible = 150;
-                
-                if (elementTop < windowHeight - elementVisible) {
-                    element.classList.add('reveal');
-                }
+        </footer>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+            crossorigin="anonymous"></script>
+        <script>
+            // Loading Screen
+            window.addEventListener('load', () => {
+                setTimeout(() => {
+                    document
+                        .querySelector('.loading-overlay')
+                        .classList
+                        .add('hidden');
+                }, 1000);
             });
-        }
 
-        window.addEventListener('scroll', reveal);
-        
-        // Initial check on page load
-        reveal();
+            // Scroll Progress Bar
+            window.addEventListener('scroll', () => {
+                const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (window.scrollY / windowHeight) * 100;
+                document
+                    .querySelector('.progress-bar')
+                    .style
+                    .width = scrolled + '%';
+            });
 
-        // Smooth Scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
+            // Scroll Reveal Animation
+            function reveal() {
+                const reveals = document.querySelectorAll('.practice-area, .intro-section');
+
+                reveals.forEach(element => {
+                    const windowHeight = window.innerHeight;
+                    const elementTop = element
+                        .getBoundingClientRect()
+                        .top;
+                    const elementVisible = 150;
+
+                    if (elementTop < windowHeight - elementVisible) {
+                        element
+                            .classList
+                            .add('reveal');
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', reveal);
+
+            // Initial check on page load
+            reveal();
+
+            // Smooth Scroll
+            document
+                .querySelectorAll('a[href^="#"]')
+                .forEach(anchor => {
+                    anchor.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const target = document.querySelector(this.getAttribute('href'));
+                        if (target) {
+                            target.scrollIntoView({behavior: 'smooth', block: 'start'});
+                        }
                     });
-                }
+                });
+
+            // Add hover effect sound (optional - currently visual only)
+            const featureTags = document.querySelectorAll('.feature-tag');
+            featureTags.forEach(tag => {
+                tag.addEventListener('mouseenter', function () {
+                    this.style.boxShadow = '0 5px 15px rgba(201, 162, 77, 0.3)';
+                });
+                tag.addEventListener('mouseleave', function () {
+                    this.style.boxShadow = 'none';
+                });
             });
-        });
-
-
-
-        // Add hover effect sound (optional - currently visual only)
-        const featureTags = document.querySelectorAll('.feature-tag');
-        featureTags.forEach(tag => {
-            tag.addEventListener('mouseenter', function() {
-                this.style.boxShadow = '0 5px 15px rgba(201, 162, 77, 0.3)';
+        </script>
+        <script>
+            // Button navigation
+            document.addEventListener("DOMContentLoaded", function () {
+                document
+                    .querySelectorAll("button[data-link]")
+                    .forEach(btn => {
+                        btn.addEventListener("click", function () {
+                            window.location.href = this.dataset.link;
+                        });
+                    });
             });
-            tag.addEventListener('mouseleave', function() {
-                this.style.boxShadow = 'none';
-            });
-        });
-    </script>
-    <script>
-  // Button navigation
-  document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll("button[data-link]").forEach(btn => {
-      btn.addEventListener("click", function () {
-        window.location.href = this.dataset.link;
-      });
-    });
-  });
 
-  // Mobile menu toggle
-  function toggleMenu() {
-    document.querySelector(".navbar").classList.toggle("active");
-  }
-</script>
-</body>
+            // Mobile menu toggle
+            function toggleMenu() {
+                document
+                    .querySelector(".navbar")
+                    .classList
+                    .toggle("active");
+            }
+        </script>
+    </body>
 </html>

@@ -1,1334 +1,1536 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RRC Law Associates</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>RRC Law Associates</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <!-- LINK CSS (IMPORTANT) -->
+        <link rel="stylesheet" href="style.css">
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+            crossorigin="anonymous">
+        <script src="script.js" defer="defer"></script>
+    </head>
 
-  <!-- LINK CSS (IMPORTANT) -->
-  <link rel="stylesheet" href="style.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <body>
+        <header class="header">
+            <nav class="nav-bar">
+                <div class="logo-icon">
+                    <a href="index.html">
+                        <img src="assets/images/law3.png" alt="Logo" class="logo-img">
+                        <!-- <div class="brand-text"> <div class="name" style="font-weight:
+                        700;">RRC</div> <div class="name" style="font-family: 'Cinzel', serif;
+                        letter-spacing: 1px;"> Law Associates </div> </div> -->
+                    </a>
+                </div>
 
-</head>
-<script src="script.js" defer></script>
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const slider = document.querySelector(".testimonial-slider");
-  const slides = document.querySelectorAll(".testimonial");
-  const prevBtn = document.querySelector(".test.prev");
-  const nextBtn = document.querySelector(".test.next");
-
-  if (!slider || slides.length === 0) {
-    console.error("Slider or testimonials not found");
-    return;
-  }
-
-  let index = 0;
-  const gap = 40;
-
-  function updateSlider() {
-    const slideWidth = slides[0].offsetWidth + gap;
-    slider.style.transform = `translateX(-${index * slideWidth}px)`;
-  }
-
-  nextBtn?.addEventListener("click", () => {
-    index = (index + 1) % slides.length;
-    updateSlider();
-  });
-
-  prevBtn?.addEventListener("click", () => {
-    index = (index - 1 + slides.length) % slides.length;
-    updateSlider();
-  });
-
-  // AUTO SCROLL (slow & premium)
-  setInterval(() => {
-    index = (index + 1) % slides.length;
-    updateSlider();
-  }, 8000);
-
-  window.addEventListener("resize", updateSlider);
-});
-</script>
-<script>
-window.addEventListener("load", () => {
-
-  const counters = document.querySelectorAll(".stat-card h3");
-
-  counters.forEach(counter => {
-    const text = counter.textContent.trim();
-    const number = parseInt(text.replace(/\D/g, ""));
-    const suffix = text.replace(/[0-9]/g, "");
-    let current = 0;
-
-    const increment = Math.max(1, Math.floor(number / 80));
-
-    const updateCount = () => {
-      current += increment;
-
-      if (current < number) {
-        counter.textContent = current + suffix;
-        requestAnimationFrame(updateCount);
-      } else {
-        counter.textContent = number + suffix;
-      }
-    };
-
-    updateCount();
-  });
-
-});
-
-</script>
-<!-- stats count up -->
-
-<!-- stats heading scroll -->
- <script>
-const statsHeader = document.querySelector('.stats-header');
-
-const observer = new IntersectionObserver(entries => {
-  if(entries[0].isIntersecting) {
-    statsHeader.classList.add('show');
-    observer.disconnect(); // run only once
-  }
-}, { threshold: 0.3 });
-
-observer.observe(statsHeader);
-</script>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    // Show the disclaimer only if not accepted
-    if (!localStorage.getItem("disclaimerAccepted")) {
-        document.getElementById("disclaimerOverlay").style.display = "block";
-    }
-});
-
-// Function to accept disclaimer
-function acceptDisclaimer() {
-    localStorage.setItem("disclaimerAccepted", "yes"); // store in localStorage
-    document.getElementById("disclaimerOverlay").style.display = "none"; // hide popup
-}
-
-// Function to close popup without accepting
-function closeDisclaimer() {
-    document.getElementById("disclaimerOverlay").style.display = "none";
-}
-</script>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  
-  const menuToggle = document.querySelector('.menu-toggle');
-  const mobileMenu = document.querySelector('.mobile-menu');
-  const header = document.querySelector('.header');
-  
-  // Toggle mobile menu
-  menuToggle.addEventListener('click', function(e) {
-    e.stopPropagation(); // Prevent document click from firing
-    mobileMenu.classList.toggle('open');
-    
-    // Change icon
-    if (mobileMenu.classList.contains('open')) {
-      menuToggle.innerHTML = '✕';
-      menuToggle.style.fontSize = '28px';
-    } else {
-      menuToggle.innerHTML = '☰';
-      menuToggle.style.fontSize = '24px';
-    }
-  });
-  
-  // Handle all navigation buttons (Desktop + Mobile)
-  const allNavButtons = document.querySelectorAll('[data-link], .mobile-menu button');
-  
-  allNavButtons.forEach(button => {
-    button.addEventListener('click', function() {
-      let link;
-      
-      // Get link from data-link attribute or button text
-      if (this.hasAttribute('data-link')) {
-        link = this.getAttribute('data-link');
-      } else {
-        // Map mobile menu buttons to pages
-        const text = this.textContent.trim().toLowerCase();
-        const linkMap = {
-          'home': 'index.html',
-          'practiceareas': 'practiceareas.html',
-          'blog': 'lawfirm-blog.html',
-          'contact': '#contact'
-        };
-        link = linkMap[text] || '#';
-      }
-      
-      // Close mobile menu if open
-      if (mobileMenu.classList.contains('open')) {
-        mobileMenu.classList.remove('open');
-        menuToggle.innerHTML = '☰';
-        menuToggle.style.fontSize = '24px';
-      }
-      
-      // Navigate
-      if (link.startsWith('#')) {
-        // Smooth scroll to section on same page
-        const target = document.querySelector(link);
-        if (target) {
-          target.scrollIntoView({ 
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      } else {
-        // Navigate to different page
-        window.location.href = link;
-      }
-    });
-  });
-  
-  // Book Consultation button
-  const bookBtn = document.querySelector('.btn-gold');
-  if (bookBtn) {
-    bookBtn.addEventListener('click', function() {
-      const contactSection = document.querySelector('#contact');
-      if (contactSection) {
-        contactSection.scrollIntoView({ 
-          behavior: 'smooth',
-          block: 'start'
-        });
-      } else {
-        // If contact section doesn't exist, go to contact page
-        window.location.href = 'contact.html';
-      }
-    });
-  }
-  
-  // Close mobile menu when clicking outside
-  document.addEventListener('click', function(event) {
-    if (!header.contains(event.target) && mobileMenu.classList.contains('open')) {
-      mobileMenu.classList.remove('open');
-      menuToggle.innerHTML = '☰';
-      menuToggle.style.fontSize = '24px';
-    }
-  });
-  
-  // Prevent clicks inside menu from closing it
-  mobileMenu.addEventListener('click', function(e) {
-    e.stopPropagation();
-  });
-  
-  // Header scroll effect
-  window.addEventListener('scroll', function() {
-    if (window.scrollY > 50) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
-  });
-  
-  // Close mobile menu on window resize to desktop
-  window.addEventListener('resize', function() {
-    if (window.innerWidth > 968 && mobileMenu.classList.contains('open')) {
-      mobileMenu.classList.remove('open');
-      menuToggle.innerHTML = '☰';
-      menuToggle.style.fontSize = '24px';
-    }
-  });
-  
-});
-</script>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  
-  const disclaimerOverlay = document.getElementById('disclaimerOverlay');
-  const agreeBtn = document.querySelector('.agreeBtn');
-  const closeBtn = document.querySelector('.closeBtn');
-  
-  // Check if user has already agreed in this session
-  const hasAgreed = sessionStorage.getItem('disclaimerAgreed');
-  
-  if (hasAgreed === 'true') {
-    disclaimerOverlay.style.display = 'none';
-  } else {
-    disclaimerOverlay.style.display = 'flex';
-  }
-  
-  // When user clicks "Agree"
-  agreeBtn.addEventListener('click', function() {
-    sessionStorage.setItem('disclaimerAgreed', 'true');
-    closeDisclaimer();
-  });
-  
-  // Optional: Close button
-  if (closeBtn) {
-    closeBtn.addEventListener('click', function() {
-      closeDisclaimer();
-    });
-  }
-  
-  function closeDisclaimer() {
-    disclaimerOverlay.style.animation = 'fadeOut 0.3s ease';
-    setTimeout(() => {
-      disclaimerOverlay.style.display = 'none';
-    }, 300);
-  }
-});
-</script>
-<script>
-// Scroll to Top Button Functionality
-document.addEventListener('DOMContentLoaded', function() {
-    
-    const scrollTopBtn = document.getElementById('scrollTop');
-    
-    // Show/hide button on scroll
-    window.addEventListener('scroll', function() {
-        if (window.pageYOffset > 300) {
-            scrollTopBtn.classList.add('visible');
-        } else {
-            scrollTopBtn.classList.remove('visible');
-        }
-    });
-    
-    // Scroll to top when clicked
-    scrollTopBtn.addEventListener('click', function() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
-    
-});
-</script>
-<script>
-  /* Scroll reveal */
-  /* Scroll reveal — fixed */
-  function initReveal() {
-    const els = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
-
-    if (!els.length) return;
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          observer.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
-
-    els.forEach(el => observer.observe(el));
-  }
-
-  /* Run after DOM is fully ready */
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initReveal);
-  } else {
-    initReveal();
-  }
-</script>
-
-<body>
-  <header class="header">
-  <nav class="nav-bar">
-    <div class="logo-icon">
-      <a href="index.html">
-        <img src="assets/images/law3.png" alt="Logo" class="logo-img">
-        <!-- <div class="brand-text">
-          <div class="name" style="font-weight: 700;">RRC</div>
-          <div class="name" style="font-family: 'Cinzel', serif; letter-spacing: 1px;">
-            Law Associates
-          </div>
-        </div> -->
-      </a>
-    </div>
-
-    <!-- Desktop Navigation -->
-    <div class="desktop-nav">
-      <button type="button" data-link="index.html">Home</button>
-      <button type="button" data-link="practiceareas.html">Practice Areas</button>
-      <button type="button" data-link="lawfirm-blog.html">Blog</button>
-      <button type="button" data-link="index.html#contact">Contact</button>
-    </div>
-    <!-- CTA Section -->
-    <div class="cta">
-      <button class="btn-gold" data-link="index.html#contact">Book Consultation</button>
-      <!-- Mobile Toggle Button -->
-      <button class="menu-toggle">☰</button>
-    </div>
-  </nav>
-  <!-- Mobile Menu -->
-  <div class="mobile-menu">
-    <button type="button" data-link="index.html">Home</button>
-    <button type="button" data-link="practiceareas.html">Practice Areas</button>
-    <button type="button" data-link="lawfirm-blog.html">Blog</button>
-    <button type="button" data-link="index.html#contact">Contact</button>
-  </div>
-</header>
-<!-- disclaimer -->
-<!-- Disclaimer Overlay -->
-<div id="disclaimerOverlay">
-  <div class="popup">
-    <div class="disclaimerBox">
-      <button class="closeBtn" aria-label="Close">&times;</button>
-      
-      <h2>Disclaimer</h2>
-      
-      <p>
-        In compliance with the rules of the Bar Council of India, this website of RRC Law Associates ( the “Firm” ) is meant solely for information about the Firm, its practice areas, advocates and solicitors and not for the purpose of advertising, soliciting work or inducement of any sort by the Firm or any of its members. Nor is it to be construed as legal advice of any nature or manner whatsoever.
-      </p>
-    <p>
-Please read and accept our website’s Terms of Use and our Privacy Policy. By clicking on ‘I AGREE’ below, the website visitor acknowledges that the information provided in is meant only for his/her understanding of the Firm and its activities.
-      </p>
-      
-      <p>
-        By using this website, you acknowledge that you have read and understood 
-        this disclaimer.
-      </p>
-      
-      <div class="btn-wrapper">
-        <button class="agreeBtn">I Agree</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- hero section -->
-
-<section id="home" class="hero">
-
-  <!-- Background -->
-  <div class="hero-bg">
-    <img src="assets/images/hero-law-office.jpg" alt="Professional law office interior" />
-    <div class="overlay overlay-x"></div>
-    <div class="overlay overlay-y"></div>
-     <div class="img-gradient"></div>
-  </div>
-
-  <!-- Content -->
-  <div class="hero-content">
-    <div class="hero-inner">
-      <!-- Heading -->
-       <h1 class="law-firm-heading">
-        <span class="rrc-text">RRC</span> 
-        <span class="law-text">Law Associates</span>
-    </h1>
-      <h1 class="fade-up delay-2">
-        Trusted Legal Solutions with
-        <span class="gold-gradient">Integrity</span>
-      </h1>  
-    </div>
-  </div>
-</section>
-<!-- about us -->
- <section class="story-section">
-        <h2 class="section-title">About Us</h2>
-        <div class="story-content">
-            <div class="story-text">
-                <p><strong>RRC Law Associates</strong> is a boutique litigation firm built on precision, principle, and courtroom strength. We represent clients before District Courts, High Courts, and the Supreme Court of India, delivering strategic advocacy grounded in deep legal scholarship and disciplined preparation.</p>
-                <p>The firm carries forward the legacy of its founder, <b>Durai Balasundaram, M.A., B.L., Senior Advocate</b> — a first-generation lawyer of exceptional distinction. Born on 04 January 1937 in Thanjavur, Tamil Nadu, he established a formidable reputation through decades of practice in both criminal and civil litigation.</p>
-                <p>A Gold Medalist in M.A. Economics from Pachaiyappa's College, he earned his B.L. degree from Madras Law College and enrolled as an Advocate in 1964 (Enrollment No. 227/1964). His advocacy was marked by analytical rigor, strategic clarity, and unwavering professional ethics — values that continue to define the firm.</p>
-                <p>Established in 2025, <Strong>RRC Law Associates</Strong> combines legacy with contemporary litigation strategy. We approach every brief with meticulous preparation, decisive argumentation, and a clear objective: to protect our clients’ rights with authority and integrity.</p>
-                <p>We believe that effective litigation is not merely about appearing in court — it is about mastering facts, law, and strategy long before the matter is called.</p>
+                <!-- Desktop Navigation -->
+                <div class="desktop-nav">
+                    <button type="button" data-link="index.html">Home</button>
+                    <div class="dropdown">
+                        <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="text-decoration: none; color: ivory;">
+                            Practice Areas
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="./civil-lawyer.html">Civil litigation</a></li>
+                            <li><a class="dropdown-item" href="./property-dispute-lawyer.html">Real Estate & Property Law</a></li>
+                            <li><a class="dropdown-item" href="./criminal-law.html">Criminal Defense & Appellate Practice</a></li>
+                            <li><a class="dropdown-item" href="./cheque-bounce-lawyer.html">Cheque Bounce</a></li>
+                        </ul>
+                    </div>
+                    <button type="button" data-link="lawfirm-blog.html">Blog</button>
+                    <button type="button" data-link="index.html#contact">Contact</button>
+                </div>
+                <!-- CTA Section -->
+                <div class="cta">
+                    <button class="btn-gold" data-link="index.html#contact">Book Consultation</button>
+                    <!-- Mobile Toggle Button -->
+                    <button class="menu-toggle">☰</button>
+                </div>
+            </nav>
+            <!-- Mobile Menu -->
+            <div class="mobile-menu">
+                <button type="button" data-link="index.html">Home</button>
+                <div class="dropdown">
+                    <button type="button" >Practice Areas</button>
+                </div>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+                <button type="button" data-link="lawfirm-blog.html">Blog</button>
+                <button type="button" data-link="index.html#contact">Contact</button>
             </div>
-            <div class="story-image">
-                  <img src="assets/images/founder1.png" alt="justice">
+        </header>
+        <!-- disclaimer -->
+        <!-- Disclaimer Overlay -->
+        <div id="disclaimerOverlay">
+            <div class="popup">
+                <div class="disclaimerBox">
+                    <button class="closeBtn" aria-label="Close">&times;</button>
+
+                    <h2>Disclaimer</h2>
+
+                    <p>
+                        In compliance with the rules of the Bar Council of India, this website of RRC
+                        Law Associates ( the “Firm” ) is meant solely for information about the Firm,
+                        its practice areas, advocates and solicitors and not for the purpose of
+                        advertising, soliciting work or inducement of any sort by the Firm or any of its
+                        members. Nor is it to be construed as legal advice of any nature or manner
+                        whatsoever.
+                    </p>
+                    <p>
+                        Please read and accept our website’s Terms of Use and our Privacy Policy. By
+                        clicking on ‘I AGREE’ below, the website visitor acknowledges that the
+                        information provided in is meant only for his/her understanding of the Firm and
+                        its activities.
+                    </p>
+
+                    <p>
+                        By using this website, you acknowledge that you have read and understood this
+                        disclaimer.
+                    </p>
+
+                    <div class="btn-wrapper">
+                        <button class="agreeBtn">I Agree</button>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
-    <!-- ADVOCATES SECTION -->
-  <section id="advocates" class="advocates-section">
+        <!-- hero section -->
+        <section id="home" class="hero">
+
+            <!-- Background -->
+            <div class="hero-bg">
+                <img
+                    src="assets/images/hero-law-office.jpg"
+                    alt="Professional law office interior"/>
+                <div class="img-gradient"></div>
+            </div>
+
+            <!-- Content -->
+            <div class="hero-content">
+                <div class="hero-inner">
+                    <!-- Heading -->
+                    <h1 class="law-firm-heading p-3">
+                        <span class="rrc-text">Trusted Criminal & Civil Lawyers</span>
+                    </h1>
+                    <!-- Subheading -->
+                    <h2 class="subheading rrc-subtext p-3">
+                       Providing strategic legal solutions in Criminal, Civil, Property and Cheque Bounce matters across Tamil Nadu courts.
+                    </h2>
+                    <h2 class="law-text p-3">
+                        Need Legal Assistance? Speak to an Advocate Today
+                    </h2>
+                    <div class="hero-cta d-flex gap-3">
+                        <div>
+                            <button class="btn-gold" data-link="index.html#contact">Book Consultation</button>
+                        </div>
+                        <div>
+                            <button class="btn-gold-outline" data-link="index.html#contact">Call Now</button>
+                        </div>
+                    </div>
+                    </div>
+            </div>
+        </section>
+        <!-- about us -->
+        <section class="story-section">
+            <h2 class="section-title">About Us</h2>
+            <div class="story-content">
+                <div class="story-text">
+                    <p>
+                        <strong>RRC Law Associates</strong>
+                        is a boutique litigation firm built on precision, principle, and courtroom
+                        strength. We represent clients before District Courts, High Courts, and the
+                        Supreme Court of India, delivering strategic advocacy grounded in deep legal
+                        scholarship and disciplined preparation.</p>
+                    <p>The firm carries forward the legacy of its founder,
+                        <b>Durai Balasundaram, M.A., B.L., Senior Advocate</b>
+                        — a first-generation lawyer of exceptional distinction. Born on 04 January 1937
+                        in Thanjavur, Tamil Nadu, he established a formidable reputation through decades
+                        of practice in both criminal and civil litigation.</p>
+                    <p>A Gold Medalist in M.A. Economics from Pachaiyappa's College, he earned his
+                        B.L. degree from Madras Law College and enrolled as an Advocate in 1964
+                        (Enrollment No. 227/1964). His advocacy was marked by analytical rigor,
+                        strategic clarity, and unwavering professional ethics — values that continue to
+                        define the firm.</p>
+                    <p>Established in 2025,
+                        <strong>RRC Law Associates</strong>
+                        combines legacy with contemporary litigation strategy. We approach every brief
+                        with meticulous preparation, decisive argumentation, and a clear objective: to
+                        protect our clients’ rights with authority and integrity.</p>
+                    <p>We believe that effective litigation is not merely about appearing in court —
+                        it is about mastering facts, law, and strategy long before the matter is called.</p>
+                </div>
+                <div class="story-image">
+                    <img src="assets/images/founder1.png" alt="justice">
+                </div>
+            </div>
+        </section>
+        <!-- ADVOCATES SECTION -->
+        <section id="advocates" class="advocates-section">
     <div class="container">
-
-      <!-- Section Header -->
-      <div class="section-header">
-        <span class="eyebrow">Our Team</span>
-        <h2>Meet Our Advocates</h2>
-        <p>
-          RRC Law Associates is composed of experienced advocates trained in rigorous courtroom practice and supported by a dedicated legal research and case-management team. We maintain a culture of discipline, scholarship, and strategic preparation — ensuring every matter is approached with authority and precision.
-        </p>
-      </div>
-
-      <!-- Advocates Grid -->
-      <div class="advocates-grid">
-
-        <!-- Card 1 -->
-        <div class="advocate-card">
-          <div class="image-box">
-            <img src="assets/images/advocate3.png" alt="Adv. Rajesh Kumar">
-            <!-- <div class="overlay">
-              <button>View Profile</button>
-            </div> -->
-          </div>
-          
-          <div class="content">
-            <h3>R. Muthukumaraswamy</h3>
-            <span>Senior Advocate & Co-Founder</span>
-            <p>President of the Madras Bar Association(2012-2014)</p>
-            <small>19+ Years Experience</small>
-          </div>
-          
-      </div>
-
-        <!-- Card 2 -->
-        <div class="advocate-card">
-          <div class="image-box">
-            <img src="assets/images/advocate-2.png" alt="Adv. Priya Sharma">
-            <!-- <div class="overlay">
-              <button>View Profile</button>
-            </div> -->
-          </div>
-          <div class="content">
-            <h3>Adv. Mathimugam, LL.B. (Hons), Lon., CLP</h3>
-            <span>Senior Associate</span>
-            <p>Family/Civil/Tort(accident claims)</p>
-            <small>30+ Years Experience</small>
-          </div>
+        <div class="section-header">
+            <span class="eyebrow">Our Team</span>
+            <h2>Meet Our Advocates</h2>
+            <p>RRC Law Associates is composed of experienced advocates...</p>
         </div>
 
-        <!-- Card 3 -->
-        <div class="advocate-card">
-          <div class="image-box">
-            <img src="assets/images/advocate-1.png" alt="Adv. Suresh Menon">
-            <!-- <div class="overlay">
-              <button>View Profile</button>
-            </div> -->
-          </div>
-          <div class="content">
-            <h3>Dr. N. Tamilmani, M.A., M.L., M.Phil., Ph.D.,</h3>
-            <span>Senior Partner & Founder</span>
-            <p>Civil Law, Criminal Law, Constitutional Law, Consumer Law and Family Law</p>
-            <small>20+ Years Experience</small>
-          </div>
+        <div class="advocates-slider-wrapper">
+            <div class="advocates-grid" id="advocatesGrid">
+                <div class="advocate-card">
+                        <div class="image-box">
+                            <img src="assets/images/advocate3.png" alt="Adv. Rajesh Kumar">
+                            <!-- <div class="overlay"> <button>View Profile</button> </div> -->
+                        </div>
+
+                        <div class="content">
+                            <h3>R. Muthukumaraswamy</h3>
+                            <span>Senior Advocate & Co-Founder</span>
+                            <p>President of the Madras Bar Association(2012-2014)</p>
+                            <small>19+ Years Experience</small>
+                        </div>
+                </div>
+                <div class="advocate-card">
+                    <div class="image-box">
+                            <img src="assets/images/advocate-2.png" alt="Adv. Priya Sharma">
+                            <!-- <div class="overlay"> <button>View Profile</button> </div> -->
+                        </div>
+                        <div class="content">
+                            <h3>Adv. Mathimugam, LL.B. (Hons), Lon., CLP</h3>
+                            <span>Senior Associate</span>
+                            <p>Family/Civil/Tort(accident claims)</p>
+                            <small>30+ Years Experience</small>
+                        </div>
+                </div>
+                <div class="advocate-card">
+                    <div class="image-box">
+                            <img src="assets/images/advocate-1.png" alt="Adv. Suresh Menon">
+                            <!-- <div class="overlay"> <button>View Profile</button> </div> -->
+                        </div>
+                        <div class="content">
+                            <h3>Dr. N. Tamilmani, M.A., M.L., M.Phil., Ph.D.,</h3>
+                            <span>Senior Partner & Founder</span>
+                            <p>Civil Law, Criminal Law, Constitutional Law, Consumer Law and Family Law</p>
+                            <small>20+ Years Experience</small>
+                        </div>
+                </div>
+                <div class="advocate-card">
+                    <div class="image-box">
+                            <img src="assets/images/advocate-4.png" alt="Adv. Lakshmi Devi">
+
+                        </div>
+                        <div class="content">
+                            <h3>R. Vidhya, B.A., LL.B.</h3>
+                            <span>Member</span>
+                            <p>Civil, Criminal, Family Law, MCop, Cyber, Consumer Law, Constitutional Law</p>
+                            <small>16+ Years Experience</small>
+                        </div>
+                </div>
+            </div>
+
+            <div class="slider-controls">
+                <button class="adv-prev">❮</button>
+                <button class="adv-next">❯</button>
+            </div>
         </div>
-
-        <!-- Card 4 -->
-        <div class="advocate-card">
-          <div class="image-box">
-            <img src="assets/images/advocate-4.png" alt="Adv. Lakshmi Devi">
-           
-          </div>
-          <div class="content">
-            <h3>R. Vidhya, B.A., LL.B.</h3>
-            <span>Member</span>
-            <p>Civil, Criminal, Family Law, MCop, Cyber, Consumer Law, Constitutional Law</p>
-            <small>16+ Years Experience</small>
-          </div>
-        </div>
-
-      </div>
     </div>
-  </section>
-<!-- practise section -->
-<section id="practice-areas" class="practice">
-  <div class="practice-sec">
-
-    <!-- Section Header -->
-    <div class="section-header">
-      <span class="eyebrow">Our Expertise</span>
-      <h2>Practice Areas</h2>
-      <p>
-        We offer comprehensive legal services across multiple domains,
-        ensuring expert representation for all your legal needs.
-      </p>
-    </div>
-
-    <!-- Grid -->
-    <div class="grid">
-
-      <!-- Card -->
-      <div class="card">
-        <div class="icon"><svg
-    class="justice-icon"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    stroke-width="1.8"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-  >
-    <path d="M12 3v18" />
-    <path d="M5 7h14" />
-    <path d="M5 7l-3 6h6l-3-6z" />
-    <path d="M19 7l-3 6h6l-3-6z" />
-  </svg><i data-lucide="scale"></i></div>
-        <h3>Civil & Constitutional Litigation</h3>
-        <p>District Courts, High Courts, and Supreme Court representation.</p>
-        <a href="practiceareas.html">
-        <div class="learn">Learn More <span>→</span></div>
-        </a>
-      </div>
-
-      <div class="card">
-        <div class="icon"><svg
-  class="corporate-law-logo"
-  width="64"
-  height="64"
-  viewBox="0 0 64 64"
-  fill="none"
-  xmlns="http://www.w3.org/2000/svg"
-  aria-label="Corporate Law"
->
-  <!-- Building -->
-  <rect x="12" y="18" width="40" height="34" rx="3" stroke="currentColor" stroke-width="2"/>
-  
-  <!-- Windows -->
-  <rect x="18" y="24" width="6" height="6" fill="currentColor"/>
-  <rect x="29" y="24" width="6" height="6" fill="currentColor"/>
-  <rect x="40" y="24" width="6" height="6" fill="currentColor"/>
-  
-  <rect x="18" y="34" width="6" height="6" fill="currentColor"/>
-  <rect x="29" y="34" width="6" height="6" fill="currentColor"/>
-  <rect x="40" y="34" width="6" height="6" fill="currentColor"/>
-
-  <!-- Briefcase -->
-  <rect x="24" y="44" width="16" height="10" rx="2" stroke="currentColor" stroke-width="2"/>
-  <path d="M28 44v-2h8v2" stroke="currentColor" stroke-width="2"/>
-</svg><i data-lucide="building-2"></i></div>
-        <h3>Corporate & Commercial Law</h3>
-        <p>Advisory, structuring, compliance, and commercial dispute management.</p>
-        <a href="practiceareas.html">
-        <div class="learn">Learn More <span>→</span></div>
-        </a>
-      </div>
-
-      <div class="card">
-        <div class="icon"><svg
-  class="property-law-icon"
-  width="64"
-  height="64"
-  viewBox="0 0 64 64"
-  fill="none"
-  xmlns="http://www.w3.org/2000/svg"
-  aria-label="Property Law"
->
-  <!-- House Roof -->
-  <path d="M12 30L32 14L52 30" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-
-  <!-- House Body -->
-  <rect x="18" y="30" width="28" height="22" rx="2" stroke="currentColor" stroke-width="2"/>
-
-  <!-- Door -->
-  <rect x="29" y="38" width="6" height="14" fill="currentColor"/>
-
-  <!-- Legal Pillar -->
-  <path d="M10 54H54" stroke="currentColor" stroke-width="2"/>
-  <rect x="26" y="52" width="12" height="2" fill="currentColor"/>
-</svg><i data-lucide="file-text"></i></div>
-        <h3>Real Estate & Property Law</h3>
-        <p>Title disputes, development advisory, and land litigation.</p>
-        <a href="practiceareas.html">
-        <div class="learn">Learn More <span>→</span></div>
-        </a>
-      </div>
-
-      <div class="card">
-        <div class="icon"><svg
-  class="corporate-law-logo"
-  width="64"
-  height="64"
-  viewBox="0 0 64 64"
-  fill="none"
-  xmlns="http://www.w3.org/2000/svg"
-  aria-label="Corporate Law"
->
-  <!-- Building -->
-  <rect x="12" y="18" width="40" height="34" rx="3" stroke="currentColor" stroke-width="2"/>
-  
-  <!-- Windows -->
-  <rect x="18" y="24" width="6" height="6" fill="currentColor"/>
-  <rect x="29" y="24" width="6" height="6" fill="currentColor"/>
-  <rect x="40" y="24" width="6" height="6" fill="currentColor"/>
-  
-  <rect x="18" y="34" width="6" height="6" fill="currentColor"/>
-  <rect x="29" y="34" width="6" height="6" fill="currentColor"/>
-  <rect x="40" y="34" width="6" height="6" fill="currentColor"/>
-
-  <!-- Briefcase -->
-  <rect x="24" y="44" width="16" height="10" rx="2" stroke="currentColor" stroke-width="2"/>
-  <path d="M28 44v-2h8v2" stroke="currentColor" stroke-width="2"/>
-</svg><i data-lucide="building-2"></i></div>
-        <h3>Cyber Crime & Digital Law</h3>
-        <p>Advocacy against unfair business practices and defective services.</p>
-        <a href="practiceareas.html">
-        <div class="learn">Learn More <span>→</span></div>
-        </a>
-      </div>
-      <div class="card">
-        <div class="icon"><!-- Criminal Defense SVG Icon -->
-<svg
-  class="criminal-law-icon"
-  width="64"
-  height="64"
-  viewBox="0 0 64 64"
-  fill="none"
-  xmlns="http://www.w3.org/2000/svg"
-  aria-label="Criminal Defense"
->
-  <!-- Shield -->
-  <path
-    d="M32 6L52 14V32C52 44 40 54 32 58C24 54 12 44 12 32V14L32 6Z"
-    stroke="currentColor"
-    stroke-width="2"
-    stroke-linejoin="round"
-  />
-
-  <!-- Gavel Handle -->
-  <path
-    d="M26 26L38 38"
-    stroke="currentColor"
-    stroke-width="2"
-    stroke-linecap="round"
-  />
-
-  <!-- Gavel Head -->
-  <rect
-    x="35"
-    y="22"
-    width="10"
-    height="6"
-    rx="1"
-    transform="rotate(45 35 22)"
-    stroke="currentColor"
-    stroke-width="2"
-  />
-</svg>
-<i data-lucide="gavel"></i></div>
-        <h3>Criminal Defense & Appellate Practice</h3>
-        <p>Strategic defense, discharge, quashing, bail, and appellate advocacy.</p>
-        <a href="practiceareas.html">
-        <div class="learn">Learn More <span>→</span></div>
-        </a>
-      </div>
-       <div class="card">
-        <div class="icon"><!-- Consumer Protection SVG Icon -->
-<svg
-  class="consumer-law-icon"
-  width="64"
-  height="64"
-  viewBox="0 0 64 64"
-  fill="none"
-  xmlns="http://www.w3.org/2000/svg"
-  aria-label="Consumer Protection"
->
-  <!-- Shield -->
-  <path
-    d="M32 6L52 14V32C52 44 40 54 32 58C24 54 12 44 12 32V14L32 6Z"
-    stroke="currentColor"
-    stroke-width="2"
-    stroke-linejoin="round"
-  />
-
-  <!-- Checkmark -->
-  <path
-    d="M22 33L29 40L42 26"
-    stroke="currentColor"
-    stroke-width="3"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-  />
-</svg>
-<i data-lucide="shield"></i></div>
-        <h3>Employment & Immigration Law</h3>
-        <p>Workforce structuring, regulatory compliance, and immigration representation.</p>
-       <a href="practiceareas.html">
-        <div class="learn">Learn More <span>→</span></div>
-        </a>
-      </div>
-
-    </div>
-    </div>
-    </div>
-
-    </div>
-    
-  </div>
 </section>
- 
+        <!-- practise section -->
+        <section id="practice-areas" class="practice">
+            <div class="practice-sec">
+
+                <!-- Section Header -->
+                <div class="section-header">
+                    <span class="eyebrow">Our Expertise</span>
+                    <h2>Practice Areas</h2>
+                    <p>
+                        We offer comprehensive legal services across multiple domains, ensuring expert
+                        representation for all your legal needs.
+                    </p>
+                </div>
+
+                <!-- Grid -->
+                <div class="grid">
+
+                    <!-- Card -->
+                    <div class="card">
+                        <div class="icon">
+                            <svg
+                                class="justice-icon"
+                                viewbox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                                stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M12 3v18"/>
+                                <path d="M5 7h14"/>
+                                <path d="M5 7l-3 6h6l-3-6z"/>
+                                <path d="M19 7l-3 6h6l-3-6z"/>
+                            </svg>
+                            <i data-lucide="scale"></i>
+                        </div>
+                        <h3>Civil & Constitutional Litigation</h3>
+                        <p>District Courts, High Courts, and Supreme Court representation.</p>
+                        <a href="practiceareas.html">
+                            <div class="learn">Learn More
+                                <span>→</span></div>
+                        </a>
+                    </div>
+
+                    <div class="card">
+                        <div class="icon">
+                            <svg
+                                class="corporate-law-logo"
+                                width="64"
+                                height="64"
+                                viewbox="0 0 64 64"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                                aria-label="Corporate Law">
+                                <!-- Building -->
+                                <rect
+                                    x="12"
+                                    y="18"
+                                    width="40"
+                                    height="34"
+                                    rx="3"
+                                    stroke="currentColor"
+                                    stroke-width="2"/>
+
+                                <!-- Windows -->
+                                <rect x="18" y="24" width="6" height="6" fill="currentColor"/>
+                                <rect x="29" y="24" width="6" height="6" fill="currentColor"/>
+                                <rect x="40" y="24" width="6" height="6" fill="currentColor"/>
+
+                                <rect x="18" y="34" width="6" height="6" fill="currentColor"/>
+                                <rect x="29" y="34" width="6" height="6" fill="currentColor"/>
+                                <rect x="40" y="34" width="6" height="6" fill="currentColor"/>
+
+                                <!-- Briefcase -->
+                                <rect
+                                    x="24"
+                                    y="44"
+                                    width="16"
+                                    height="10"
+                                    rx="2"
+                                    stroke="currentColor"
+                                    stroke-width="2"/>
+                                <path d="M28 44v-2h8v2" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            <i data-lucide="building-2"></i>
+                        </div>
+                        <h3>Corporate & Commercial Law</h3>
+                        <p>Advisory, structuring, compliance, and commercial dispute management.</p>
+                        <a href="practiceareas.html">
+                            <div class="learn">Learn More
+                                <span>→</span></div>
+                        </a>
+                    </div>
+
+                    <div class="card">
+                        <div class="icon">
+                            <svg
+                                class="property-law-icon"
+                                width="64"
+                                height="64"
+                                viewbox="0 0 64 64"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                                aria-label="Property Law">
+                                <!-- House Roof -->
+                                <path
+                                    d="M12 30L32 14L52 30"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"/>
+
+                                <!-- House Body -->
+                                <rect
+                                    x="18"
+                                    y="30"
+                                    width="28"
+                                    height="22"
+                                    rx="2"
+                                    stroke="currentColor"
+                                    stroke-width="2"/>
+
+                                <!-- Door -->
+                                <rect x="29" y="38" width="6" height="14" fill="currentColor"/>
+
+                                <!-- Legal Pillar -->
+                                <path d="M10 54H54" stroke="currentColor" stroke-width="2"/>
+                                <rect x="26" y="52" width="12" height="2" fill="currentColor"/>
+                            </svg>
+                            <i data-lucide="file-text"></i>
+                        </div>
+                        <h3>Real Estate & Property Law</h3>
+                        <p>Title disputes, development advisory, and land litigation.</p>
+                        <a href="practiceareas.html">
+                            <div class="learn">Learn More
+                                <span>→</span></div>
+                        </a>
+                    </div>
+
+                    <div class="card">
+                        <div class="icon">
+                            <svg
+                                class="corporate-law-logo"
+                                width="64"
+                                height="64"
+                                viewbox="0 0 64 64"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                                aria-label="Corporate Law">
+                                <!-- Building -->
+                                <rect
+                                    x="12"
+                                    y="18"
+                                    width="40"
+                                    height="34"
+                                    rx="3"
+                                    stroke="currentColor"
+                                    stroke-width="2"/>
+
+                                <!-- Windows -->
+                                <rect x="18" y="24" width="6" height="6" fill="currentColor"/>
+                                <rect x="29" y="24" width="6" height="6" fill="currentColor"/>
+                                <rect x="40" y="24" width="6" height="6" fill="currentColor"/>
+
+                                <rect x="18" y="34" width="6" height="6" fill="currentColor"/>
+                                <rect x="29" y="34" width="6" height="6" fill="currentColor"/>
+                                <rect x="40" y="34" width="6" height="6" fill="currentColor"/>
+
+                                <!-- Briefcase -->
+                                <rect
+                                    x="24"
+                                    y="44"
+                                    width="16"
+                                    height="10"
+                                    rx="2"
+                                    stroke="currentColor"
+                                    stroke-width="2"/>
+                                <path d="M28 44v-2h8v2" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            <i data-lucide="building-2"></i>
+                        </div>
+                        <h3>Cyber Crime & Digital Law</h3>
+                        <p>Advocacy against unfair business practices and defective services.</p>
+                        <a href="practiceareas.html">
+                            <div class="learn">Learn More
+                                <span>→</span></div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <div class="icon">
+                            <!-- Criminal Defense SVG Icon -->
+                            <svg
+                                class="criminal-law-icon"
+                                width="64"
+                                height="64"
+                                viewbox="0 0 64 64"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                                aria-label="Criminal Defense">
+                                <!-- Shield -->
+                                <path
+                                    d="M32 6L52 14V32C52 44 40 54 32 58C24 54 12 44 12 32V14L32 6Z"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linejoin="round"/>
+
+                                <!-- Gavel Handle -->
+                                <path
+                                    d="M26 26L38 38"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"/>
+
+                                <!-- Gavel Head -->
+                                <rect
+                                    x="35"
+                                    y="22"
+                                    width="10"
+                                    height="6"
+                                    rx="1"
+                                    transform="rotate(45 35 22)"
+                                    stroke="currentColor"
+                                    stroke-width="2"/>
+                            </svg>
+                            <i data-lucide="gavel"></i>
+                        </div>
+                        <h3>Criminal Defense & Appellate Practice</h3>
+                        <p>Strategic defense, discharge, quashing, bail, and appellate advocacy.</p>
+                        <a href="practiceareas.html">
+                            <div class="learn">Learn More
+                                <span>→</span></div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <div class="icon">
+                            <!-- Consumer Protection SVG Icon -->
+                            <svg
+                                class="consumer-law-icon"
+                                width="64"
+                                height="64"
+                                viewbox="0 0 64 64"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                                aria-label="Consumer Protection">
+                                <!-- Shield -->
+                                <path
+                                    d="M32 6L52 14V32C52 44 40 54 32 58C24 54 12 44 12 32V14L32 6Z"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linejoin="round"/>
+
+                                <!-- Checkmark -->
+                                <path
+                                    d="M22 33L29 40L42 26"
+                                    stroke="currentColor"
+                                    stroke-width="3"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"/>
+                            </svg>
+                            <i data-lucide="shield"></i>
+                        </div>
+                        <h3>Employment & Immigration Law</h3>
+                        <p>Workforce structuring, regulatory compliance, and immigration representation.</p>
+                        <a href="practiceareas.html">
+                            <div class="learn">Learn More
+                                <span>→</span></div>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+</section>
+
 <section id="philosophy">
-  <div class="container">
+<div class="container">
     <div class="reveal">
-     <div class="section-header">
-         <span class="eyebrow">Who We Are</span>
-          <h2>Our Philosophy</h2>
-         <p>
-         Three founding principles that define every matter we take — from the first consultation to the final judgment.
-        </p>
-     </div>
+        <div class="section-header">
+            <span class="eyebrow">Who We Are</span>
+            <h2>Our Philosophy</h2>
+            <p>
+                Three founding principles that define every matter we take — from the first
+                consultation to the final judgment.
+            </p>
+        </div>
     </div>
 
     <!-- Cards -->
     <div class="phil-grid">
 
-      <!-- Card 1 -->
-      <div class="phil-card reveal d1">
-        <h3 class="card-title">Strategic Precision</h3>
-        <div class="card-rule"></div>
-        <p class="card-body">Every case is built on structured analysis and deliberate legal positioning.</p>
-      </div>
+        <!-- Card 1 -->
+        <div class="phil-card reveal d1">
+            <h3 class="card-title">Strategic Precision</h3>
+            <div class="card-rule"></div>
+            <p class="card-body">Every case is built on structured analysis and deliberate legal positioning.</p>
+        </div>
 
-      <!-- Card 2 -->
-      <div class="phil-card reveal d2">
+        <!-- Card 2 -->
+        <div class="phil-card reveal d2">
 
-        <h3 class="card-title">Courtroom Authority</h3>
-        <div class="card-rule"></div>
-        <p class="card-body">Disciplined advocacy, grounded in preparation and precedent.</p>
-      </div>
+            <h3 class="card-title">Courtroom Authority</h3>
+            <div class="card-rule"></div>
+            <p class="card-body">Disciplined advocacy, grounded in preparation and precedent.</p>
+        </div>
 
-      <!-- Card 3 -->
-      <div class="phil-card reveal d3">
+        <!-- Card 3 -->
+        <div class="phil-card reveal d3">
 
-        <h3 class="card-title">Client Confidence</h3>
-        <div class="card-rule"></div>
-        <p class="card-body">Transparent advice. Realistic assessment. Relentless representation.</p>
-      </div>
+            <h3 class="card-title">Client Confidence</h3>
+            <div class="card-rule"></div>
+            <p class="card-body">Transparent advice. Realistic assessment. Relentless representation.</p>
+        </div>
 
     </div>
-  </div>
+</div>
 </section>
 
-<!-- ══════════════════════════════════
-     NATIONAL & INTERNATIONAL SECTION
+<!-- ══════════════════════════════════ NATIONAL & INTERNATIONAL SECTION
 ══════════════════════════════════ -->
 <section id="international">
-  <div class="container">
+<div class="container">
     <div class="section-header">
         <h2>
-          National & International Clients
+            National & International Clients
         </h2>
-        </div>
+    </div>
     <!-- Top: heading + intro + stats -->
     <div class="intl-top">
 
-      <!-- Left -->
-      <div>
-        
-        <p class="intl-intro-text reveal d2">
-          We assist <strong>foreign investors, corporations,</strong> and instructing law firms requiring <strong>reliable Indian counsel.</strong> Our services include regulatory advisory, cross-border commercial structuring, immigration strategy, and high-stakes dispute resolution. We function as strategic partners, ensuring clarity in Indian legal processes while maintaining global professional standards.
-        </p>
+        <!-- Left -->
+        <div>
 
-      </div>
+            <p class="intl-intro-text reveal d2">
+                We assist
+                <strong>foreign investors, corporations,</strong>
+                and instructing law firms requiring
+                <strong>reliable Indian counsel.</strong>
+                Our services include regulatory advisory, cross-border commercial structuring,
+                immigration strategy, and high-stakes dispute resolution. We function as
+                strategic partners, ensuring clarity in Indian legal processes while maintaining
+                global professional standards.
+            </p>
 
-      <!-- Right: stat rows -->
-      <div class="intl-right">
-        <div class="feature-visual">
-                  <img src="assets/images/justice.jpeg" alt="justice">
+        </div>
+
+        <!-- Right: stat rows -->
+        <div class="intl-right">
+            <div class="feature-visual">
+                <img src="assets/images/justice.jpeg" alt="justice">
             </div>
-      </div>
+        </div>
 
     </div>
     <!-- Service Cards -->
     <div class="services-grid">
 
-      <!-- Card 1 -->
-      <div class="svc-card reveal d1">
-        <span class="svc-num">01</span>
-      
-        <h4 class="svc-title">Regulatory Advisory</h4>
-        <div class="svc-rule"></div>
-        <p class="svc-body">Navigating India's complex regulatory landscape for foreign entities seeking market entry, operational compliance, and strategic clarity.</p>
-      </div>
+        <!-- Card 1 -->
+        <div class="svc-card reveal d1">
+            <span class="svc-num">01</span>
 
-      <!-- Card 2 -->
-      <div class="svc-card reveal d2">
-        <span class="svc-num">02</span>
-        <!-- <div class="svc-icon">
-          
-        </div> -->
-        <h4 class="svc-title">Cross-Border Commercial Structuring</h4>
-        <div class="svc-rule"></div>
-        <p class="svc-body">Sophisticated deal architecture across jurisdictions — mergers, acquisitions, joint ventures, and cross-border investment frameworks.</p>
-      </div>
+            <h4 class="svc-title">Regulatory Advisory</h4>
+            <div class="svc-rule"></div>
+            <p class="svc-body">Navigating India's complex regulatory landscape for foreign
+                entities seeking market entry, operational compliance, and strategic clarity.</p>
+        </div>
 
-      <!-- Card 3 -->
-      <div class="svc-card reveal d3">
-        <span class="svc-num">03</span>
-        <!-- <div class="svc-icon">
-          <svg viewBox="0 0 40 40" fill="none" stroke="#c9a24d" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M20 6 L20 14"/>
-            <circle cx="20" cy="20" r="8"/>
-            <path d="M10 34 Q20 26 30 34"/>
-            <path d="M6 20 L12 20 M28 20 L34 20"/>
-          </svg>
-        </div> -->
-        <h4 class="svc-title">Immigration Strategy</h4>
-        <div class="svc-rule"></div>
-        <p class="svc-body">End-to-end immigration counsel for executives, skilled professionals, and corporate mobility programmes entering or operating within India.</p>
-      </div>
+        <!-- Card 2 -->
+        <div class="svc-card reveal d2">
+            <span class="svc-num">02</span>
+            <!-- <div class="svc-icon"> </div> -->
+            <h4 class="svc-title">Cross-Border Commercial Structuring</h4>
+            <div class="svc-rule"></div>
+            <p class="svc-body">Sophisticated deal architecture across jurisdictions —
+                mergers, acquisitions, joint ventures, and cross-border investment frameworks.</p>
+        </div>
 
-      <!-- Card 4 -->
-      <div class="svc-card reveal d4">
-        <span class="svc-num">04</span>
-        
-        <h4 class="svc-title">High-Stakes Dispute Resolution</h4>
-        <div class="svc-rule"></div>
-        <p class="svc-body">Arbitration, litigation, and mediation for commercial disputes with international dimensions — argued with precision and authority at every level.</p>
-      </div>
+        <!-- Card 3 -->
+        <div class="svc-card reveal d3">
+            <span class="svc-num">03</span>
+            <!-- <div class="svc-icon"> <svg viewBox="0 0 40 40" fill="none"
+            stroke="#c9a24d" stroke-width="1.4" stroke-linecap="round"
+            stroke-linejoin="round"> <path d="M20 6 L20 14"/> <circle cx="20" cy="20"
+            r="8"/> <path d="M10 34 Q20 26 30 34"/> <path d="M6 20 L12 20 M28 20 L34 20"/>
+            </svg> </div> -->
+            <h4 class="svc-title">Immigration Strategy</h4>
+            <div class="svc-rule"></div>
+            <p class="svc-body">End-to-end immigration counsel for executives, skilled
+                professionals, and corporate mobility programmes entering or operating within
+                India.</p>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="svc-card reveal d4">
+            <span class="svc-num">04</span>
+
+            <h4 class="svc-title">High-Stakes Dispute Resolution</h4>
+            <div class="svc-rule"></div>
+            <p class="svc-body">Arbitration, litigation, and mediation for commercial
+                disputes with international dimensions — argued with precision and authority at
+                every level.</p>
+        </div>
 
     </div>
-  </div>
- 
-  </div>
+</div>
+
+</div>
 </div>
 </section>
 
-
 <!-- why choose us -->
- <section id="about" class="why-section">
-  <div class="container">
+<section id="about" class="why-section">
+<div class="container">
 
-    <div class="why-grid">
+<div class="why-grid">
 
-      <!-- Image Column -->
-      <div class="image-column">
-        <div class="image-wrapper">
-          <img src="assets/images/law-office-meeting.jpg" alt="Professional law office meeting">
-          <!-- Overlay Badge -->
-          <div class="award-badge">
+<!-- Image Column -->
+<div class="image-column">
+    <div class="image-wrapper">
+        <img
+            src="assets/images/law-office-meeting.jpg"
+            alt="Professional law office meeting">
+        <!-- Overlay Badge -->
+        <div class="award-badge">
             <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="64"
-    height="64"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="#d4af37"
-    stroke-width="1.8"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-  >
-    <!-- Base -->
-    <path d="M8 21h8"/>
-    <path d="M12 17v4"/>
+                xmlns="http://www.w3.org/2000/svg"
+                width="64"
+                height="64"
+                viewbox="0 0 24 24"
+                fill="none"
+                stroke="#d4af37"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round">
+                <!-- Base -->
+                <path d="M8 21h8"/>
+                <path d="M12 17v4"/>
 
-    <!-- Trophy Cup -->
-    <path d="M7 4h10v4a5 5 0 0 1-10 0V4z"/>
+                <!-- Trophy Cup -->
+                <path d="M7 4h10v4a5 5 0 0 1-10 0V4z"/>
 
-    <!-- Handles -->
-    <path d="M4 6a3 3 0 0 0 3 3"/>
-    <path d="M20 6a3 3 0 0 1-3 3"/>
+                <!-- Handles -->
+                <path d="M4 6a3 3 0 0 0 3 3"/>
+                <path d="M20 6a3 3 0 0 1-3 3"/>
 
-    <!-- Star -->
-    <path d="M12 8l.9 1.8 2 .3-1.45 1.4.35 2-1.8-.9-1.8.9.35-2-1.45-1.4 2-.3z"/>
-  </svg>
+                <!-- Star -->
+                <path d="M12 8l.9 1.8 2 .3-1.45 1.4.35 2-1.8-.9-1.8.9.35-2-1.45-1.4 2-.3z"/>
+            </svg>
             <div>
-              <strong>Award Winning</strong>
-              <span>Best Law Firm 2023</span>
+                <strong>Award Winning</strong>
+                <span>Best Law Firm 2023</span>
             </div>
-          </div>
+        </div>
+    </div>
+
+    <!-- Decorative Shape -->
+    <div class="decorative-bg"></div>
+</div>
+
+<!-- Content Column -->
+<div class="content-column">
+    <span class="section-tag">Why Choose Us</span>
+
+    <h2>Dedicated to Your Legal Success</h2>
+
+    <p class="intro">
+        With over 20 years of experience, our team of dedicated advocates brings
+        unmatched expertise and a commitment to excellence in every case we handle.
+    </p>
+
+    <!-- Features -->
+    <div class="features-grid">
+
+        <div class="feature-card">
+            <div class="feature-icon">
+                <i data-lucide="award">
+                    <svg
+                        class="award-icon"
+                        viewbox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        width="40"
+                        height="40">
+                        <!-- Medallion -->
+                        <circle cx="12" cy="8" r="5"/>
+                        <!-- Left ribbon -->
+                        <path d="M7 13l2 6 3-3"/>
+                        <!-- Right ribbon -->
+                        <path d="M17 13l-2 6-3-3"/>
+                    </svg>
+                </i>
+            </div>
+            <div>
+                <h3>20+ Years of Legal Experience</h3>
+                <p>Decades of courtroom experience handling complex cases across Tamil Nadu.</p>
+            </div>
         </div>
 
-        <!-- Decorative Shape -->
-        <div class="decorative-bg"></div>
-      </div>
-
-      <!-- Content Column -->
-      <div class="content-column">
-        <span class="section-tag">Why Choose Us</span>
-
-        <h2>Dedicated to Your Legal Success</h2>
-
-        <p class="intro">
-          With over 20 years of experience, our team of dedicated advocates
-          brings unmatched expertise and a commitment to excellence in every
-          case we handle.
-        </p>
-
-        <!-- Features -->
-        <div class="features-grid">
-
-          <div class="feature-card">
+        <div class="feature-card">
             <div class="feature-icon">
-              <i data-lucide="award"><svg
-    class="award-icon"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    stroke-width="1.8"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    width="40"
-    height="40"
->
-  <!-- Medallion -->
-  <circle cx="12" cy="8" r="5" />
-  <!-- Left ribbon -->
-  <path d="M7 13l2 6 3-3" />
-  <!-- Right ribbon -->
-  <path d="M17 13l-2 6-3-3" />
-</svg></i>
+                <i data-lucide="eye">
+                    <svg
+                        class="eye-icon"
+                        viewbox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        width="40"
+                        height="40">
+                        <!-- Eye outline -->
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                        <!-- Pupil -->
+                        <circle cx="12" cy="12" r="3"/>
+                    </svg>
+                </i>
             </div>
             <div>
-              <h3>20+ Years of Legal Experience</h3>
-              <p>Decades of courtroom experience handling complex cases across Tamil Nadu.</p>
+                <h3>Ethical & Transparent Practice</h3>
+                <p>Complete transparency in billing, case progress, and legal strategies.</p>
             </div>
-          </div>
-
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i data-lucide="eye"><svg
-    class="eye-icon"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    stroke-width="1.8"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    width="40"
-    height="40"
->
-  <!-- Eye outline -->
-  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-  <!-- Pupil -->
-  <circle cx="12" cy="12" r="3" />
-</svg></i>
-            </div>
-            <div>
-              <h3>Ethical & Transparent Practice</h3>
-              <p>Complete transparency in billing, case progress, and legal strategies.</p>
-            </div>
-          </div>
-
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i data-lucide="heart"><svg
-    class="legal-solution-icon"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    stroke-width="1.8"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    width="40"
-    height="40"
->
-  <!-- Shield -->
-  <path d="M12 2 L4 6 V12 C4 17 8 21 12 22 C16 21 20 17 20 12 V6 L12 2 Z" />
-  <!-- Checkmark -->
-  <path d="M9 12 L11 14 L15 10" />
-</svg></i>
-            </div>
-            <div>
-              <h3>Client-Focused Legal Solutions</h3>
-              <p>Personalized attention and tailored strategies for every unique case.</p>
-            </div>
-          </div>
-
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i data-lucide="users"><!-- Courtroom Representation Icon (Gavel) -->
-<svg
-    class="courtroom-icon"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    stroke-width="1.8"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    width="40"
-    height="40"
->
-  <!-- Handle -->
-  <path d="M2 21l10-10" />
-  <!-- Head of Gavel -->
-  <rect x="12" y="2" width="8" height="4" transform="rotate(45 12 2)" />
-  <!-- Base -->
-  <line x1="16" y1="8" x2="22" y2="14" />
-</svg>
-</i>
-            </div>
-            <div>
-              <h3>Strong Courtroom Representation</h3>
-              <p>Confident and compelling advocacy in all court proceedings.</p>
-            </div>
-          </div>
-
         </div>
-      </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">
+                <i data-lucide="heart">
+                    <svg
+                        class="legal-solution-icon"
+                        viewbox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        width="40"
+                        height="40">
+                        <!-- Shield -->
+                        <path d="M12 2 L4 6 V12 C4 17 8 21 12 22 C16 21 20 17 20 12 V6 L12 2 Z"/>
+                        <!-- Checkmark -->
+                        <path d="M9 12 L11 14 L15 10"/>
+                    </svg>
+                </i>
+            </div>
+            <div>
+                <h3>Client-Focused Legal Solutions</h3>
+                <p>Personalized attention and tailored strategies for every unique case.</p>
+            </div>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">
+                <i data-lucide="users">
+                    <!-- Courtroom Representation Icon (Gavel) -->
+                    <svg
+                        class="courtroom-icon"
+                        viewbox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        width="40"
+                        height="40">
+                        <!-- Handle -->
+                        <path d="M2 21l10-10"/>
+                        <!-- Head of Gavel -->
+                        <rect x="12" y="2" width="8" height="4" transform="rotate(45 12 2)"/>
+                        <!-- Base -->
+                        <line x1="16" y1="8" x2="22" y2="14"/>
+                    </svg>
+                </i>
+            </div>
+            <div>
+                <h3>Strong Courtroom Representation</h3>
+                <p>Confident and compelling advocacy in all court proceedings.</p>
+            </div>
+        </div>
 
     </div>
-  </div>
+</div>
+
+</div>
+</div>
 </section>
 
 <!-- Blog -->
- <section class="blog-section">
- <div class="container">
-        <div class="section-header">
-          <span class="eyebrow">Blog</span>
-            <h2>Latest Articles</h2>
-            <p>Stay informed with our expert legal insights</p>
-        </div>
+<section class="blog-section">
+<div class="container">
+<div class="section-header">
+<span class="eyebrow">Blog</span>
+<h2>Latest Articles</h2>
+<p>Stay informed with our expert legal insights</p>
+</div>
 
-        <div class="blog-grid" id="blogGrid">
-            <!-- Blog Card 1 -->
-            <div class="blog-card">
-                <div class="blog-card-image">
-                    <img src="assets/images/iplaw.jpeg" alt="Blog Post">
-                </div>
-                <div class="blog-card-content">
-                    <span class="category-tag">IP Law</span>
-                    <h3>Patent Protection Strategies for Tech Startups</h3>
-                    <p class="blog-card-excerpt">
-                        Discover essential patent protection strategies that every tech startup should implement to safeguard their innovations and maintain competitive advantages.
-                    </p>
-                    <div class="blog-card-footer">
-                        <div class="author-info">
-                            <div class="author-avatar">JD</div>
-                            <span>John Davis</span>
-                        </div>
-                        <span class="read-time">5 min</span>
-                    </div>
-                </div>
-            </div>
-            <!-- Blog Card 2 -->
-            <div class="blog-card">
-                <div class="blog-card-image">
-                    <img src="assets/images/el.jpeg" alt="Blog Post">
-                </div>
-                <div class="blog-card-content">
-                    <span class="category-tag">Employment</span>
-                    <h3>Remote Work Policies: Legal Considerations</h3>
-                    <p class="blog-card-excerpt">
-                        Explore the legal framework surrounding remote work policies, including compliance requirements, employee rights, and best practices for employers.
-                    </p>
-                    <div class="blog-card-footer">
-                        <div class="author-info">
-                            <div class="author-avatar">ER</div>
-                            <span>Emma Roberts</span>
-                        </div>
-                        <span class="read-time">6 min</span>
-                    </div>
-                </div>
-            </div>
-            <!-- Blog Card 3 -->
-            <div class="blog-card">
-                <div class="blog-card-image">
-                    <img src="assets/images/property.jpeg" alt="Blog Post">
-                </div>
-                <div class="blog-card-content">
-                    <span class="category-tag">Property</span>
-                    <h3>Commercial Lease Negotiations: A Complete Guide</h3>
-                    <p class="blog-card-excerpt">
-                        Master the art of commercial lease negotiations with insights on key terms, common pitfalls, and strategies for securing favorable agreements.
-                    </p>
-                    <div class="blog-card-footer">
-                        <div class="author-info">
-                            <div class="author-avatar">MW</div>
-                            <span>Michael Wong</span>
-                        </div>
-                        <span class="read-time">7 min</span>
-                    </div>
-                </div>
-            </div>
-     </div>
-     </section>
-  <!-- contact section -->
-<section id="contact" class="contact-section">
-  <div class="container-sec">
-
-    <!-- Header -->
-    <div class="section-header reveal-up">
-      <span class="badge">Get In Touch</span>
-      <h2>Schedule Your Legal Consultation</h2>
-      <p>
-        Take the first step towards resolving your legal matters.
-        Contact us today for a confidential consultation.
-      </p>
+<div class="blog-grid" id="blogGrid">
+<!-- Blog Card 1 -->
+<div class="blog-card">
+    <div class="blog-card-image">
+        <img src="assets/images/iplaw.jpeg" alt="Blog Post">
     </div>
+    <div class="blog-card-content">
+        <span class="category-tag">IP Law</span>
+        <h3>Patent Protection Strategies for Tech Startups</h3>
+        <p class="blog-card-excerpt">
+            Discover essential patent protection strategies that every tech startup should
+            implement to safeguard their innovations and maintain competitive advantages.
+        </p>
+        <div class="blog-card-footer">
+            <div class="author-info">
+                <div class="author-avatar">JD</div>
+                <span>John Davis</span>
+            </div>
+            <span class="read-time">5 min</span>
+        </div>
+    </div>
+</div>
+<!-- Blog Card 2 -->
+<div class="blog-card">
+    <div class="blog-card-image">
+        <img src="assets/images/el.jpeg" alt="Blog Post">
+    </div>
+    <div class="blog-card-content">
+        <span class="category-tag">Employment</span>
+        <h3>Remote Work Policies: Legal Considerations</h3>
+        <p class="blog-card-excerpt">
+            Explore the legal framework surrounding remote work policies, including
+            compliance requirements, employee rights, and best practices for employers.
+        </p>
+        <div class="blog-card-footer">
+            <div class="author-info">
+                <div class="author-avatar">ER</div>
+                <span>Emma Roberts</span>
+            </div>
+            <span class="read-time">6 min</span>
+        </div>
+    </div>
+</div>
+<!-- Blog Card 3 -->
+<div class="blog-card">
+    <div class="blog-card-image">
+        <img src="assets/images/property.jpeg" alt="Blog Post">
+    </div>
+    <div class="blog-card-content">
+        <span class="category-tag">Property</span>
+        <h3>Commercial Lease Negotiations: A Complete Guide</h3>
+        <p class="blog-card-excerpt">
+            Master the art of commercial lease negotiations with insights on key terms,
+            common pitfalls, and strategies for securing favorable agreements.
+        </p>
+        <div class="blog-card-footer">
+            <div class="author-info">
+                <div class="author-avatar">MW</div>
+                <span>Michael Wong</span>
+            </div>
+            <span class="read-time">7 min</span>
+        </div>
+    </div>
+</div>
+</div>
+</section>
+<!-- contact section -->
+<section id="contact" class="contact-section">
+<div class="container-sec">
 
-    <div class="contact-grid">
+<!-- Header -->
+<div class="section-header reveal-up">
+    <span class="badge">Get In Touch</span>
+    <h2>Schedule Your Legal Consultation</h2>
+    <p>
+        Take the first step towards resolving your legal matters. Contact us today for a
+        confidential consultation.
+    </p>
+</div>
 
-      <!-- FORM (LEFT) -->
-      <div class="contact-form reveal-left">
+<div class="contact-grid">
+
+    <!-- FORM (LEFT) -->
+    <div class="contact-form reveal-left">
         <h3>Send us a Message</h3>
 
         <form class="contact-form">
 
-  <div class="form-group">
-    <input type="text" id="name"  required />
-    <label for="name">Full Name</label>
-  </div>
+            <div class="form-group">
+                <input type="text" id="name" required="required"/>
+                <label for="name">Full Name</label>
+            </div>
 
-  <div class="form-group">
-    <input type="tel" id="phone"  required />
-    <label for="phone">Phone Number</label>
-  </div>
+            <div class="form-group">
+                <input type="tel" id="phone" required="required"/>
+                <label for="phone">Phone Number</label>
+            </div>
 
-  <div class="form-group">
-    <input type="email" id="email"  required />
-    <label for="email">Email Address</label>
-  </div>
+            <div class="form-group">
+                <input type="email" id="email" required="required"/>
+                <label for="email">Email Address</label>
+            </div>
 
-  <div class="form-group textarea-group">
-    <textarea id="message" rows="5" required></textarea>
-    <label for="message">How Can We Help? *</label>
-  </div>
+            <div class="form-group textarea-group">
+                <textarea id="message" rows="5" required="required"></textarea>
+                <label for="message">How Can We Help? *</label>
+            </div>
 
-  <button type="submit" class="submit-btn">
-    Submit Request →
-  </button>
-  </div>
+            <button type="submit" class="submit-btn">
+                Submit Request →
+            </button>
+        </div>
 
-</form>
+    </form>
 
-      <!-- INFO (RIGHT) -->
-      <div class="contact-info">
+    <!-- INFO (RIGHT) -->
+    <div class="contact-info">
 
         <h3>Contact Information</h3>
         <p>
-          Our team is ready to assist you with your legal needs.
-          Reach out to us through any channel below.
+            Our team is ready to assist you with your legal needs. Reach out to us through
+            any channel below.
         </p>
 
         <div class="info-card">
-          📞 <span>+91 97511 82452</span>
+            📞
+            <span>+91 97511 82452</span>
         </div>
 
         <div class="info-card">
-          ✉️ <span>durai.balasundaram.advocate@gmail.com</span>
+            ✉️
+            <span>durai.balasundaram.advocate@gmail.com</span>
         </div>
 
         <div class="info-card">
-          📍 <span>No 82/6B, Deen Complex,Mary's Corner, Parisutham Nagar, <br>
-            Thanjavur, Tamil Nadu 613001</span>
+            📍
+            <span>No 82/6B, Deen Complex,Mary's Corner, Parisutham Nagar,
+                <br>
+                Thanjavur, Tamil Nadu 613001</span>
         </div>
 
         <div class="info-card">
-          🕒 <span>Mon - Sat: 9:00 AM - 6:00 PM</span>
+            🕒
+            <span>Mon - Sat: 9:00 AM - 6:00 PM</span>
         </div>
 
         <!-- MAP -->
         <div class="map-box">
-          <div class="map-content">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.455708022919!2d79.13827177480488!3d10.776366989372395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baab968786be449%3A0xf3215151eb7dfc74!2sRRC%20Academy%20NEET-JEE-CBSE-State%20Board%20Coaching%20Centre!5e0!3m2!1sen!2sin!4v1772106310137!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            
-          </div>
+            <div class="map-content">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.455708022919!2d79.13827177480488!3d10.776366989372395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baab968786be449%3A0xf3215151eb7dfc74!2sRRC%20Academy%20NEET-JEE-CBSE-State%20Board%20Coaching%20Centre!5e0!3m2!1sen!2sin!4v1772106310137!5m2!1sen!2sin"
+                    width="600"
+                    height="450"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+            </div>
         </div>
-      </div>
-      </div>
+    </div>
+</div>
 </section>
- <!-- Scroll to Top Button -->
-    <div class="scroll-top" id="scrollTop">↑</div>
+<!-- Scroll to Top Button -->
+<div class="scroll-top" id="scrollTop">↑</div>
+
 <footer class="footer">
-  <div class="footer-contain">
+<div class="footer-contain">
 
     <div class="footer-grid">
 
-      <!-- Brand -->
-      <div class="footer-brand">
-           <div class="logo-icon">
-            <a href="index.html" title="Home">
-             <img src="assets/images/logo.png" alt="Law Firm Logo" class="logo-img">
-             
-           <div>
-            <strong>RRC</strong>
-            <span>Law Associates</span>
-          </div>
-          </div>
-          </a>
+        <!-- Brand -->
+        <div class="footer-brand">
+            <div class="logo-icon">
+                <a href="index.html" title="Home">
+                    <img src="assets/images/logo.png" alt="Law Firm Logo" class="logo-img">
 
-        <p>
-          Providing trusted legal solutions with integrity since 2008.
-          Your reliable partner for all legal matters in Tamil Nadu.
-        </p>
-
-        <div class="social">
-          
-          
-        </div>
-      </div>
-
-      <!-- Practice Areas -->
-      <div>
-        <h4>Practice Areas</h4>
-        <ul>
-          <li><a href="practiceareas.html">Civil Litigation</a></li>
-          <li><a href="practiceareas.html">Family Law</a></li>
-          <li><a href="practiceareas.html">Corporate Law</a></li>
-          <li><a href="practiceareas.html">Criminal Defense</a></li>
-          <li><a href="practiceareas.html">Property Law</a></li>
-        </ul>
-      </div>
-
-      <!-- Quick Links -->
-      <div>
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="practiceareas.html">Practice Areas</a></li>
-          <li><a href="lawfirm-blog.html">Blog</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-
-      <!-- Contact -->
-      <div>
-        <h4>Contact Us</h4>
-        <ul class="contact">
-          <li>
-            <span>Address</span>
-            No 82/6B, Deen Complex,Mary's Corner, Parisutham Nagar,<br>
-            Thanjavur, Tamil Nadu-613001
-          </li>
-          <li>
-            <span>Phone</span>
-            <a href="tel:+919876543210">+91 97511 82452</a>
-          </li>
-          <li>
-            <span>Email</span>
-            <a href="mailto:contact@advocatelawfirm.com">
-              durai.balasundaram.advocate@gmail.com
+                    <div>
+                        <strong>RRC</strong>
+                        <span>Law Associates</span>
+                    </div>
+                </div>
             </a>
-          </li>
-        </ul>
-      </div>
+
+            <p>
+                Providing trusted legal solutions with integrity since 2008. Your reliable
+                partner for all legal matters in Tamil Nadu.
+            </p>
+
+            <div class="social"></div>
+        </div>
+
+        <!-- Practice Areas -->
+        <div>
+            <h4>Practice Areas</h4>
+            <ul>
+                <li>
+                    <a href="practiceareas.html">Civil Litigation</a>
+                </li>
+                <li>
+                    <a href="practiceareas.html">Family Law</a>
+                </li>
+                <li>
+                    <a href="practiceareas.html">Corporate Law</a>
+                </li>
+                <li>
+                    <a href="practiceareas.html">Criminal Defense</a>
+                </li>
+                <li>
+                    <a href="practiceareas.html">Property Law</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+            <h4>Quick Links</h4>
+            <ul>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="practiceareas.html">Practice Areas</a>
+                </li>
+                <li>
+                    <a href="lawfirm-blog.html">Blog</a>
+                </li>
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Contact -->
+        <div>
+            <h4>Contact Us</h4>
+            <ul class="contact">
+                <li>
+                    <span>Address</span>
+                    No 82/6B, Deen Complex,Mary's Corner, Parisutham Nagar,<br>
+                    Thanjavur, Tamil Nadu-613001
+                </li>
+                <li>
+                    <span>Phone</span>
+                    <a href="tel:+919876543210">+91 97511 82452</a>
+                </li>
+                <li>
+                    <span>Email</span>
+                    <a href="mailto:contact@advocatelawfirm.com">
+                        durai.balasundaram.advocate@gmail.com
+                    </a>
+                </li>
+            </ul>
+        </div>
 
     </div>
 
     <!-- Bottom -->
     <div class="footer-bottom">
-      <p>© <span id="year">2026</span> Branzyne. All rights reserved.</p>
-      <div class="legal">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms</a>
-        <a href="#">Disclaimer</a>
-      </div>
+        <p>©
+            <span id="year">2026</span>
+            Branzyne. All rights reserved.</p>
+        <div class="legal">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms</a>
+            <a href="#">Disclaimer</a>
+        </div>
     </div>
 
-  </div>
+</div>
 </footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+
+ <a
+            href="https://wa.me/919751182452?text=Hello! I'm interested in booking a desk at RRC Co-Workspace."
+            class="whatsapp-float"
+            target="_blank">
+            <i class="fab fa-whatsapp"></i>
+            <span class="float-text">Chat with us</span>
+        </a>
+
+</body>
+
 <script>
-  document.getElementById("year").innerText = new Date().getFullYear();
+document.addEventListener("DOMContentLoaded", () => {
+  // --- 1. Testimonial Slider (Existing) ---
+  const testimonialSlider = document.querySelector(".testimonial-slider");
+  const testimonialSlides = document.querySelectorAll(".testimonial");
+  const tPrevBtn = document.querySelector(".test.prev");
+  const tNextBtn = document.querySelector(".test.next");
+
+  if (testimonialSlider && testimonialSlides.length > 0) {
+    let tIndex = 0;
+    const tGap = 40;
+
+    function updateTestimonialSlider() {
+      const slideWidth = testimonialSlides[0].offsetWidth + tGap;
+      testimonialSlider.style.transform = `translateX(-${tIndex * slideWidth}px)`;
+    }
+
+    tNextBtn?.addEventListener("click", () => {
+      tIndex = (tIndex + 1) % testimonialSlides.length;
+      updateTestimonialSlider();
+    });
+
+    tPrevBtn?.addEventListener("click", () => {
+      tIndex = (tIndex - 1 + testimonialSlides.length) % testimonialSlides.length;
+      updateTestimonialSlider();
+    });
+
+    setInterval(() => {
+      tIndex = (tIndex + 1) % testimonialSlides.length;
+      updateTestimonialSlider();
+    }, 8000);
+
+    window.addEventListener("resize", updateTestimonialSlider);
+  }
+
+  // --- 2. Advocates Slider (New) ---
+  const advGrid = document.getElementById("advocatesGrid");
+  const advCards = document.querySelectorAll(".advocate-card");
+  const advPrevBtn = document.querySelector(".adv-prev");
+  const advNextBtn = document.querySelector(".adv-next");
+
+  if (advGrid && advCards.length > 0) {
+    let advIndex = 0;
+    const advGap = 24;
+    let autoScrollInterval;
+
+    function getVisibleCards() {
+      if (window.innerWidth > 968) return 3;
+      if (window.innerWidth > 768) return 2;
+      return 1;
+    }
+
+    function updateAdvocateSlider() {
+      const cardWidth = advCards[0].offsetWidth + advGap;
+      advGrid.style.transform = `translateX(-${advIndex * cardWidth}px)`;
+    }
+
+    function moveAdvNext() {
+      const visible = getVisibleCards();
+      if (advIndex >= advCards.length - visible) {
+        advIndex = 0; // Loop back to start
+      } else {
+        advIndex++;
+      }
+      updateAdvocateSlider();
+    }
+
+    function moveAdvPrev() {
+      const visible = getVisibleCards();
+      if (advIndex > 0) {
+        advIndex--;
+      } else {
+        advIndex = advCards.length - visible;
+      }
+      updateAdvocateSlider();
+    }
+
+    // Auto Scroll Management
+    function startAdvAutoScroll() {
+      stopAdvAutoScroll();
+      autoScrollInterval = setInterval(moveAdvNext, 2000); // 5 seconds
+    }
+
+    function stopAdvAutoScroll() {
+      if (autoScrollInterval) clearInterval(autoScrollInterval);
+    }
+
+    advNextBtn?.addEventListener("click", () => {
+      moveAdvNext();
+      startAdvAutoScroll(); // Reset timer
+    });
+
+    advPrevBtn?.addEventListener("click", () => {
+      moveAdvPrev();
+      startAdvAutoScroll(); // Reset timer
+    });
+
+    // Pause on hover
+    advGrid.addEventListener("mouseenter", stopAdvAutoScroll);
+    advGrid.addEventListener("mouseleave", startAdvAutoScroll);
+
+    window.addEventListener("resize", updateAdvocateSlider);
+    
+    // Initial start
+    updateAdvocateSlider();
+    startAdvAutoScroll();
+  }
+});
+</script>
+
+<script
+src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+crossorigin="anonymous"></script>
+<script>
+document
+    .getElementById("year")
+    .innerText = new Date().getFullYear();
 </script>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
-  if (!('IntersectionObserver' in window)) {
-    // Fallback: show everything if observer not supported
-    document.querySelectorAll(
-      '.section-title, .story-text, .story-image, .value-card, .team-member, .stat-item,.feature-visual'
-    ).forEach(el => el.classList.add('visible'));
-    return;
-  }
+    if (!('IntersectionObserver' in window)) {
+        // Fallback: show everything if observer not supported
+        document
+            .querySelectorAll(
+                '.section-title, .story-text, .story-image, .value-card, .team-member, .stat-it' +
+                'em,.feature-visual'
+            )
+            .forEach(el => el.classList.add('visible'));
+        return;
+    }
 
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
-  };
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+    };
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target); // optional: run once
-      }
-    });
-  }, observerOptions);
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry
+                    .target
+                    .classList
+                    .add('visible');
+                observer.unobserve(entry.target); // optional: run once
+            }
+        });
+    }, observerOptions);
 
-  document.querySelectorAll(
-    '.section-title, .story-text, .story-image, .feature-visual, .blog-grid, .blog-card, .blog-card-image, .blog-card-content'
-  ).forEach(el => observer.observe(el));
+    document
+        .querySelectorAll(
+            '.section-title, .story-text, .story-image, .feature-visual, .blog-grid, .blog-' +
+            'card, .blog-card-image, .blog-card-content'
+        )
+        .forEach(el => observer.observe(el));
 
 });
 </script>
+<script>
+const statsHeader = document.querySelector('.stats-header');
 
+const observer = new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting) {
+        statsHeader
+            .classList
+            .add('show');
+        observer.disconnect(); // run only once
+    }
+}, {threshold: 0.3});
 
-</body>
+observer.observe(statsHeader);
 
+document.addEventListener("DOMContentLoaded", function () {
+    // Show the disclaimer only if not accepted
+    if (!localStorage.getItem("disclaimerAccepted")) {
+        document
+            .getElementById("disclaimerOverlay")
+            .style
+            .display = "block";
+    }
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const header = document.querySelector('.header');
+
+    // Toggle mobile menu
+    menuToggle.addEventListener('click', function (e) {
+        e.stopPropagation(); // Prevent document click from firing
+        mobileMenu
+            .classList
+            .toggle('open');
+
+        // Change icon
+        if (mobileMenu.classList.contains('open')) {
+            menuToggle.innerHTML = '✕';
+            menuToggle.style.fontSize = '28px';
+        } else {
+            menuToggle.innerHTML = '☰';
+            menuToggle.style.fontSize = '24px';
+        }
+    });
+
+    // Handle all navigation buttons (Desktop + Mobile)
+    const allNavButtons = document.querySelectorAll(
+        '[data-link], .mobile-menu button'
+    );
+
+    allNavButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            let link;
+
+            // Get link from data-link attribute or button text
+            if (this.hasAttribute('data-link')) {
+                link = this.getAttribute('data-link');
+            } else {
+                // Map mobile menu buttons to pages
+                const text = this
+                    .textContent
+                    .trim()
+                    .toLowerCase();
+                const linkMap = {
+                    'home': 'index.html',
+                    'practiceareas': 'practiceareas.html',
+                    'blog': 'lawfirm-blog.html',
+                    'contact': '#contact'
+                };
+                link = linkMap[text] || '#';
+            }
+
+            // Close mobile menu if open
+            if (mobileMenu.classList.contains('open')) {
+                mobileMenu
+                    .classList
+                    .remove('open');
+                menuToggle.innerHTML = '☰';
+                menuToggle.style.fontSize = '24px';
+            }
+
+            // Navigate
+            if (link.startsWith('#')) {
+                // Smooth scroll to section on same page
+                const target = document.querySelector(link);
+                if (target) {
+                    target.scrollIntoView({behavior: 'smooth', block: 'start'});
+                }
+            } else {
+                // Navigate to different page
+                window.location.href = link;
+            }
+        });
+    });
+
+    // Book Consultation button
+    const bookBtn = document.querySelector('.btn-gold');
+    if (bookBtn) {
+        bookBtn.addEventListener('click', function () {
+            const contactSection = document.querySelector('#contact');
+            if (contactSection) {
+                contactSection.scrollIntoView({behavior: 'smooth', block: 'start'});
+            } else {
+                // If contact section doesn't exist, go to contact page
+                window.location.href = 'contact.html';
+            }
+        });
+    }
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function (event) {
+        if (!header.contains(event.target) && mobileMenu.classList.contains('open')) {
+            mobileMenu
+                .classList
+                .remove('open');
+            menuToggle.innerHTML = '☰';
+            menuToggle.style.fontSize = '24px';
+        }
+    });
+
+    // Prevent clicks inside menu from closing it
+    mobileMenu.addEventListener('click', function (e) {
+        e.stopPropagation();
+    });
+
+    // Header scroll effect
+    window.addEventListener('scroll', function () {
+        if (window.scrollY > 50) {
+            header
+                .classList
+                .add('scrolled');
+        } else {
+            header
+                .classList
+                .remove('scrolled');
+        }
+    });
+
+    // Close mobile menu on window resize to desktop
+    window.addEventListener('resize', function () {
+        if (window.innerWidth > 968 && mobileMenu.classList.contains('open')) {
+            mobileMenu
+                .classList
+                .remove('open');
+            menuToggle.innerHTML = '☰';
+            menuToggle.style.fontSize = '24px';
+        }
+    });
+
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+    const disclaimerOverlay = document.getElementById('disclaimerOverlay');
+    const agreeBtn = document.querySelector('.agreeBtn');
+    const closeBtn = document.querySelector('.closeBtn');
+
+    // Check if user has already agreed in this session
+    const hasAgreed = sessionStorage.getItem('disclaimerAgreed');
+
+    if (hasAgreed === 'true') {
+        disclaimerOverlay.style.display = 'none';
+    } else {
+        disclaimerOverlay.style.display = 'flex';
+    }
+
+    // When user clicks "Agree"
+    agreeBtn.addEventListener('click', function () {
+        sessionStorage.setItem('disclaimerAgreed', 'true');
+        closeDisclaimer();
+    });
+
+    // Optional: Close button
+    if (closeBtn) {
+        closeBtn.addEventListener('click', function () {
+            closeDisclaimer();
+        });
+    }
+
+    function closeDisclaimer() {
+        disclaimerOverlay.style.animation = 'fadeOut 0.3s ease';
+        setTimeout(() => {
+            disclaimerOverlay.style.display = 'none';
+        }, 300);
+    }
+});
+</script>
+<script>
+// Scroll to Top Button Functionality
+document.addEventListener('DOMContentLoaded', function () {
+
+    const scrollTopBtn = document.getElementById('scrollTop');
+
+    // Show/hide button on scroll
+    window.addEventListener('scroll', function () {
+        if (window.pageYOffset > 300) {
+            scrollTopBtn
+                .classList
+                .add('visible');
+        } else {
+            scrollTopBtn
+                .classList
+                .remove('visible');
+        }
+    });
+
+    // Scroll to top when clicked
+    scrollTopBtn.addEventListener('click', function () {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    });
+
+});
+</script>
+<script>
+/* Scroll reveal */
+/* Scroll reveal — fixed */
+function initReveal() {
+    const els = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+
+    if (!els.length) 
+        return;
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                e
+                    .target
+                    .classList
+                    .add('visible');
+                observer.unobserve(e.target);
+            }
+        });
+    }, {
+        threshold: 0.08,
+        rootMargin: '0px 0px -30px 0px'
+    });
+
+    els.forEach(el => observer.observe(el));
+}
+
+/* Run after DOM is fully ready */
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initReveal);
+} else {
+    initReveal();
+}
+</script>
 </html>
-

@@ -15,6 +15,12 @@ html, body {
   overflow-x: hidden; /* stops horizontal shift */
 }
 
+#home {
+  scroll-margin-top: 80px; /* height of header */
+  margin-top: 200px;
+  margin-bottom: 0;
+}
+
 *,
 *::before,
 *::after {
@@ -162,9 +168,17 @@ html, body {
   font-size: 14px;
 }
 
+.hero-cta {
+  display: flex;
+  gap: 16px;
+  margin-top: 20px;
+  justify-content: start;
+  margin-bottom: 10px;
+}
+
 .btn-gold {
   background: var(--gold);
-  border: none;
+  border: 2px solid var(--gold);
   padding: 12px 22px;
   border-radius: 8px;
   font-weight: 600;
@@ -445,6 +459,7 @@ html, body {
 /* hero section */
 /* Hero */
 .hero {
+  margin-top: 150px; /* height of header */
   min-height: 100vh;
   display: flex;
   overflow: hidden;
@@ -457,6 +472,7 @@ html, body {
 .hero-bg {
   position: absolute;
   inset: 0;
+  height: auto;
 }
 
 .hero-bg img {
@@ -464,32 +480,15 @@ html, body {
   height: 100%;
   object-fit: cover;
 }
-
-.overlay {
-  position: absolute;
-  inset: 0;
-}
-.overlay-x {
-   background: linear-gradient(
-    to right,
-    rgba(11,28,45,0.96),
-    rgba(11,28,45,0.55)
-  );
-}
-
-.overlay-y {
-  background: linear-gradient(
-    to top,
-    rgba(11,28,45,0.92),
-    rgba(11,28,45,0.1)
-  );
-}
+ 
 .hero-bg img {
   width: 100%;
-  height: 750px;
+  height: 850px;
   object-fit: cover;
-  animation: heroZoom 14s ease-in-out infinite;
+
 }
+
+
 
 @keyframes heroZoom {
   0% {
@@ -511,6 +510,7 @@ html, body {
     rgba(11, 28, 45, 0.6),
     rgba(11, 28, 45, 0.2)
   );
+  height: 850px;
 }
 /* Mobile Responsive Styles */
 @media (max-width: 768px) {
@@ -521,7 +521,7 @@ html, body {
   }
 
   .hero-bg img {
-    height: 80vh;
+    height: 100vh;
     object-position: center;
   }
 
@@ -581,13 +581,14 @@ html, body {
 
 /* Content */
 .hero-content {
-  position: relative;
+  position: absolute;
   z-index: 2;
-  padding: 50px 20px 170px; 
+  padding: 0px 20px; 
+  margin-top: -50px; /* Move UP (negative value) */
 }
 
 .hero-inner {
-  max-width: 900px;   /* Move UP (negative value) */
+  max-width: 550px;   /* Move UP (negative value) */
 }
 
 /* Badge */
@@ -638,6 +639,24 @@ p {
   margin-bottom: 48px;
 }
 
+.btn-gold-outline {
+  background: transparent;
+  border: 2px solid var(--gold);
+  color: var(--gold);
+  padding: 12px 22px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-gold-outline:hover {
+  background: var(--gold);
+  color: var(--dark);
+   transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(212,175,55,0.4);
+}
+
 /* CTA */
 .cta.fade-up.delay-4 {
   display: flex;
@@ -648,10 +667,10 @@ p {
 }
  .law-firm-heading {
             font-family: 'Playfair Display', serif;
-            font-size: 4rem;
+            font-size: 5rem;
             font-weight: 900;
             line-height: 1;
-            margin-bottom: 0;
+            margin-top: 0;
         }
 
         .rrc-text {
@@ -660,6 +679,16 @@ p {
             -webkit-text-fill-color: transparent;
             background-clip: text;
             display: inline-block;
+            padding: 5px;
+        }
+
+        .rrc-subtext{
+            background-clip: text;
+            display: inline-block;
+            color: var(--cream);
+            font-size: 1.3rem;
+            line-height: 1.8;
+            font-family: playfair display, serif;
         }
 
         .law-text {
@@ -673,13 +702,13 @@ p {
         /* Responsive */
         @media (max-width: 768px) {
             .law-firm-heading {
-                font-size: 2.5rem;
+                font-size: 3rem;
             }
         }
 
         @media (max-width: 480px) {
             .law-firm-heading {
-                font-size: 2rem;
+                font-size: 2.5rem;
             }
         }
 /* ===== MOBILE RESPONSIVE ===== */
@@ -819,9 +848,10 @@ p {
 /* about us */
 /* Story Section */
   .story-section {
-    padding: 50px 20px 120px;
+  padding: 50px 20px 120px;
   background-color: var(--cream);
   position: relative;
+  color: #3c3819;
 }
 
 .section-title {
@@ -1530,6 +1560,7 @@ p {
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0,0,0,0.08);
   transition: transform 0.3s;
+  padding: 0px 0px 0px 0px;
 }
 
 .advocate-card:hover {
@@ -1775,6 +1806,10 @@ p {
         .section-title p{
             color: #2d2d2d;
             margin: 0 auto;
+            width: 80%;
+            font-size: 1.15rem;
+            font-weight: 400;
+
         }
         .blog-grid {
             display: grid;
@@ -2093,6 +2128,37 @@ p {
 }
 
 
+
+/* Center the main contact section */
+.contact-section {
+    padding: 100px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers header and badge */
+    justify-content: center;
+    width: 100%;
+}
+
+/* Ensure the grid is centered and responsive */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    width: 100%;
+    margin: 0 auto; /* Centers the grid container itself */
+    align-items: start;
+}
+
+/* Mobile Responsive centering */
+@media (max-width: 968px) {
+    .contact-grid {
+        grid-template-columns: 1fr; /* Stacks columns */
+        justify-items: center; /* Centers stacked items */
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}
+
 /* conatct section */
 .contact-form {
   width: 100%;
@@ -2216,8 +2282,9 @@ p {
 
 .section-header {
   text-align: center;
-  max-width: 650px;
+  max-width: 100%;
   margin: 0 auto 70px;
+  width: 100%;
 }
 
 .badge {
@@ -2674,6 +2741,7 @@ p {
     font-weight: bold;
     cursor: pointer;
     opacity: 0;
+    margin-bottom: 62px;
     visibility: hidden;
     transform: translateY(20px);
     transition: all 0.3s ease;
@@ -3679,3 +3747,99 @@ p {
       .container { padding: 0 24px; }
       .strip-inner { padding: 0 24px; flex-direction: column; gap: 20px; }
     }
+
+
+/* WhatsApp Floating Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 10px;
+    background-color: #25d366;
+    /* WhatsApp Green */
+    color: white;
+    padding: 12px 20px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    /* Pulsing effect */
+    animation: pulse-green 2s infinite;
+}
+
+.whatsapp-float i {
+    font-size: 24px;
+}
+
+.whatsapp-float:hover {
+    background-color: #128c7e;
+    /* Darker WhatsApp Green */
+    color: white;
+    transform: translateY(-5px);
+}
+
+/* Slider Wrapper */
+.advocates-slider-wrapper {
+    overflow: hidden; /* This hides the cards that are "off-screen" */
+    width: 100%;
+}
+
+/* Redefine Grid for Scrolling */
+.advocates-grid {
+    display: flex; /* Required for horizontal layout */
+    gap: 24px;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); /* Required for smooth scrolling */
+    will-change: transform;
+}
+
+/* Ensure cards stay a consistent width */
+.advocate-card {
+    flex: 0 0 calc(33.33% - 16px); /* Shows 3 cards on desktop */
+    min-width: 300px;
+    background: #fff;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* Controls */
+.slider-controls {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.slider-controls button {
+    background: var(--gold);
+    color: white;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.slider-controls button:hover {
+    background: var(--primary);
+}
+
+/* Mobile adjustments */
+@media (max-width: 968px) {
+    .advocate-card {
+        flex: 0 0 calc(50% - 12px); /* 2 cards */
+    }
+}
+
+@media (max-width: 768px) {
+    .advocate-card {
+        flex: 0 0 100%; /* 1 card */
+    }
+}

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criminal Lawyer in Thanjavur | RRC Law Associates</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #0b1c2d;
+            --gold: #c9a24d;
+            --cream: #f9f7f3;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--white);
+            color: var(--primary);
+        }
+
+        /* Header Styling */
+        .header {
+            background: linear-gradient(135deg, #081521, #0b1c2d);
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .logo-img {
+            height: 60px;
+            width: auto;
+        }
+
+        .nav-link-custom {
+            color: rgba(255, 255, 255, 0.88);
+            text-decoration: none;
+            font-weight: 500;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+
+        .nav-link-custom:hover {
+            color: var(--gold);
+        }
+
+        .btn-gold {
+            background-color: var(--gold);
+            color: var(--primary);
+            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: none;
+            transition: all 0.3s;
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(201, 162, 77, 0.3);
+            background-color: #b38f40;
+        }
+
+        /* Main Content Styling */
+        .page-header-section {
+            padding-top: 140px;
+            padding-bottom: 40px;
+            text-align: center;
+        }
+
+        /* The Heading Container */
+        .section-title {
+            position: relative;
+            display: inline-block; /* Required for the underline to match text width */
+            padding-bottom: 15px;  /* Space between text and underline */
+            margin-bottom: 30px;
+            font-family: playfair display, serif;
+            font-weight: 600;
+        }
+
+        /* The Gradient Underline */
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%); /* Centers the underline */
+            width: 60px;                 /* Width of the line */
+            height: 4px;                  /* Thickness of the line */
+            border-radius: 2px;
+            /* Gradient from Navy to Gold */
+            background: linear-gradient(to right, #0b1c2d, #c9a24d);
+        }
+
+        .eyebrow {
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* Card Styling */
+        .service-card {
+            background: var(--white);
+            border: 1px solid rgba(0,0,0,0.06);
+            border-radius: 15px;
+            padding: 25px 15px;
+            height: 100%;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .service-icon {
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: 15px;
+        }
+
+        .service-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* Advocate Card Styling */
+        .advocate-card {
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            background: var(--white);
+        }
+
+        .image-box img {
+            width: 100%;
+            height: 500px;
+            object-fit: fill;
+        }
+
+        .advocate-content {
+            padding: 20px;
+        }
+
+        .advocate-content h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        .advocate-content span {
+            color: var(--gold);
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .advocate-content p {
+            font-size: 0.85rem;
+            color: #555;
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, #081521, #0b1c2d);
+            color: var(--white);
+            padding: 60px 0 30px;
+            margin-top: 60px;
+        }
+
+        /* Mobile specific adjustments */
+        @media (max-width: 768px) {
+            .image-box img {
+                height: 180px;
+            }
+            .advocate-content h3 { font-size: 0.9rem; }
+            .advocate-content p { font-size: 0.75rem; }
+            .service-card { padding: 15px 10px; }
+            .service-card h3 { font-size: 0.95rem; }
+            .service-card p { font-size: 0.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+    <div class="container d-flex align-items-center justify-content-between">
+        <a href="index.html" class="d-flex align-items-center">
+            <img src="assets/images/law3.png" alt="RRC Logo" class="logo-img">
+        </a>
+
+        <div class="d-none d-md-flex align-items-center">
+            <a href="index.html" class="nav-link-custom">Home</a>
+            
+            <div class="dropdown mx-3">
+                <a class="nav-link-custom dropdown-toggle border-0 bg-transparent p-0" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Practice Areas
+                </a>
+                <ul class="dropdown-menu shadow-lg">
+                    <li><a class="dropdown-item" href="./civil-lawyer.html">Civil litigation</a></li>
+                    <li><a class="dropdown-item" href="./property-dispute-lawyer.html">Real Estate & Property Law</a></li>
+                    <li><a class="dropdown-item" href="./criminal-law.html">Criminal Defense & Appellate Practice</a></li>
+                    <li><a class="dropdown-item" href="./cheque-bounce-lawyer.html">Cheque Bounce</a></li>
+                </ul>
+            </div>
+            
+            <a href="lawfirm-blog.html" class="nav-link-custom">Blog</a>
+            <a href="index.html#contact" class="nav-link-custom">Contact</a>
+        </div>
+
+        <div class="cta">
+            <a href="index.html#contact" class="btn btn-gold px-4">Book Consultation</a>
+        </div>
+    </div>
+</header>
+
+    <section class="page-header-section container">
+        <h1 class="section-title">Criminal Defense & Appellate Practice</h1>
+        <div class="row mt-5 align-items-center text-start">
+            <div class="col-lg-7 pe-lg-5">
+                <p class="lead fw-bold">RRC Law Associates provides strong legal representation in criminal cases including bail, anticipatory bail, FIR quashing, and trial defense.</p>
+                <p>We handle cases involving IPC offences, financial crimes, and false accusations with a strategic and result-oriented approach.</p>
+                <p class="fw-bold mt-4">We ensure protection of your legal rights at every stage of the case.</p>
+            </div>
+            <div class="col-lg-5 mt-4 mt-lg-0">
+                <img src="assets/images/justice.jpeg" alt="Justice" class="img-fluid rounded-4 shadow">
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-light">
+        <div class="container text-center">
+            <span class="eyebrow">Our Service</span>
+            <h2 class="mb-5 fw-bold">Specialized Legal Services</h2>
+            <div class="row g-3">
+                <div class="col-6 col-md-3">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-gavel"></i></div>
+                        <h3>Bail & Anticipatory Bail</h3>
+                        <p>Securing immediate liberty through strategic bail applications.</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
+                        <h3>FIR Defense & Quashing</h3>
+                        <p>Protecting you from false accusations by challenging FIRs.</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-balance-scale"></i></div>
+                        <h3>Trial Representation</h3>
+                        <p>Result-oriented courtroom advocacy for trial defense.</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-file-contract"></i></div>
+                        <h3>Criminal Appeals</h3>
+                        <p>Strong appellate advocacy at High Court and Supreme Court levels.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container text-center">
+            <span class="eyebrow">Our Lawyers</span>
+            <h2 class="mb-5 fw-bold">Expert Criminal Advocates</h2>
+            <div class="row g-4 justify-content-center">
+                <div class="col-6 col-md-4">
+                    <div class="advocate-card text-start h-100">
+                        <div class="image-box">
+                            <img src="assets/images/advocate-1.png" alt="Dr. N. Tamilmani">
+                        </div>
+                        <div class="advocate-content">
+                            <h3>Dr. N. Tamilmani</h3>
+                            <span>Senior Partner & Founder</span>
+                            <p>Specializes in Criminal Law with 20+ years of experience.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4">
+                    <div class="advocate-card text-start h-100">
+                        <div class="image-box">
+                            <img src="assets/images/advocate-4.png" alt="R. Vidhya">
+                        </div>
+                        <div class="advocate-content">
+                            <h3>R. Vidhya, B.A., LL.B.</h3>
+                            <span>Member</span>
+                            <p>Handling complex criminal litigation for 16+ years.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container text-center">
+            <p class="mb-0">© 2026 RRC Law Associates. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
