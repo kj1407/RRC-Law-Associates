@@ -571,136 +571,7 @@
 
         });
     </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-
-            const menuToggle = document.querySelector('.menu-toggle');
-            const mobileMenu = document.querySelector('.mobile-menu');
-            const header = document.querySelector('.header');
-
-            // Toggle mobile menu
-            menuToggle.addEventListener('click', function (e) {
-                e.stopPropagation(); // Prevent document click from firing
-                mobileMenu
-                    .classList
-                    .toggle('open');
-
-                // Change icon
-                if (mobileMenu.classList.contains('open')) {
-                    menuToggle.innerHTML = '✕';
-                    menuToggle.style.fontSize = '28px';
-                } else {
-                    menuToggle.innerHTML = '☰';
-                    menuToggle.style.fontSize = '24px';
-                }
-            });
-
-            // Handle all navigation buttons (Desktop + Mobile)
-            const allNavButtons = document.querySelectorAll(
-                '[data-link], .mobile-menu button'
-            );
-
-            allNavButtons.forEach(button => {
-                button.addEventListener('click', function () {
-                    let link;
-
-                    // Get link from data-link attribute or button text
-                    if (this.hasAttribute('data-link')) {
-                        link = this.getAttribute('data-link');
-                    } else {
-                        // Map mobile menu buttons to pages
-                        const text = this
-                            .textContent
-                            .trim()
-                            .toLowerCase();
-                        const linkMap = {
-                            'home': 'index.html',
-                            'practiceareas': 'practiceareas.html',
-                            'blog': 'lawfirm-blog.html',
-                            'contact': '#contact'
-                        };
-                        link = linkMap[text] || '#';
-                    }
-
-                    // Close mobile menu if open
-                    if (mobileMenu.classList.contains('open')) {
-                        mobileMenu
-                            .classList
-                            .remove('open');
-                        menuToggle.innerHTML = '☰';
-                        menuToggle.style.fontSize = '24px';
-                    }
-
-                    // Navigate
-                    if (link.startsWith('#')) {
-                        // Smooth scroll to section on same page
-                        const target = document.querySelector(link);
-                        if (target) {
-                            target.scrollIntoView({behavior: 'smooth', block: 'start'});
-                        }
-                    } else {
-                        // Navigate to different page
-                        window.location.href = link;
-                    }
-                });
-            });
-
-            // Book Consultation button
-            const bookBtn = document.querySelector('.btn-gold');
-            if (bookBtn) {
-                bookBtn.addEventListener('click', function () {
-                    const contactSection = document.querySelector('#contact');
-                    if (contactSection) {
-                        contactSection.scrollIntoView({behavior: 'smooth', block: 'start'});
-                    } else {
-                        // If contact section doesn't exist, go to contact page
-                        window.location.href = 'contact.html';
-                    }
-                });
-            }
-
-            // Close mobile menu when clicking outside
-            document.addEventListener('click', function (event) {
-                if (!header.contains(event.target) && mobileMenu.classList.contains('open')) {
-                    mobileMenu
-                        .classList
-                        .remove('open');
-                    menuToggle.innerHTML = '☰';
-                    menuToggle.style.fontSize = '24px';
-                }
-            });
-
-            // Prevent clicks inside menu from closing it
-            mobileMenu.addEventListener('click', function (e) {
-                e.stopPropagation();
-            });
-
-            // Header scroll effect
-            window.addEventListener('scroll', function () {
-                if (window.scrollY > 50) {
-                    header
-                        .classList
-                        .add('scrolled');
-                } else {
-                    header
-                        .classList
-                        .remove('scrolled');
-                }
-            });
-
-            // Close mobile menu on window resize to desktop
-            window.addEventListener('resize', function () {
-                if (window.innerWidth > 968 && mobileMenu.classList.contains('open')) {
-                    mobileMenu
-                        .classList
-                        .remove('open');
-                    menuToggle.innerHTML = '☰';
-                    menuToggle.style.fontSize = '24px';
-                }
-            });
-
-        });
-    </script>
+    <script src="script.js" defer="defer"></script>
     <body>
         <!-- Loading Overlay -->
         <div class="loading-overlay">
@@ -711,39 +582,62 @@
         <div class="progress-bar"></div>
 
         <!-- Header -->
-        <header class="header">
-            <nav class="nav-bar">
-                <div class="logo-icon">
-                    <a href="index.html">
-                        <img src="assets/images/law3.png" alt="Logo" class="logo-img">
+<header class="header">
+    <nav class="container d-flex align-items-center justify-content-between">
+        <a href="index.html">
+            <img src="assets/images/law3.png" alt="RRC Logo" class="logo-img">
+        </a>
 
-                    </a>
-                </div>
-
-                <!-- Desktop Navigation -->
-                <div class="desktop-nav">
-                    <button type="button" data-link="index.html">Home</button>
-                    <button type="button" data-link="practiceareas.html">Practice Areas</button>
-                    <button type="button" data-link="lawfirm-blog.html">Blog</button>
-                    <button type="button" data-link="index.html#contact">Contact</button>
-                </div>
-
-                <!-- CTA Section -->
-                <div class="cta">
-                    <button class="btn-gold" data-link="index.html#contact">Book Consultation</button>
-
-                    <!-- Mobile Toggle Button -->
-                    <button class="menu-toggle">☰</button>
-                </div>
-            </nav>
-            <!-- Mobile Menu -->
-            <div class="mobile-menu">
-                <button type="button" data-link="index.html">Home</button>
-                <button type="button" data-link="practiceareas.html">About</button>
-                <button type="button" data-link="lawfirm-blog.html">Services</button>
-                <button type="button" data-link="index.html#contact">Contact</button>
+        <div class="d-none d-lg-flex align-items-center ms-auto">
+            <a href="index.html" class="nav-link-custom">Home</a>
+            
+            <div class="dropdown mx-3">
+                <a class="nav-link-custom dropdown-toggle border-0 bg-transparent p-0" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Practice Areas
+                </a>
+                <ul class="dropdown-menu shadow-lg">
+                    <li><a class="dropdown-item" href="./civil-lawyer.html">Civil litigation</a></li>
+                    <li><a class="dropdown-item" href="./property-dispute-lawyer.html">Real Estate & Property Law</a></li>
+                    <li><a class="dropdown-item" href="./criminal-law.html">Criminal Defense</a></li>
+                    <li><a class="dropdown-item" href="./cheque-bounce-lawyer.html">Cheque Bounce</a></li>
+                </ul>
             </div>
-        </header>
+            
+            <a href="lawfirm-blog.html" class="nav-link-custom">Blog</a>
+            <a href="index.html#contact" class="nav-link-custom">Contact</a>
+        </div>
+
+        <div class="d-flex align-items-center gap-3">
+            <div class="cta d-none d-sm-block">
+                <a href="index.html#contact" class="btn btn-gold">Book Consultation</a>
+            </div>
+            <button class="btn text-white d-lg-none fs-3 p-0" id="menuToggle">
+                <i class="fa fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+    <button class="close-menu" id="closeMenu">✕</button>
+    <div class="mt-5">
+        <a href="index.html" class="mobile-link">Home</a>
+        <div class="dropdown">
+            <a class="mobile-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Practice Areas</a>
+            <ul class="dropdown-menu dropdown-menu-dark bg-dark border-0">
+                <li><a class="dropdown-item" href="./civil-lawyer.html">Civil litigation</a></li>
+                <li><a class="dropdown-item" href="./property-dispute-lawyer.html">Real Estate & Property Law</a></li>
+                <li><a class="dropdown-item" href="./criminal-law.html">Criminal Defense</a></li>
+                <li><a class="dropdown-item" href="./cheque-bounce-lawyer.html">Cheque Bounce</a></li>
+            </ul>
+        </div>
+        <a href="lawfirm-blog.html" class="mobile-link">Blog</a>
+        <a href="index.html#contact" class="mobile-link">Contact</a>
+        <div class="mt-4">
+            <a href="index.html#contact" class="btn btn-gold w-100 py-3 text-center">Book Consultation</a>
+        </div>
+    </div>
+</div>
         <br>
         <br>
         <div class="header-content">

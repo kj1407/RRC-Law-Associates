@@ -33,38 +33,47 @@ lucide.createIcons();
 //header
 lucide.createIcons();
 
-const header = document.getElementById("header");
-const menuToggle = document.getElementById("menuToggle");
-const mobileMenu = document.getElementById("mobileMenu");
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.getElementById('menuToggle');
+    const closeMenu = document.getElementById('closeMenu');
+    const mobileMenu = document.getElementById('mobileMenu');
 
-// Scroll effect
-window.addEventListener("scroll", () => {
-  header.classList.toggle("scrolled", window.scrollY > 20);
-});
-  function toggleMenu() {
-    document.querySelector('.desktop-nav').classList.toggle('active');
-  }
-
-// Toggle mobile menu
-menuToggle.addEventListener("click", () => {
-  mobileMenu.classList.toggle("open");
-  menuToggle.innerHTML = mobileMenu.classList.contains("open")
-    ? '<i data-lucide="x"></i>'
-    : '<i data-lucide="menu"></i>';
-  lucide.createIcons();
-});
-
-// Smooth scroll
-document.querySelectorAll("[data-link]").forEach(btn => {
-  btn.addEventListener("click", () => {
-    const target = document.querySelector(btn.dataset.link);
-    if (target) {
-      target.scrollIntoView({ behavior: "smooth" });
+    // Open Mobile Menu
+    if (menuToggle) {
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.add('open');
+        });
     }
-    mobileMenu.classList.remove("open");
-  });
-});
 
+    // Close Mobile Menu (X button)
+    if (closeMenu) {
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.remove('open');
+        });
+    }
+
+    // Close Menu on Background Click
+    document.addEventListener('click', (e) => {
+        if (mobileMenu.classList.contains('open')) {
+            if (!mobileMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+                mobileMenu.classList.remove('open');
+            }
+        }
+    });
+
+    // Smooth scroll for old elements that used data-link
+    document.querySelectorAll("[data-link]").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const target = document.querySelector(btn.dataset.link);
+        if (target) {
+          target.scrollIntoView({ behavior: "smooth" });
+        }
+        if (mobileMenu) {
+            mobileMenu.classList.remove("open");
+        }
+      });
+    });
+});
 
 // hero section
 lucide.createIcons();

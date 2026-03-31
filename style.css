@@ -27,137 +27,59 @@ html, body {
   box-sizing: border-box;
 }
 
-/* Header */
+/* Navbar & Header Styling */
 .header {
-  background: linear-gradient(135deg, #081521, #0b1c2d);
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  transition: all 0.4s ease;
-  padding: 10px 0;
-}
-
-/* .header.scrolled {
-  background: rgba(11, 28, 45, 0.95);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
-  padding: 12px 0;
-} */
-
-.nav-bar {
- 
-  max-width: 1280px;
-  margin:0 auto;
-  padding: 0 14px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-
-/* Logo */
-.name {
-  display: flex;
-  flex-direction: column; /* RRC on top, Law Associates below */
-  align-items: flex-start;
-  color: #c9a24d;
-}
-.law{
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.85rem;
-  letter-spacing: 1.2px;
-  text-transform: uppercase;;
-}
-.rrc,
-.law {
-  margin: 0;
-  text-align: left;
-}
-
-.logo-icon a {
-  display: flex;
-  align-items: center;     /* vertical center */
-  gap: 5px;               /* space between logo and text */
-  text-decoration: none;
-}
-
-.brand-text {
-  display: flex;
-  align-items: flex-start;
-  white-space: nowrap; 
-  flex-direction: column;    /* keeps text in one line */
-  gap: 4px;
-}
-
-.logo-title {
-  font-size: 20px;
-  font-weight: 700;
-  color:var(--white);
-}
-
-.logo-subtitle {
-  font-size: 11px;
-  letter-spacing: 2px;
-  opacity: 0.7;
+    background: #000000 !important; /* Pure Black as requested */
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 .logo-img {
-  height: 80px;   /* try 80px / 90px / 100px */
-  width: 120px;
-  object-fit: contain;
-  display: block;
+    height: 60px;
+    width: auto;
 }
 
-/* Desktop Nav */
-.desktop-nav {
-  display: flex;
-  flex-direction: row;
-  align-items: right;
-  gap: 24px;
+.nav-link-custom {
+    color: #ffffff !important;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 15px;
+    transition: color 0.3s;
 }
 
-.desktop-nav button {
-  background: none;
-  border: none;
-  font-family: "Inter", system-ui, sans-serif;
-  font-size: 15px;          /* trending size */
-  font-weight: 500;         /* calm & professional */
-  letter-spacing: 0.3px;
-
-  color: rgba(255, 255, 255, 0.88); /* soft white */
-  cursor: pointer;
-
-  padding: 8px 6px;
-  position: relative;
-  transition: color 0.25s ease;
-}
-.desktop-nav button::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: -20px;
-  width: 60%;
-  height: 2px;
-  background: var(--gold);
-  opacity: 0;
-  transform: translateX(-50%) translateY(6px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  pointer-events: none;
+.nav-link-custom:hover, .dropdown-item:hover {
+    color: #c9a24d !important; /* Gold hover */
 }
 
-.desktop-nav button:hover::after {
-  opacity: 1;
-  transform: translateX(-50%) translateY(0);
+/* Desktop Dropdown Styling */
+.dropdown-menu {
+    background-color: #000000 !important;
+    border: 1px solid #c9a24d !important;
+    margin-top: 10px !important;
 }
 
+.dropdown-item {
+    color: #ffffff !important;
+    padding: 10px 20px;
+}
 
+.dropdown-item:hover {
+    background-color: #1a1a1a !important;
+}
 
 /* CTA */
 .cta {
   display: flex;
   align-items: center;
   gap: 20px;
+}
+
+.cta {
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
 .phone {
@@ -178,284 +100,65 @@ html, body {
 }
 
 .btn-gold {
-  background: var(--gold);
-  border: 2px solid var(--gold);
-  padding: 12px 22px;
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
+    background-color: #c9a24d !important; /* Your signature gold */
+    color: #000000 !important;             /* Sharp black text for readability */
+    font-weight: 700 !important;           /* Bold text */
+    padding: 12px 25px !important;
+    border-radius: 8px !important;
+    border: none !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 15px rgba(201, 162, 77, 0.3); /* Subtle glow */
+    text-transform: none;                  /* Matches your reference image */
 }
 
 .btn-gold:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(212,175,55,0.4);
+    background-color: #e2b759 !important; /* Brighter gold on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(201, 162, 77, 0.5);
+    color: #000000 !important;
 }
 
 .full {
   width: 100%;
 }
 
-/* Mobile */
-.menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  color: var(--white);
-}
-
+/* Mobile Sidebar Styling */
 .mobile-menu {
-  max-height: 0;
-  overflow: hidden;
-  background: white;
-  transition: max-height 0.5s ease, opacity 0.4s ease;
-  opacity: 0;
-  border-radius: 16px;
-  margin: 0 20px;
+    position: fixed;
+    top: 0;
+    right: -100%; 
+    width: 80%;
+    max-width: 350px;
+    height: 100vh;
+    background: #000000; 
+    z-index: 2000;
+    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+    padding: 20px;
 }
 
 .mobile-menu.open {
-  max-height: 400px;
-  opacity: 1;
-  padding: 12px;
-}
-
-.mobile-menu button {
-  width: 100%;
-  padding: 14px;
-  border: none;
-  background: none;
-  font-size: 15px;
-  text-align: left;
-  cursor: pointer;
-}
-
-.mobile-menu button:hover {
-  background: #f2f2f2;
-  color: var(--gold);
-}
-
-/* Responsive */
-/* Mobile Responsive Styles for Header */
-@media (max-width: 968px) {
-  .header {
-    padding: 8px 0;
-  }
-
-  .header.scrolled {
-    padding: 10px 0;
-  }
-
-  .nav-bar {
-    padding: 0 20px;
-  }
-
-  .logo-img {
-    height: 60px;
-    width: 80px;
-  }
-
-  .logo-title {
-    font-size: 18px;
-  }
-
-  .logo-subtitle {
-    font-size: 10px;
-    letter-spacing: 1.5px;
-  }
-
-  .desktop-nav {
-    display: none;
-  }
-
-  .cta .phone {
-    display: none;
-  }
-
-  .cta .btn-gold {
-    padding: 10px 18px;
-    font-size: 13px;
-  }
-
-  .menu-toggle {
-    display: block;
-    font-size: 24px;
-    padding: 8px;
-    cursor: pointer;
-    z-index: 1001;
-  }
-
-  .mobile-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
     right: 0;
-    background: rgba(11, 28, 45, 0.98);
-    backdrop-filter: blur(10px);
-    margin: 0;
-    border-radius: 0;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-  }
-
-  .mobile-menu.open {
-    max-height: 500px;
-    padding: 20px;
-  }
-
-  .mobile-menu button {
-    width: 100%;
-    padding: 16px 20px;
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 16px;
-    font-weight: 500;
-    text-align: left;
-    border-radius: 8px;
-    margin-bottom: 8px;
-    transition: all 0.3s ease;
-  }
-
-  .mobile-menu button:hover {
-    background: rgba(201, 162, 77, 0.15);
-    color: var(--gold);
-    transform: translateX(8px);
-  }
 }
 
-@media (max-width: 768px) {
-  .nav-bar {
-    padding: 0 16px;
-  }
-
-  .logo-img {
-    height: 55px;
-    width: 70px;
-  }
-
-  .logo-title {
-    font-size: 16px;
-  }
-
-  .logo-subtitle {
-    font-size: 9px;
-  }
-
-  .rrc {
-    font-size: 16px;
-  }
-
-  .law {
-    font-size: 0.75rem;
-    letter-spacing: 1px;
-  }
-
-  .cta {
-    gap: 12px;
-  }
-
-  .cta .btn-gold {
-    padding: 9px 16px;
-    font-size: 12px;
-    border-radius: 6px;
-  }
-
-  .menu-toggle {
-    font-size: 22px;
-    padding: 6px;
-  }
-
-  .mobile-menu button {
-    padding: 14px 18px;
-    font-size: 15px;
-  }
+.mobile-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    display: block;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
-@media (max-width: 480px) {
-  .header {
-    padding: 6px 0;
-  }
-
-  .nav-bar {
-    padding: 0 12px;
-  }
-
-  .logo-img {
-    height: 50px;
-    width: 60px;
-  }
-
-  .logo-title {
-    font-size: 14px;
-  }
-
-  .logo-subtitle {
-    font-size: 8px;
-    letter-spacing: 1px;
-  }
-
-  .rrc {
-    font-size: 14px;
-  }
-
-  .law {
-    font-size: 0.7rem;
-    letter-spacing: 0.8px;
-  }
-
-  .brand-text {
-    gap: 2px;
-  }
-
-  .cta {
-    gap: 8px;
-  }
-
-  .cta .btn-gold {
-    padding: 8px 14px;
-    font-size: 11px;
-  }
-
-  .menu-toggle {
-    font-size: 20px;
-  }
-
-  .mobile-menu.open {
-    padding: 16px;
-  }
-
-  .mobile-menu button {
-    padding: 12px 16px;
-    font-size: 14px;
-    margin-bottom: 6px;
-  }
-}
-
-@media (max-width: 360px) {
-  .nav-bar {
-    padding: 0 10px;
-  }
-
-  .logo-img {
-    height: 45px;
-    width: 55px;
-  }
-
-  .logo-title {
-    font-size: 13px;
-  }
-
-  .logo-subtitle {
-    font-size: 7px;
-  }
-
-  .cta .btn-gold {
-    padding: 7px 12px;
-    font-size: 10px;
-  }
-
-  .mobile-menu button {
-    padding: 11px 14px;
-    font-size: 13px;
-  }
+.close-menu {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 2rem;
+    float: right;
+    cursor: pointer;
 }
 /* hero section */
 /* Hero */
