@@ -4,7 +4,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Family Lawyer| RRC Law Associates</title>
-
+        <link rel="stylesheet" href="style2.css">
+        <script src="script2.js" defer="defer"></script>
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
             rel="stylesheet">
@@ -651,16 +652,25 @@
     </head>
     <body>
 
-        <header class="header">
+<header class="header">
             <nav class="container d-flex align-items-center justify-content-between">
                 <a href="index.html">
                     <img src="assets/images/law3.png" alt="RRC Logo" class="logo-img">
                 </a>
 
                 <div class="d-none d-lg-flex align-items-center ms-auto">
-                    <a href="index.html" class="nav-link-custom">Home</a>
+                    <div class="dropdown">
+                        <a
+                            class="nav-link-custom border-0 bg-transparent p-0"
+                            href="index.html"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Home
+                        </a>
+                    </div>    
 
-                    <div class="dropdown mx-3">
+                    <div class="dropdown">
                         <a
                             class="nav-link-custom dropdown-toggle border-0 bg-transparent p-0"
                             href="practiceareas.html"
@@ -690,9 +700,68 @@
                             </li>
                         </ul>
                     </div>
-
-                    <a href="lawfirm-blog.html" class="nav-link-custom">Blog</a>
-                    <a href="index.html#contact" class="nav-link-custom">Contact</a>
+                    <div class="dropdown mx-3 mega-dropdown-static">
+                        <a class="nav-link-custom dropdown-toggle border-0 bg-transparent p-0" 
+                        href="practiceareas.html" 
+                        role="button" 
+                        data-bs-toggle="dropdown">
+                            Sectors
+                        </a>
+                        <div class="dropdown-menu mega-menu shadow-lg border-0">
+                            <div class="container-fluid">
+                                <div class="row g-0">
+                                    <div class="col-md-3">
+                                        <a class="dropdown-item" href="#">Agriculture and Forestry</a>
+                                        <a class="dropdown-item" href="#">Defence and Internal Security</a>
+                                        <a class="dropdown-item" href="#">Insurance & Pension</a>
+                                        <a class="dropdown-item" href="#">Mines & Minerals</a>
+                                        <a class="dropdown-item" href="#">Technology, Media & Sports</a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <a class="dropdown-item" href="#">Banking and Financial Services</a>
+                                        <a class="dropdown-item" href="#">Education</a>
+                                        <a class="dropdown-item" href="#">Investment Funds & Assets Management</a>
+                                        <a class="dropdown-item" href="#">Non Governmental Sector</a>
+                                        <a class="dropdown-item" href="#">Telecommunications & Broadcasting</a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <a class="dropdown-item" href="#">Capital Markets and Securities</a>
+                                        <a class="dropdown-item" href="#">Energy - Power & Hydrocarbons</a>
+                                        <a class="dropdown-item" href="#">Life Sciences, Healthcare & Pharma</a>
+                                        <a class="dropdown-item" href="#">Real Estate</a>
+                                        <a class="dropdown-item" href="#">Transportation & Logistics</a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <a class="dropdown-item" href="#">Construction and Engineering</a>
+                                        <a class="dropdown-item" href="#">Hospitality, Tourism & Retail</a>
+                                        <a class="dropdown-item" href="#">Manufacturing</a>
+                                        <a class="dropdown-item" href="#">Services</a>
+                                        <a class="dropdown-item" href="#">Urban Infrastructure</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <a
+                            class="nav-link-custom border-0 bg-transparent p-0"
+                            href="lawfirm-blog.html"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Blog
+                        </a>
+                    </div>
+                    <div class="dropdown">
+                        <a
+                            class="nav-link-custom border-0 bg-transparent p-0"
+                            href="index.html#contact"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Contact
+                        </a>
+                    </div>
                 </div>
 
                 <div class="d-flex align-items-center gap-3">
@@ -706,7 +775,7 @@
             </nav>
         </header>
 
-        <div class="mobile-menu" id="mobileMenu">
+<div class="mobile-menu" id="mobileMenu">
     <button class="close-menu" id="closeMenu">✕</button>
     <div class="mt-5">
         <a href="index.html" class="m-link">Home</a>
@@ -722,6 +791,33 @@
                 <a class="m-sub-item" href="./family-law.html">Family Law</a>
                 <a class="m-sub-item" href="./corporate-law.html">Corporate Law</a>
                 <a class="m-sub-item" href="./cheque-bounce-lawyer.html">Cheque Bounce</a>
+            </div>
+        </div>
+        <div class="m-dropdown">
+            <a class="m-link m-trigger" href="">
+                Sectors <i class="fa fa-chevron-down ms-2"></i>
+            </a>
+            <div class="m-submenu" id="mSectorMenu">
+                <a class="m-sub-item" href="#">Agriculture and Forestry</a>
+                <a class="m-sub-item" href="#">Banking and Financial Services</a>
+                <a class="m-sub-item" href="#">Capital Markets and Securities</a>
+                <a class="m-sub-item" href="#">Construction and Engineering</a>
+                <a class="m-sub-item" href="#">Defence and Internal Security</a>
+                <a class="m-sub-item" href="#">Education</a>
+                <a class="m-sub-item" href="#">Energy - Power & Hydrocarbons</a>
+                <a class="m-sub-item" href="#">Hospitality, Tourism & Retail</a>
+                <a class="m-sub-item" href="#">Insurance & Pension</a>
+                <a class="m-sub-item" href="#">Investment Funds & Assets Management</a>
+                <a class="m-sub-item" href="#">Life Sciences, Healthcare & Pharma</a>
+                <a class="m-sub-item" href="#">Manufacturing</a>
+                <a class="m-sub-item" href="#">Mines & Minerals</a>
+                <a class="m-sub-item" href="#">Non Governmental Sector</a>
+                <a class="m-sub-item" href="#">Real Estate</a>
+                <a class="m-sub-item" href="#">Services</a>
+                <a class="m-sub-item" href="#">Technology, Media & Sports</a>
+                <a class="m-sub-item" href="#">Telecommunications & Broadcasting</a>
+                <a class="m-sub-item" href="#">Transportation & Logistics</a>
+                <a class="m-sub-item" href="#">Urban Infrastructure</a>
             </div>
         </div>
 
