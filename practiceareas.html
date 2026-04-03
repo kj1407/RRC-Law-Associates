@@ -677,6 +677,37 @@
 .m-sub-item:hover {
     color: #c9a24d;
 }
+.section-title {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  color: var(--dark);
+  text-align: center;
+  margin-top: -10px;
+  margin-bottom: 60px;
+  position: relative;
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.8s ease;
+}
+
+.section-title.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 4px;
+  background: linear-gradient(135deg, #0f2a44, #d4af37);
+  margin: 20px auto 0;
+  border-radius: 2px;
+  transition: width 0.8s ease;
+}
+
+.section-title.visible::after {
+  width: 100px;
+}
 
         </style>
     </head>
@@ -907,7 +938,7 @@
         <div class="container align-items-center mt-5 mb-5">
             <!-- Intro Section -->
             <div class="intro-section">
-                <h2>Comprehensive Legal Solutions</h2>
+                <h2 style="color: #3c3819; font-weight: bold; font-family: playfair;">Comprehensive Legal Solutions</h2>
                 <p>Our firm provides exceptional legal services across multiple practice areas.
                     With years of experience and a commitment to excellence, we deliver results that
                     matter to our clients.</p>
