@@ -106,11 +106,17 @@
             text-align: center;
         }
 
+        .page-header-section-nri {
+            padding-top: 10px;
+            padding-bottom: 40px;
+            text-align: center;
+        }
+
         .location-box {
-    background: rgba(255, 255, 255, 0.03);
-    transition: all 0.3s ease;
-    cursor: default;
-}
+            background: rgba(255, 255, 255, 0.03);
+            transition: all 0.3s ease;
+            cursor: default;
+        }
 
 .location-box:hover {
     background: rgba(201, 162, 77, 0.1);
@@ -251,6 +257,7 @@
 
         @media (max-width: 768px) {
             .page-header-section { padding-top: 100px; }
+            .page-header-section-nri { padding-top: 10px; }
             .section-title { font-size: 1.8rem; }
         }
         .border-gold {
@@ -469,6 +476,8 @@
 </head>
 <body>
 
+    
+
     <header class="header">
         <nav class="container d-flex align-items-center justify-content-between">
             <a href="index.html"><img src="assets/images/law3.png" alt="RRC Logo" class="logo-img"></a>
@@ -599,6 +608,7 @@
         <span class="eyebrow">Expert Indian Counsel Abroad</span>
         <h1 class="section-title">Legal Services for NRIs & International Clients</h1>
     </section>
+
     <section class="py-5 bg-dark text-white">
     <div class="container">
         <div class="section-header text-center mb-5">
@@ -623,11 +633,12 @@
         </div>
         
         <div class="text-center mt-5">
-            <p class="small text-muted italic">*Our remote litigation and documentation services are available for NRIs in over 25+ countries.</p>
+            <p class="small text-white-50 italic">*Our remote litigation and documentation services are available for NRIs.</p>
         </div>
     </div>
     </section>
-    <section class="page-header-section container">
+
+    <section class="page-header-section-nri container">
         <div class="row mt-5 align-items-center text-start">
             <div class="col-lg-7 pe-lg-5">
                 <p class="lead fw-bold">RRC Law Associates provides end-to-end legal support for Non-Resident Indians (NRIs), Persons of Indian Origin (PIOs), and foreign nationals dealing with legal matters in India.</p>
