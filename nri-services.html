@@ -112,26 +112,49 @@
             text-align: center;
         }
 
-        .location-box {
-            background: rgba(255, 255, 255, 0.03);
-            transition: all 0.3s ease;
-            cursor: default;
-        }
+        /* Base styling for the location box */
+.location-box {
+    background: rgba(255, 255, 255, 0.03) !important;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(5px);
+}
 
+/* Flag Background Logic using Pseudo-elements */
+.location-box::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.6; /* Makes the flag subtle */
+    transition: opacity 0.4s ease;
+    z-index: 1;
+}
+
+/* Specific Flag Images */
+.loc-singapore::before {
+    background-image: url('https://flagcdn.com/w640/sg.png');
+}
+
+.loc-malaysia::before {
+    background-image: url('https://flagcdn.com/w640/my.png');
+}
+
+/* Hover Effects */
 .location-box:hover {
-    background: rgba(201, 162, 77, 0.1);
+    transform: translateY(-10px);
     border-color: var(--gold) !important;
-    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(193, 158, 83, 0.418);
 }
 
-.location-box i {
-    opacity: 0.8;
+.location-box:hover::before {
+    opacity: 0.6; /* Flag becomes slightly clearer on hover */
 }
 
-.location-box h5 {
-    font-size: 1rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+.location-content h5 {
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
         .section-title {
             position: relative;
@@ -176,6 +199,10 @@
         .service-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .service-card-text:hover{
+            color: var(--gold);
         }
 
         /* Ensure all mobile links look identical */
@@ -609,7 +636,7 @@
         <h1 class="section-title">Legal Services for NRIs & International Clients</h1>
     </section>
 
-    <section class="py-5 bg-dark text-white">
+    <section class="py-5 bg-dark text-white" id="global-reach">
     <div class="container">
         <div class="section-header text-center mb-5">
             <span class="eyebrow">Global Reach</span>
@@ -618,30 +645,32 @@
         </div>
 
         <div class="row g-4 text-center justify-content-center">
-            <div class="col-6 col-md-4 col-lg-2">
-                <div class="location-box p-4 border border-secondary rounded-4 h-100">
-                    <i class="fas fa-globe-asia fa-2x mb-3 text-gold"></i>
-                    <h5 class="fw-bold mb-0">Singapore</h5>
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="location-box loc-singapore p-5 border border-secondary rounded-4 h-100 position-relative overflow-hidden">
+                    <div class="location-content position-relative" style="z-index: 2;">
+                        <h5 class="fw-bold mb-0">Singapore</h5>
+                    </div>
                 </div>
             </div>
-            <div class="col-6 col-md-4 col-lg-2">
-                <div class="location-box p-4 border border-secondary rounded-4 h-100">
-                    <i class="fas fa-globe-asia fa-2x mb-3 text-gold"></i>
-                    <h5 class="fw-bold mb-0">Malaysia</h5>
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="location-box loc-malaysia p-5 border border-secondary rounded-4 h-100 position-relative overflow-hidden">
+                    <div class="location-content position-relative" style="z-index: 2;">
+                        <h5 class="fw-bold mb-0">Malaysia</h5>
+                    </div>
                 </div>
             </div>
         </div>
         
         <div class="text-center mt-5">
-            <p class="small text-white-50 italic">*Our remote litigation and documentation services are available for NRIs.</p>
+            <p class="small text-white-50 italic">*Our remote litigation and documentation services are available for NRIs across Southeast Asia.</p>
         </div>
     </div>
-    </section>
+</section>
 
     <section class="page-header-section-nri container">
         <div class="row mt-5 align-items-center text-start">
             <div class="col-lg-7 pe-lg-5">
-                <p class="lead fw-bold">RRC Law Associates provides end-to-end legal support for Non-Resident Indians (NRIs), Persons of Indian Origin (PIOs), and foreign nationals dealing with legal matters in India.</p>
+                <p class="lead fw-bold">Legal Support in India for NRIs — Without You Traveling</p>
                 <p>Handling legal matters from abroad can be complex. We act as your trusted legal representative in India, ensuring your interests are protected without requiring your physical presence for every hearing.</p>
                 
                 <div class="mt-4">
@@ -664,32 +693,40 @@
         <div class="container">
             <div class="row g-4">
                 <div class="col-md-6 col-lg-3">
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fas fa-city"></i></div>
-                        <h3>NRI Property Disputes</h3>
-                        <p>Illegal occupation, land grabbing, partition disputes, and title verification across Tamil Nadu.</p>
-                    </div>
+                    <a href="./nri-property-disputes.html" class="text-decoration-none text-black">
+                        <div class="service-card">
+                            <div class="service-icon"><i class="fas fa-city"></i></div>
+                            <h3 class="service-card-text" style="font-family: 'Playfair Display', serif; font-weight: bold;">NRI Property Disputes</h3>
+                            <p>Illegal occupation, land grabbing, partition disputes, and title verification across Tamil Nadu.</p>
+                        </div>
+                    </a>
                 </div>
                 <div class="col-md-6 col-lg-3">
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fas fa-file-contract"></i></div>
-                        <h3>Power of Attorney</h3>
-                        <p>Drafting, validation, and legal representation in India via registered POA frameworks.</p>
-                    </div>
+                    <a href="./nri-power-of-attorney.html" class="text-decoration-none text-black">
+                        <div class="service-card">
+                            <div class="service-icon"><i class="fas fa-file-contract"></i></div>
+                            <h3 class="service-card-text" style="font-family: 'Playfair Display', serif; font-weight: bold;">Power of Attorney</h3>
+                            <p>Drafting, validation, and legal representation in India via registered POA frameworks.</p>
+                        </div>
+                    </a>
                 </div>
                 <div class="col-md-6 col-lg-3">
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fas fa-gavel"></i></div>
-                        <h3>Criminal Cases</h3>
-                        <p>Complaint filing, defense representation, bail, and trial support for international clients.</p>
-                    </div>
-                </div>
+                    <a href="./nri-criminal-case.html" class="text-decoration-none text-black">
+                        <div class="service-card">
+                            <div class="service-icon"><i class="fas fa-gavel"></i></div>
+                            <h3 class="service-card-text" style="font-family: 'Playfair Display', serif; font-weight: bold;">Criminal Cases</h3>
+                            <p>Complaint filing, defense representation, bail, and trial support for international clients.</p>
+                        </div>
+                    </a>
+                </div>  
                 <div class="col-md-6 col-lg-3">
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fas fa-ring"></i></div>
-                        <h3>Family & Matrimonial</h3>
-                        <p>Divorce matters involving NRI spouses, maintenance, and child custody disputes.</p>
-                    </div>
+                     <a href="./nri-family-matrimonial.html" class="text-decoration-none text-black">
+                        <div class="service-card">
+                            <div class="service-icon"><i class="fas fa-ring"></i></div>
+                            <h3 class="service-card-text" style="font-family: 'Playfair Display', serif; font-weight: bold;">Family & Matrimonial</h3>
+                            <p>Divorce matters involving NRI spouses, maintenance, and child custody disputes.</p>
+                        </div>
+                     </a>
                 </div>
             </div>
         </div>

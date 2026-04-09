@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NRI Criminal Defense & Bail Support | RRC Law Associates</title>
+    <link rel="stylesheet" href="./style2.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #3c3819;
+            --gold: #c9a24d;
+            --white: #ffffff;
+            --dark: #000000;
+        }
+
+        body { font-family: 'Inter', sans-serif; background-color: var(--white); color: var(--primary); }
+
+        /* Navigation */
+        .header { background: #000 !important; padding: 10px 0; position: fixed; top: 0; width: 100%; z-index: 1000; height: 80px; }
+        .nav-link-custom { color: #fff !important; text-decoration: none; margin: 0 15px; font-weight: 500; }
+        .btn-gold { background-color: var(--gold); color: #000; font-weight: 600; padding: 10px 25px; border-radius: 8px; text-decoration: none; }
+
+        /* Glassmorphism Hero */
+        .nri-hero {
+            padding-top: 160px;
+            padding-bottom: 80px;
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('./assets/images/nri-law-1.jpg');
+            background-size: cover;
+            color: white;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        }
+
+        .section-title { font-family: 'Playfair Display', serif; position: relative; padding-bottom: 15px; margin-bottom: 30px; }
+        .section-title::after { content: ""; position: absolute; bottom: 0; left: 0; width: 60px; height: 4px; background: var(--gold); }
+
+        /* Location Cards - Kept same as reference */
+        .location-box { 
+            background: rgba(0, 0, 0, 0.03); 
+            border: 1px solid #eee; 
+            border-radius: 15px; 
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+            height: 150px;
+        }
+        .location-box::before {
+            content: ""; position: absolute; top:0; left:0; width:100%; height:100%;
+            opacity: 0.7; z-index: 0; background-size: cover; 
+        }
+        .loc-sg::before { background-image: url('https://flagcdn.com/w640/sg.png'); }
+        .loc-my::before { background-image: url('https://flagcdn.com/w640/my.png'); }
+
+        .location-content { position: relative; z-index: 1; font-family: 'Inter', sans-serif;}
+
+        .footer { background: #081521; color: white; padding: 60px 0; }
+        
+        .text-gold { color: var(--gold); }
+
+                    :root {
+                --primary: #3c3819;
+                --gold: #c9a24d;
+                --cream: #f9f7f3;
+                --white: #ffffff;
+            }
+
+            body {
+                font-family: 'Inter', sans-serif;
+                background-color: var(--white);
+                color: var(--primary);
+            }
+
+            /* Header Styling */
+            .header {
+                background: #000000 !important;
+                /* Pure Black as requested */
+                padding: 10px 0;
+                position: fixed;
+                top: 0;
+                width: 100%;
+                z-index: 1000;
+            }
+
+            .logo-img {
+                height: 60px;
+                width: auto;
+            }
+
+            .nav-link-custom {
+                color: #ffffff !important;
+                text-decoration: none;
+                font-weight: 500;
+                margin: 0 15px;
+                transition: color 0.3s;
+            }
+
+            .dropdown-item:hover,
+            .nav-link-custom:hover {
+                color: #c9a24d !important;
+                /* Gold hover */
+            }
+
+            .dropdown-menu {
+                background-color: #000000 !important;
+                border: 1px solid #c9a24d !important;
+                margin-top: 10px !important;
+            }
+
+            .dropdown-item {
+                color: #ffffff !important;
+                padding: 10px 20px;
+            }
+
+            .dropdown-item:hover {
+                background-color: #1a1a1a !important;
+            }
+
+            .mobile-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 350px;
+                height: 100vh;
+                background: #000000;
+                z-index: 2000;
+                transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+                padding: 20px;
+            }
+
+            .mobile-menu.open {
+                right: 0;
+            }
+
+            .mobile-link {
+                color: #ffffff;
+                text-decoration: none;
+                font-size: 1.1rem;
+                display: block;
+                padding: 15px 0;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+
+            .close-menu {
+                background: transparent;
+                border: none;
+                color: #ffffff;
+                font-size: 2rem;
+                float: right;
+                cursor: pointer;
+            }
+
+            .btn-gold {
+                background-color: #c9a24d;
+                color: #000;
+                font-weight: 600;
+                padding: 10px 20px;
+                border-radius: 8px;
+                border: none;
+                text-decoration: none;
+                display: inline-block;
+            }
+
+            .btn-gold:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 10px 20px rgba(201, 162, 77, 0.3);
+                background-color: #b38f40;
+            }
+
+            /* Main Content Styling */
+            .page-header-section {
+                padding-top: 140px;
+                padding-bottom: 40px;
+                text-align: center;
+            }
+
+            /* The Heading Container */
+            .section-title {
+                position: relative;
+                display: inline-block;
+                padding-bottom: 15px;
+                margin-bottom: 30px;
+                font-family: 'Playfair Display', serif;
+                font-weight: 600;
+            }
+
+            /* The Gradient Underline */
+            .section-title::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 60px;
+                height: 4px;
+                border-radius: 2px;
+                background: linear-gradient(to right, #0b1c2d, #c9a24d);
+            }
+
+            .eyebrow {
+                color: var(--gold);
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                font-weight: 700;
+                font-size: 0.85rem;
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            /* Card Styling */
+            .service-card {
+                background: var(--white);
+                border: 1px solid rgba(0,0,0,0.06);
+                border-radius: 15px;
+                padding: 25px 15px;
+                height: 100%;
+                transition: all 0.4s ease;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+                text-align: center;
+            }
+
+            .service-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            }
+
+            .service-icon {
+                font-size: 2rem;
+                color: var(--gold);
+                margin-bottom: 15px;
+            }
+
+            .service-card h3 {
+                font-size: 1.1rem;
+                font-weight: 700;
+                margin-bottom: 10px;
+            }
+
+            .service-card p {
+                font-size: 0.85rem;
+                color: #666;
+                line-height: 1.5;
+            }
+
+            /* Advocate Card Styling */
+            .advocate-card {
+                border-radius: 14px;
+                overflow: hidden;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+                background: var(--white);
+            }
+
+            .image-box img {
+                width: 100%;
+                height: 500px;
+                object-fit: fill;
+            }
+
+            .advocate-content {
+                padding: 20px;
+            }
+
+            .advocate-content h3 {
+                font-size: 1.2rem;
+                margin-bottom: 5px;
+                font-weight: 700;
+            }
+
+            .advocate-content span {
+                color: var(--gold);
+                font-weight: 600;
+                font-size: 0.9rem;
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            .advocate-content p {
+                font-size: 0.85rem;
+                color: #555;
+            }
+
+            :root {
+                --primary: #3c3819;
+                --gold: #c9a24d;
+                --cream: #f9f7f3;
+                --white: #ffffff;
+            }
+
+            body {
+                font-family: 'Inter', sans-serif;
+                background-color: var(--white);
+                color: var(--primary);
+            }
+
+            /* Header Styling */
+            .header {
+                background: #000000 !important;
+                /* Pure Black as requested */
+                padding: 10px 0;
+                position: fixed;
+                top: 0;
+                width: 100%;
+                z-index: 1000;
+            }
+
+            .logo-img {
+                height: 60px;
+                width: auto;
+            }
+
+            .nav-link-custom {
+                color: #ffffff !important;
+                text-decoration: none;
+                font-weight: 500;
+                margin: 0 15px;
+                transition: color 0.3s;
+            }
+
+            .dropdown-item:hover,
+            .nav-link-custom:hover {
+                color: #c9a24d !important;
+                /* Gold hover */
+            }
+
+            .dropdown-menu {
+                background-color: #000000 !important;
+                border: 1px solid #c9a24d !important;
+                margin-top: 10px !important;
+            }
+
+            .dropdown-item {
+                color: #ffffff !important;
+                padding: 10px 20px;
+            }
+
+            .dropdown-item:hover {
+                background-color: #1a1a1a !important;
+            }
+
+            .mobile-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 350px;
+                height: 100vh;
+                background: #000000;
+                z-index: 2000;
+                transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+                padding: 20px;
+            }
+
+            .mobile-menu.open {
+                right: 0;
+            }
+
+            .mobile-link {
+                color: #ffffff;
+                text-decoration: none;
+                font-size: 1.1rem;
+                display: block;
+                padding: 15px 0;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+
+            .close-menu {
+                background: transparent;
+                border: none;
+                color: #ffffff;
+                font-size: 2rem;
+                float: right;
+                cursor: pointer;
+            }
+
+            .btn-gold {
+                background-color: #c9a24d;
+                color: #000;
+                font-weight: 600;
+                padding: 10px 20px;
+                border-radius: 8px;
+                border: none;
+                text-decoration: none;
+                display: inline-block;
+            }
+
+            .btn-gold:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 10px 20px rgba(201, 162, 77, 0.3);
+                background-color: #b38f40;
+            }
+
+            /* Main Content Styling */
+            .page-header-section {
+                padding-top: 140px;
+                padding-bottom: 40px;
+                text-align: center;
+            }
+
+            /* The Heading Container */
+            .section-title {
+                position: relative;
+                display: inline-block;
+                padding-bottom: 15px;
+                margin-bottom: 30px;
+                font-family: 'Playfair Display', serif;
+                font-weight: 600;
+            }
+
+            /* The Gradient Underline */
+            .section-title::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 60px;
+                height: 4px;
+                border-radius: 2px;
+                background: linear-gradient(to right, #0b1c2d, #c9a24d);
+            }
+
+            .eyebrow {
+                color: var(--gold);
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                font-weight: 700;
+                font-size: 0.85rem;
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            /* Card Styling */
+            .service-card {
+                background: var(--white);
+                border: 1px solid rgba(0,0,0,0.06);
+                border-radius: 15px;
+                padding: 25px 15px;
+                height: 100%;
+                transition: all 0.4s ease;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+                text-align: center;
+            }
+
+            .service-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            }
+
+            .service-icon {
+                font-size: 2rem;
+                color: var(--gold);
+                margin-bottom: 15px;
+            }
+
+            .service-card h3 {
+                font-size: 1.1rem;
+                font-weight: 700;
+                margin-bottom: 10px;
+            }
+
+            .service-card p {
+                font-size: 0.85rem;
+                color: #666;
+                line-height: 1.5;
+            }
+
+            /* Advocate Card Styling */
+            .advocate-card {
+                border-radius: 14px;
+                overflow: hidden;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+                background: var(--white);
+            }
+
+            .image-box img {
+                width: 100%;
+                height: 500px;
+                object-fit: fill;
+            }
+
+            .advocate-content {
+                padding: 20px;
+            }
+
+            .advocate-content h3 {
+                font-size: 1.2rem;
+                margin-bottom: 5px;
+                font-weight: 700;
+            }
+
+            .advocate-content span {
+                color: var(--gold);
+                font-weight: 600;
+                font-size: 0.9rem;
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            .advocate-content p {
+                font-size: 0.85rem;
+                color: #555;
+            }
+
+            /* Footer */
+            /* Refined Footer Styles */
+            .footer {
+                background: linear-gradient(135deg, #081521, #0b1c2d);
+                padding: 80px 0 30px;
+                color: #ffffff;
+                width: 100%;
+                /* Ensure no bullets are inherited globally */
+                list-style: none;
+            }
+
+            .footer-contain {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 20px;
+            }
+
+            /* This creates the columns seen in the image */
+            .footer-grid {
+                display: grid;
+                grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+                /* Adjusts widths of columns */
+                gap: 50px;
+                margin-bottom: 50px;
+            }
+
+            /* RESET LISTS: This removes the bullets and indentation shown in your image */
+            .footer ul {
+                list-style: none !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+
+            .footer h4 {
+                color: #c9a24d;
+                font-size: 1.2rem;
+                margin-bottom: 25px;
+                font-weight: 600;
+                text-transform: none;
+                /* Keeps it professional */
+            }
+
+            .footer-text {
+                color: rgba(255, 255, 255, 0.7);
+                font-size: 0.95rem;
+                line-height: 1.7;
+                margin-top: 15px;
+            }
+
+            .footer li {
+                margin-bottom: 12px;
+            }
+
+            .footer a {
+                color: rgba(255, 255, 255, 0.7);
+                text-decoration: none !important;
+                transition: 0.3s ease;
+                font-size: 0.95rem;
+            }
+
+            .footer a:hover {
+                color: #c9a24d;
+                padding-left: 5px;
+                /* Subtle interaction effect */
+            }
+
+            /* Bottom Bar Styling */
+            .footer-bottom {
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+                padding-top: 25px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                color: rgba(255, 255, 255, 0.5);
+                font-size: 14px;
+            }
+
+            .legal-links a {
+                margin-left: 20px;
+                font-size: 13px;
+            }
+
+            /* Responsive Fixes */
+            @media (max-width: 992px) {
+                .footer-grid {
+                    grid-template-columns: 1fr 1fr;
+                    /* 2 columns on tablets */
+                }
+            }
+
+            @media (max-width: 768px) {
+                .footer-grid {
+                    grid-template-columns: 1fr;
+                    /* 1 column on phones */
+                    gap: 30px;
+                    text-align: left;
+                }
+                .footer-bottom {
+                    flex-direction: column;
+                    text-align: center;
+                    gap: 15px;
+                }
+                .legal-links a {
+                    margin: 0 10px;
+                }
+            }
+
+            /* Mobile specific adjustments */
+            @media (max-width: 768px) {
+                .image-box img {
+                    height: 180px;
+                }
+                .advocate-content h3 {
+                    font-size: 0.9rem;
+                }
+                .advocate-content p {
+                    font-size: 0.75rem;
+                }
+                .service-card {
+                    padding: 15px 10px;
+                }
+                .service-card h3 {
+                    font-size: 0.95rem;
+                }
+                .service-card p {
+                    font-size: 0.8rem;
+                }
+            }
+            @media (min-width: 992px) {
+                /* Show menu on hover */
+                .header .dropdown:hover > .dropdown-menu {
+                    display: block;
+                    margin-top: 0;
+                }
+
+                /* The Bridge: Prevents the menu from closing during diagonal movement */
+                .header .dropdown-menu::before {
+                    content: "";
+                    position: absolute;
+                    top: -20px; /* Covers the gap between button and menu */
+                    left: 0;
+                    width: 100%;
+                    height: 20px;
+                    background: transparent;
+                }
+                .nav-link-custom.dropdown-toggle::after {
+                    pointer-events: none; 
+                }
+            }
+            /* Custom Mobile Sidebar Styles */
+            .m-link {
+                color: #ffffff;
+                text-decoration: none;
+                font-size: 1.1rem;
+                display: block;
+                padding: 15px 0;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+                width: 100%;
+                text-align: left;
+            }
+
+            .m-trigger {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .m-submenu {
+                display: none; /* Hidden by default */
+                background: rgba(255, 255, 255, 0.05);
+                padding-left: 20px;
+            }
+
+            .m-submenu.active {
+                display: block; /* Shown when toggled */
+            }
+
+            .m-sub-item {
+                display: block;
+                color: rgba(255,255,255,0.7);
+                text-decoration: none;
+                padding: 10px 0;
+                font-size: 0.95rem;
+            }
+
+            .m-sub-item:hover {
+                color: #c9a24d;
+            }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+            <nav class="container d-flex align-items-center justify-content-between">
+                <a href="index.html">
+                    <img src="assets/images/law3.png" alt="RRC Logo" class="logo-img">
+                </a>
+
+                <div class="d-none d-lg-flex align-items-center ms-auto">
+                    <div class="dropdown">
+                        <a
+                            class="nav-link-custom border-0 bg-transparent p-0"
+                            href="index.html"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Home
+                        </a>
+                    </div>    
+                    <div class="dropdown">
+                        <a
+                            class="nav-link-custom border-0 bg-transparent p-0"
+                            href="nri-services.html"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            NRI Services
+                        </a>
+                    </div>
+                    <div class="dropdown">
+                        <a
+                            class="nav-link-custom dropdown-toggle border-0 bg-transparent p-0"
+                            href="practiceareas.html"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Practice Areas
+                        </a>
+                        <ul class="dropdown-menu shadow-lg">
+                            <li>
+                                <a class="dropdown-item" href="./property-disputes.html">Property Dispute</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./property-law.html">Real Estate & Property Law</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="family-law.html">Family Law</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./criminal-defense.html">Criminal Defense</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./cheque-bounce-lawyer.html">Cheque Bounce</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./corporate-law.html">Corporate Law</a>
+                            </li> 
+                        </ul>
+                    </div>
+                    <div class="dropdown mx-3 mega-dropdown-static">
+                        <a class="nav-link-custom dropdown-toggle border-0 bg-transparent p-0" 
+                        href="practiceareas.html" 
+                        role="button" 
+                        data-bs-toggle="dropdown">
+                            Sectors
+                        </a>
+                        <div class="dropdown-menu mega-menu shadow-lg border-0">
+                            <div class="container-fluid">
+                                <div class="row g-0">
+                                    <div class="col-md-3">
+                                        <a class="dropdown-item" href="#">Agriculture and Forestry</a>
+                                        <a class="dropdown-item" href="#">Defence and Internal Security</a>
+                                        <a class="dropdown-item" href="#">Insurance & Pension</a>
+                                        <a class="dropdown-item" href="#">Mines & Minerals</a>
+                                        <a class="dropdown-item" href="#">Technology, Media & Sports</a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <a class="dropdown-item" href="#">Banking and Financial Services</a>
+                                        <a class="dropdown-item" href="#">Education</a>
+                                        <a class="dropdown-item" href="#">Investment Funds & Assets Management</a>
+                                        <a class="dropdown-item" href="#">Non Governmental Sector</a>
+                                        <a class="dropdown-item" href="#">Telecommunications & Broadcasting</a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <a class="dropdown-item" href="#">Capital Markets and Securities</a>
+                                        <a class="dropdown-item" href="#">Energy - Power & Hydrocarbons</a>
+                                        <a class="dropdown-item" href="#">Life Sciences, Healthcare & Pharma</a>
+                                        <a class="dropdown-item" href="#">Real Estate</a>
+                                        <a class="dropdown-item" href="#">Transportation & Logistics</a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <a class="dropdown-item" href="#">Construction and Engineering</a>
+                                        <a class="dropdown-item" href="#">Hospitality, Tourism & Retail</a>
+                                        <a class="dropdown-item" href="#">Manufacturing</a>
+                                        <a class="dropdown-item" href="#">Services</a>
+                                        <a class="dropdown-item" href="#">Urban Infrastructure</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <a
+                            class="nav-link-custom border-0 bg-transparent p-0"
+                            href="lawfirm-blog.html"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Blog
+                        </a>
+                    </div>
+                    <div class="dropdown">
+                        <a
+                            class="nav-link-custom border-0 bg-transparent p-0"
+                            href="index.html#contact"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Contact
+                        </a>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-center gap-3">
+                    <div class="cta d-none d-sm-block">
+                        <a href="index.html#contact" class="btn btn-gold">Book Consultation</a>
+                    </div>
+                    <button class="btn text-white d-lg-none fs-3 p-0" id="menuToggle">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                </div>
+            </nav>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-menu" id="closeMenu">✕</button>
+        <div class="mt-5">
+            <a href="index.html" class="m-link">Home</a>
+            <a href="nri-services.html" class="m-link">NRI Services</a>
+            <div class="m-dropdown">
+                <a class="m-link m-trigger" href="practiceareas.html">
+                    Practice Areas <i class="fa fa-chevron-down ms-2"></i>
+                </a>
+                <div class="m-submenu" id="mPracticeMenu">
+                    <a class="m-sub-item" href="./property-disputes.html">Property Dispute</a>
+                    <a class="m-sub-item" href="./property-law.html">Real Estate & Property Law</a>
+                    <a class="m-sub-item" href="./family-law.html">Family Law</a>
+                    <a class="m-sub-item" href="./criminal-defense.html">Criminal Defense</a>
+                    <a class="m-sub-item" href="./cheque-bounce-lawyer.html">Cheque Bounce</a>
+                    <a class="m-sub-item" href="./corporate-law.html">Corporate Law</a>
+                </div>
+            </div>
+            <div class="m-dropdown">
+                <a class="m-link m-trigger" href="">
+                    Sectors <i class="fa fa-chevron-down ms-2"></i>
+                </a>
+                <div class="m-submenu" id="mSectorMenu">
+                    <a class="m-sub-item" href="#">Agriculture and Forestry</a>
+                    <a class="m-sub-item" href="#">Banking and Financial Services</a>
+                    <a class="m-sub-item" href="#">Capital Markets and Securities</a>
+                    <a class="m-sub-item" href="#">Construction and Engineering</a>
+                    <a class="m-sub-item" href="#">Defence and Internal Security</a>
+                    <a class="m-sub-item" href="#">Education</a>
+                    <a class="m-sub-item" href="#">Energy - Power & Hydrocarbons</a>
+                    <a class="m-sub-item" href="#">Hospitality, Tourism & Retail</a>
+                    <a class="m-sub-item" href="#">Insurance & Pension</a>
+                    <a class="m-sub-item" href="#">Investment Funds & Assets Management</a>
+                    <a class="m-sub-item" href="#">Life Sciences, Healthcare & Pharma</a>
+                    <a class="m-sub-item" href="#">Manufacturing</a>
+                    <a class="m-sub-item" href="#">Mines & Minerals</a>
+                    <a class="m-sub-item" href="#">Non Governmental Sector</a>
+                    <a class="m-sub-item" href="#">Real Estate</a>
+                    <a class="m-sub-item" href="#">Services</a>
+                    <a class="m-sub-item" href="#">Technology, Media & Sports</a>
+                    <a class="m-sub-item" href="#">Telecommunications & Broadcasting</a>
+                    <a class="m-sub-item" href="#">Transportation & Logistics</a>
+                    <a class="m-sub-item" href="#">Urban Infrastructure</a>
+                </div>
+            </div>
+
+            <a href="lawfirm-blog.html" class="m-link">Blog</a>
+            <a href="index.html#contact" class="m-link">Contact</a>
+
+            <div class="mt-4">
+                <a href="index.html#contact" class="btn btn-gold w-100 py-3 text-center">Book Consultation</a>
+            </div>
+        </div>
+    </div>
+
+    <section class="nri-hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <span class="text-gold text-uppercase fw-bold mb-3 d-block" style="letter-spacing: 2px;">Defending Your Rights</span>
+                    <h1 class="display-4 fw-bold mb-4" style="font-family: 'Playfair Display';">Protecting Your Reputation and Freedom in India</h1>
+                    <div class="glass-card">
+                        <p class="text-gold lead mb-0">
+                            Legal complications in India shouldn't jeopardize your international career or visa status. RRC Law Associates provides a <strong>formidable legal defense</strong> for NRIs, specializing in quashing Look-Out Circulars (LOC), obtaining anticipatory bail, and providing authoritative courtroom representation while you remain abroad.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-5 mt-5 mt-lg-0 text-center">
+                    <div class="p-5 bg-gold rounded-circle d-inline-block shadow-lg">
+                        <i class="fas fa-gavel fa-5x text-gold"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-light">
+        <div class="container text-center">
+            <h2 class="mb-5" style="font-family: 'Playfair Display'; font-weight: bold;">International Legal Support</h2>
+            <div class="row g-4 justify-content-center">
+                <div class="col-6 col-md-3">
+                    <div class="location-box loc-sg p-4"></div>
+                    <div class="location-content mt-2"><h5>Singapore</h5></div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="location-box loc-my p-4"></div>
+                    <div class="location-content mt-2"><h5>Malaysia</h5></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 mx-auto text-center">
+                    <h2 class="section-title mb-4">Strategic NRI Criminal Defense</h2>
+                    <p>We handle high-stakes criminal matters with total discretion and analytical rigor:</p>
+                    <ul class="list-group list-group-flush mb-5 text-start">
+                        <li class="list-group-item bg-transparent border-0"><i class="fas fa-shield-alt text-gold me-2"></i> <strong>498A & Matrimonial Defense:</strong> Protecting NRIs and their families from false allegations.</li>
+                        <li class="list-group-item bg-transparent border-0"><i class="fas fa-passport text-gold me-2"></i> <strong>LOC & Passport Matters:</strong> Quashing Look-Out Circulars to ensure your freedom of travel.</li>
+                        <li class="list-group-item bg-transparent border-0"><i class="fas fa-balance-scale text-gold me-2"></i> <strong>Anticipatory Bail:</strong> Securing legal protection before your arrival in India.</li>
+                        <li class="list-group-item bg-transparent border-0"><i class="fas fa-file-invoice-dollar text-gold me-2"></i> <strong>Financial Crimes:</strong> Defense against cheque bounce (Sec 138) and white-collar charges.</li>
+                    </ul>
+                    
+                    <div class="p-5 bg-dark text-white rounded-4 text-center">
+                        <h3>Face Legal Hurdles with Confidence</h3>
+                        <p class="opacity-75">Connect with our criminal law experts for a confidential strategy session.</p>
+                        <a href="https://wa.me/919751182452" class="btn btn-gold btn-lg mt-3">Chat on WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+            <div class="footer-contain">
+
+                <div class="footer-grid">
+
+                    <!-- Brand -->
+                    <div class="footer-brand">
+                        <div class="logo-icon">
+                            <a href="index.html" title="Home">
+                                <img src="assets/images/logo.png" alt="Law Firm Logo" class="logo-img">
+
+                                <div class="logo-text">
+                                    <strong>RRC</strong>
+                                    <strong>Law Associates</strong>
+                                </div>
+                            </a>
+                        </div>
+
+                        <p>
+                            Providing trusted legal solutions with integrity since 2008. Your reliable
+                            partner for all legal matters in Tamil Nadu.
+                        </p>
+
+                        <div class="social"></div>
+                    </div>
+
+                    <!-- Practice Areas -->
+                    <div>
+                        <h4>Practice Areas</h4>
+                        <ul>
+                            <li>
+                                <a href="civil-lawyer.html">Civil Litigation</a>
+                            </li>
+                            <li>
+                                <a href="family-law.html">Family Law</a>
+                            </li>
+                            <li>
+                                <a href="corporate-lawyer.html">Corporate Law</a>
+                            </li>
+                            <li>
+                                <a href="criminal-law.html">Criminal Defense</a>
+                            </li>
+                            <li>
+                                <a href="property-dispute-lawyer.html">Property Law</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div>
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li>
+                                <a href="index.html">Home</a>
+                            </li>
+                            <li>
+                                <a href="practiceareas.html">Practice Areas</a>
+                            </li>
+                            <li>
+                                <a href="lawfirm-blog.html">Blog</a>
+                            </li>
+                            <li>
+                                <a href="#contact">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Contact -->
+                    <div>
+                        <h4>Contact Us</h4>
+                        <ul class="contact">
+                            <li>
+                                <span style="color: #c9a24d;">Address</span>
+                                <br>
+                                No 82/6B, Deen Complex,Mary's Corner, Parisutham Nagar,<br>
+                                Thanjavur, Tamil Nadu-613001
+                            </li>
+                            <li>
+                                <span style="color: #c9a24d;">Phone</span>
+                                <br>
+                                <a href="tel:+919876543210">+91 97511 82452</a>
+                            </li>
+                            <li>
+                                <span style="color: #c9a24d;">Email</span>
+                                <br>
+                                <a href="mailto:contact@advocatelawfirm.com">
+                                    durai.balasundaram.advocate@gmail.com
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <!-- Bottom -->
+                <div class="footer-bottom">
+                    <p>©
+                        <span id="year">2026</span>
+                        Branzyne. All rights reserved.</p>
+                    <div class="legal">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms</a>
+                        <a href="#">Disclaimer</a>
+                    </div>
+                </div>
+
+            </div>
+        </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./script.js"></script>
+    <script src="./script2.js"></script>
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.add('open');
+        });
+        document.getElementById('closeMenu').addEventListener('click', () => {
+            mobileMenu.classList.remove('open');
+        });
+    </script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const closeMenu = document.getElementById('closeMenu');
+
+    // 1. Open/Close Mobile Sidebar
+    if (menuToggle) {
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.add('open');
+        });
+    }
+    if (closeMenu) {
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.remove('open');
+        });
+    }
+
+    // 2. Custom Mobile Dropdown Logic
+    const trigger = document.querySelector('.m-trigger');
+    const submenu = document.getElementById('mPracticeMenu');
+
+    if (trigger) {
+        trigger.addEventListener('click', function(e) {
+            if (!submenu.classList.contains('active')) {
+                e.preventDefault(); // Stop navigation on first click
+                submenu.classList.add('active');
+                this.querySelector('i').style.transform = 'rotate(180deg)';
+            }
+            // If already active, the link (practiceareas.html) will naturally follow.
+        });
+    }
+
+    // 3. FORCE NAVIGATION for all mobile links
+    const mobileLinks = document.querySelectorAll('.m-link, .m-sub-item');
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            const url = this.getAttribute('href');
+            // If it's a normal link (Home, Blog, Contact) and NOT the Practice Areas trigger
+            if (url && url !== '#' && !this.classList.contains('m-trigger')) {
+                window.location.href = url;
+            }
+        });
+    });
+    
+    // 4. Desktop Navigation (Clicking parent link)
+    const practiceDropdown = document.getElementById('practiceDropdown');
+    if (practiceDropdown) {
+        practiceDropdown.addEventListener('click', function() {
+            if (window.innerWidth > 992) {
+                window.location.href = this.getAttribute('href');
+            }
+        });
+    }
+});
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+        // 1. Mobile Menu Sidebar Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeMenu = document.getElementById('closeMenu');
+
+        if (menuToggle && mobileMenu) {
+            menuToggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                mobileMenu.classList.add('open');
+            });
+        }
+
+        if (closeMenu) {
+            closeMenu.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+            });
+        }
+
+        // 2. THE ULTIMATE LINK FIX
+        // Select all nav links that have an actual destination
+        const allLinks = document.querySelectorAll('.nav-link-custom, .mobile-link');
+        
+        allLinks.forEach(link => {
+            link.addEventListener('click', function (e) {
+                const destination = this.getAttribute('href');
+                
+                // If it's a real URL (not just #) and not a mobile dropdown toggle
+                if (destination && destination !== '#' && !this.classList.contains('dropdown-toggle')) {
+                    window.location.href = destination;
+                } 
+                // If it's the Practice Areas link on Desktop, force navigation
+                else if (this.id === 'practiceDropdown' && window.innerWidth > 992) {
+                    window.location.href = destination;
+                }
+            });
+        });
+    });
+    </script>
+    <script>
+                document.addEventListener('DOMContentLoaded', function() {
+        // Force direct navigation for desktop links
+        if (window.innerWidth > 992) {
+            const links = document.querySelectorAll('.nav-link-custom');
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href && href !== '#' && !this.classList.contains('dropdown-toggle')) {
+                        window.location.href = href;
+                    }
+                });
+            });
+
+            // Special case for Practice Areas clickable parent
+            const practiceBtn = document.getElementById('practiceDropdown');
+            if (practiceBtn) {
+                practiceBtn.addEventListener('click', function() {
+                    window.location.href = "practiceareas.html";
+                });
+            }
+        }
+    });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuToggle = document.getElementById('menuToggle');
+            const closeMenu = document.getElementById('closeMenu');
+            const mobileMenu = document.getElementById('mobileMenu');
+
+            // Open Mobile Menu
+            if (menuToggle) {
+                menuToggle.addEventListener('click', () => {
+                    mobileMenu
+                        .classList
+                        .add('open');
+                });
+            }
+
+            // Close Mobile Menu (X button)
+            if (closeMenu) {
+                closeMenu.addEventListener('click', () => {
+                    mobileMenu
+                        .classList
+                        .remove('open');
+                });
+            }
+
+            // Close Menu on Background Click
+            document.addEventListener('click', (e) => {
+                if (mobileMenu.classList.contains('open')) {
+                    if (!mobileMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+                        mobileMenu
+                            .classList
+                            .remove('open');
+                    }
+                }
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        // Select the Practice Areas link
+        const practiceLink = document.querySelector('.dropdown-toggle[href="practiceareas.html"]');
+
+        if (practiceLink && window.innerWidth > 992) {
+            practiceLink.addEventListener('click', function(e) {
+                // Redirect to the page immediately on click
+                window.location.href = this.getAttribute('href');
+            });
+        }
+    });
+    </script>
+</body>
+</html>

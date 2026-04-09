@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 html, body {
   margin: 0;
@@ -400,9 +400,8 @@ p {
         .rrc-subtext{
             background-clip: text;
             display: inline-block;
-            color: var(--cream);
-            font-size: 16px;
-            font-weight: 450;
+            font-size: 18px;
+            font-weight: 700;
         }
 
         .law-text {
@@ -411,7 +410,6 @@ p {
             -webkit-text-fill-color: transparent;
             background-clip: text;
             display: inline-block;
-            font-family: playfair display, serif;
         }
 
         /* Responsive */
