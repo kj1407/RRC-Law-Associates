@@ -413,7 +413,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.addEventListener('DOMContentLoaded', function() {
     // Select the Practice Areas link
-    const practiceLink = document.querySelector('.dropdown-toggle[href="practiceareas.html"]');
+    const practiceLink = document.querySelector('.dropdown-toggle[href="core-practice-areas.html"]');
 
     if (practiceLink && window.innerWidth > 992) {
         practiceLink.addEventListener('click', function(e) {
