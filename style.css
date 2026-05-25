@@ -3883,3 +3883,122 @@ p {
     opacity: 1;
     transform: translateX(0);
 }
+
+/* --- HOME SCREEN ALLIANCE COMPONENT BRAND STYLES --- */
+.alliance-eyebrow {
+    color: #c9a24d;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    display: block;
+}
+
+.alliance-section-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: #000000;
+    font-size: 2.25rem;
+    line-height: 1.3;
+}
+
+.alliance-title-underline {
+    width: 60px;
+    height: 3px;
+    background-color: #c9a24d;
+    border-radius: 2px;
+}
+
+.alliance-description {
+    color: #444444;
+    font-size: 1.02rem;
+    line-height: 1.7;
+}
+
+/* Premium Navigation Action CTA Text Button */
+.alliance-explore-btn {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: #3c3819;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-flex;
+    align-items: center;
+    transition: color 0.25s ease;
+}
+
+.alliance-explore-btn:hover {
+    color: #c9a24d;
+}
+
+.alliance-explore-btn i {
+    font-size: 0.85rem;
+    transition: transform 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.alliance-explore-btn:hover i {
+    transform: translateX(5px);
+}
+
+/* Geometric Structural Layout Grid Boxes on Right */
+.alliance-preview-box {
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 30px 24px;
+    border-radius: 0px; /* Sharp editorial structure native to RRC platform layout standards */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.01);
+    transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.3s ease;
+}
+
+.alliance-preview-box:hover {
+    transform: translateY(-4px);
+    border-color: #c9a24d;
+    box-shadow: 0 12px 30px rgba(60, 56, 25, 0.04);
+}
+
+.alliance-region-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: #999999;
+    letter-spacing: 0.5px;
+    font-weight: 700;
+}
+
+.alliance-hub-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: #000000;
+    font-size: 1.15rem;
+    margin-top: 5px;
+    margin-bottom: 8px;
+}
+
+.alliance-hub-text {
+    font-size: 0.85rem;
+    color: #666666;
+    line-height: 1.6;
+}
+
+/* Sidebar Context Numerical Counters */
+.counter-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #c9a24d;
+    line-height: 1.1;
+    display: block;
+}
+
+.counter-lbl {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #999999;
+    font-weight: 700;
+}
+
+/* Responsive Structural Breakpoints */
+@media (max-width: 991px) {
+    .alliance-section-title { font-size: 1.85rem; }
+}

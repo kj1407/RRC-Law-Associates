@@ -191,6 +191,188 @@
             }
 
     </style>
+
+    <style>
+        :root {
+            --primary: #3c3819;
+            --gold: #c9a24d;
+            --cream: #f9f7f3;
+            --white: #ffffff;
+            --dark: #0b1c2d;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--white);
+            color: var(--primary);
+            line-height: 1.8;
+        }
+
+        /* --- NAVIGATION STANDARDIZATION --- */
+        .header {
+            background: #000000 !important;
+            padding: 5px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1100;
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+        }
+        .logo-img { height: 60px; width: auto; }
+        .nav-link-custom { color: #ffffff !important; text-decoration: none; font-weight: 500; margin: 0 15px; transition: 0.3s; cursor: pointer; }
+        .nav-link-custom:hover { color: var(--gold) !important; }
+        .dropdown-menu { background-color: #000000 !important; border: 1px solid #c9a24d !important; margin-top: 10px !important; }
+        .dropdown-item { color: #ffffff !important; padding: 10px 20px; }
+        .dropdown-item:hover { background-color: #1a1a1a !important; color: var(--gold) !important; }
+
+        /* --- EDITORIAL HERO BANNER --- */
+        .sectors-hero {
+            padding-top: 160px;
+            padding-bottom: 60px;
+            background-color: var(--cream);
+            border-bottom: 1px solid rgba(60, 56, 25, 0.05);
+            text-align: center;
+        }
+        .eyebrow {
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: #000000;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background-color: var(--gold);
+            border-radius: 2px;
+        }
+
+        /* --- QUICK ANCHOR MESH CARDS --- */
+        .sector-anchor-card {
+            background-color: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            padding: 25px;
+            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+            height: 100%;
+        }
+        .sector-anchor-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--gold);
+            box-shadow: 0 10px 30px rgba(201, 162, 77, 0.06);
+        }
+        .anchor-icon {
+            color: var(--gold);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        .anchor-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: #000000;
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        /* --- DETAILED INDUSTRIAL BLOCK SECTORS --- */
+        .industrial-block {
+            padding: 50px 40px;
+            background-color: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            border-radius: 16px;
+            margin-bottom: 45px;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.01);
+            scroll-margin-top: 110px; /* Precise smooth scroll offset past fixed navigation */
+        }
+        .industrial-block:nth-child(even) {
+            background-color: #fcfbfa;
+        }
+        .block-header-inline {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(60, 56, 25, 0.08);
+            padding-bottom: 15px;
+        }
+        .block-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: #000000;
+            font-size: 1.65rem;
+            margin-bottom: 0;
+        }
+        .block-icon {
+            color: var(--primary);
+            font-size: 1.75rem;
+            background-color: var(--cream);
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            border: 1px solid rgba(201, 162, 77, 0.2);
+        }
+        
+        /* --- METICULOUS BULLET SYSTEM --- */
+        .sector-bullet-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 11fr);
+            gap: 12px 30px;
+        }
+        .sector-bullet-item {
+            font-size: 0.98rem;
+            color: #444444;
+            display: flex;
+            align-items: start;
+            gap: 10px;
+        }
+        .sector-bullet-item i {
+            color: var(--gold);
+            font-size: 0.8rem;
+            margin-top: 6px;
+        }
+
+        /* --- SIDEBAR PANEL --- */
+        .sticky-sidebar {
+            position: sticky;
+            top: 110px;
+            background-color: #ffffff;
+            border: 1px solid rgba(0,0,0,0.06);
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+        }
+
+        .footer { background: linear-gradient(135deg, #081521, #0b1c2d); color: white; padding: 80px 0 30px; }
+
+        @media (max-width: 768px) {
+            .sectors-hero { padding-top: 120px; }
+            .sector-bullet-grid { grid-template-columns: 1fr; }
+            .industrial-block { padding: 30px 20px; }
+            .block-title { font-size: 1.35rem; }
+        }
+    </style>
 </head>
 <body>
 
@@ -249,7 +431,7 @@
                                 <a class="dropdown-item" href="family-law.html">FAMILY, SUCCESSION &amp; PRIVATE CLIENT PRACTICE</a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="property-law.html">INTELLECTUAL PROPERTY &amp; INNOVATION PROTECTION</a>
+                                <a class="dropdown-item" href="intellectual-property.html">INTELLECTUAL PROPERTY &amp; INNOVATION PROTECTION</a>
                             </li>
                             <li>
                                 <a class="dropdown-item" href="employment-law.html">LABOUR, EMPLOYMENT &amp; INDUSTRIAL RELATIONS</a>
@@ -258,7 +440,7 @@
                                 <a class="dropdown-item" href="white-collar-crime.html">WHITE COLLAR CRIMES &amp; FINANCIAL INVESTIGATIONS</a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="due-diligence.html">DOCUMENTATION, REGISTRATION &amp; DUE DILIGENCE</a>
+                                <a class="dropdown-item" href="property-law.html">DOCUMENTATION, REGISTRATION &amp; DUE DILIGENCE</a>
                             </li>
                             <li>
                                 <a class="dropdown-item" href="cyber-law.html">CYBER LAW, DATA PROTECTION &amp; DIGITAL EVIDENCE</a>
@@ -268,47 +450,35 @@
                             </li> 
                         </ul>
                     </div>
-                    <div class="dropdown mx-3 mega-dropdown-static">
-                        <a class="nav-link-custom dropdown-toggle border-0 bg-transparent p-0" 
-                        href="./sectors.html" 
-                        role="button" 
-                        data-bs-toggle="dropdown">
+                    <div class="dropdown">
+                        <a
+                            class="nav-link-custom dropdown-toggle border-0 bg-transparent p-0"
+                            href="sectors.html"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false">
                             Sectors
                         </a>
-                        <div class="dropdown-menu mega-menu shadow-lg border-0">
-                            <div class="container-fluid">
-                                <div class="row g-0">
-                                    <div class="col-md-3">
-                                        <a class="dropdown-item" href="./sectors.html#four">Agriculture and Forestry</a>
-                                        <a class="dropdown-item" href="./sectors.html#three">Defence and Internal Security</a>
-                                        <a class="dropdown-item" href="./sectors.html#eight">Insurance & Pension</a>
-                                        <a class="dropdown-item" href="./sectors.html#four">Mines & Minerals</a>
-                                        <a class="dropdown-item" href="./sectors.html#three">Technology, Media & Sports</a>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <a class="dropdown-item" href="./sectors.html#two">Banking and Financial Services</a>
-                                        <a class="dropdown-item" href="./sectors.html#five">Education</a>
-                                        <a class="dropdown-item" href="./sectors.html#two">Investment Funds & Assets Management</a>
-                                        <a class="dropdown-item" href="./sectors.html#eight">Non Governmental Sector</a>
-                                        <a class="dropdown-item" href="./sectors.html#three">Telecommunications & Broadcasting</a>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <a class="dropdown-item" href="./sectors.html#two">Capital Markets and Securities</a>
-                                        <a class="dropdown-item" href="./sectors.html#six">Energy - Power & Hydrocarbons</a>
-                                        <a class="dropdown-item" href="./sectors.html#five">Life Sciences, Healthcare & Pharma</a>
-                                        <a class="dropdown-item" href="./sectors.html#one">Real Estate</a>
-                                        <a class="dropdown-item" href="./sectors.html#seven">Transportation & Logistics</a>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <a class="dropdown-item" href="./sectors.html#one">Construction and Engineering</a>
-                                        <a class="dropdown-item" href="./sectors.html#seven">Hospitality, Tourism & Retail</a>
-                                        <a class="dropdown-item" href="./sectors.html#three">Manufacturing</a>
-                                        <a class="dropdown-item" href="./sectors.html#seven">Services</a>
-                                        <a class="dropdown-item" href="./sectors.html#one">Urban Infrastructure</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                       <ul class="dropdown-menu shadow-lg">
+                            <li>
+                                <a class="dropdown-item" href="sectors.html#agri-sector">AGRICULTURE, RURAL &amp; AGRI-BUSINESS</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="sectors.html#finance-sector">BANKING, FINANCE &amp; FINTECH</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="sectors.html#realestate-sector">REAL ESTATE, INFRASTRUCTURE &amp; CONSTRUCTION</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="sectors.html#healthcare-sector">HEALTHCARE, LIFE SCIENCES &amp; EDUCATION</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="sectors.html#logistics-sector">TRANSPORTATION, LOGISTICS &amp; HOSPITALITY</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="sectors.html#international-sector">INTERNATIONAL, NRI &amp; CROSS-BORDER</a>
+                            </li>
+                        </ul>
                     </div>
                     <div class="dropdown">
                         <a
@@ -364,39 +534,25 @@
                     </a>
                     <div class="m-submenu" id="mPracticeMenu">
                         <a class="m-sub-item" href="family-law.html">FAMILY, SUCCESSION &amp; PRIVATE CLIENT PRACTICE</a>
-                        <a class="m-sub-item" href="property-law.html">INTELLECTUAL PROPERTY &amp; INNOVATION PROTECTION</a>
+                        <a class="m-sub-item" href="intellectual-property.html">INTELLECTUAL PROPERTY &amp; INNOVATION PROTECTION</a>
                         <a class="m-sub-item" href="employment-law.html">LABOUR, EMPLOYMENT &amp; INDUSTRIAL RELATIONS</a>
                         <a class="m-sub-item" href="white-collar-crime.html">WHITE COLLAR CRIMES &amp; FINANCIAL INVESTIGATIONS</a>
-                        <a class="m-sub-item" href="due-diligence.html">DOCUMENTATION, REGISTRATION &amp; DUE DILIGENCE</a>
+                        <a class="m-sub-item" href="property-law.html">DOCUMENTATION, REGISTRATION &amp; DUE DILIGENCE</a>
                         <a class="m-sub-item" href="cyber-law.html">CYBER LAW, DATA PROTECTION &amp; DIGITAL EVIDENCE</a>
                         <a class="m-sub-item" href="litigation-dispute-resolution.html">LITIGATION &amp; DISPUTE RESOLUTION</a>
                     </div>
                 </div>
                 <div class="m-dropdown">
-                    <a class="m-link m-trigger" href="">
+                    <a class="m-link m-trigger" href="sectors.html">
                         Sectors <i class="fa fa-chevron-down ms-2"></i>
                     </a>
                     <div class="m-submenu" id="mSectorMenu">
-                        <a class="m-sub-item" href="./sectors.html#four">Agriculture and Forestry</a>
-                        <a class="m-sub-item" href="./sectors.html#two">Banking and Financial Services</a>
-                        <a class="m-sub-item" href="./sectors.html#two">Capital Markets and Securities</a>
-                        <a class="m-sub-item" href="./sectors.html#one">Construction and Engineering</a>
-                        <a class="m-sub-item" href="./sectors.html#three">Defence and Internal Security</a>
-                        <a class="m-sub-item" href="./sectors.html#five">Education</a>
-                        <a class="m-sub-item" href="./sectors.html#six">Energy - Power & Hydrocarbons</a>
-                        <a class="m-sub-item" href="./sectors.html#seven">Hospitality, Tourism & Retail</a>
-                        <a class="m-sub-item" href="./sectors.html#eight">Insurance & Pension</a>
-                        <a class="m-sub-item" href="./sectors.html#two">Investment Funds & Assets Management</a>
-                        <a class="m-sub-item" href="./sectors.html#five">Life Sciences, Healthcare & Pharma</a>
-                        <a class="m-sub-item" href="./sectors.html#three">Manufacturing</a>
-                        <a class="m-sub-item" href="./sectors.html#four">Mines & Minerals</a>
-                        <a class="m-sub-item" href="./sectors.html#eight">Non Governmental Sector</a>
-                        <a class="m-sub-item" href="./sectors.html#one">Real Estate</a>
-                        <a class="m-sub-item" href="./sectors.html#seven">Services</a>
-                        <a class="m-sub-item" href="./sectors.html#three">Technology, Media & Sports</a>
-                        <a class="m-sub-item" href="./sectors.html#three">Telecommunications & Broadcasting</a>
-                        <a class="m-sub-item" href="./sectors.html#seven">Transportation & Logistics</a>
-                        <a class="m-sub-item" href="./sectors.html#one">Urban Infrastructure</a>
+                        <a class="m-sub-item" href="sectors.html#agri-sector">AGRICULTURE, RURAL &amp; AGRI-BUSINESS</a>
+                        <a class="m-sub-item" href="sectors.html#finance-sector">BANKING, FINANCE &amp; FINTECH</a>
+                        <a class="m-sub-item" href="sectors.html#realestate-sector">REAL ESTATE, INFRASTRUCTURE &amp; CONSTRUCTION</a>
+                        <a class="m-sub-item" href="sectors.html#healthcare-sector">HEALTHCARE, LIFE SCIENCES &amp; EDUCATION</a>
+                        <a class="m-sub-item" href="sectors.html#logistics-sector">TRANSPORTATION, LOGISTICS &amp; HOSPITALITY</a>
+                        <a class="m-sub-item" href="sectors.html#international-sector">INTERNATIONAL, NRI &amp; CROSS-BORDER</a>
                     </div>
                 </div>
 
@@ -409,229 +565,199 @@
             </div>
         </div>
 
-    <section class="sectors-hero">
+ <section class="sectors-hero">
         <div class="container">
-            <span class="eyebrow text-gold">Global Industrial Practice</span>
-            <h1 class="display-4 fw-bold section-title">Industry Sectors</h1>
-            <p class="lead opacity-75 mt-3 mx-auto" style="max-width: 800px;">Providing a definitive legal framework tailored to the regulatory and operational demands of modern industry.</p>
+            <span class="eyebrow">Industry Practice Areas</span>
+            <h1 class="display-5 fw-bold section-title text-white">Sectors Serviced by the RRC Law Associates</h1>
+            <p class="lead text-gold mt-3 mx-auto" style="max-width: 760px;">
+                Comprehensive statutory architecture mapping, structural compliance auditing, and trial-level risk containment tailored to the distinct operational demands of primary market sectors.
+            </p>
         </div>
     </section>
 
-    <section id="one" class="sector-row bg-white reveal">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-7">
-                    <h2 class="fw-bold mb-4" style="font-family: 'Playfair Display';">01. Real Estate, Infrastructure & Construction</h2>
-                    <p class="text-muted">Specializing in high-value land sub-divisions, urban infrastructure legalities, and FIDIC-based construction contracts. We act as a definitive shield for developers and institutional investors.</p>
-                    <ul class="list-unstyled list-expertise row mt-4">
-                        <div class="col-md-6">
-                            <li><i class="fas fa-check"></i> Title Due Diligence</li>
-                            <li><i class="fas fa-check"></i> RERA & TNRERA Compliance</li>
-                        </div>
-                        <div class="col-md-6">
-                            <li><i class="fas fa-check"></i> Smart City Legalities</li>
-                            <li><i class="fas fa-check"></i> Urban Infrastructure PPP</li>
-                        </div>
-                    </ul>
-                </div>
-                <div class="col-lg-5">
-                    <div class="strategic-focus">
-                        <h6 class="text-gold fw-bold">STRATEGIC FOCUS</h6>
-                        <p class="small">Protecting family heritage and corporate capital through aggressive revenue record verification and title protection.</p>
-                    </div>
-                </div>
+    <div class="container my-5">
+        
+        <div class="row g-3 mb-5 text-start">
+            <div class="col-lg-4 col-sm-6">
+                <a href="#agri-sector" class="sector-anchor-card rounded-3">
+                    <div class="anchor-icon"><i class="fas fa-tractor"></i></div>
+                    <h5 class="anchor-title">Agriculture &amp; Agri-Business</h5>
+                    <p class="small text-muted mb-0">Land diligence, lease structuring, and digital farming compliance matrices.</p>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <a href="#finance-sector" class="sector-anchor-card rounded-3">
+                    <div class="anchor-icon"><i class="fas fa-university"></i></div>
+                    <h5 class="anchor-title">Banking, Finance &amp; FinTech</h5>
+                    <p class="small text-muted mb-0">FEMA advisory, digital payment rules, and cross-border bank metrics.</p>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <a href="#realestate-sector" class="sector-anchor-card rounded-3">
+                    <div class="anchor-icon"><i class="fas fa-building"></i></div>
+                    <h5 class="anchor-title">Real Estate &amp; Construction</h5>
+                    <p class="small text-muted mb-0">RERA litigation, title link verifications, and project containment.</p>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <a href="#healthcare-sector" class="sector-anchor-card rounded-3">
+                    <div class="anchor-icon"><i class="fas fa-heartbeat"></i></div>
+                    <h5 class="anchor-title">Healthcare &amp; Education</h5>
+                    <p class="small text-muted mb-0">Medical negligence defense, biotech compliance, and EdTech setups.</p>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <a href="#logistics-sector" class="sector-anchor-card rounded-3">
+                    <div class="anchor-icon"><i class="fas fa-shipping-fast"></i></div>
+                    <h5 class="anchor-title">Logistics &amp; Hospitality</h5>
+                    <p class="small text-muted mb-0">Supply chain disputes, customs compliance, and tourism structuring.</p>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <a href="#international-sector" class="sector-anchor-card rounded-3">
+                    <div class="anchor-icon"><i class="fas fa-globe-americas"></i></div>
+                    <h5 class="anchor-title">International &amp; NRI Desk</h5>
+                    <p class="small text-muted mb-0">Cross-border inheritance, asset distribution, and foreign investments.</p>
+                </a>
             </div>
         </div>
-    </section>
 
-    <section id="two" class="sector-row bg-soft reveal">
-        <div class="container">
-            <div class="row align-items-center flex-lg-row-reverse">
-                <div class="col-lg-7">
-                    <h2 class="fw-bold mb-4" style="font-family: 'Playfair Display';">02. Banking, Finance & Capital Markets</h2>
-                    <p class="text-muted">Representing financial institutions in debt recovery and regulatory matters. Expert navigation of SEBI frameworks and Portfolio Investment Schemes (PIS) for global investors.</p>
-                    <ul class="list-unstyled list-expertise row mt-4">
-                        <div class="col-md-6">
-                            <li><i class="fas fa-check"></i> SARFAESI & DRT Litigation</li>
-                            <li><i class="fas fa-check"></i> Investment Fund Structuring</li>
-                        </div>
-                        <div class="col-md-6">
-                            <li><i class="fas fa-check"></i> SEBI Compliance</li>
-                            <li><i class="fas fa-check"></i> IPO & Securities Advice</li>
-                        </div>
-                    </ul>
-                </div>
-                <div class="col-lg-5">
-                    <div class="strategic-focus">
-                        <h6 class="text-gold fw-bold">FINANCIAL INTEGRITY</h6>
-                        <p class="small">Ensuring seamless capital flow and asset protection through robust legal audits of financial instruments.</p>
+        <div class="row g-5">
+            <div class="col-lg-8">
+                
+                <div class="industrial-block text-start" id="agri-sector">
+                    <div class="block-header-inline">
+                        <div class="block-icon"><i class="fas fa-tractor text-dark"></i></div>
+                        <h3 class="block-title">Agriculture, Rural &amp; Agri-Business</h3>
+                    </div>
+                    <div class="sector-bullet-grid">
+                        <div class="sector-bullet-item"><i class="fas fa-chevron-right"></i> Agricultural Land Due Diligence</div>
+                        <div class="sector-bullet-item"><i class="fas fa-chevron-right"></i> Farm Acquisition &amp; Structuring</div>
+                        <div class="sector-bullet-item"><i class="fas fa-chevron-right"></i> Agri-Lease &amp; Cultivation Agreements</div>
+                        <div class="sector-bullet-item"><i class="fas fa-chevron-right"></i> Water Rights &amp; Irrigation Disputes</div>
+                        <div class="sector-bullet-item"><i class="fas fa-chevron-right"></i> Agri-Finance &amp; Crop Loan Matters</div>
+                        <div class="sector-bullet-item"><i class="fas fa-chevron-right"></i> Food Processing &amp; Agri-Export Compliance</div>
+                        <div class="sector-bullet-item"><i class="fas fa-chevron-right"></i> Organic Farming &amp; Regulatory Advisory</div>
+                        <div class="sector-bullet-item"><i class="fas fa-chevron-right"></i> Agricultural Family Settlements &amp; Succession</div>
+                        <div class="sector-bullet-item"><i class="fas fa-chevron-right"></i> Agri-Tech &amp; Digital Farming Compliance</div>
+                        <div class="sector-bullet-item"><i class="fas fa-chevron-right"></i> Government Subsidy &amp; Scheme Advisory</div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <section id="three" class="sector-row bg-white reveal">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-7">
-                    <h2 class="fw-bold mb-4" style="font-family: 'Playfair Display';">03. Technology, Defense & Manufacturing</h2>
-                    <p class="text-muted">Strategic counsel for the digital and industrial age. We handle industrial licensing, SaaS frameworks, and internal security procurement legalities.</p>
-                    <ul class="list-unstyled list-expertise row mt-4">
-                        <div class="col-md-6">
-                            <li><i class="fas fa-check"></i> Data Privacy & Cybersecurity</li>
-                            <li><i class="fas fa-check"></i> Industrial Licensing</li>
-                        </div>
-                        <div class="col-md-6">
-                            <li><i class="fas fa-check"></i> Defense Procurement</li>
-                            <li><i class="fas fa-check"></i> SaaS & IP Management</li>
-                        </div>
-                    </ul>
-                </div>
-                <div class="col-lg-5">
-                    <div class="strategic-focus">
-                        <h6 class="text-gold fw-bold">DIGITAL TRUST</h6>
-                        <p class="small">Building bulletproof contractual frameworks to protect intellectual property and industrial trade secrets.</p>
+                <div class="industrial-block text-start" id="finance-sector">
+                    <div class="block-header-inline">
+                        <div class="block-icon"><i class="fas fa-university text-dark"></i></div>
+                        <h3 class="block-title">Banking, Finance &amp; FinTech</h3>
+                    </div>
+                    <div class="sector-bullet-grid">
+                        <div class="sector-bullet-item"><i class="fas fa-chevron-right"></i> Banking &amp; Financial Institution Advisory</div>
+                        <div class="sector-bullet-item"><i class="fas fa-chevron-right"></i> Loan Documentation &amp; Recovery Matters</div>
+                        <div class="sector-bullet-item"><i class="fas fa-chevron-right"></i> FinTech &amp; Digital Payment Compliance</div>
+                        <div class="sector-bullet-item"><i class="fas fa-chevron-right"></i> RBI &amp; FEMA Regulatory Advisory</div>
+                        <div class="sector-bullet-item"><i class="fas fa-chevron-right"></i> NRI Banking &amp; Cross-Border Transactions</div>
+                        <div class="sector-bullet-item"><i class="fas fa-chevron-right"></i> Financial Fraud &amp; Cybercrime Matters</div>
+                        <div class="sector-bullet-item"><i class="fas fa-chevron-right"></i> Securities &amp; Capital Market Advisory</div>
+                        <div class="sector-bullet-item"><i class="fas fa-chevron-right"></i> Trade Finance &amp; International Transactions</div>
+                        <div class="sector-bullet-item"><i class="fas fa-chevron-right"></i> Risk Management &amp; Compliance Advisory</div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <section id="four" class="sector-row bg-soft reveal">
-        <div class="container">
-            <div class="row align-items-center flex-lg-row-reverse">
-                <div class="col-lg-7">
-                    <h2 class="fw-bold mb-4" style="font-family: 'Playfair Display';">04. Agriculture, Forestry & Natural Resources</h2>
-                    <p class="text-muted">Legal expertise in land reforms, plantation laws, and resource extraction. We help clients navigate environmental clearances and complex mineral rights litigation across Tamil Nadu.</p>
-                    <ul class="list-unstyled list-expertise row mt-4">
-                        <div class="col-md-6">
-                            <li><i class="fas fa-check"></i> AgriTech Frameworks</li>
-                            <li><i class="fas fa-check"></i> Mining Leases & Rights</li>
-                        </div>
-                        <div class="col-md-6">
-                            <li><i class="fas fa-check"></i> Environmental Compliance</li>
-                            <li><i class="fas fa-check"></i> Plantation Management</li>
-                        </div>
-                    </ul>
-                </div>
-                <div class="col-lg-5">
-                    <div class="strategic-focus">
-                        <h6 class="text-gold fw-bold">RESOURCE GOVERNANCE</h6>
-                        <p class="small">Balancing industrial extraction with stringent environmental and land-use regulations to ensure long-term operational viability.</p>
+                <div class="industrial-block text-start" id="realestate-sector">
+                    <div class="block-header-inline">
+                        <div class="block-icon"><i class="fas fa-building text-dark"></i></div>
+                        <h3 class="block-title">Real Estate, Infrastructure &amp; Construction</h3>
+                    </div>
+                    <div class="sector-bullet-grid">
+                        <div class="sector-bullet-item"><i class="fas fa-chevron-right"></i> Property Due Diligence &amp; Title Verification</div>
+                        <div class="sector-bullet-item"><i class="fas fa-chevron-right"></i> Real Estate Transactions &amp; Documentation</div>
+                        <div class="sector-bullet-item"><i class="fas fa-chevron-right"></i> Construction &amp; Infrastructure Contracts</div>
+                        <div class="sector-bullet-item"><i class="fas fa-chevron-right"></i> RERA Advisory &amp; Litigation</div>
+                        <div class="sector-bullet-item"><i class="fas fa-chevron-right"></i> Land Acquisition &amp; Compensation Matters</div>
+                        <div class="sector-bullet-item"><i class="fas fa-chevron-right"></i> Builder Disputes &amp; Project Litigation</div>
+                        <div class="sector-bullet-item"><i class="fas fa-chevron-right"></i> Commercial &amp; Industrial Real Estate</div>
+                        <div class="sector-bullet-item"><i class="fas fa-chevron-right"></i> Environmental &amp; Building Compliance</div>
+                        <div class="sector-bullet-item"><i class="fas fa-chevron-right"></i> Real Estate Finance Support</div>
+                        <div class="sector-bullet-item"><i class="fas fa-chevron-right"></i> Smart City &amp; Urban Development Advisory</div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <section id="five" class="sector-row bg-white reveal">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-7">
-                    <h2 class="fw-bold mb-4" style="font-family: 'Playfair Display';">05. Life Sciences, Healthcare & Education</h2>
-                    <p class="text-muted">Serving the vital infrastructure of society. We provide regulatory advisory for pharmaceutical entities and comprehensive legal frameworks for educational institutions.</p>
-                    <ul class="list-unstyled list-expertise row mt-4">
-                        <div class="col-md-6">
-                            <li><i class="fas fa-check"></i> Pharma Regulatory</li>
-                            <li><i class="fas fa-check"></i> Medical Negligence Defense</li>
-                        </div>
-                        <div class="col-md-6">
-                            <li><i class="fas fa-check"></i> Institutional Accreditation</li>
-                            <li><i class="fas fa-check"></i> Clinical Trial Compliance</li>
-                        </div>
-                    </ul>
-                </div>
-                <div class="col-lg-5">
-                    <div class="strategic-focus">
-                        <h6 class="text-gold fw-bold">COMPLIANCE RIGOR</h6>
-                        <p class="small">Navigating the high-stakes regulatory landscape of healthcare and the evolving policy standards of the education sector.</p>
+                <div class="industrial-block text-start" id="healthcare-sector">
+                    <div class="block-header-inline">
+                        <div class="block-icon"><i class="fas fa-heartbeat text-dark"></i></div>
+                        <h3 class="block-title">Healthcare, Life Sciences &amp; Education</h3>
+                    </div>
+                    <div class="sector-bullet-grid">
+                        <div class="sector-bullet-item"><i class="fas fa-chevron-right"></i> Hospital &amp; Healthcare Regulatory Advisory</div>
+                        <div class="sector-bullet-item"><i class="fas fa-chevron-right"></i> Medical Negligence &amp; Healthcare Litigation</div>
+                        <div class="sector-bullet-item"><i class="fas fa-chevron-right"></i> Pharmaceutical &amp; Biotechnology Compliance</div>
+                        <div class="sector-bullet-item"><i class="fas fa-chevron-right"></i> Clinical Research &amp; Life Sciences Advisory</div>
+                        <div class="sector-bullet-item"><i class="fas fa-chevron-right"></i> Medical Data Privacy &amp; Cybersecurity</div>
+                        <div class="sector-bullet-item"><i class="fas fa-chevron-right"></i> Medical Insurance &amp; Claims Support</div>
+                        <div class="sector-bullet-item"><i class="fas fa-chevron-right"></i> Educational Institution Advisory</div>
+                        <div class="sector-bullet-item"><i class="fas fa-chevron-right"></i> EdTech &amp; Digital Learning Compliance</div>
+                        <div class="sector-bullet-item"><i class="fas fa-chevron-right"></i> International Student &amp; Education Matters</div>
+                        <div class="sector-bullet-item"><i class="fas fa-chevron-right"></i> Healthcare Infrastructure &amp; Licensing</div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <section id="six" class="sector-row bg-soft reveal">
-        <div class="container">
-            <div class="row align-items-center flex-lg-row-reverse">
-                <div class="col-lg-7">
-                    <h2 class="fw-bold mb-4" style="font-family: 'Playfair Display';">06. Energy, Power & Hydrocarbons</h2>
-                    <p class="text-muted">Strategic counsel for renewable energy projects and traditional power distribution. We manage Power Purchase Agreements (PPA) and oil & gas concession legalities.</p>
-                    <ul class="list-unstyled list-expertise row mt-4">
-                        <div class="col-md-6">
-                            <li><i class="fas fa-check"></i> Renewable Energy PPA</li>
-                            <li><i class="fas fa-check"></i> Hydrocarbon Licensing</li>
-                        </div>
-                        <div class="col-md-6">
-                            <li><i class="fas fa-check"></i> Electricity Law Disputes</li>
-                            <li><i class="fas fa-check"></i> Project Finance for Power</li>
-                        </div>
-                    </ul>
-                </div>
-                <div class="col-lg-5">
-                    <div class="strategic-focus">
-                        <h6 class="text-gold fw-bold">ENERGY SECURITY</h6>
-                        <p class="small">Securing the legal foundations of infrastructure that powers the nation, focusing on sustainability and regulatory foresight.</p>
+                <div class="industrial-block text-start" id="logistics-sector">
+                    <div class="block-header-inline">
+                        <div class="block-icon"><i class="fas fa-shipping-fast text-dark"></i></div>
+                        <h3 class="block-title">Transportation, Logistics &amp; Hospitality</h3>
+                    </div>
+                    <div class="sector-bullet-grid">
+                        <div class="sector-bullet-item"><i class="fas fa-chevron-right"></i> Transportation &amp; Logistics Contracts</div>
+                        <div class="sector-bullet-item"><i class="fas fa-chevron-right"></i> Customs &amp; International Trade Compliance</div>
+                        <div class="sector-bullet-item"><i class="fas fa-chevron-right"></i> Shipping &amp; Supply Chain Disputes</div>
+                        <div class="sector-bullet-item"><i class="fas fa-chevron-right"></i> Hospitality &amp; Tourism Advisory</div>
+                        <div class="sector-bullet-item"><i class="fas fa-chevron-right"></i> Hotel &amp; Restaurant Regulatory Compliance</div>
+                        <div class="sector-bullet-item"><i class="fas fa-chevron-right"></i> Travel &amp; Tourism Business Structuring</div>
+                        <div class="sector-bullet-item"><i class="fas fa-chevron-right"></i> Insurance &amp; Liability Claims</div>
+                        <div class="sector-bullet-item"><i class="fas fa-chevron-right"></i> Labour &amp; Employment Advisory</div>
+                        <div class="sector-bullet-item"><i class="fas fa-chevron-right"></i> Commercial Infrastructure Support</div>
+                        <div class="sector-bullet-item"><i class="fas fa-chevron-right"></i> Consumer &amp; Commercial Disputes</div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <section id="seven" class="sector-row bg-white reveal">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-7">
-                    <h2 class="fw-bold mb-4" style="font-family: 'Playfair Display';">07. Transportation, Hospitality & B2B Services</h2>
-                    <p class="text-muted">Comprehensive support for the service economy. From multi-modal logistics and maritime law to high-end hospitality leasing and professional service agreements.</p>
-                    <ul class="list-unstyled list-expertise row mt-4">
-                        <div class="col-md-6">
-                            <li><i class="fas fa-check"></i> Supply Chain Contracts</li>
-                            <li><i class="fas fa-check"></i> Tourism & Hotel Licensing</li>
-                        </div>
-                        <div class="col-md-6">
-                            <li><i class="fas fa-check"></i> Maritime & Port Legalities</li>
-                            <li><i class="fas fa-check"></i> Professional Liability</li>
-                        </div>
-                    </ul>
-                </div>
-                <div class="col-lg-5">
-                    <div class="strategic-focus">
-                        <h6 class="text-gold fw-bold">OPERATIONAL EXCELLENCE</h6>
-                        <p class="small">Mitigating B2B risks and ensuring consumer compliance for global hospitality brands and logistics giants.</p>
+                <div class="industrial-block text-start" id="international-sector">
+                    <div class="block-header-inline">
+                        <div class="block-icon"><i class="fas fa-globe-americas text-dark"></i></div>
+                        <h3 class="block-title">International, NRI &amp; Cross-Border</h3>
+                    </div>
+                    <div class="sector-bullet-grid">
+                        <div class="sector-bullet-item"><i class="fas fa-chevron-right"></i> NRI Property &amp; Family Matters</div>
+                        <div class="sector-bullet-item"><i class="fas fa-chevron-right"></i> Cross-Border Transactions</div>
+                        <div class="sector-bullet-item"><i class="fas fa-chevron-right"></i> Immigration &amp; Overseas Documentation</div>
+                        <div class="sector-bullet-item"><i class="fas fa-chevron-right"></i> International Commercial Contracts</div>
+                        <div class="sector-bullet-item"><i class="fas fa-chevron-right"></i> Foreign Investment Advisory</div>
+                        <div class="sector-bullet-item"><i class="fas fa-chevron-right"></i> International Arbitration Support</div>
+                        <div class="sector-bullet-item"><i class="fas fa-chevron-right"></i> Overseas Educational &amp; Business Advisory</div>
+                        <div class="sector-bullet-item"><i class="fas fa-chevron-right"></i> Cross-Border Inheritance &amp; Succession</div>
+                        <div class="sector-bullet-item"><i class="fas fa-chevron-right"></i> International Trade &amp; Customs Support</div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <section id="eight" class="sector-row bg-soft reveal">
-        <div class="container">
-            <div class="row align-items-center flex-lg-row-reverse">
-                <div class="col-lg-7">
-                    <h2 class="fw-bold mb-4" style="font-family: 'Playfair Display';">08. NGO, Insurance & Social Infrastructure</h2>
-                    <p class="text-muted">Expertise in social and financial security frameworks. We guide NGOs through FCRA compliance and represent entities in IRDAI-related insurance disputes.</p>
-                    <ul class="list-unstyled list-expertise row mt-4">
-                        <div class="col-md-6">
-                            <li><i class="fas fa-check"></i> FCRA & NGO Compliance</li>
-                            <li><i class="fas fa-check"></i> Insurance Claim Litigation</li>
-                        </div>
-                        <div class="col-md-6">
-                            <li><i class="fas fa-check"></i> Pension Fund Structuring</li>
-                            <li><i class="fas fa-check"></i> Charitable Trust Law</li>
-                        </div>
-                    </ul>
-                </div>
-                <div class="col-lg-5">
-                    <div class="strategic-focus">
-                        <h6 class="text-gold fw-bold">SOCIAL TRUST</h6>
-                        <p class="small">Protecting the legal integrity of organizations dedicated to social welfare and financial protection.</p>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="sticky-sidebar text-start">
+                    <h5 class="fw-bold mb-3 text-gold" style="font-family: 'Playfair Display';">Sector Advisory Desk</h5>
+                    <p class="small text-muted">RRC Law Associates integrates cross-disciplinary teams to advise corporate boards, agricultural operations, tech startups, and global NRI clients across multi-layered statutory paths in India.</p>
+                    <hr>
+                    <div class="d-flex align-items-start gap-2 mb-3">
+                        <i class="fas fa-shield-alt text-gold mt-1"></i>
+                        <span class="small"><strong>Strategic Compliance:</strong> Proactive structural risk assessments preventing long-term operational litigation blocks.</span>
                     </div>
+                    <div class="d-flex align-items-start gap-2 mb-4">
+                        <i class="fas fa-gavel text-gold mt-1"></i>
+                        <span class="small"><strong>Tribunal Readiness:</strong> Direct, firm representation pipelines across state SRO registries, RERA, and commercial high-court benches.</span>
+                    </div>
+                    <a href="./booking.html" class="btn btn-gold w-100 py-2.5 fw-bold text-uppercase small text-center d-block">Request Sector Strategy Audit</a>
                 </div>
             </div>
+
         </div>
-    </section>
+    </div>
 
   <footer class="footer">
         <div class="footer-contain">
@@ -664,22 +790,22 @@
                     <h4>Practice Areas</h4>
                     <ul>
                         <li>
-                            <a href="./property-disputes.html">Property Dispute</a>
+                            <a href="family-law.html">Family Law</a>
                         </li>
                         <li>
-                            <a href="./property-law.html">Real Estate & Property Law</a>
+                            <a href="property-law.html">Property Law</a>
                         </li>
                         <li>
-                            <a href="./family-law.html">Family Law</a>
+                            <a href="employment-law.html">Employment Law</a>
                         </li>
                         <li>
-                            <a href="./criminal-defense.html">Criminal Defense</a>
+                            <a href="white-collar-crime.html">White Collar Crimes</a>
                         </li>
                         <li>
-                            <a href="./cheque-bounce-lawyer.html">Cheque Bounce</a>
+                            <a href="due-diligence.html">Due Diligence</a>
                         </li>
                         <li>
-                            <a href="./corporate-law.html">Corporate Law</a>
+                            <a href="litigation-dispute-resolution.html">Litigation Dispute</a>
                         </li>
                     </ul>
                 </div>
