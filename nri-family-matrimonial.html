@@ -3,1386 +3,634 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NRI Family & Matrimonial Lawyers in India | RRC Law Associates</title>
+    <title>NRI Family &amp; Divorce Lawyer Tamil Nadu | Foreign Decree Recognition</title>
+    <meta name="description" content="Expert NRI matrimonial lawyers in Tamil Nadu. Specializing in foreign divorce decree validation (Section 13 CPC), mutual consent divorce via video link, child custody, and false 498A defense.">
+    <meta name="keywords" content="NRI family lawyer, foreign divorce recognition index, section 13 cpc validation india, mutual consent divorce nri, family court thanjavur, child custody lawyers kumbakonam">
 
-    <meta name="description" content="Legal assistance for NRI divorce, child custody, matrimonial disputes, maintenance, and family settlement matters in India.">
+    <meta name="geo.region" content="IN-TN">
+    <meta name="geo.placename" content="Thanjavur">
+    <meta name="geo.position" content="10.7870;79.1378">
+    <meta name="ICBM" content="10.7870, 79.1378">
 
-    <meta name="keywords" content="NRI divorce lawyer India, matrimonial lawyer Tamil Nadu, family disputes India, NRI custody lawyer">
-
-    <link rel="canonical" href="https://rrclawassociates.com/nri-family-matrimonial.html">
-    <link rel="stylesheet" href="./style2.css">
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" type="image/png" href="assets/images/logo.png">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
-    <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
+
     <style>
         :root {
             --primary: #3c3819;
             --gold: #c9a24d;
+            --cream: #f9f7f3;
             --white: #ffffff;
             --dark: #000000;
         }
 
-        body { font-family: 'Inter', sans-serif; background-color: var(--white); color: var(--primary); }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--white);
+            color: var(--primary);
+            line-height: 1.8;
+        }
 
-        /* Navigation */
-        .header { background: #000 !important; padding: 10px 0; position: fixed; top: 0; width: 100%; z-index: 1000; height: 80px; }
-        .nav-link-custom { color: #fff !important; text-decoration: none; margin: 0 15px; font-weight: 500; }
-        .btn-gold { background-color: var(--gold); color: #000; font-weight: 600; padding: 10px 25px; border-radius: 8px; text-decoration: none; }
+        /* --- FIXED NAVIGATION STYLING --- */
+        .header {
+            background: #000000 !important;
+            padding: 5px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1100;
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+        }
+        .logo-img { height: 60px; width: auto; }
+        .nav-link-custom { color: #ffffff !important; text-decoration: none; font-weight: 500; margin: 0 15px; transition: 0.3s; cursor: pointer; }
+        .nav-link-custom:hover { color: var(--gold) !important; }
+        .dropdown-menu { background-color: #000000 !important; border: 1px solid #c9a24d !important; margin-top: 10px !important; }
+        .dropdown-item { color: #ffffff !important; padding: 10px 20px; }
+        .dropdown-item:hover { background-color: #1a1a1a !important; color: var(--gold) !important; }
 
-        /* Glassmorphism Hero */
-        .nri-hero {
+        /* --- EDITORIAL HERO BANNER --- */
+        .article-hero {
             padding-top: 160px;
-            padding-bottom: 80px;
-            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('./assets/images/nri-law-1.jpg');
-            background-size: cover;
-            color: white;
+            padding-bottom: 60px;
+            background-color: var(--cream);
+            border-bottom: 1px solid rgba(60, 56, 25, 0.05);
+        }
+        .meta-text {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            color: var(--gold);
+        }
+        .article-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: #000000;
+            font-size: 2.5rem;
+            line-height: 1.3;
+        }
+        .article-subtitle {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 1.4rem;
+            line-height: 1.4;
         }
 
-        .glass-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        /* --- PRACTICE FOCUS GRIDS --- */
+        .practice-service-card {
+            background-color: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.03); 
+            border-radius: 20px; 
+            padding: 40px 30px; 
+            width: 280px; 
+            min-height: 355px;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.04); 
+            transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.3s ease;
+        }
+        .practice-service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 45px rgba(201, 162, 77, 0.12); 
+        }
+        .card-icon-wrapper {
+            color: #c9a24d; 
+            font-size: 2.2rem; 
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 50px;
+        }
+        .card-service-title {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            color: #222222; 
+            font-size: 1.1rem;
+            line-height: 1.4;
+            margin-bottom: 15px;
+        }
+        .card-service-text {
+            font-family: 'Inter', sans-serif;
+            color: #666666; 
+            font-size: 0.88rem;
+            line-height: 1.6;
+            font-weight: 400;
+            margin-bottom: 0px;
         }
 
-        .section-title { font-family: 'Playfair Display', serif; position: relative; padding-bottom: 15px; margin-bottom: 30px; }
-        .section-title::after { content: ""; position: absolute; bottom: 0; left: 0; width: 60px; height: 4px; background: var(--gold); }
-
-        /* Location Cards - Kept same as reference */
-        .location-box { 
-            background: rgba(0, 0, 0, 0.03); 
-            border: 1px solid #eee; 
-            border-radius: 15px; 
-            transition: 0.3s;
+        /* --- EDITORIAL CONTENT BLOCKS --- */
+        .content-body h2 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            margin-top: 45px;
+            margin-bottom: 20px;
+            color: #000000;
             position: relative;
+            padding-bottom: 10px;
+        }
+        .content-body h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--gold);
+        }
+        .litigation-row-card {
+            background-color: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            border-radius: 16px; 
+            padding: 40px; 
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02); 
+            transition: transform 0.25s ease, border-color 0.25s ease;
+        }
+        .litigation-row-card:hover {
+            transform: translateY(-3px);
+            border-color: #c9a24d;
+        }
+        .pub-headline {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: #1a1e21;
+            font-size: 1.45rem;
+            line-height: 1.35;
+            margin-bottom: 15px;
+        }
+        .pub-description {
+            color: #555555;
+            font-size: 1rem;
+            line-height: 1.7;
+            font-weight: 400;
+            margin-bottom: 0px;
+        }
+        .visual-token-box {
+            border-radius: 12px;
+            height: 220px;
+            width: 100%;
             overflow: hidden;
-            height: 150px;
+            background-color: #f9f7f3;
+            border: 1px solid rgba(60, 56, 25, 0.05);
         }
-        .location-box::before {
-            content: ""; position: absolute; top:0; left:0; width:100%; height:100%;
-            opacity: 0.7; z-index: 0; background-size: cover; 
+
+        /* --- INTAKE SIDEBAR PANEL --- */
+        .sticky-sidebar {
+            position: sticky;
+            top: 110px;
+            background-color: #ffffff;
+            border: 1px solid rgba(0,0,0,0.06);
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
         }
+        .btn-gold { 
+            background-color: var(--gold); 
+            color: #000000; 
+            font-weight: 700; 
+            padding: 14px; 
+            border-radius: 10px; 
+            width: 100%; 
+            border: none; 
+            transition: 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            display: block;
+            text-align: center;
+            text-decoration: none;
+        }
+        .btn-gold:hover { background-color: #b38f40; transform: translateY(-2px); box-shadow: 0 10px 20px rgba(201, 162, 77, 0.2); color: #000000; }
         
-        .loc-usa::before { background-image: url('https://flagcdn.com/w1160/us.webp'); }
-        .loc-uk::before { background-image: url('https://flagcdn.com/w1160/gb.webp'); }
-        .loc-uae::before { background-image: url('https://flagcdn.com/w1160/ae.webp'); }
-        .loc-sg::before { background-image: url('https://flagcdn.com/w640/sg.png'); }
-        .loc-my::before { background-image: url('https://flagcdn.com/w640/my.png'); }
-
-        .location-content { position: relative; z-index: 1; font-family: 'Inter', sans-serif;}
-
-        .footer { background: #081521; color: white; padding: 60px 0; }
-        
-        .text-gold { color: var(--gold); }
-
-                    :root {
-                --primary: #3c3819;
-                --gold: #c9a24d;
-                --cream: #f9f7f3;
-                --white: #ffffff;
-            }
-
-            body {
-                font-family: 'Inter', sans-serif;
-                background-color: var(--white);
-                color: var(--primary);
-            }
-
-            /* Header Styling */
-            .header {
-                background: #000000 !important;
-                /* Pure Black as requested */
-                padding: 10px 0;
-                position: fixed;
-                top: 0;
-                width: 100%;
-                z-index: 1000;
-            }
-
-            .logo-img {
-                height: 60px;
-                width: auto;
-            }
-
-            .nav-link-custom {
-                color: #ffffff !important;
-                text-decoration: none;
-                font-weight: 500;
-                margin: 0 15px;
-                transition: color 0.3s;
-            }
-
-            .dropdown-item:hover,
-            .nav-link-custom:hover {
-                color: #c9a24d !important;
-                /* Gold hover */
-            }
-
-            .dropdown-menu {
-                background-color: #000000 !important;
-                border: 1px solid #c9a24d !important;
-                margin-top: 10px !important;
-            }
-
-            .dropdown-item {
-                color: #ffffff !important;
-                padding: 10px 20px;
-            }
-
-            .dropdown-item:hover {
-                background-color: #1a1a1a !important;
-            }
-
-            .mobile-menu {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 80%;
-                max-width: 350px;
-                height: 100vh;
-                background: #000000;
-                z-index: 2000;
-                transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-                box-shadow: -10px 0 30px rgba(0,0,0,0.5);
-                padding: 20px;
-            }
-
-            .mobile-menu.open {
-                right: 0;
-            }
-
-            .mobile-link {
-                color: #ffffff;
-                text-decoration: none;
-                font-size: 1.1rem;
-                display: block;
-                padding: 15px 0;
-                border-bottom: 1px solid rgba(255,255,255,0.1);
-            }
-
-            .close-menu {
-                background: transparent;
-                border: none;
-                color: #ffffff;
-                font-size: 2rem;
-                float: right;
-                cursor: pointer;
-            }
-
-            .btn-gold {
-                background-color: #c9a24d;
-                color: #000;
-                font-weight: 600;
-                padding: 10px 20px;
-                border-radius: 8px;
-                border: none;
-                text-decoration: none;
-                display: inline-block;
-            }
-
-            .btn-gold:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 10px 20px rgba(201, 162, 77, 0.3);
-                background-color: #b38f40;
-            }
-
-            /* Main Content Styling */
-            .page-header-section {
-                padding-top: 140px;
-                padding-bottom: 40px;
-                text-align: center;
-            }
-
-            /* The Heading Container */
-            .section-title {
-                position: relative;
-                display: inline-block;
-                padding-bottom: 15px;
-                margin-bottom: 30px;
-                font-family: 'Playfair Display', serif;
-                font-weight: 600;
-            }
-
-            /* The Gradient Underline */
-            .section-title::after {
-                content: "";
-                position: absolute;
-                bottom: 0;
-                left: 50%;
-                transform: translateX(-50%);
-                width: 60px;
-                height: 4px;
-                border-radius: 2px;
-                background: linear-gradient(to right, #0b1c2d, #c9a24d);
-            }
-
-            .eyebrow {
-                color: var(--gold);
-                text-transform: uppercase;
-                letter-spacing: 2px;
-                font-weight: 700;
-                font-size: 0.85rem;
-                display: block;
-                margin-bottom: 10px;
-            }
-
-            /* Card Styling */
-            .service-card {
-                background: var(--white);
-                border: 1px solid rgba(0,0,0,0.06);
-                border-radius: 15px;
-                padding: 25px 15px;
-                height: 100%;
-                transition: all 0.4s ease;
-                box-shadow: 0 10px 30px rgba(0,0,0,0.04);
-                text-align: center;
-            }
-
-            .service-card:hover {
-                transform: translateY(-10px);
-                box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-            }
-
-            .service-icon {
-                font-size: 2rem;
-                color: var(--gold);
-                margin-bottom: 15px;
-            }
-
-            .service-card h3 {
-                font-size: 1.1rem;
-                font-weight: 700;
-                margin-bottom: 10px;
-            }
-
-            .service-card p {
-                font-size: 0.85rem;
-                color: #666;
-                line-height: 1.5;
-            }
-
-            /* Advocate Card Styling */
-            .advocate-card {
-                border-radius: 14px;
-                overflow: hidden;
-                box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-                background: var(--white);
-            }
-
-            .image-box img {
-                width: 100%;
-                height: 500px;
-                object-fit: fill;
-            }
-
-            .advocate-content {
-                padding: 20px;
-            }
-
-            .advocate-content h3 {
-                font-size: 1.2rem;
-                margin-bottom: 5px;
-                font-weight: 700;
-            }
-
-            .advocate-content span {
-                color: var(--gold);
-                font-weight: 600;
-                font-size: 0.9rem;
-                display: block;
-                margin-bottom: 10px;
-            }
-
-            .advocate-content p {
-                font-size: 0.85rem;
-                color: #555;
-            }
-
-            :root {
-                --primary: #3c3819;
-                --gold: #c9a24d;
-                --cream: #f9f7f3;
-                --white: #ffffff;
-            }
-
-            body {
-                font-family: 'Inter', sans-serif;
-                background-color: var(--white);
-                color: var(--primary);
-            }
-
-            /* Header Styling */
-            .header {
-                background: #000000 !important;
-                /* Pure Black as requested */
-                padding: 10px 0;
-                position: fixed;
-                top: 0;
-                width: 100%;
-                z-index: 1000;
-            }
-
-            .logo-img {
-                height: 60px;
-                width: auto;
-            }
-
-            .nav-link-custom {
-                color: #ffffff !important;
-                text-decoration: none;
-                font-weight: 500;
-                margin: 0 15px;
-                transition: color 0.3s;
-            }
-
-            .dropdown-item:hover,
-            .nav-link-custom:hover {
-                color: #c9a24d !important;
-                /* Gold hover */
-            }
-
-            .dropdown-menu {
-                background-color: #000000 !important;
-                border: 1px solid #c9a24d !important;
-                margin-top: 10px !important;
-            }
-
-            .dropdown-item {
-                color: #ffffff !important;
-                padding: 10px 20px;
-            }
-
-            .dropdown-item:hover {
-                background-color: #1a1a1a !important;
-            }
-
-            .mobile-menu {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 80%;
-                max-width: 350px;
-                height: 100vh;
-                background: #000000;
-                z-index: 2000;
-                transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-                box-shadow: -10px 0 30px rgba(0,0,0,0.5);
-                padding: 20px;
-            }
-
-            .mobile-menu.open {
-                right: 0;
-            }
-
-            .mobile-link {
-                color: #ffffff;
-                text-decoration: none;
-                font-size: 1.1rem;
-                display: block;
-                padding: 15px 0;
-                border-bottom: 1px solid rgba(255,255,255,0.1);
-            }
-
-            .close-menu {
-                background: transparent;
-                border: none;
-                color: #ffffff;
-                font-size: 2rem;
-                float: right;
-                cursor: pointer;
-            }
-
-            .btn-gold {
-                background-color: #c9a24d;
-                color: #000;
-                font-weight: 600;
-                padding: 10px 20px;
-                border-radius: 8px;
-                border: none;
-                text-decoration: none;
-                display: inline-block;
-            }
-
-            .btn-gold:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 10px 20px rgba(201, 162, 77, 0.3);
-                background-color: #b38f40;
-            }
-
-            /* Main Content Styling */
-            .page-header-section {
-                padding-top: 140px;
-                padding-bottom: 40px;
-                text-align: center;
-            }
-
-            /* The Heading Container */
-            .section-title {
-                position: relative;
-                display: inline-block;
-                padding-bottom: 15px;
-                margin-bottom: 30px;
-                font-family: 'Playfair Display', serif;
-                font-weight: 600;
-            }
-
-            /* The Gradient Underline */
-            .section-title::after {
-                content: "";
-                position: absolute;
-                bottom: 0;
-                left: 50%;
-                transform: translateX(-50%);
-                width: 60px;
-                height: 4px;
-                border-radius: 2px;
-                background: linear-gradient(to right, #0b1c2d, #c9a24d);
-            }
-
-            .eyebrow {
-                color: var(--gold);
-                text-transform: uppercase;
-                letter-spacing: 2px;
-                font-weight: 700;
-                font-size: 0.85rem;
-                display: block;
-                margin-bottom: 10px;
-            }
-
-            /* Card Styling */
-            .service-card {
-                background: var(--white);
-                border: 1px solid rgba(0,0,0,0.06);
-                border-radius: 15px;
-                padding: 25px 15px;
-                height: 100%;
-                transition: all 0.4s ease;
-                box-shadow: 0 10px 30px rgba(0,0,0,0.04);
-                text-align: center;
-            }
-
-            .service-card:hover {
-                transform: translateY(-10px);
-                box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-            }
-
-            .service-icon {
-                font-size: 2rem;
-                color: var(--gold);
-                margin-bottom: 15px;
-            }
-
-            .service-card h3 {
-                font-size: 1.1rem;
-                font-weight: 700;
-                margin-bottom: 10px;
-            }
-
-            .service-card p {
-                font-size: 0.85rem;
-                color: #666;
-                line-height: 1.5;
-            }
-
-            /* Advocate Card Styling */
-            .advocate-card {
-                border-radius: 14px;
-                overflow: hidden;
-                box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-                background: var(--white);
-            }
-
-            .image-box img {
-                width: 100%;
-                height: 500px;
-                object-fit: fill;
-            }
-
-            .advocate-content {
-                padding: 20px;
-            }
-
-            .advocate-content h3 {
-                font-size: 1.2rem;
-                margin-bottom: 5px;
-                font-weight: 700;
-            }
-
-            .advocate-content span {
-                color: var(--gold);
-                font-weight: 600;
-                font-size: 0.9rem;
-                display: block;
-                margin-bottom: 10px;
-            }
-
-            .advocate-content p {
-                font-size: 0.85rem;
-                color: #555;
-            }
-
-            /* Footer */
-            /* Refined Footer Styles */
-            .footer {
-                background: linear-gradient(135deg, #081521, #0b1c2d);
-                padding: 80px 0 30px;
-                color: #ffffff;
-                width: 100%;
-                /* Ensure no bullets are inherited globally */
-                list-style: none;
-            }
-
-            .footer-contain {
-                max-width: 1200px;
-                margin: 0 auto;
-                padding: 0 20px;
-            }
-
-            /* This creates the columns seen in the image */
-            .footer-grid {
-                display: grid;
-                grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
-                /* Adjusts widths of columns */
-                gap: 50px;
-                margin-bottom: 50px;
-            }
-
-            /* RESET LISTS: This removes the bullets and indentation shown in your image */
-            .footer ul {
-                list-style: none !important;
-                padding: 0 !important;
-                margin: 0 !important;
-            }
-
-            .footer h4 {
-                color: #c9a24d;
-                font-size: 1.2rem;
-                margin-bottom: 25px;
-                font-weight: 600;
-                text-transform: none;
-                /* Keeps it professional */
-            }
-
-            .footer-text {
-                color: rgba(255, 255, 255, 0.7);
-                font-size: 0.95rem;
-                line-height: 1.7;
-                margin-top: 15px;
-            }
-
-            .footer li {
-                margin-bottom: 12px;
-            }
-
-            .footer a {
-                color: rgba(255, 255, 255, 0.7);
-                text-decoration: none !important;
-                transition: 0.3s ease;
-                font-size: 0.95rem;
-            }
-
-            .footer a:hover {
-                color: #c9a24d;
-                padding-left: 5px;
-                /* Subtle interaction effect */
-            }
-
-            /* Bottom Bar Styling */
-            .footer-bottom {
-                border-top: 1px solid rgba(255, 255, 255, 0.1);
-                padding-top: 25px;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                color: rgba(255, 255, 255, 0.5);
-                font-size: 14px;
-            }
-
-            .legal-links a {
-                margin-left: 20px;
-                font-size: 13px;
-            }
-
-            /* Responsive Fixes */
-            @media (max-width: 992px) {
-                .footer-grid {
-                    grid-template-columns: 1fr 1fr;
-                    /* 2 columns on tablets */
-                }
-            }
-
-            @media (max-width: 768px) {
-                .footer-grid {
-                    grid-template-columns: 1fr;
-                    /* 1 column on phones */
-                    gap: 30px;
-                    text-align: left;
-                }
-                .footer-bottom {
-                    flex-direction: column;
-                    text-align: center;
-                    gap: 15px;
-                }
-                .legal-links a {
-                    margin: 0 10px;
-                }
-            }
-
-            /* Mobile specific adjustments */
-            @media (max-width: 768px) {
-                .image-box img {
-                    height: 180px;
-                }
-                .advocate-content h3 {
-                    font-size: 0.9rem;
-                }
-                .advocate-content p {
-                    font-size: 0.75rem;
-                }
-                .service-card {
-                    padding: 15px 10px;
-                }
-                .service-card h3 {
-                    font-size: 0.95rem;
-                }
-                .service-card p {
-                    font-size: 0.8rem;
-                }
-            }
-            @media (min-width: 992px) {
-                /* Show menu on hover */
-                .header .dropdown:hover > .dropdown-menu {
-                    display: block;
-                    margin-top: 0;
-                }
-
-                /* The Bridge: Prevents the menu from closing during diagonal movement */
-                .header .dropdown-menu::before {
-                    content: "";
-                    position: absolute;
-                    top: -20px; /* Covers the gap between button and menu */
-                    left: 0;
-                    width: 100%;
-                    height: 20px;
-                    background: transparent;
-                }
-                .nav-link-custom.dropdown-toggle::after {
-                    pointer-events: none; 
-                }
-            }
-            /* Custom Mobile Sidebar Styles */
-            .m-link {
-                color: #ffffff;
-                text-decoration: none;
-                font-size: 1.1rem;
-                display: block;
-                padding: 15px 0;
-                border-bottom: 1px solid rgba(255,255,255,0.1);
-                width: 100%;
-                text-align: left;
-            }
-
-            .m-trigger {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-            }
-
-            .m-submenu {
-                display: none; /* Hidden by default */
-                background: rgba(255, 255, 255, 0.05);
-                padding-left: 20px;
-            }
-
-            .m-submenu.active {
-                display: block; /* Shown when toggled */
-            }
-
-            .m-sub-item {
-                display: block;
-                color: rgba(255,255,255,0.7);
-                text-decoration: none;
-                padding: 10px 0;
-                font-size: 0.95rem;
-            }
-
-            .m-sub-item:hover {
-                color: #c9a24d;
-            }
-            /* --- BREADCRUMBS STYLING --- */
-.breadcrumb-nav {
-    padding-top: 70px !important; /* Adjust based on your 80px fixed header */
-    padding-bottom: 15px !important;
-    background-color: var(--cream) !important;
-    border-bottom: 1px solid rgba(201, 162, 77, 0.2) !important;
-}
-
-.breadcrumb-item + .breadcrumb-item::before {
-    content: "\f105" !important; /* FontAwesome chevron right */
-    font-family: "Font Awesome 6 Free" !important;
-    font-weight: 900 !important;
-    color: var(--gold) !important;
-    font-size: 1rem !important;
-}
-
-.breadcrumb-item a {
-    color: var(--primary) !important;
-    text-decoration: none !important;
-    font-size: 0.9rem !important;
-    font-weight: 500 !important;
-    transition: color 0.3s ease !important;
-}
-
-.breadcrumb-item a:hover {
-    color: var(--gold) !important;
-}
-
-.breadcrumb-item.active {
-    color: var(--gold) !important;
-    font-weight: 600 !important;
-    font-size: 0.9rem !important;
-}
-
-@media (max-width: 768px) {
-    .breadcrumb-nav {
-        padding-top: 90px !important;
-    }
-}
-
-/* --- NRI REMOTE HELP SECTION STYLES --- */
-
-/* 1. Card Base Styling */
-.service-card {
-    background: var(--white);
-    border: 1px solid rgba(0, 0, 0, 0.05); /* Subtle border for minimalist look */
-    border-radius: 15px;
-    padding: 30px 25px;
-    height: 100%;
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
-}
-
-/* 2. Interactive Hover Effects */
-.transition-hover:hover {
-    transform: translateY(-10px);
-    border-color: var(--gold) !important; /* Branded gold border on hover */
-    box-shadow: 0 15px 40px rgba(201, 162, 77, 0.15) !important;
-}
-
-/* 3. Iconography Styling */
-.icon-box {
-    height: 60px;
-    width: 60px;
-    display: flex;             /* Uses flexbox to center the <i> inside */
-    align-items: center;       /* Vertical centering */
-    justify-content: center;    /* Horizontal centering */
-    background: rgba(201, 162, 77, 0.08); /* Light gold background */
-    border-radius: 12px;
-    
-    /* This centers the box itself within the card */
-    margin: 0 auto 20px auto;  
-}
-
-.service-card {
-    text-align: center;
-    padding: 30px 25px;
-}
-
-.icon-box i {
-    color: var(--gold);
-    font-size: 1.8rem;
-    
-}
-
-/* 4. Text and Hierarchy */
-.service-card h5 {
-    font-family: 'Inter', sans-serif;
-    font-weight: 700;
-    color: var(--primary);
-    margin-bottom: 12px;
-    letter-spacing: -0.02em;
-}
-
-.service-card p {
-    font-size: 0.9rem;
-    color: #666;
-    line-height: 1.6;
-}
-
-/* 5. Special CTA Card (Dark Mode) */
-.service-card.bg-dark {
-    background: linear-gradient(135deg, #0b1c2d 0%, #000000 100%) !important;
-    border: 1px solid var(--gold) !important;
-}
-
-.service-card.bg-dark .text-gold {
-    color: var(--gold) !important;
-    letter-spacing: 1px;
-}
-
-/* 6. Responsive Adjustments */
-@media (max-width: 768px) {
-    .service-card {
-        padding: 20px;
-    }
-    
-    .icon-box {
-        height: 50px;
-        width: 50px;
-    }
-}
-/* --- FAQ & ACCORDION CUSTOM STYLING --- */
-
-/* 1. Accordion Container */
-.custom-accordion .accordion-item {
-    background-color: transparent;
-    border: none;
-    border-bottom: 1px solid rgba(201, 162, 77, 0.2) !important; /* Gold divider */
-    margin-bottom: 0;
-}
-
-.custom-accordion .accordion-item:last-child {
-    border-bottom: none !important;
-}
-
-/* 2. Accordion Button (The Question) */
-.custom-accordion .accordion-button {
-    background-color: transparent !important;
-    color: var(--primary);
-    font-size: 1.05rem;
-    font-weight: 600;
-    padding: 25px 10px;
-    box-shadow: none !important;
-    transition: all 0.3s ease;
-}
-
-/* Question color when expanded */
-.custom-accordion .accordion-button:not(.collapsed) {
-    color: var(--gold) !important;
-}
-
-/* 3. Custom Toggle Icons (Plus/Minus) */
-.custom-accordion .accordion-button::after {
-    background-image: none !important; /* Remove default Bootstrap arrow */
-    content: "\f067"; /* FontAwesome Plus Icon */
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    color: var(--gold);
-    font-size: 0.9rem;
-    transition: transform 0.4s ease;
-}
-
-.custom-accordion .accordion-button:not(.collapsed)::after {
-    content: "\f068"; /* FontAwesome Minus Icon */
-    transform: rotate(180deg);
-}
-
-/* 4. Accordion Body (The Answer) */
-.custom-accordion .accordion-body {
-    padding: 0 10px 30px 10px;
-    color: #666;
-    line-height: 1.7;
-    font-size: 0.95rem;
-}
-
-/* 5. Responsive Tweaks */
-@media (max-width: 768px) {
-    .custom-accordion .accordion-button {
-        font-size: 0.95rem;
-        padding: 20px 5px;
-    }
-}
-
+        .whatsapp-float-btn {
+            background-color: #25d366;
+            color: white !important;
+            padding: 12px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.2);
+            transition: 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.88rem;
+        }
+        .whatsapp-float-btn:hover { background-color: #128c7e; transform: translateY(-2px); }
+
+        .mobile-menu { position: fixed; top: 0; right: -100%; width: 80%; max-width: 350px; height: 100vh; background: #000; z-index: 2000; transition: 0.4s ease; padding: 20px; overflow-y: auto; overflow-x: hidden; display: flex; flex-direction: column; }
+        .mobile-menu.open { right: 0; }
+        .close-menu { background: transparent; border: none; color: #ffffff; font-size: 2rem; float: right; cursor: pointer; text-align: right; width: 100%; padding-bottom: 20px; }
+        .m-link { color: #fff !important; text-decoration: none; display: block; padding: 15px 0; border-bottom: 1px solid rgba(255,255,255,0.1); width: 100%; text-align: left; }
+        .m-trigger { display: flex; justify-content: space-between; align-items: center; }
+        .m-submenu { display: none; background: rgba(255,255,255,0.05); padding-left: 20px; }
+        .m-submenu.active { display: block; }
+        .m-sub-item { display: block; color: rgba(255,255,255,0.7); text-decoration: none; padding: 10px 0; font-size: 0.95rem; }
+        .m-sub-item:hover { color: #c9a24d; }
+
+        .footer { background: linear-gradient(135deg, #081521, #0b1c2d); color: white; padding: 80px 0 30px; }
+
+        @media (max-width: 991px) {
+            .article-title { font-size: 2rem; }
+            .article-subtitle { font-size: 1.15rem; }
+            .article-hero { padding-top: 120px; }
+            .practice-service-card { width: 100%; min-height: auto; }
+            .litigation-row-card { padding: 30px 20px; }
+            .visual-token-box { height: 160px; margin-bottom: 15px; }
+        }
     </style>
 </head>
 <body>
 
-            <header class="header"> 
-            <nav class="container d-flex align-items-center justify-content-between">
-                <a href="index.html">
-                    <img src="assets/images/rrclogo.png" alt="RRC Logo" class="logo-img">
-                </a>
+    <header class="header"> 
+        <nav class="container d-flex align-items-center justify-content-between">
+            <a href="index.html"><img src="assets/images/rrclogo.png" alt="RRC Law Associates Brand Logo - Top Law Firm in Thanjavur" class="logo-img"></a>
 
-                <div class="d-none d-lg-flex align-items-center ms-auto">
-                    <div class="dropdown">
-                        <a
-                            class="nav-link-custom border-0 bg-transparent p-0"
-                            href="index.html"
-                            role="button"
-                            data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Home
-                        </a>
-                    </div>    
-                    <div class="dropdown">
-                        <a
-                            class="nav-link-custom dropdown-toggle border-0 bg-transparent p-0"
-                            href="nri-services.html"
-                            role="button"
-                            data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            NRI Services
-                        </a>
-                        <ul class="dropdown-menu shadow-lg">
-                            <li>
-                                <a class="dropdown-item" href="nri-property-disputes.html">Property Dispute</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="nri-power-of-attorney.html">Power of Attorney</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="nri-criminal-case.html">Criminal Cases</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="nri-family-matrimonial.html">Family & Matrimonial</a>
-                            </li>
-                        </ul>
-                    </div> 
-                    <div class="dropdown">
-                        <a
-                            class="nav-link-custom dropdown-toggle border-0 bg-transparent p-0"
-                            href="core-practice-areas.html"
-                            role="button"
-                            data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Core Practice Areas
-                        </a>
-                       <ul class="dropdown-menu shadow-lg">
-                            <li>
-                                <a class="dropdown-item" href="family-law.html">FAMILY, SUCCESSION &amp; PRIVATE CLIENT PRACTICE</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="intellectual-property.html">INTELLECTUAL PROPERTY &amp; INNOVATION PROTECTION</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="employment-law.html">LABOUR, EMPLOYMENT &amp; INDUSTRIAL RELATIONS</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="white-collar-crime.html">WHITE COLLAR CRIMES &amp; FINANCIAL INVESTIGATIONS</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="property-law.html">DOCUMENTATION, REGISTRATION &amp; DUE DILIGENCE</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="cyber-law.html">CYBER LAW, DATA PROTECTION &amp; DIGITAL EVIDENCE</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="litigation-dispute-resolution.html">LITIGATION &amp; DISPUTE RESOLUTION</a>
-                            </li> 
-                        </ul>
-                    </div>
-                    <div class="dropdown">
-                        <a
-                            class="nav-link-custom dropdown-toggle border-0 bg-transparent p-0"
-                            href="sectors.html"
-                            role="button"
-                            data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Sectors
-                        </a>
-                       <ul class="dropdown-menu shadow-lg">
-                            <li>
-                                <a class="dropdown-item" href="sectors.html#agri-sector">AGRICULTURE, RURAL &amp; AGRI-BUSINESS</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="sectors.html#finance-sector">BANKING, FINANCE &amp; FINTECH</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="sectors.html#realestate-sector">REAL ESTATE, INFRASTRUCTURE &amp; CONSTRUCTION</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="sectors.html#healthcare-sector">HEALTHCARE, LIFE SCIENCES &amp; EDUCATION</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="sectors.html#logistics-sector">TRANSPORTATION, LOGISTICS &amp; HOSPITALITY</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="sectors.html#international-sector">INTERNATIONAL, NRI &amp; CROSS-BORDER</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="dropdown">
-                        <a
-                            class="nav-link-custom border-0 bg-transparent p-0"
-                            href="lawfirm-blog.html"
-                            role="button"
-                            data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Blog
-                        </a>
-                    </div>
-                    <div class="dropdown">
-                        <a
-                            class="nav-link-custom border-0 bg-transparent p-0"
-                            href="index.html#contact"
-                            role="button"
-                            data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Contact
-                        </a>
-                    </div>
+            <div class="d-none d-lg-flex align-items-center ms-auto">
+                <a href="index.html" class="nav-link-custom">Home</a>
+                <div class="dropdown">
+                    <a class="nav-link-custom dropdown-toggle text-gold" href="nri-services.html" role="button" data-bs-toggle="dropdown">NRI Services</a>
+                    <ul class="dropdown-menu shadow-lg">
+                        <li><a class="dropdown-item" href="nri-property-disputes.html">Property Dispute</a></li>
+                        <li><a class="dropdown-item" href="nri-power-of-attorney.html">Power of Attorney</a></li>
+                        <li><a class="dropdown-item" href="nri-criminal-case.html">Criminal Cases</a></li>
+                        <li><a class="dropdown-item" href="nri-family-matrimonial.html">Family &amp; Matrimonial</a></li>
+                    </ul>
+                </div> 
+                <div class="dropdown">
+                    <a class="nav-link-custom dropdown-toggle" href="core-practice-areas.html" role="button" data-bs-toggle="dropdown">Core Practice Areas</a>
+                    <ul class="dropdown-menu shadow-lg">
+                        <li><a class="dropdown-item" href="family-law.html">Family Law Workspace</a></li>
+                        <li><a class="dropdown-item" href="intellectual-property.html">Intellectual Property Advisory</a></li>
+                        <li><a class="dropdown-item" href="employment-law.html">Labour &amp; Employment Protection</a></li>
+                        <li><a class="dropdown-item" href="white-collar-crime.html">White Collar Crime Defense</a></li>
+                        <li><a class="dropdown-item" href="property-law.html">Due Diligence Frameworks</a></li>
+                        <li><a class="dropdown-item" href="cyber-law.html">Cyber Law Desk</a></li>
+                        <li><a class="dropdown-item" href="litigation-dispute-resolution.html">Litigation &amp; Dispute Resolution</a></li> 
+                    </ul>
                 </div>
+                <div class="dropdown">
+                    <a class="nav-link-custom dropdown-toggle" href="sectors.html" role="button" data-bs-toggle="dropdown">Sectors</a>
+                    <ul class="dropdown-menu shadow-lg">
+                        <li><a class="dropdown-item" href="sectors.html#agri-sector">Agriculture &amp; Agri-Business</a></li>
+                        <li><a class="dropdown-item" href="sectors.html#finance-sector">Banking &amp; FinTech Compliance</a></li>
+                        <li><a class="dropdown-item" href="sectors.html#realestate-sector">Real Estate &amp; Infrastructure</a></li>
+                        <li><a class="dropdown-item" href="sectors.html#healthcare-sector">Healthcare &amp; Education</a></li>
+                        <li><a class="dropdown-item" href="sectors.html#logistics-sector">Logistics &amp; Hospitality</a></li>
+                        <li><a class="dropdown-item" href="sectors.html#international-sector">Cross-Border International Desk</a></li>
+                    </ul>
+                </div>
+                <a href="lawfirm-blog.html" class="nav-link-custom">Blog</a>
+                <a href="index.html#contact" class="nav-link-custom">Contact</a>
+            </div>
 
-                <div class="d-flex align-items-center gap-3">
-                    <div class="cta d-none d-sm-block">
-                        <a href="./booking.html" class="btn btn-gold">Book Consultation</a>
-                    </div>
-                    <button class="btn text-white d-lg-none fs-3 p-0" id="menuToggle">
-                        <i class="fa fa-bars"></i>
-                    </button>
-                </div>
-            </nav>
-        </header>
+            <div class="d-flex align-items-center gap-3">
+                <a href="./booking.html" class="btn btn-gold d-none d-sm-block" style="width: auto; padding: 10px 20px;">Book Consultation</a>
+                <button class="btn text-white d-lg-none fs-3 p-0" id="menuToggle"><i class="fa fa-bars"></i></button>
+            </div>
+        </nav>
+    </header>
 
-        <div class="mobile-menu" id="mobileMenu">
-            <button class="close-menu" id="closeMenu">✕</button>
-            <div class="mt-5">
-                <a href="index.html" class="m-link">Home</a>
-                <div class="m-dropdown">
-                    <a class="m-link m-trigger" href="nri-services.html">
-                        NRI Services <i class="fa fa-chevron-down ms-2"></i>
-                    </a>
-                    <div class="m-submenu" id="mPracticeMenu">
-                        <a class="m-sub-item" href="nri-property-disputes.html">Property Dispute</a>
-                        <a class="m-sub-item" href="nri-power-of-attorney.html">Power of Attorney</a>
-                        <a class="m-sub-item" href="nri-criminal-case.html">Criminal Case</a>
-                        <a class="m-sub-item" href="nri-family-matrimonial.html">Family & Matrimonial</a>
-                    </div>
-                </div>
-                <div class="m-dropdown">
-                    <a class="m-link m-trigger" href="core-practice-areas.html">
-                        Core Practice Areas <i class="fa fa-chevron-down ms-2"></i>
-                    </a>
-                    <div class="m-submenu" id="mPracticeMenu">
-                        <a class="m-sub-item" href="family-law.html">FAMILY, SUCCESSION &amp; PRIVATE CLIENT PRACTICE</a>
-                        <a class="m-sub-item" href="intellectual-property.html">INTELLECTUAL PROPERTY &amp; INNOVATION PROTECTION</a>
-                        <a class="m-sub-item" href="employment-law.html">LABOUR, EMPLOYMENT &amp; INDUSTRIAL RELATIONS</a>
-                        <a class="m-sub-item" href="white-collar-crime.html">WHITE COLLAR CRIMES &amp; FINANCIAL INVESTIGATIONS</a>
-                        <a class="m-sub-item" href="property-law.html">DOCUMENTATION, REGISTRATION &amp; DUE DILIGENCE</a>
-                        <a class="m-sub-item" href="cyber-law.html">CYBER LAW, DATA PROTECTION &amp; DIGITAL EVIDENCE</a>
-                        <a class="m-sub-item" href="litigation-dispute-resolution.html">LITIGATION &amp; DISPUTE RESOLUTION</a>
-                    </div>
-                </div>
-                <div class="m-dropdown">
-                    <a class="m-link m-trigger" href="">
-                        Sectors <i class="fa fa-chevron-down ms-2"></i>
-                    </a>
-                    <div class="m-submenu" id="mSectorMenu">
-                        <a class="m-sub-item" href="sectors.html#agri-sector">AGRICULTURE, RURAL &amp; AGRI-BUSINESS</a>
-                        <a class="m-sub-item" href="sectors.html#finance-sector">BANKING, FINANCE &amp; FINTECH</a>
-                        <a class="m-sub-item" href="sectors.html#realestate-sector">REAL ESTATE, INFRASTRUCTURE &amp; CONSTRUCTION</a>
-                        <a class="m-sub-item" href="sectors.html#healthcare-sector">HEALTHCARE, LIFE SCIENCES &amp; EDUCATION</a>
-                        <a class="m-sub-item" href="sectors.html#logistics-sector">TRANSPORTATION, LOGISTICS &amp; HOSPITALITY</a>
-                        <a class="m-sub-item" href="sectors.html#international-sector">INTERNATIONAL, NRI &amp; CROSS-BORDER</a>
-                    </div>
-                </div>
-
-                <a href="lawfirm-blog.html" class="m-link">Blog</a>
-                <a href="index.html#contact" class="m-link">Contact</a>
-
-                <div class="mt-4">
-                    <a href="./booking.html" class="btn btn-gold w-100 py-3 text-center">Book Consultation</a>
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-menu" id="closeMenu">✕</button>
+        <div class="mt-3">
+            <a href="index.html" class="m-link">Home</a>
+            <div class="m-dropdown">
+                <a class="m-link m-trigger" href="nri-services.html">NRI Services <i class="fa fa-chevron-down ms-2"></i></a>
+                <div class="m-submenu">
+                    <a class="m-sub-item" href="nri-property-disputes.html">Property Dispute</a>
+                    <a class="m-sub-item" href="nri-power-of-attorney.html">Power of Attorney</a>
+                    <a class="m-sub-item" href="nri-criminal-case.html">Criminal Case</a>
+                    <a class="m-sub-item" href="nri-family-matrimonial.html">Family &amp; Matrimonial</a>
                 </div>
             </div>
+            <div class="m-dropdown">
+                <a class="m-link m-trigger" href="core-practice-areas.html">Core Practice Areas <i class="fa fa-chevron-down ms-2"></i></a>
+                <div class="m-submenu">
+                    <a class="m-sub-item" href="family-law.html">FAMILY, SUCCESSION &amp; PRIVATE CLIENT</a>
+                    <a class="m-sub-item" href="intellectual-property.html">INTELLECTUAL PROPERTY &amp; INNOVATION</a>
+                    <a class="m-sub-item" href="employment-law.html">LABOUR, EMPLOYMENT &amp; INDUSTRIAL</a>
+                    <a class="m-sub-item" href="white-collar-crime.html">WHITE COLLAR CRIMES &amp; INVESTIGATIONS</a>
+                    <a class="m-sub-item" href="property-law.html">DOCUMENTATION &amp; DUE DILIGENCE</a>
+                    <a class="m-sub-item" href="cyber-law.html">CYBER LAW &amp; DIGITAL EVIDENCE</a>
+                    <a class="m-sub-item" href="litigation-dispute-resolution.html">LITIGATION &amp; DISPUTE RESOLUTION</a>
+                </div>
+            </div>
+            <div class="m-dropdown">
+                <a class="m-link m-trigger" href="sectors.html">Sectors <i class="fa fa-chevron-down ms-2"></i></a>
+                <div class="m-submenu">
+                    <a class="m-sub-item" href="sectors.html#agri-sector">AGRICULTURE &amp; AGRI-BUSINESS</a>
+                    <a class="m-sub-item" href="sectors.html#finance-sector">BANKING, FINANCE &amp; FINTECH</a>
+                    <a class="m-sub-item" href="sectors.html#realestate-sector">REAL ESTATE &amp; CONSTRUCTION</a>
+                    <a class="m-sub-item" href="sectors.html#healthcare-sector">HEALTHCARE &amp; EDUCATION</a>
+                    <a class="m-sub-item" href="sectors.html#logistics-sector">TRANSPORTATION &amp; LOGISTICS</a>
+                    <a class="m-sub-item" href="sectors.html#international-sector">INTERNATIONAL &amp; CROSS-BORDER</a>
+                </div>
+            </div>
+            <a href="lawfirm-blog.html" class="m-link">Blog</a>
+            <a href="index.html#contact" class="m-link">Contact</a>
+            <div class="mt-4">
+                <a href="./booking.html" class="btn btn-gold w-100 py-3 text-center">Book Consultation</a>
+            </div>
         </div>
-<br>
+    </div>
+
     <nav aria-label="breadcrumb" class="breadcrumb-nav">
         <div class="container">
             <ol class="breadcrumb mb-0">
                 <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                <li class="breadcrumb-item"><a href="./nri-services.html">NRI Services</a></li>
-                <li class="breadcrumb-item active" aria-current="page">NRI Family & Matrimonial</li>
+                <li class="breadcrumb-item"><a href="nri-services.html">NRI Services</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Family &amp; Matrimonial</li>
             </ol>
         </div>
     </nav>
 
-    <section class="nri-hero">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-7">
-                    <span class="text-gold text-uppercase fw-bold mb-3 d-block" style="letter-spacing: 2px;">Cross-Border Family Law</span>
-                    <h1 class="display-4 fw-bold mb-4" style="font-family: 'Playfair Display';">Family or Matrimonial Dispute in India While Living Abroad?</h1>
-                    <div class="glass-card">
-                        <p class="text-gold lead mb-0">
-                            Matrimonial disputes for NRIs involve complex jurisdictional challenges and personal law nuances. RRC Law Associates provides a <strong>compassionate yet decisive</strong> legal anchor, specializing in mutual consent divorce, maintenance claims, and international child custody matters while safeguarding your rights in India.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-5 mt-5 mt-lg-0 text-center">
-                    <div class="p-5 bg-gold rounded-circle d-inline-block shadow-lg">
-                        <i class="fas fa-ring fa-5x text-gold"></i>
-                    </div>
-                </div>
-            </div>
+    <section class="article-hero text-center">
+        <div class="container px-4">
+            <span class="meta-text">Cross-Border Matrimonial Desk</span>
+            <h1 class="article-title mt-3 mb-2">NRI Family Law, Mutual Divorce &amp; Foreign Decree Recognition</h1>
+            <h2 class="article-subtitle mt-1 mb-4">Compassionate Counsel and Strategic Matrimonial Representation for Global Indians</h2>
+            <p class="lead text-muted mx-auto" style="max-width: 850px;">
+                Resolving family conflicts, managing marital separations, or securing child custody rights from overseas requires an advocate who balances deep empathy with absolute cross-border procedural mastery. RRC Law Associates provides a specialized, zero-travel legal framework for Non-Resident Indians (NRIs) worldwide. We protect your personal liberty, parental rights, and ancestral asset streams across Tamil Nadu while you remain safely abroad.
+            </p>
         </div>
     </section>
 
-    <section class="py-5 bg-light">
+    <section class="py-5" style="background-color: #ffffff;">
+    <div class="container text-center">
+        
+        <h3 class="global-service-heading mb-4">Serving clients in</h3>
+        
+        <div class="d-flex flex-wrap justify-content-center align-items-center gap-5 py-2">
+            
+            <div class="global-flag-node d-flex flex-column align-items-center">
+                <div class="flag-icon-frame mb-2 shadow-sm">
+                    <img src="https://flagcdn.com/w160/us.png" alt="USA Flag Icon">
+                </div>
+                <span class="flag-label-text">USA</span>
+            </div>
+
+            <div class="global-flag-node d-flex flex-column align-items-center">
+                <div class="flag-icon-frame mb-2 shadow-sm">
+                    <img src="https://flagcdn.com/w160/gb.png" alt="UK Flag Icon">
+                </div>
+                <span class="flag-label-text">UK</span>
+            </div>
+
+            <div class="global-flag-node d-flex flex-column align-items-center">
+                <div class="flag-icon-frame mb-2 shadow-sm">
+                    <img src="https://flagcdn.com/w160/ae.png" alt="UAE Flag Icon">
+                </div>
+                <span class="flag-label-text">UAE</span>
+            </div>
+
+            <div class="global-flag-node d-flex flex-column align-items-center">
+                <div class="flag-icon-frame mb-2 shadow-sm" style="border: 1px solid rgba(0, 0, 0, 0.05);">
+                    <img src="https://flagcdn.com/w160/sg.png" alt="Singapore Flag Icon">
+                </div>
+                <span class="flag-label-text">Singapore</span>
+            </div>
+
+            <div class="global-flag-node d-flex flex-column align-items-center">
+                <div class="flag-icon-frame mb-2 shadow-sm">
+                    <img src="https://flagcdn.com/w160/my.png" alt="Malaysia Flag Icon">
+                </div>
+                <span class="flag-label-text">Malaysia</span>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+    <section class="py-5 bg-white border-bottom" style="border-color: rgba(60, 56, 25, 0.05) !important;">
         <div class="container text-center">
-            <h2 class="mb-5" style="font-family: 'Playfair Display'; font-weight: bold;">Serving clients in</h2>
-            <div class="row g-4 justify-content-center">
-                <div class="col-6 col-md-2">
-                    <div class="location-box loc-usa p-4"></div>
-                    <div class="location-content mt-2"><h5>USA</h5></div>
-                </div>
-                <div class="col-6 col-md-2">
-                    <div class="location-box loc-uk p-4"></div>
-                    <div class="location-content mt-2"><h5>UK</h5></div>
-                </div>
-                <div class="col-6 col-md-2">
-                    <div class="location-box loc-uae p-4"></div>
-                    <div class="location-content mt-2"><h5>UAE</h5></div>
-                </div>
-                <div class="col-6 col-md-2">
-                    <div class="location-box loc-sg p-4"></div>
-                    <div class="location-content mt-2"><h5>Singapore</h5></div>
-                </div>
-                <div class="col-6 col-md-2">
-                    <div class="location-box loc-my p-4"></div>
-                    <div class="location-content mt-2"><h5>Malaysia</h5></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="remote-family-help" class="py-5" style="background-color: var(--cream);">
-    <div class="container">
-        <div class="text-center mb-5 reveal">
-            <span class="eyebrow">Compassionate Remote Advocacy</span>
-            <h2 class="section-title" style="color: #3c3819;">How We Help Remotely</h2>
-            <p class="text-muted mx-auto" style="max-width: 750px;">Matrimonial and family disputes involving NRIs require a delicate balance of emotional empathy and aggressive legal strategy. We manage the complexities of Indian family law while you maintain your life abroad.</p>
-        </div>
-
-        <div class="row g-4">
-            <div class="col-md-4 reveal d1">
-                <div class="service-card p-4 h-100 border-0 shadow-sm rounded-4 bg-white transition-hover">
-                    <div class="icon-box mb-3 text-gold">
-                        <i class="fas fa-handshake fa-2x"></i>
-                    </div>
-                    <h5 class="fw-bold">Confidential Consultation</h5>
-                    <p class="small text-muted mb-0">Private strategy sessions scheduled at your convenience to discuss sensitive matrimonial or custodial matters under strict legal privilege.</p>
-                </div>
-            </div>
-
-            <div class="col-md-4 reveal d2">
-                <div class="service-card p-4 h-100 border-0 shadow-sm rounded-4 bg-white transition-hover">
-                    <div class="icon-box mb-3 text-gold">
-                        <i class="fas fa-file-contract fa-2x"></i>
-                    </div>
-                    <h5 class="fw-bold">Document Review</h5>
-                    <p class="small text-muted mb-0">Comprehensive digital audit of marriage certificates, foreign court orders, and financial disclosures to build a robust legal standing.</p>
-                </div>
-            </div>
-
-            <div class="col-md-4 reveal d3">
-                <div class="service-card p-4 h-100 border-0 shadow-sm rounded-4 bg-white transition-hover">
-                    <div class="icon-box mb-3 text-gold">
-                        <i class="fas fa-balance-scale fa-2x"></i>
-                    </div>
-                    <h5 class="fw-bold">Jurisdiction Assessment</h5>
-                    <p class="small text-muted mb-0">Expert analysis to determine the appropriate forum for filing, preventing "forum shopping" and protecting you against conflicting international orders.</p>
-                </div>
-            </div>
-
-            <div class="col-md-4 reveal d1">
-                <div class="service-card p-4 h-100 border-0 shadow-sm rounded-4 bg-white transition-hover">
-                    <div class="icon-box mb-3 text-gold">
-                        <i class="fas fa-chess-knight fa-2x"></i>
-                    </div>
-                    <h5 class="fw-bold">Filing / Response Planning</h5>
-                    <p class="small text-muted mb-0">Strategic planning for divorce petitions, child custody responses, or maintenance claims, including remote representation through a Power of Attorney.</p>
-                </div>
-            </div>
-
-            <div class="col-md-4 reveal d2">
-                <div class="service-card p-4 h-100 border-0 shadow-sm rounded-4 bg-white transition-hover">
-                    <div class="icon-box mb-3 text-gold">
-                        <i class="fas fa-bell fa-2x"></i>
-                    </div>
-                    <h5 class="fw-bold">Ongoing Updates</h5>
-                    <p class="small text-muted mb-0">Regular, transparent reporting on court dates, mediation progress, and procedural milestones in India, delivered directly to your inbox or WhatsApp.</p>
-                </div>
-            </div>
+            <h2 class="font-family-serif fw-bold mb-4" style="font-family: 'Playfair Display', serif; font-size: 2rem;">Our Specialized NRI Matrimonial &amp; Family Operations</h2>
+            <div class="mx-auto mb-5" style="width: 50px; height: 3px; background-color: #c9a24d; border-radius: 2px;"></div>
             
-            <div class="col-md-4 reveal d3">
-                <div class="service-card p-4 h-100 border-gold border-2 bg-dark text-white rounded-4 shadow d-flex flex-column justify-content-center align-items-center text-center">
-                    <h5 class="fw-bold text-gold">Seek Professional Advice</h5>
-                    <p class="small opacity-75 mb-3">Family matters are deeply personal. Let us handle the legal burden for you.</p>
-                    <a href="./booking.html" class="btn btn-gold btn-sm w-100">Schedule a Strategy Call</a>
+            <div class="d-flex flex-wrap justify-content-center gap-4">
+                <div class="practice-service-card d-flex flex-column align-items-center">
+                    <div class="card-icon-wrapper"><i class="fas fa-certificate"></i></div>
+                    <h4 class="card-service-title">Recognition &amp; Validation of Foreign Court Divorce Decrees (Section 13 CPC)</h4>
+                    <p class="card-service-text">Reviewing international judgments and filing declaration suits before family courts to ensure domestic marital updates are binding.</p>
                 </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-    <section class="py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 mx-auto text-center">
-                    <h2 class="section-title mb-4">Specialized NRI Matrimonial Desk</h2>
-                    <p>We guide NRIs through sensitive family disputes with strategic advice, confidentiality, and effective representation in India.</p>
-                    <ul class="list-group list-group-flush mb-5 text-start">
-                        <li class="list-group-item bg-transparent border-0"><i class="fas fa-balance-scale text-gold me-2"></i> <strong>Mutual Consent Divorce:</strong> Remote processing for NRIs to avoid frequent travel to India.</li>
-                        <li class="list-group-item bg-transparent border-0"><i class="fas fa-child text-gold me-2"></i> <strong>Child Custody & Visitation:</strong> Handling international relocation and jurisdictional issues.</li>
-                        <li class="list-group-item bg-transparent border-0"><i class="fas fa-hand-holding-heart text-gold me-2"></i> <strong>Spousal Maintenance:</strong> Securing financial rights and alimony under Indian personal laws.</li>
-                        <li class="list-group-item bg-transparent border-0"><i class="fas fa-gavel text-gold me-2"></i> <strong>Foreign Decree Execution:</strong> Legal representation for foreign divorce decree matters.</li>
-                    </ul>
-                    <div class="p-5 bg-dark text-white rounded-4 text-center">
-                        <h3>Secure Your Peace of Mind</h3>
-                        <p class="opacity-75">Speak to our family law specialists about your cross-border matrimonial concerns.</p>
-                        <a href="./booking.html" target="_blank" class="btn btn-gold btn-lg mt-3">Book Consultation</a>
-                        <a href="https://wa.me/919751182452?text=Hello RRC Law Associates, I am an NRI looking for legal assistance in family matrimonial matters." target="_blank" class="btn btn-gold btn-lg mt-3">Chat on WhatsApp</a>
-                    </div>
+                <div class="practice-service-card d-flex flex-column align-items-center">
+                    <div class="card-icon-wrapper"><i class="fas fa-video"></i></div>
+                    <h4 class="card-service-title">Streamlined NRI Mutual Consent Divorce &amp; Remote Video Testimony</h4>
+                    <p class="card-service-text">Coordinating restricted legal authorization workflows and secure remote counseling sessions without overseas disruptions.</p>
+                </div>
+                <div class="practice-service-card d-flex flex-column align-items-center">
+                    <div class="card-icon-wrapper"><i class="fas fa-child"></i></div>
+                    <h4 class="card-service-title">Cross-Border Child Custody, Legal Guardianship &amp; CARA Adoptions</h4>
+                    <p class="card-service-text">Protecting parent-child bonds under explicit GAWA applications and cross-border alignment strategies prioritized around child welfare.</p>
+                </div>
+                <div class="practice-service-card d-flex flex-column align-items-center">
+                    <div class="card-icon-wrapper"><i class="fas fa-shield-alt"></i></div>
+                    <h4 class="card-service-title">Defense Against Malicious Matrimonial Litigation &amp; 498A FIR Quashing</h4>
+                    <p class="card-service-text">Deploying aggressive counter-litigation protections including High Court quashings and emergency anticipatory bail actions.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="family-faqs" class="py-5 bg-white">
-    <div class="container">
-        <div class="text-center mb-5 reveal">
-            <span class="eyebrow">Legal Clarity</span>
-            <h2 class="section-title" style="color: #3c3819;">Frequently Asked Questions</h2>
-        </div>
+    <div class="container my-5">
+        <div class="row g-5">
+            
+            <div class="col-lg-8 content-body text-start">
+                
+                <div class="litigation-row-card mb-4">
+                    <div class="row align-items-center g-4">
+                        <div class="col-md-4">
+                            <div class="visual-token-box">
+                                <img src="assets/images/Foreign Divorce.png" class="w-100 h-100 object-fit-cover" alt="Validating foreign court divorce decrees under Section 13 CPC before Indian family courts">
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <h3>Validation of Foreign Divorce Decrees (Section 13 CPC)</h3>
+                            <p class="pub-description">
+                                A divorce decree obtained from a foreign court—whether in Singapore, Malaysia, the UK, the USA, or the Gulf—is not automatically binding under Indian family jurisprudence. If the decree is ex-parte or violates the principles of natural justice outlined under Section 13 of the Civil Procedure Code (CPC), it can be declared void in India, exposing you to charges of bigamy or property division hurdles. Our cross-border family desk systematically reviews international judgments, verifies jurisdictional parameters, and files formal recognition suits before domestic family courts to ensure your single status is legally airtight in India.
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-        <div class="row justify-content-center">
-            <div class="col-lg-9">
-                <div class="accordion accordion-flush custom-accordion shadow-sm rounded-4 border p-4" id="familyFaqAccordion">
+                <div class="litigation-row-card mb-4">
+                    <div class="row align-items-center g-4">
+                        <div class="col-md-4 order-md-1">
+                            <div class="visual-token-box">
+                                <img src="assets/images/Zero-Travel.png" class="w-100 h-100 object-fit-cover" alt="Processing mutual consent divorce for NRI clients using remote video conferencing">
+                            </div>
+                        </div>
+                        <div class="col-md-8 order-md-2">
+                            <h3>Zero-Travel NRI Mutual Consent Divorce Frameworks</h3>
+                            <p class="pub-description">
+                                Dissolving a marital union does not have to disrupt your international career or require expensive, recurring travel to India. Under modern family court guidelines, Non-Resident Indians can initiate Mutual Consent Divorce proceedings through a registered, restricted Power of Attorney. Our trial advocates coordinate your application framework, compile statutory settlement agreements regarding asset divisions or alimony, and secure formal permissions to conduct mandatory counseling and final court statements securely via High-Definition Video Conferencing panels.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="litigation-row-card mb-4">
+                    <div class="row align-items-center g-4">
+                        <div class="col-md-4">
+                            <div class="visual-token-box">
+                                <img src="assets/images/Cross-Border Child Custody.png" class="w-100 h-100 object-fit-cover" alt="Cross border child custody legal defense and international parental guardianship applications">
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <h3>Cross-Border Child Custody and International Parental Abduction</h3>
+                            <p class="pub-description">
+                                Child custody deadlocks cross into complex legal territory when parents reside in different sovereign nations. Indian courts heavily prioritize the 'welfare of the minor child' over foreign structural arrangements. Whether you are seeking to enforce localized visitation rights, establish lawful guardianship under the Guardians and Wards Act (GAWA), or defending against international parental child removal allegations, our trial team builds protective litigation strategies that defend parental bonds before family courts in Thanjavur, Kumbakonam, and the Madras High Court.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="litigation-row-card mb-4">
+                    <div class="row align-items-center g-4">
+                        <div class="col-md-4 order-md-1">
+                            <div class="visual-token-box">
+                                <img src="assets/images/Defensive.png" class="w-100 h-100 object-fit-cover" alt="Filing high court petitions to quash false 498A dowry harassment cases against NRIs">
+                            </div>
+                        </div>
+                        <div class="col-md-8 order-md-2">
+                            <h3>Defensive Representation Against Malicious 498A Dowry Allegations</h3>
+                            <p class="pub-description">
+                                NRIs are frequently targeted with vexatious criminal complaints under Section 498A of the IPC (now corresponding provisions under the unified criminal code), malicious dowry harassment claims, and excessive maintenance demands aimed at forcing unfair financial settlements. If you or your overseas family members are facing a frivolous FIR, acting swiftly is vital. We deploy a multi-layered criminal defense strategy: managing emergency anticipatory bail applications to shield you from airport immigration arrests, and executing aggressive High Court Quashing Petitions to strike down groundless prosecutions completely.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-lg-4 text-start">
+                <div class="sticky-sidebar">
+                    <h5 class="fw-bold mb-3 text-gold" style="font-family: 'Playfair Display';">Matrimonial Strategy Desk</h5>
+                    <p class="small text-muted">Protect your liberty, family bonds, and international career status by initiating a secure, privileged case audit with our specialized counsel desk.</p>
+                    <hr>
                     
-                    <div class="accordion-item border-bottom">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#ff1">
-                                Can I file for divorce in India if I live abroad?
-                            </button>
-                        </h2>
-                        <div id="ff1" class="accordion-collapse collapse" data-bs-parent="#familyFaqAccordion">
-                            <div class="accordion-body text-muted">
-                                Yes. If your marriage was solemnized in India or you last resided as a couple in India, you can file through a Power of Attorney (POA). Most family courts now allow appearances via video conferencing for initial stages and mutual consent petitions.
-                            </div>
-                        </div>
-                    </div>
+                    <a href="./booking.html" class="btn btn-gold py-2.5 mb-3 fw-bold text-uppercase small">Schedule a Secure Remote Family Law Consultation</a>
+                    
+                    <p class="text-muted mb-4" style="font-size: 0.82rem; line-height: 1.5; background-color: #fcfbfa; padding: 12px; border-radius: 6px; border: 1px solid rgba(0,0,0,0.03);">
+                        <i class="fas fa-lock text-gold me-1"></i> **Privacy Guarantee:** Virtual video-conference consultations and secure international document routing available directly with our senior matrimonial advocates. All case details are kept strictly confidential under attorney-client privilege.
+                    </p>
 
-                    <div class="accordion-item border-bottom">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#ff2">
-                                Do I need to travel to India for mediation?
-                            </button>
-                        </h2>
-                        <div id="ff2" class="accordion-collapse collapse" data-bs-parent="#familyFaqAccordion">
-                            <div class="accordion-body text-muted">
-                                Not necessarily. We actively move applications to conduct mediation sessions via online platforms. Our Senior Partners represent your interests during these sessions to ensure a fair negotiation without requiring your physical presence.
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="accordion-item border-bottom">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#ff3">
-                                How is child custody handled for NRI parents?
-                            </button>
-                        </h2>
-                        <div id="ff3" class="accordion-collapse collapse" data-bs-parent="#familyFaqAccordion">
-                            <div class="accordion-body text-muted">
-                                Indian courts prioritize the "best interest of the child." We help you navigate the complexities of the Guardian and Wards Act, including managing visitation rights and ensuring foreign court orders are recognized or contested effectively in India.
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="accordion-item border-bottom">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#ff4">
-                                What if my spouse files a case in India while I am abroad?
-                            </button>
-                        </h2>
-                        <div id="ff4" class="accordion-collapse collapse" data-bs-parent="#familyFaqAccordion">
-                            <div class="accordion-body text-muted">
-                                If you receive a notice or summons, it is critical to respond through a lawyer immediately. We can represent you to challenge the jurisdiction, file a counter-response, or seek a stay on proceedings if a similar case is already active in your country of residence.
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="accordion-item border-bottom">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#ff5">
-                                Is a foreign divorce decree valid in India?
-                            </button>
-                        </h2>
-                        <div id="ff5" class="accordion-collapse collapse" data-bs-parent="#familyFaqAccordion">
-                            <div class="accordion-body text-muted">
-                                A foreign decree is valid only if it meets specific conditions under Section 13 of the Civil Procedure Code (CPC). If the decree was granted ex-parte or on grounds not recognized in India, it may need to be "confirmed" or "contested" in an Indian court.
-                            </div>
-                        </div>
-                    </div>
-
+                    <a href="https://wa.me/919751182452?text=Hello%20RRC%20Law%20Associates,%20I%20am%20an%20NRI%20seeking%20discreet%20legal%20assistance%20regarding%20a%20matrimonial,%20foreign%20divorce,%20or%20family%20matter%20in%20Tamil%20Nadu." class="whatsapp-float-btn" target="_blank">
+                        <i class="fab fa-whatsapp fs-5"></i>
+                        <span>Secure Consultation Chat</span>
+                    </a>
                 </div>
             </div>
+
+        </div>
+    </div>
+
+        <section class="py-5" style="background-color: #ffffff;">
+    <div class="container" style="max-width: 850px;">
+        
+        <div class="text-center mb-5">
+            <span class="faq-eyebrow">Support &amp; Guidance</span>
+            <h2 class="faq-title mt-2">Frequently Asked Questions</h2>
+            <div class="faq-title-line"></div>
+        </div>
+
+        <div class="accordion custom-faq-accordion" id="nriMatrimonialFaq">
+            
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="nriFaqHeadingOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#nriFaqCollapseOne" aria-expanded="false" aria-controls="nriFaqCollapseOne">
+                        1. Is a divorce decree granted by a foreign court automatically valid in India?
+                    </button>
+                </h2>
+                <div id="nriFaqCollapseOne" class="accordion-collapse collapse" aria-labelledby="nriFaqHeadingOne" data-bs-parent="#nriMatrimonialFaq">
+                    <div class="accordion-body">
+                        No, an international divorce decree is not automatically recognized in India. If the judgment was passed ex-parte (in the absence of one spouse) or failed to follow the principles of natural justice, it must be evaluated and formally validated under <strong>Section 13 of the Civil Procedure Code (CPC)</strong> through a recognition suit filed before a competent Indian family court.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="nriFaqHeadingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#nriFaqCollapseTwo" aria-expanded="false" aria-controls="nriFaqCollapseTwo">
+                        2. Can an NRI couple file for mutual consent divorce without traveling to India?
+                    </button>
+                </h2>
+                <div id="nriFaqCollapseTwo" class="accordion-collapse collapse" aria-labelledby="nriFaqHeadingTwo" data-bs-parent="#nriMatrimonialFaq">
+                    <div class="accordion-body">
+                        Yes. By executing a restricted, specific Power of Attorney (POA) adjudicated in India, your legal counsel can initiate the proceedings. Under current family court guidelines, mandatory counseling sessions and final statements can be securely recorded via <strong>High-Definition Video Conferencing panels</strong>, eliminating the requirement for international travel.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="nriFaqHeadingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#nriFaqCollapseThree" aria-expanded="false" aria-controls="nriFaqCollapseThree">
+                        3. How do Indian courts determine child custody in cross-border disputes?
+                    </button>
+                </h2>
+                <div id="nriFaqCollapseThree" class="accordion-collapse collapse" aria-labelledby="nriFaqHeadingThree" data-bs-parent="#nriMatrimonialFaq">
+                    <div class="accordion-body">
+                        Regardless of foreign custody arrangements, Indian courts under the <strong>Guardians and Wards Act (GAWA)</strong> place supreme emphasis on the "welfare of the minor child." Courts will evaluate the child's familiar environment, financial security, and personal preferences rather than strictly following overseas structural decrees.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="nriFaqHeadingFour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#nriFaqCollapseFour" aria-expanded="false" aria-controls="nriFaqCollapseFour">
+                        4. What defense options exist if false 498A allegations are filed against an NRI?
+                    </button>
+                </h2>
+                <div id="nriFaqCollapseFour" class="accordion-collapse collapse" aria-labelledby="nriFaqHeadingFour" data-bs-parent="#nriMatrimonialFaq">
+                    <div class="accordion-body">
+                        If targeted by a vexatious or false dowry harassment complaint, immediate protective steps include filing for <strong>Anticipatory Bail</strong> to prevent immigration airport arrests. Concurrently, an aggressive <strong>Quashing Petition under Section 482 of the CrPC</strong> (or corresponding BNSS provisions) can be moved before the High Court to dismantle groundless prosecutions completely.
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
-
-    <nav aria-label="Page navigation" class="py-5">
-        <ul class="pagination justify-content-center custom-pagination">
-            <li class="page-item">
-                <a class="page-link" href="./nri-criminal-case.html">
-                    <i class="fas fa-chevron-left me-1"></i> Prev
-                </a>
-            </li>
-            
-            <li class="page-item" aria-current="page">
-                <a class="page-link" href="./nri-property-disputes.html">1</a>
-            </li>
-            <li class="page-item">
-                <a class="page-link" href="./nri-power-of-attorney.html">2</a>
-            </li>
-            <li class="page-item">
-                <a class="page-link" href="./nri-criminal-case.html">3</a>
-            </li>
-            <li class="page-item active">
-                <a class="page-link" href="./nri-family-matrimonial.html">4</a>
-            </li>
-            <li class="page-item disabled">
-                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
-                    Next <i class="fas fa-chevron-right ms-1"></i>
-                </a>
-            </li>
-        </ul>
-    </nav>
 
     <footer class="footer">
-            <div class="footer-contain">
+        <div class="footer-contain">
 
-                <div class="footer-grid">
+            <div class="footer-grid">
 
-                    <!-- Brand -->
-                    <div class="footer-brand">
-                        <div class="logo-icon">
-                            <a href="index.html" title="Home">
-                                <img src="assets/images/logo.png" alt="Law Firm Logo" class="logo-img">
+                <!-- Brand -->
+                <div class="footer-brand">
+                    <div class="logo-icon">
+                        <a href="index.html" title="Home">
+                            <img src="assets/images/logo.png" alt="Law Firm Logo" class="logo-img">
 
-                                <div class="logo-text">
-                                    <strong>RRC</strong>
-                                    <strong>Law Associates</strong>
-                                </div>
-                            </a>
-                        </div>
-
-                        <p>
-                            Providing trusted legal solutions with integrity since 2008. Your reliable
-                            partner for all legal matters in Tamil Nadu.
-                        </p>
-
-                        <div class="social"></div>
+                            <div>
+                                <strong>RRC</strong>
+                                <strong>Law Associates</strong>
+                            </div>
+                        </a>
                     </div>
 
-                    <!-- Practice Areas -->
-                    <div>
-                        <h4>Practice Areas</h4>
-                        <ul>
+                    <p>
+                        Providing trusted legal solutions with integrity since 2008. Your reliable
+                        partner for all legal matters in Tamil Nadu.
+                    </p>
+
+                    <div class="social"></div>
+                </div>
+
+                <!-- Practice Areas -->
+                <div>
+                    <h4>Practice Areas</h4>
+                    <ul>
                         <li>
                             <a href="family-law.html">Family Law</a>
                         </li>
@@ -1402,264 +650,107 @@
                             <a href="litigation-dispute-resolution.html">Litigation Dispute</a>
                         </li>
                     </ul>
-                    </div>
-
-                    <!-- Quick Links -->
-                    <div>
-                        <h4>Quick Links</h4>
-                        <ul>
-                            <li>
-                                <a href="index.html">Home</a>
-                            </li>
-                            <li>
-                                <a href="nri-services.html">NRI Services</a>
-                            </li>
-                            <li>
-                                <a href="core-practice-areas.html">Practice Areas</a>
-                            </li>
-                            <li>
-                                <a href="sectors.html">Sectors</a>
-                            </li>
-                            <li>
-                                <a href="lawfirm-blog.html">Blog</a>
-                            </li>
-                            <li>
-                                <a href="#contact">Contact</a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- Contact -->
-                    <div>
-                        <h4>Contact Us</h4>
-                        <ul class="contact">
-                            <li>
-                                <span style="color: #c9a24d;">Address</span>
-                                <br>
-                                No 82/6B, Deen Complex,Mary's Corner, Parisutham Nagar,<br>
-                                Thanjavur, Tamil Nadu-613001
-                            </li>
-                            <li>
-                                <span style="color: #c9a24d;">Phone</span>
-                                <br>
-                                <a href="tel:+919751182452">+91 97511 82452</a>
-                            </li>
-                            <li>
-                                <span style="color: #c9a24d;">Email</span>
-                                <br>
-                                <a href="mailto:
-dr.kumar@rrclawassociates.com">
-                                    dr.kumar@rrclawassociates.com
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-
                 </div>
 
-                <!-- Bottom -->
-                <div class="footer-bottom">
-                    <p>©
-                        <span id="year">2026</span>
-                        Branzyne. All rights reserved.</p>
-                    <div class="legal">
-                        <a href="#">Privacy Policy</a>
-                        <a href="#">Terms</a>
-                        <a href="#">Disclaimer</a>
-                    </div>
+                <!-- Quick Links -->
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="nri-services.html">NRI Services</a>
+                        </li>
+                        <li>
+                            <a href="core-practice-areas.html">Practice Areas</a>
+                        </li>
+                        <li>
+                            <a href="sectors.html">Sectors</a>
+                        </li>
+                        <li>
+                            <a href="lawfirm-blog.html">Blog</a>
+                        </li>
+                        <li>
+                            <a href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4>Contact Us</h4>
+                    <ul class="contact">
+                        <li>
+                            <span>Address</span>
+                            <a>
+                                No 82/6B, Deen Complex,Mary's Corner, Parisutham Nagar, Thanjavur, Tamil Nadu-613001
+                            </a>
+                        </li>
+                        <li>
+                            <span>Phone</span>
+                            <a href="tel:+919751182452">+91 97511 82452</a>
+                        </li>
+                        <li>
+                            <span>Email</span>
+                            <a href="mailto:
+dr.kumar@rrclawassociates.com">
+                                dr.kumar@rrclawassociates.com
+                            </a>
+                        </li>
+                    </ul>
                 </div>
 
             </div>
+
+            <!-- Bottom -->
+            <div class="footer-bottom">
+                <p>©
+                    <span id="year">2026</span>
+                    Branzyne. All rights reserved.</p>
+                <div class="legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Disclaimer</a>
+                </div>
+            </div>
+
+        </div>
         </footer>
-     <a
-        href="https://wa.me/919751182452?text=Hello RRC Law Associates, I am an NRI looking for legal assistance regarding..."
-        class="whatsapp-float"
-        target="_blank">
-        <i class="fab fa-whatsapp"></i>
-        <span class="float-text">Chat with us</span>
-    </a>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="./script.js"></script>
-    <script src="./script2.js"></script>
-    <script>
-        const menuToggle = document.getElementById('menuToggle');
-        const mobileMenu = document.getElementById('mobileMenu');
-        menuToggle.addEventListener('click', () => {
-            mobileMenu.classList.add('open');
-        });
-        document.getElementById('closeMenu').addEventListener('click', () => {
-            mobileMenu.classList.remove('open');
-        });
-    </script>
-    <script>
-    document.addEventListener('DOMContentLoaded', function () {
-    const menuToggle = document.getElementById('menuToggle');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const closeMenu = document.getElementById('closeMenu');
-
-    // 1. Open/Close Mobile Sidebar
-    if (menuToggle) {
-        menuToggle.addEventListener('click', () => {
-            mobileMenu.classList.add('open');
-        });
-    }
-    if (closeMenu) {
-        closeMenu.addEventListener('click', () => {
-            mobileMenu.classList.remove('open');
-        });
-    }
-
-    // 2. Custom Mobile Dropdown Logic
-    const trigger = document.querySelector('.m-trigger');
-    const submenu = document.getElementById('mPracticeMenu');
-
-    if (trigger) {
-        trigger.addEventListener('click', function(e) {
-            if (!submenu.classList.contains('active')) {
-                e.preventDefault(); // Stop navigation on first click
-                submenu.classList.add('active');
-                this.querySelector('i').style.transform = 'rotate(180deg)';
-            }
-            // If already active, the link (core-practice-areas.html) will naturally follow.
-        });
-    }
-
-    // 3. FORCE NAVIGATION for all mobile links
-    const mobileLinks = document.querySelectorAll('.m-link, .m-sub-item');
-    mobileLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            const url = this.getAttribute('href');
-            // If it's a normal link (Home, Blog, Contact) and NOT the Practice Areas trigger
-            if (url && url !== '#' && !this.classList.contains('m-trigger')) {
-                window.location.href = url;
-            }
-        });
-    });
-    
-    // 4. Desktop Navigation (Clicking parent link)
-    const practiceDropdown = document.getElementById('practiceDropdown');
-    if (practiceDropdown) {
-        practiceDropdown.addEventListener('click', function() {
-            if (window.innerWidth > 992) {
-                window.location.href = this.getAttribute('href');
-            }
-        });
-    }
-});
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-        // 1. Mobile Menu Sidebar Toggle
-        const menuToggle = document.getElementById('menuToggle');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const closeMenu = document.getElementById('closeMenu');
-
-        if (menuToggle && mobileMenu) {
-            menuToggle.addEventListener('click', (e) => {
-                e.preventDefault();
-                mobileMenu.classList.add('open');
-            });
-        }
-
-        if (closeMenu) {
-            closeMenu.addEventListener('click', () => {
-                mobileMenu.classList.remove('open');
-            });
-        }
-
-        // 2. THE ULTIMATE LINK FIX
-        // Select all nav links that have an actual destination
-        const allLinks = document.querySelectorAll('.nav-link-custom, .mobile-link');
-        
-        allLinks.forEach(link => {
-            link.addEventListener('click', function (e) {
-                const destination = this.getAttribute('href');
-                
-                // If it's a real URL (not just #) and not a mobile dropdown toggle
-                if (destination && destination !== '#' && !this.classList.contains('dropdown-toggle')) {
-                    window.location.href = destination;
-                } 
-                // If it's the Practice Areas link on Desktop, force navigation
-                else if (this.id === 'practiceDropdown' && window.innerWidth > 992) {
-                    window.location.href = destination;
-                }
-            });
-        });
-    });
-    </script>
-    <script>
-                document.addEventListener('DOMContentLoaded', function() {
-        // Force direct navigation for desktop links
-        if (window.innerWidth > 992) {
-            const links = document.querySelectorAll('.nav-link-custom');
-            links.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    const href = this.getAttribute('href');
-                    if (href && href !== '#' && !this.classList.contains('dropdown-toggle')) {
-                        window.location.href = href;
-                    }
-                });
-            });
-
-            // Special case for Practice Areas clickable parent
-            const practiceBtn = document.getElementById('practiceDropdown');
-            if (practiceBtn) {
-                practiceBtn.addEventListener('click', function() {
-                    window.location.href = "core-practice-areas.html";
-                });
-            }
-        }
-    });
-    </script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const menuToggle = document.getElementById('menuToggle');
-            const closeMenu = document.getElementById('closeMenu');
             const mobileMenu = document.getElementById('mobileMenu');
+            const closeMenu = document.getElementById('closeMenu');
 
-            // Open Mobile Menu
-            if (menuToggle) {
-                menuToggle.addEventListener('click', () => {
-                    mobileMenu
-                        .classList
-                        .add('open');
-                });
-            }
+            if (menuToggle) menuToggle.addEventListener('click', () => mobileMenu.classList.add('open'));
+            if (closeMenu) closeMenu.addEventListener('click', () => mobileMenu.classList.remove('open'));
 
-            // Close Mobile Menu (X button)
-            if (closeMenu) {
-                closeMenu.addEventListener('click', () => {
-                    mobileMenu
-                        .classList
-                        .remove('open');
-                });
-            }
-
-            // Close Menu on Background Click
-            document.addEventListener('click', (e) => {
-                if (mobileMenu.classList.contains('open')) {
-                    if (!mobileMenu.contains(e.target) && !menuToggle.contains(e.target)) {
-                        mobileMenu
-                            .classList
-                            .remove('open');
+            // Mobile Dropdown Navigation Submenu Clamping
+            const triggers = document.querySelectorAll('.m-trigger');
+            triggers.forEach(trigger => {
+                trigger.addEventListener('click', function(e) {
+                    const submenu = this.nextElementSibling;
+                    if (!submenu.classList.contains('active')) {
+                        e.preventDefault();
+                        document.querySelectorAll('.m-submenu').forEach(m => m.classList.remove('active'));
+                        submenu.classList.add('active');
                     }
-                }
+                });
             });
-        });
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-        // Select the Practice Areas link
-        const practiceLink = document.querySelector('.dropdown-toggle[href="core-practice-areas.html"]');
 
-        if (practiceLink && window.innerWidth > 992) {
-            practiceLink.addEventListener('click', function(e) {
-                // Redirect to the page immediately on click
-                window.location.href = this.getAttribute('href');
-            });
-        }
-    });
+            // Desktop Parent Dropdown Anchor Navigation Force
+            if (window.innerWidth > 992) {
+                document.querySelectorAll('.nav-link-custom.dropdown-toggle').forEach(link => {
+                    link.addEventListener('click', function() {
+                        window.location.href = this.getAttribute('href');
+                    });
+                });
+            }
+        });
     </script>
 </body>
 </html>
