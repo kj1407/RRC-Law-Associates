@@ -315,6 +315,57 @@
         .custom-faq-accordion .accordion-button { font-size: 1rem; padding: 18px 0; }
         .custom-faq-accordion .accordion-body { font-size: 0.95rem; }
     }
+
+     /* Exact Proportion Flag Image Frame */
+    .flag-icon-frame {
+        width: 160px;
+        height: 100px;
+        border-radius: 18px; /* Perfectly captures the rounded profile layout from the reference */
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: box-shadow 0.3s ease;
+    }
+
+    /* Image Scaling Rule within the Frame */
+    .flag-icon-frame img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Guarantees square crop consistency without squishing shapes */
+    }
+
+    /* Highlight box shadow on hover */
+    .global-flag-node:hover .flag-icon-frame {
+        box-shadow: 0 10px 25px rgba(60, 56, 25, 0.12) !important;
+    }
+
+    /* Under-Flag Text Label Styling */
+    .flag-label-text {
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+        color: #222222; /* Clean high-contrast typography font color */
+        font-size: 1rem;
+        letter-spacing: 0.2px;
+    }
+
+    /* Fluid Layout Adjustments for Smaller Breakpoints */
+    @media (max-width: 576px) {
+        .global-service-heading {
+            font-size: 1.5rem;
+        }
+        .flag-icon-frame {
+            width: 85px;
+            height: 85px;
+            border-radius: 14px;
+        }
+        .global-flag-node {
+            width: 100px;
+        }
+        .flag-label-text {
+            font-size: 0.9rem;
+        }
+    }
     </style>
 </head>
 <body>
