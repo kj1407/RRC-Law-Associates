@@ -855,3 +855,73 @@
         font-size: 1.3rem;
     }
 }
+
+/* Eyebrow and Headings Layout Typography */
+    .faq-eyebrow {
+        color: #c9a24d; /* Brand Gold Accent */
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 700;
+        font-size: 0.85rem;
+        display: block;
+    }
+    .faq-title {
+        font-family: 'Playfair Display', serif;
+        font-weight: 700;
+        color: #000000;
+        font-size: 2.25rem;
+    }
+    .faq-title-line {
+        width: 50px;
+        height: 3px;
+        background-color: #c9a24d;
+        margin: 15px auto 0;
+        border-radius: 2px;
+    }
+
+    /* Custom Geometric Minimalist Accordion Styles */
+    .custom-faq-accordion .accordion-item {
+        border: none;
+        border-bottom: 1px solid rgba(60, 56, 25, 0.12) !important;
+        background: transparent;
+        border-radius: 0px !important;
+    }
+    
+    .custom-faq-accordion .accordion-button {
+        background: transparent !important;
+        color: #3c3819; /* Brand Primary Dark Text */
+        font-weight: 600;
+        font-size: 1.1rem;
+        padding: 22px 0px;
+        box-shadow: none !important;
+        border: none;
+        text-align: left;
+        transition: color 0.25s ease;
+    }
+    
+    /* Interactive color shifts to gold when panel expands */
+    .custom-faq-accordion .accordion-button:not(.collapsed) {
+        color: #c9a24d !important;
+    }
+    
+    .custom-faq-accordion .accordion-body {
+        padding: 0px 0px 24px 0px;
+        color: #555555;
+        font-size: 1rem;
+        line-height: 1.75;
+    }
+
+    /* Chevron Rotation UI Alignment */
+    .custom-faq-accordion .accordion-button::after {
+        filter: grayscale(1) invert(0.2);
+        transition: transform 0.25s ease;
+    }
+    .custom-faq-accordion .accordion-button:not(.collapsed)::after {
+        filter: none;
+    }
+
+    @media (max-width: 768px) {
+        .faq-title { font-size: 1.85rem; }
+        .custom-faq-accordion .accordion-button { font-size: 1rem; padding: 18px 0; }
+        .custom-faq-accordion .accordion-body { font-size: 0.95rem; }
+    }
