@@ -658,6 +658,325 @@
             .m-sub-item:hover {
                 color: #c9a24d;
             }
+
+          /* Core Publication/Litigation Row Card Frame */
+    .litigation-row-card {
+        background-color: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.06);
+        border-radius: 16px; 
+        padding: 40px; 
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02); 
+        transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+    
+    .litigation-row-card:hover {
+        transform: translateY(-3px);
+        border-color: #c9a24d;
+    }
+
+    /* Headline Grid Typography */
+    .pub-headline {
+        font-family: 'Playfair Display', serif;
+        font-weight: 700;
+        color: #1a1e21;
+        font-size: 1.45rem;
+        line-height: 1.35;
+        margin-bottom: 15px;
+    }
+
+    /* Short Text Summaries */
+    .pub-description {
+        color: #555555;
+        font-size: 1rem;
+        line-height: 1.7;
+        font-weight: 400;
+        margin-bottom: 0px;
+    }
+
+    /* Visual Content Box Layout */
+    .visual-token-box {
+        border-radius: 12px;
+        height: 200px;
+        width: 100%;
+        overflow: hidden;
+        background-color: #f9f7f3;
+        border: 1px solid rgba(60, 56, 25, 0.05);
+    }
+
+    @media (max-width: 768px) {
+        .litigation-row-card {
+            padding: 30px 20px;
+        }
+        .pub-headline {
+            font-size: 1.25rem;
+        }
+        .visual-token-box {
+            height: 160px;
+        }
+    }
+
+           /* Section Main Title Heading Style */
+    .global-service-heading {
+        font-family: 'Playfair Display', serif;
+        font-weight: 700;
+        color: #3c3819; /* Signature RRC Law Associates Brand Primary Dark */
+        font-size: 1.85rem;
+        letter-spacing: 0.5px;
+    }
+
+    /* Individual Flag Unit Container Node */
+    .global-flag-node {
+        transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+        width: 130px; /* Forces exact spatial distribution symmetry */
+    }
+
+    /* Subtle animation trigger on hovering paths */
+    .global-flag-node:hover {
+        transform: translateY(-4px);
+    }
+
+    /* Exact Proportion Flag Image Frame */
+    .flag-icon-frame {
+        width: 150px;
+        height: 100px;
+        border-radius: 18px; /* Perfectly captures the rounded profile layout from the reference */
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: box-shadow 0.3s ease;
+    }
+
+    /* Image Scaling Rule within the Frame */
+    .flag-icon-frame img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Guarantees square crop consistency without squishing shapes */
+    }
+
+    /* Highlight box shadow on hover */
+    .global-flag-node:hover .flag-icon-frame {
+        box-shadow: 0 10px 25px rgba(60, 56, 25, 0.12) !important;
+    }
+
+    /* Under-Flag Text Label Styling */
+    .flag-label-text {
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+        color: #222222; /* Clean high-contrast typography font color */
+        font-size: 1rem;
+        letter-spacing: 0.2px;
+    }
+
+    /* Fluid Layout Adjustments for Smaller Breakpoints */
+    @media (max-width: 576px) {
+        .global-service-heading {
+            font-size: 1.5rem;
+        }
+        .flag-icon-frame {
+            width: 85px;
+            height: 85px;
+            border-radius: 14px;
+        }
+        .global-flag-node {
+            width: 100px;
+        }
+        .flag-label-text {
+            font-size: 0.9rem;
+        }
+    }
+
+
+/* Eyebrow and Headings Layout Typography */
+    .faq-eyebrow {
+        color: #c9a24d; /* Brand Gold Accent */
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 700;
+        font-size: 0.85rem;
+        display: block;
+    }
+    .faq-title {
+        font-family: 'Playfair Display', serif;
+        font-weight: 700;
+        color: #000000;
+        font-size: 2.25rem;
+    }
+    .faq-title-line {
+        width: 50px;
+        height: 3px;
+        background-color: #c9a24d;
+        margin: 15px auto 0;
+        border-radius: 2px;
+    }
+
+    /* Custom Geometric Minimalist Accordion Styles */
+    .custom-faq-accordion .accordion-item {
+        border: none;
+        border-bottom: 1px solid rgba(60, 56, 25, 0.12) !important;
+        background: transparent;
+        border-radius: 0px !important;
+    }
+    
+    .custom-faq-accordion .accordion-button {
+        background: transparent !important;
+        color: #3c3819; /* Brand Primary Dark Text */
+        font-weight: 600;
+        font-size: 1.1rem;
+        padding: 22px 0px;
+        box-shadow: none !important;
+        border: none;
+        text-align: left;
+        transition: color 0.25s ease;
+    }
+    
+    /* Interactive color shifts to gold when panel expands */
+    .custom-faq-accordion .accordion-button:not(.collapsed) {
+        color: #c9a24d !important;
+    }
+    
+    .custom-faq-accordion .accordion-body {
+        padding: 0px 0px 24px 0px;
+        color: #555555;
+        font-size: 1rem;
+        line-height: 1.75;
+    }
+
+    /* Chevron Rotation UI Alignment */
+    .custom-faq-accordion .accordion-button::after {
+        filter: grayscale(1) invert(0.2);
+        transition: transform 0.25s ease;
+    }
+    .custom-faq-accordion .accordion-button:not(.collapsed)::after {
+        filter: none;
+    }
+
+    @media (max-width: 768px) {
+        .faq-title { font-size: 1.85rem; }
+        .custom-faq-accordion .accordion-button { font-size: 1rem; padding: 18px 0; }
+        .custom-faq-accordion .accordion-body { font-size: 0.95rem; }
+    }
+
+
+
+/* ================================================================= */
+/* ================================================================= */
+
+/* --- LEFT SIDE: LITIGATION ROW CARDS --- */
+.litigation-row-card {
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 16px; 
+    padding: 40px; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02); 
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.litigation-row-card:hover {
+    transform: translateY(-3px);
+    border-color: #c9a24d; /* Firm Gold Brand Color */
+}
+
+.pub-headline {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: #1a1e21;
+    font-size: 1.45rem;
+    line-height: 1.35;
+    margin-bottom: 15px;
+}
+
+.pub-description {
+    color: #555555;
+    font-size: 1rem;
+    line-height: 1.7;
+    font-weight: 400;
+    margin-bottom: 0px;
+}
+
+.visual-token-box {
+    border-radius: 12px;
+    height: 220px;
+    width: 100%;
+    overflow: hidden;
+    background-color: #f9f7f3; /* Gentle Brand Cream */
+    border: 1px solid rgba(60, 56, 25, 0.05);
+}
+
+/* Framework Helper Image Class explicitly for raw grid nodes */
+.object-fit-cover {
+    object-fit: cover;
+}
+
+
+/* --- RIGHT SIDE: INTAKE STICKY SIDEBAR & BUTTONS --- */
+.sticky-sidebar {
+    position: sticky;
+    top: 110px; /* Aligns comfortably below fixed navigational headers */
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+}
+
+.text-gold {
+    color: #c9a24d !important;
+}
+
+/* Primary Action CTA: Evaluation Button */
+
+.btn-gold:hover { 
+    background-color: #c9a24d; 
+    transform: translateY(-2px); 
+}
+
+/* Secondary Action CTA: WhatsApp Chat Component Node */
+.whatsapp-float-btn {
+    background-color: #25d366;
+    color: #ffffff !important;
+    padding: 12px;
+    border-radius: 10px;
+    text-decoration: none !important;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.2);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.88rem;
+}
+
+.whatsapp-float-btn:hover { 
+    background-color: #128c7e; 
+    transform: translateY(-2px); 
+    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+}
+
+
+/* --- RESPONSIVE SCREEN BREAKPOINTS --- */
+@media (max-width: 991px) {
+    .sticky-sidebar {
+        position: relative;
+        top: 0;
+        margin-top: 30px;
+    }
+    .litigation-row-card { 
+        padding: 30px 20px; 
+    }
+    .visual-token-box { 
+        height: 160px; 
+        margin-bottom: 15px; 
+    }
+    .pub-headline {
+        font-size: 1.3rem;
+    }
+}
+
+
         </style>
     </head>
     <body>
@@ -690,16 +1009,16 @@
                         </a>
                         <ul class="dropdown-menu shadow-lg">
                             <li>
-                                <a class="dropdown-item" href="nri-property-disputes.html">Property Dispute</a>
+                                <a class="dropdown-item text-uppercase" href="nri-property-disputes.html">Property Dispute</a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="nri-power-of-attorney.html">Power of Attorney</a>
+                                <a class="dropdown-item text-uppercase" href="nri-power-of-attorney.html">Power of Attorney</a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="nri-criminal-case.html">Criminal Cases</a>
+                                <a class="dropdown-item text-uppercase" href="nri-criminal-case.html">Criminal Cases</a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="nri-family-matrimonial.html">Family & Matrimonial</a>
+                                <a class="dropdown-item text-uppercase" href="nri-family-matrimonial.html">Family & Matrimonial</a>
                             </li>
                         </ul>
                     </div> 
@@ -747,22 +1066,22 @@
                         </a>
                        <ul class="dropdown-menu shadow-lg">
                             <li>
-                                <a class="dropdown-item" href="sectors.html#agri-sector">AGRICULTURE, RURAL &amp; AGRI-BUSINESS</a>
+                                <a class="dropdown-item text-uppercase" href="sectors.html#agri-sector">AGRICULTURE, RURAL &amp; AGRI-BUSINESS</a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="sectors.html#finance-sector">BANKING, FINANCE &amp; FINTECH</a>
+                                <a class="dropdown-item text-uppercase" href="sectors.html#finance-sector">BANKING, FINANCE &amp; FINTECH</a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="sectors.html#realestate-sector">REAL ESTATE, INFRASTRUCTURE &amp; CONSTRUCTION</a>
+                                <a class="dropdown-item text-uppercase" href="sectors.html#realestate-sector">REAL ESTATE, INFRASTRUCTURE &amp; CONSTRUCTION</a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="sectors.html#healthcare-sector">HEALTHCARE, LIFE SCIENCES &amp; EDUCATION</a>
+                                <a class="dropdown-item text-uppercase" href="sectors.html#healthcare-sector">HEALTHCARE, LIFE SCIENCES &amp; EDUCATION</a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="sectors.html#logistics-sector">TRANSPORTATION, LOGISTICS &amp; HOSPITALITY</a>
+                                <a class="dropdown-item text-uppercase" href="sectors.html#logistics-sector">TRANSPORTATION, LOGISTICS &amp; HOSPITALITY</a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="sectors.html#international-sector">INTERNATIONAL, NRI &amp; CROSS-BORDER</a>
+                                <a class="dropdown-item text-uppercase" href="sectors.html#international-sector">INTERNATIONAL, NRI &amp; CROSS-BORDER</a>
                             </li>
                         </ul>
                     </div>

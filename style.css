@@ -4002,3 +4002,7 @@ p {
 @media (max-width: 991px) {
     .alliance-section-title { font-size: 1.85rem; }
 }
+
+.dropdown-menu{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
