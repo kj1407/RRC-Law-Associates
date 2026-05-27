@@ -72,11 +72,6 @@
   </url>
 
   <url>
-    <loc>https://rrclawassociates.com/sectors.html</loc>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
     <loc>https://rrclawassociates.com/lawfirm-blog.html</loc>
     <priority>0.7</priority>
   </url>
@@ -87,14 +82,13 @@
   </url>
 
   <url>
-    <loc>https://rrclawassociates.com/opportunities.html</loc>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
     <loc>https://rrclawassociates.com/blog-nri-property-remedies.html</loc>
     <priority>0.8</priority>
   </url>
 
+  <url>
+    <loc>https://rrclawassociates.com/blog-evolution-of-digital-evidence-india.html</loc>
+    <priority>0.8</priority>
+  </url>
 
 </urlset>
