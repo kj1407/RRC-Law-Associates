@@ -1,63 +1,128 @@
-# ==============================
-# RRC Law Associates .htaccess
-# ==============================
+# ====================================================================
+#   RRC LAW ASSOCIATES — MASTER PRODUCTION CONFIGURATION (2026)
+# ====================================================================
 
 RewriteEngine On
+RewriteBase /
 
-# Force HTTPS
+# --------------------------------------------------------------------
+# A. CLEAN URL ENGINE: AUTOMATICALLY STRIP .HTML EXTENSIONS
+# --------------------------------------------------------------------
+
+# 1. Externally redirect any legacy incoming .html requests to clean URLs
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s([^.]+)\.html [NC]
+RewriteRule ^ %1 [R=301,L]
+
+# 2. Internally resolve the clean extensionless URL path back to the actual HTML file
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^([^/]+)$ $1.html [L]
+
+# --------------------------------------------------------------------
+# B. CANONICAL NON-WWW SECURE HTTPS ROUTING
+# --------------------------------------------------------------------
+
+# 1. Route www subdomain traffic directly to the clean canonical root apex
+RewriteCond %{HTTP_HOST} ^www\.rrclawassociates\.com [NC]
+RewriteRule ^(.*)$ https://rrclawassociates.com/$1 [L,R=301]
+
+# 2. Force SSL layer encryption across all active communication lines
 RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+RewriteCond %{HTTP_HOST} ^(www\.)?rrclawassociates\.com [NC]
+RewriteRule ^(.*)$ https://rrclawassociates.com/$1 [L,R=301]
 
-# Redirect index.html to homepage
+# 3. Clear raw index.html loops completely by routing to the home root address
 RewriteCond %{THE_REQUEST} /index\.html [NC]
 RewriteRule ^index\.html$ https://rrclawassociates.com/ [L,R=301]
 
-# Enable GZIP Compression
+# --------------------------------------------------------------------
+# C. SERVER-SIDE GZIP COMPRESSION ENGINE
+# --------------------------------------------------------------------
 <IfModule mod_deflate.c>
-  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css
-  AddOutputFilterByType DEFLATE application/javascript application/x-javascript application/json
-  AddOutputFilterByType DEFLATE image/svg+xml
+    # Compress standard text and structured code layout strings
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript
+    AddOutputFilterByType DEFLATE application/javascript application/x-javascript application/json
+    AddOutputFilterByType DEFLATE application/xml application/xhtml+xml application/rss+xml
+    
+    # Compress vector graphics and scale font files safely
+    AddOutputFilterByType DEFLATE image/svg+xml text/x-component
+    AddOutputFilterByType DEFLATE font/ttf font/otf font/opentype application/x-font-ttf application/vnd.ms-fontobject
 </IfModule>
 
-# Browser Caching
+# --------------------------------------------------------------------
+# D. BROWSER EXPIRES CACHING METRICS
+# --------------------------------------------------------------------
 <IfModule mod_expires.c>
-  ExpiresActive On
+    ExpiresActive On
+    ExpiresDefault "access plus 1 month"
 
-  ExpiresByType text/html "access plus 1 hour"
-  ExpiresByType text/css "access plus 1 month"
-  ExpiresByType application/javascript "access plus 1 month"
+    # HTML / Dynamic Content Profile — Forces revalidation checks to mirror instant updates
+    ExpiresByType text/html "access plus 0 seconds"
 
-  ExpiresByType image/jpg "access plus 1 year"
-  ExpiresByType image/jpeg "access plus 1 year"
-  ExpiresByType image/png "access plus 1 year"
-  ExpiresByType image/webp "access plus 1 year"
-  ExpiresByType image/svg+xml "access plus 1 year"
-  ExpiresByType image/gif "access plus 1 year"
+    # Core Style sheets and Interactive Scripts
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType text/javascript "access plus 1 month"
 
-  ExpiresByType font/woff "access plus 1 year"
-  ExpiresByType font/woff2 "access plus 1 year"
+    # Media, Imagery, and Vector Asset Cards
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+
+    # Typography & Font Vectors
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
 </IfModule>
 
-# Cache-Control Headers
+# --------------------------------------------------------------------
+# E. EXPLICIT CACHE-CONTROL & CORS HEADER MANAGEMENT
+# --------------------------------------------------------------------
 <IfModule mod_headers.c>
-  <FilesMatch "\.(css|js|jpg|jpeg|png|webp|svg|gif|woff|woff2)$">
-    Header set Cache-Control "public, max-age=31536000"
-  </FilesMatch>
+    # Static Assets — Safely locked down inside local caches for 1 full calendar year
+    <FilesMatch "\.(css|js|jpg|jpeg|png|webp|svg|gif|woff|woff2|ico)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
 
-  <FilesMatch "\.(html|htm)$">
-    Header set Cache-Control "no-cache, must-revalidate"
-  </FilesMatch>
+    # Dynamic Pages — Explicitly revalidated on every single system interaction route
+    <FilesMatch "\.(html|htm)$">
+        Header set Cache-Control "no-cache, no-store, must-revalidate"
+        Header set Pragma "no-cache"
+        Header set Expires "0"
+    </FilesMatch>
+
+    # Secure Cross-Origin Access for Typography Icons (Prevents font breakage)
+    <FilesMatch "\.(ttf|ttc|otf|eot|woff|woff2|font.css|css)$">
+        Header set Access-Control-Allow-Origin "*"
+    </FilesMatch>
 </IfModule>
 
-# Security Headers
+# --------------------------------------------------------------------
+# F. ENHANCED FIRM SECURITY HEADERS
+# --------------------------------------------------------------------
 <IfModule mod_headers.c>
-  Header always set X-Content-Type-Options "nosniff"
-  Header always set X-Frame-Options "SAMEORIGIN"
-  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    # Force HSTS (Strict Transport Security) for 1 full year to pass enterprise audits
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+    
+    # Block malicious browser content-type sniffing actions
+    Header always set X-Content-Type-Options "nosniff"
+    
+    # Mitigate Clickjacking and iframe data hijacking vectors
+    Header always set X-Frame-Options "SAMEORIGIN"
+    
+    # Safe referrer-data leaking guards across alternative domain bridges
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
 </IfModule>
 
-# Prevent Directory Browsing
+# --------------------------------------------------------------------
+# G. SERVER DIRECTORY & ERROR RECOVERY MAP
+# --------------------------------------------------------------------
+
+# Block structural folder list views from exposing background source lineages publicly
 Options -Indexes
 
-# Custom 404 Page
+# Map standard 404 response codes directly to your custom page asset
 ErrorDocument 404 /404.html
