@@ -558,6 +558,67 @@
         }
     }
     
+    /* --- OFFICE CARD DESIGN SYSTEM --- */
+
+.office-card {
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.office-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(18, 54, 88, 0.08) !important;
+}
+
+.card-accent-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #123658 0%, #c9a24d 100%);
+}
+
+.icon-box {
+    width: 50px;
+    height: 50px;
+    background-color: #fcf9f2;
+    color: #c9a24d;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+}
+
+.btn-liaison {
+    border: 1px solid rgba(18, 54, 88, 0.2);
+    color: #123658;
+    background: transparent;
+    font-size: 0.8rem;
+    padding: 10px 20px;
+    letter-spacing: 0.5px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.btn-liaison:hover {
+    background-color: #123658;
+    color: #fff;
+    border-color: #123658;
+}
+
+/* Responsiveness for mobile text alignment */
+@media (max-width: 576px) {
+    .btn-liaison {
+        padding: 8px 12px;
+        font-size: 0.7rem;
+    }
+}
     </style>
 
     <style>
@@ -1461,6 +1522,7 @@
         <div class="mobile-menu" id="mobileMenu">
             <button class="close-menu" id="closeMenu">✕</button>
             <div class="mt-5">
+                <a href="partners.html" class="m-link">Partners</a>
                 <a href="index.html" class="m-link">Home</a>
                 <div class="m-dropdown">
                     <a class="m-link m-trigger" href="nri-services.html">
@@ -1525,87 +1587,98 @@
         </div>
     </section>
 
-    <div class="container my-5">
-        <div class="d-flex flex-wrap justify-content-center gap-3 mb-5">
-            <!-- <button class="filter-btn active" onclick="filterCountry('all', this)">
-                All Countries
-            </button> -->
-            <button class="filter-btn" onclick="filterCountry('malaysia', this)">
-                <img src="https://flagcdn.com/16x12/my.png" class="me-2" alt="malaysia"> Malaysia
-            </button>
-            <!-- <button class="filter-btn" onclick="filterCountry('singapore', this)">
-                <img src="https://flagcdn.com/16x12/sg.png" class="me-2" alt="singapore"> Singapore
-            </button> -->
-        </div>
-
-    <div class="row g-4 text-start" id="directoryGrid">
+    <!-- START OF INTERNATIONAL OFFICES SECTION -->
+<section class="py-5" style="background-color: #ffffff;">
+    <div class="container py-4">
         
-        <!-- <div class="col-xl-4 col-md-6 partner-card-wrapper item-category" data-country="singapore">
-            <div class="unique-partner-card d-flex align-items-stretch border bg-white overflow-hidden h-100">
-                <div class="card-branding-side d-flex flex-column align-items-center justify-content-center p-3 text-center">
-                    <div class="logo-wrapper d-flex align-items-center justify-content-center">
-                        <img src="./assets/images/logo.png" alt="Global Migration Logo" style="max-width: 80px; max-height: 80px;">
-                    </div>
-                    <h6 class="firm-title mb-0 mt-3">RRC LAW ASSOCIATES</h6>
-                </div>
-                <div class="card-meta-side p-4 d-flex flex-column justify-content-between flex-grow-1">
-                    <div>
-                        <div class="location-badge mb-3"><i class="fas fa-map-marker-alt me-1.5"></i> Singapore</div>
-                        <div class="practice-heading mb-2">Core Practice Areas</div>
-                        <div class="d-flex flex-wrap gap-1.5">
-                            <span class="practice-pill">Cross-Border Estates</span>
-                            <span class="practice-pill">Asset Distribution</span>
-                            <span class="practice-pill">Offshore Trusts</span>
-                        </div>
-                    </div>
-                </div>
+        <!-- Header Region -->
+        <div class="text-center mb-5">
+            <div class="d-inline-block px-3 py-1 mb-3 rounded-1" style="background-color: #fcf9f2;">
+                <span class="text-uppercase fw-bold" style="color: #c9a24d; font-size: 0.75rem; letter-spacing: 2px;">Global Footprint</span>
             </div>
-        </div> -->
-
-        <div class="col-xl-4 col-md-6 partner-card-wrapper item-category" data-country="malaysia">
-            <div class="unique-partner-card d-flex align-items-stretch border bg-white overflow-hidden h-100">
-                <div class="card-branding-side d-flex flex-column align-items-center justify-content-center p-3 text-center">
-                    <div class="logo-wrapper d-flex align-items-center justify-content-center">
-                        <img src="./assets/images/logo.png" alt="Global Migration Logo" style="max-width: 80px; max-height: 80px;">
-                    </div>
-                    <h6 class="firm-title mb-0 mt-3">RRC LAW ASSOCIATES</h6>
-                </div>
-                <div class="card-meta-side p-4 d-flex flex-column justify-content-between flex-grow-1">
-                    <div>
-                        <div class="location-badge mb-3"><i class="fas fa-map-marker-alt me-1.5"></i> 1700-G, Jalan S2 A39, Aviva Green, Seremban 2, 70300 Seremban, Negeri Sembilan, Malaysia</div>
-                        <div class="practice-heading mb-2">Core Practice Areas</div>
-                        <div class="d-flex flex-wrap gap-1.5">
-                            <span class="practice-pill">Corporate Mobility</span>
-                            <span class="practice-pill">Labor Compliance</span>
-                            <span class="practice-pill">Remote POA</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <h2 class="display-5 fw-bold mb-3" style="color: #3c3819; font-family: 'Playfair Display', serif;">OUR INTERNATIONAL PARTNERS</h2>
+            <div class="mx-auto mb-4" style="width: 45px; height: 3px; background-color: #c9a24d;"></div>
+            <p class="text-muted mx-auto mb-5" style="max-width: 700px; font-size: 1rem;">Providing seamless cross-border legal liaison desks for expatriates, NRIs, and global commercial entities.</p>
         </div>
 
-        <!-- <div class="col-xl-4 col-md-6 partner-card-wrapper item-category" data-country="dubai">
-            <div class="unique-partner-card d-flex align-items-stretch border bg-white overflow-hidden h-100">
-                <div class="card-branding-side d-flex flex-column align-items-center justify-content-center p-3 text-center">
-                    <div class="logo-wrapper d-flex align-items-center justify-content-center">
-                        <img src="./assets/images/logo.png" alt="Global Migration Logo" style="max-width: 80px; max-height: 80px;">
-                    </div>
-                    <h6 class="firm-title mb-0 mt-3">RRC LAW ASSOCIATES</h6>
-                </div>
-                <div class="card-meta-side p-4 d-flex flex-column justify-content-between flex-grow-1">
-                    <div>
-                        <div class="location-badge mb-3"><i class="fas fa-map-marker-alt me-1.5"></i> Dubai, UAE</div>
-                        <div class="practice-heading mb-2">Core Practice Areas</div>
-                        <div class="d-flex flex-wrap gap-1.5">
-                            <span class="practice-pill">Private Wealth</span>
-                            <span class="practice-pill">Real Estate Audits</span>
-                            <span class="practice-pill">Tax Protocols</span>
+        <!-- Office Grid -->
+        <div class="row g-4 justify-content-center">
+            
+            <!-- Seremban Office -->
+            <div class="col-md-6 col-lg-5">
+                <div class="office-card shadow-sm h-100">
+                    <div class="card-accent-bar"></div>
+                    <div class="p-4 p-lg-5">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="icon-box me-3">
+                                <i class="fas fa-building-columns"></i>
+                            </div>
+                            <div>
+                                <h3 class="h5 fw-bold mb-1" style="color: #123658; font-family: 'Playfair Display', serif;">Chee & Partners</h3>
+                                <span class="badge border rounded-pill text-muted fw-normal px-3 py-1" style="font-size: 0.75rem;">Negeri Sembilan Hub</span>
+                            </div>
+                        </div>
+                        
+                        <hr class="mb-4 opacity-10">
+                        
+                        <div class="d-flex align-items-start mb-5">
+                            <i class="fas fa-map-marker-alt mt-1 me-3" style="color: #c9a24d;"></i>
+                            <p class="mb-0 text-muted" style="line-height: 1.8;">
+                                1700-G, Jalan S2 A39, Aviva Green, Seremban 2,<br>
+                                70300 Seremban, Negeri Sembilan,<br>
+                                <strong class="text-dark">Malaysia</strong>
+                            </p>
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center mt-auto pt-3">
+                            <div class="text-muted small">
+                                <i class="far fa-clock me-2"></i>By Appointment Only
+                            </div>
+                            <a href="https://wa.me/919751182452" class="btn btn-liaison fw-bold">LIAISON DESK</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div> -->
+
+            <!-- Kuala Lumpur Office -->
+            <div class="col-md-6 col-lg-5">
+                <div class="office-card shadow-sm h-100">
+                    <div class="card-accent-bar"></div>
+                    <div class="p-4 p-lg-5">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="icon-box me-3">
+                                <i class="fas fa-building-columns"></i>
+                            </div>
+                            <div>
+                                <h3 class="h5 fw-bold mb-1" style="color: #123658; font-family: 'Playfair Display', serif;">Chee & Partners</h3>
+                                <span class="badge border rounded-pill text-muted fw-normal px-3 py-1" style="font-size: 0.75rem;">Kuala Lumpur HQ</span>
+                            </div>
+                        </div>
+
+                        <hr class="mb-4 opacity-10">
+
+                        <div class="d-flex align-items-start mb-5">
+                            <i class="fas fa-map-marker-alt mt-1 me-3" style="color: #c9a24d;"></i>
+                            <p class="mb-0 text-muted" style="line-height: 1.8;">
+                                S-26-13, Wisma YNH, Kiara 163,<br>
+                                No. 8, Jalan Kiara, 50480 Mont Kiara,<br>Kuala Lumpur,<br>
+                                <strong class="text-dark">Malaysia</strong>
+                            </p>
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center mt-auto pt-3">
+                            <div class="text-muted small">
+                                <i class="far fa-clock me-2"></i>By Appointment Only
+                            </div>
+                            <a href="https://wa.me/919751182452" class="btn btn-liaison fw-bold">LIAISON DESK</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
+</section>
 </div>
 
 <section class="py-5 bg-white">
