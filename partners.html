@@ -619,6 +619,69 @@
         font-size: 0.7rem;
     }
 }
+/* --- RELATED PRACTICE AREAS STYLING MATRICES --- */
+
+.related-service-card {
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.related-service-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(18, 54, 88, 0.04) !important;
+}
+
+.related-icon-box {
+    width: 38px;
+    height: 38px;
+    background-color: #fcf9f2;
+    color: #c9a24d;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.service-title-link {
+    color: #123658;
+    text-decoration: none;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    transition: color 0.2s ease;
+}
+
+.service-title-link:hover {
+    color: #c9a24d;
+}
+
+/* --- GLOBAL CTA INTAKE ELEMENT SPECIFICATIONS --- */
+
+.bg-gold {
+    background-color: #c9a24d !important;
+}
+
+.btn-gold {
+    background-color: #c9a24d;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-gold:hover {
+    background-color: #b08d40;
+    color: #ffffff;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #c9a24d !important;
+    box-shadow: 0 0 0 0.25rem rgba(201, 162, 77, 0.15) !important;
+}
+
+/* Tracking tweaks for formal badge typography */
+.tracking-wide {
+    letter-spacing: 0.8px;
+}
     </style>
 
     <style>
@@ -1679,6 +1742,207 @@
     </div>
 </section>
 </div>
+
+<section class="py-5 bg-light border-top border-bottom border-light-subtle">
+    <div class="container py-3">
+        
+        <!-- Section Header -->
+        <div class="text-center mb-5">
+            <span class="badge text-uppercase mb-2 px-3 py-2" style="background-color: #fcf9f2; color: #c9a24d; font-weight: 600; letter-spacing: 0.8px;">Synergistic Services</span>
+            <h2 class="h3 fw-bold text-uppercase" style="color: #3c3819; font-family: 'Playfair Display', serif;">Cross-Border Practice Desks</h2>
+            <div class="mx-auto my-3" style="width: 50px; height: 3px; background-color: #c9a24d;"></div>
+            <p class="text-muted small mx-auto" style="max-width: 600px;">Explore the core legal specializations managed across our domestic offices and international liaison networks.</p>
+        </div>
+
+        <!-- Related Desks Grid Layout -->
+        <div class="row g-4 justify-content-center text-start">
+            
+            <!-- LINK 1: NRI SERVICES -->
+            <div class="col-md-6 col-lg-4">
+                <div class="related-service-card p-4 bg-white shadow-sm h-100">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="related-icon-box me-3"><i class="fas fa-globe-asia"></i></div>
+                        <h3 class="h6 fw-bold mb-0">NRI Legal Services</h3>
+                    </div>
+                    <p class="x-small text-muted mb-0" style="font-size: 0.88rem; line-height: 1.6;">Comprehensive advocacy for non-residents, covering ancestral land claims, deed cancellations, and local liaison affairs.</p>
+                </div>
+            </div>
+
+            <!-- LINK 2: PROPERTY DESK -->
+            <div class="col-md-6 col-lg-4">
+                <div class="related-service-card p-4 bg-white shadow-sm h-100">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="related-icon-box me-3"><i class="fas fa-search-location"></i></div>
+                        <h3 class="h6 fw-bold mb-0">Real Estate Due Diligence</h3>
+                    </div>
+                    <p class="x-small text-muted mb-0" style="font-size: 0.88rem; line-height: 1.6;">Rigorous 30-year property title investigation, link document validation, and transactional compliance across Tamil Nadu.</p>
+                </div>
+            </div>
+
+            <!-- LINK 3: LITIGATION & INJUNCTIONS -->
+            <div class="col-md-6 col-lg-4">
+                <div class="related-service-card p-4 bg-white shadow-sm h-100">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="related-icon-box me-3"><i class="fas fa-gavel"></i></div>
+                        <h3 class="h6 fw-bold mb-0">Litigation &amp; Dispute Resolution</h3>
+                    </div>
+                    <p class="x-small text-muted mb-0" style="font-size: 0.88rem; line-height: 1.6;">Aggressive representation for civil summary suits, extraordinary writs, and emergency injunction matters before High Courts.</p>
+                </div>
+            </div>
+
+            <!-- LINK 4: CYBER LAW DESK -->
+            <div class="col-md-6 col-lg-4">
+                <div class="related-service-card p-4 bg-white shadow-sm h-100">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="related-icon-box me-3"><i class="fas fa-shield-halved"></i></div>
+                        <h3 class="h6 fw-bold mb-0">Cyber Law &amp; Forensics</h3>
+                    </div>
+                    <p class="x-small text-muted mb-0" style="font-size: 0.88rem; line-height: 1.6;">Swift remediation for financial data frauds, online identity manipulation, corporate cyber threats, and deepfake vulnerabilities.</p>
+                </div>
+            </div>
+
+            <!-- LINK 5: INTELLECTUAL PROPERTY -->
+            <div class="col-md-6 col-lg-4">
+                <div class="related-service-card p-4 bg-white shadow-sm h-100">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="related-icon-box me-3"><i class="fas fa-copyright"></i></div>
+                        <h3 class="h6 fw-bold mb-0">Intellectual Property</h3>
+                    </div>
+                    <p class="x-small text-muted mb-0" style="font-size: 0.88rem; line-height: 1.6;">Securing global brand assets, including proactive trademark mapping, patent filing prosecution, and enforcement covenants.</p>
+                </div>
+            </div>
+
+            <!-- LINK 6: MATRIMONIAL DESK -->
+            <div class="col-md-6 col-lg-4">
+                <div class="related-service-card p-4 bg-white shadow-sm h-100">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="related-icon-box me-3"><i class="fas fa-users-rectangle"></i></div>
+                        <h3 class="h6 fw-bold mb-0">Family &amp; Matrimonial Law</h3>
+                    </div>
+                    <p class="x-small text-muted mb-0" style="font-size: 0.88rem; line-height: 1.6;">Specialized handling of mutual consent splits via video links and validation reviews for foreign legal divorce decrees.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- END OF RELATED PRACTICE AREAS & DESKS REGION -->
+
+<!-- START OF GLOBAL LIAISON INTAKE & WEB3FORMS INTEGRATION -->
+<section class="py-5 text-white position-relative" style="background-color: #123658; border-top: 4px solid #c9a24d;">
+    <div class="container py-3">
+        <div class="row align-items-center g-5 text-start">
+            
+            <!-- Left Column: Informational Authority Mapping -->
+            <div class="col-lg-6">
+                <span class="badge text-uppercase bg-gold px-3 py-2 mb-3 tracking-wide" style="color: #ffffff; font-weight: 600; font-size: 0.78rem;">Connect With Our Counsel</span>
+                <h2 class="display-6 fw-bold mb-3" style="font-family: 'Playfair Display', serif;">Need Legal Representation from Abroad?</h2>
+                <p class="opacity-90 mb-4" style="font-size: 1.05rem; line-height: 1.6;">
+                    Our dedicated international liaison networks specialize in representing overseas citizens (NRIs and OCIs) without requiring constant physical presence in local Indian courts. We coordinate directly across municipal jurisdictions to protect your ancestral interests.
+                </p>
+                
+                <!-- Trust Points Grid -->
+                <div class="row g-3 mt-2">
+                    <div class="col-sm-6">
+                        <div class="d-flex align-items-center gap-2">
+                            <i class="fas fa-shield-alt text-gold" style="font-size: 1.2rem;"></i>
+                            <span class="small fw-semibold">Secure Virtual Hearings</span>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="d-flex align-items-center gap-2">
+                            <i class="fas fa-file-signature text-gold" style="font-size: 1.2rem;"></i>
+                            <span class="small fw-semibold">Remote POA Adjudication</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Live Communication Direct Shortcuts -->
+                <div class="mt-5 pt-3 border-top border-light border-opacity-10 vstack gap-3">
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="bg-gold text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px; flex-shrink: 0;"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <p class="text-white-50 small mb-0">Secure Inbound Mail</p>
+                            <a href="mailto:dr.kumar@rrclawassociates.com" class="text-white fw-bold text-decoration-none" style="font-size: 1.05rem;">dr.kumar@rrclawassociates.com</a>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="bg-success text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px; flex-shrink: 0;"><i class="fab fa-whatsapp"></i></div>
+                        <div>
+                            <p class="text-white-50 small mb-0">Emergency Litigation Hotline</p>
+                            <a href="https://wa.me/919751182452" target="_blank" class="text-white fw-bold text-decoration-none" style="font-size: 1.05rem;">+91 97511 82452</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Column: Web3Forms Submission Target Engine -->
+            <div class="col-lg-6">
+                <div class="p-4 p-lg-5 rounded-4 bg-white text-dark shadow-lg">
+                    <h3 class="h5 fw-bold mb-2 text-navy text-uppercase" style="font-family: 'Playfair Display', serif;">Request a Case Evaluation</h3>
+                    <p class="text-muted small mb-4">Submit your legal inquiry outline to connect with our international desk teams.</p>
+                    
+                    <!-- Form Entry Endpoint Target -->
+                    <form action="https://api.web3forms.com/submit" method="POST" class="row g-3">
+                        
+                        <!-- REQUIRED WEB3FORMS META TOKENS -->
+                        <input type="hidden" name="access_key" value="070a477f-e139-4bcf-838c-49abddcc0959">
+                        <input type="hidden" name="from_name" value="RRC Law Associates - Partners Portal">
+                        <input type="hidden" name="subject" value="New International Case Evaluation Request">
+                        
+                        <!-- Anti-Spam Honeypot Field (Invisible to human users) -->
+                        <input type="hidden" name="botcheck" style="display: none;">
+
+                        <!-- Custom redirection endpoint after form submission completes (Optional) -->
+                        <!-- <input type="hidden" name="redirect" value="https://rrclawassociates.com/thanks"> -->
+
+                        <div class="col-md-6">
+                            <label class="form-label small fw-bold text-secondary">Full Name</label>
+                            <input type="text" name="Client Name" class="form-control" style="border-radius: 6px; padding: 10px;" placeholder="Your Name" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label small fw-bold text-secondary">Contact Number</label>
+                            <div class="input-group">
+                                <!-- Unified Country Dialing Code Dropdown Selector -->
+                                <select name="Country Code" class="form-select text-muted" style="max-width: 100px; border-radius: 6px 0 0 6px; padding: 10px 5px; font-size: 0.9rem; background-color: #fafafa;" required>
+                                    <option value="+91" selected>IN (+91)</option>
+                                    <option value="+60">MY (+60)</option>
+                                    <option value="+1">US/CA (+1)</option>
+                                    <option value="+44">UK (+44)</option>
+                                    <option value="+65">SG (+65)</option>
+                                    <option value="+61">AU (+61)</option>
+                                    <option value="+971">AE (+971)</option>
+                                </select>
+                                
+                                <!-- Individual Phone Number Entry Track -->
+                                <input type="tel" name="Contact Phone" class="form-control" style="border-radius: 0 6px 6px 0; padding: 10px;" placeholder="Phone Number" oninput="this.value = this.value.replace(/[^0-9]/g, '')" required>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label small fw-bold text-secondary">Primary Area of Concern</label>
+                            <select name="Area of Concern" class="form-select" style="border-radius: 6px; padding: 10px;">
+                                <option value="Global NRI Property Protection" selected>Global NRI Property Protection</option>
+                                <option value="Power of Attorney Adjudication">Power of Attorney Adjudication</option>
+                                <option value="Foreign Divorce Decree Validation">Foreign Divorce Decree Validation</option>
+                                <option value="Cross-Border Commercial Disputes">Cross-Border Commercial Disputes</option>
+                                <option value="Cyber Fraud / Identity Theft">Cyber Fraud / Identity Theft</option>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label small fw-bold text-secondary">Brief Overview of Matter</label>
+                            <textarea name="Case Summary Details" class="form-control" rows="3" style="border-radius: 6px; padding: 10px;" placeholder="Provide essential high-level case context..." required></textarea>
+                        </div>
+                        <div class="col-12 mt-4">
+                            <button type="submit" class="btn btn-gold text-white w-100 fw-bold text-uppercase py-3" style="border-radius: 6px; font-size: 0.85rem; border: none; letter-spacing: 0.5px;">Schedule Remote Consultation</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- END OF GLOBAL LIAISON INTAKE & WEB3FORMS INTEGRATION -->
 
 <section class="py-5 bg-white">
     <div class="container" style="max-width: 950px;">
