@@ -194,19 +194,1330 @@
             .whatsapp-float { bottom: 20px; right: 20px; padding: 10px 18px; font-size: 0.85rem; }
         }
     </style>
+
+    <style>
+        :root {
+            --primary: #3c3819;
+            --gold: #c9a24d;
+            --cream: #f9f7f3;
+            --white: #ffffff;
+            --dark-slate: #0b1c2d;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--white);
+            color: var(--primary);
+            line-height: 1.8;
+        }
+
+        /* Fixed Navigation Header Bar */
+        .header {
+            background: #000000 !important;
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1100;
+            border-bottom: 1px solid var(--gold);
+        }
+        .brand-logo {
+            font-family: 'Playfair Display', serif;
+            color: var(--white) !important;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-decoration: none;
+            font-size: 1.4rem;
+        }
+        .brand-logo span {
+            color: var(--gold);
+        }
+
+        /* Blog Editorial Hero Banner */
+        .blog-hero {
+            padding-top: 160px;
+            padding-bottom: 60px;
+            background-color: var(--cream);
+            border-bottom: 1px solid rgba(60, 56, 25, 0.05);
+        }
+        .hero-eyebrow {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            color: var(--gold);
+        }
+        .blog-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: #000000;
+            font-size: 2.5rem;
+            line-height: 1.3;
+        }
+
+        /* Editorial Content Container Styles */
+        .content-body h2 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            margin-top: 45px;
+            margin-bottom: 20px;
+            color: #000000;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        .content-body h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--gold);
+        }
+        .content-body h3 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: #1a1e21;
+            font-size: 1.3rem;
+        }
+        p {
+            margin-bottom: 1.5rem;
+            color: #444444;
+            font-size: 1.05rem;
+        }
+
+        /* Custom Content Cards & Lists */
+        .insight-card {
+            background-color: var(--cream);
+            border-left: 4px solid var(--gold);
+            padding: 25px;
+            border-radius: 0 12px 12px 0;
+            margin: 30px 0;
+        }
+        .evidence-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 25px 0;
+        }
+        .evidence-item {
+            background: #ffffff;
+            border: 1px solid rgba(0,0,0,0.06);
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.01);
+        }
+        .evidence-item i {
+            color: var(--gold);
+            margin-right: 8px;
+        }
+
+        /* Global Comparison Data Table UI */
+        .table-responsive {
+            margin: 35px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+        }
+        .custom-table {
+            margin-bottom: 0;
+        }
+        .custom-table thead {
+            background-color: #000000;
+            color: var(--white);
+        }
+        .custom-table th, .custom-table td {
+            padding: 16px 20px;
+            font-size: 0.95rem;
+            vertical-align: middle;
+        }
+        .custom-table tbody tr:nth-of-type(even) {
+            background-color: var(--cream);
+        }
+
+        /* Custom Geometric Minimalist Accordion Styles */
+        .custom-faq-accordion .accordion-item {
+            border: none;
+            border-bottom: 1px solid rgba(60, 56, 25, 0.12) !important;
+            background: transparent;
+            border-radius: 0px !important;
+        }
+        .custom-faq-accordion .accordion-button {
+            background: transparent !important;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 22px 0px;
+            box-shadow: none !important;
+            border: none;
+            text-align: left;
+        }
+        .custom-faq-accordion .accordion-button:not(.collapsed) {
+            color: var(--gold) !important;
+        }
+        .custom-faq-accordion .accordion-body {
+            padding: 0px 0px 24px 0px;
+            color: #555555;
+            font-size: 1rem;
+            line-height: 1.75;
+        }
+
+        /* Sticky Sidebar Lead Capture Component Node */
+        .sticky-sidebar {
+            position: sticky;
+            top: 110px;
+            background-color: #ffffff;
+            border: 1px solid rgba(0,0,0,0.06);
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+        }
+        .btn-gold { 
+            background-color: var(--gold); 
+            color: #000000; 
+            font-weight: 700; 
+            padding: 14px; 
+            border-radius: 10px; 
+            width: 100%; 
+            border: none; 
+            transition: 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            display: block;
+            text-align: center;
+            text-decoration: none;
+        }
+        .btn-gold:hover { background-color: #b38f40; transform: translateY(-2px); box-shadow: 0 10px 20px rgba(201, 162, 77, 0.2); color: #000000; }
+        
+        .whatsapp-float-btn {
+            background-color: #25d366;
+            color: white !important;
+            padding: 12px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.2);
+            transition: 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.88rem;
+        }
+        .whatsapp-float-btn:hover { background-color: #128c7e; transform: translateY(-2px); }
+
+        .footer { background: linear-gradient(135deg, #081521, #0b1c2d); color: white; padding: 60px 0 30px; }
+
+        @media (max-width: 991px) {
+            .blog-title { font-size: 2rem; }
+            .blog-hero { padding-top: 120px; }
+            .sticky-sidebar { position: relative; top: 0; margin-top: 40px; }
+        }
+
+        /* ================================================================= */
+/* 1. STRUCTURAL CORE & DESIGN SYSTEM VARIANT TOKENS               */
+/* ================================================================= */
+:root {
+    --primary: #3c3819;
+    --gold: #c9a24d;
+    --cream: #f9f7f3;
+    --white: #ffffff;
+}
+
+/* ================================================================= */
+/* 2. FIXED MASTER HEADER & DESKTOP NAVIGATION LAYOUTS             */
+/* ================================================================= */
+.header {
+    background: #000000 !important; /* Pure corporate deep black */
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo-img {
+    height: 60px;
+    width: auto;
+}
+
+.nav-link-custom {
+    color: #ffffff !important;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 15px;
+    transition: color 0.3s;
+}
+
+/* Mega Dropdown Expansion Layout Modules */
+.dropdown-menu {
+    background-color: #000000 !important;
+    border: 1px solid #c9a24d !important;
+    margin-top: 10px !important;
+}
+
+.dropdown-item {
+    color: #ffffff !important;
+    padding: 10px 20px;
+}
+
+/* Desktop Hover Interaction Framework Physics */
+.dropdown-item:hover,
+.nav-link-custom:hover {
+    color: #c9a24d !important; /* Gold hover focus shift */
+}
+
+.dropdown-item:hover {
+    background-color: #1a1a1a !important;
+}
+
+@media (min-width: 992px) {
+    /* Show menu securely on hover states */
+    .header .dropdown:hover > .dropdown-menu {
+        display: block;
+        margin-top: 0;
+    }
+
+    /* Diagonal Track Bridge Buffer: Prevents tracking drop-offs across dead zones */
+    .header .dropdown-menu::before {
+        content: "";
+        position: absolute;
+        top: -20px; /* Bridges physical distance gaps safely */
+        left: 0;
+        width: 100%;
+        height: 20px;
+        background: transparent;
+    }
+    
+    .nav-link-custom.dropdown-toggle::after {
+        pointer-events: none; 
+    }
+}
+
+/* ================================================================= */
+/* 3. MOBILE INTERACTIVE SIDEBAR DRAWER FRAMEWORK                    */
+/* ================================================================= */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 350px;
+    height: 100vh;
+    background: #000000;
+    z-index: 2000;
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+    padding: 20px;
+}
+
+.mobile-menu.open {
+    right: 0;
+}
+
+.close-menu {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 2rem;
+    float: right;
+    cursor: pointer;
+}
+
+/* Mobile Sidebar Nested Link Matrices */
+.m-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    display: block;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    width: 100%;
+    text-align: left;
+}
+
+.m-trigger {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.m-submenu {
+    display: none; /* Hidden strictly by baseline rule */
+    background: rgba(255, 255, 255, 0.05);
+    padding-left: 20px;
+}
+
+.m-submenu.active {
+    display: block; /* Triggered on-demand via class loop attachments */
+}
+
+.m-sub-item {
+    display: block;
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    padding: 10px 0;
+    font-size: 0.95rem;
+}
+
+.m-sub-item:hover {
+    color: #c9a24d;
+}
+
+/* ================================================================= */
+/* 4. REFINED BRAND FOOTER & GEOMETRIC DATA CORES                   */
+/* ================================================================= */
+.footer {
+    background: linear-gradient(135deg, #081521, #0b1c2d);
+    padding: 80px 0 30px;
+    color: #ffffff;
+    width: 100%;
+    list-style: none;
+}
+
+.footer-contain {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.2fr; /* Adaptive column balance matrix */
+    gap: 50px;
+    margin-bottom: 50px;
+}
+
+/* Absolute Reset Targets against inherit vectors */
+.footer ul {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.footer h4 {
+    color: #c9a24d;
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    font-weight: 600;
+    text-transform: none;
+}
+
+.footer-text {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-top: 15px;
+}
+
+.footer li {
+    margin-bottom: 12px;
+}
+
+.footer a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none !important;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.footer a:hover {
+    color: #c9a24d;
+    padding-left: 5px; /* Directional pull focus animation */
+}
+
+/* Footer Execution Under-Bar Details */
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 14px;
+}
+
+.legal a {
+    color: rgba(255, 255, 255, 0.5);
+    margin-left: 20px;
+    font-size: 13px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.legal a:hover {
+    color: #c9a24d;
+}
+
+/* ================================================================= */
+/* 5. GLOBAL BRAND CONVERSIONS (BUTTON GOLD MAPPINGS)               */
+/* ================================================================= */
+.btn-gold {
+    background-color: #c9a24d;
+    color: #000000;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.btn-gold:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(201, 162, 77, 0.3);
+    background-color: #b38f40;
+    color: #000000;
+}
+
+/* ================================================================= */
+/* 6. RESPONSIVE BREAKPOINT GRID REDUCTION TUNERS                   */
+/* ================================================================= */
+@media (max-width: 992px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr; /* 2 Column layout balance on mid-tier viewports */
+        gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr; /* Full stack deployment layout metrics on smaller devices */
+        gap: 30px;
+        text-align: left;
+    }
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    .legal a {
+        margin: 0 10px;
+    }
+}
+    </style>
+    <style>
+
+
+        :root {
+            --primary: #3c3819;
+            --gold: #c9a24d;
+            --cream: #f9f7f3;
+            --white: #ffffff;
+            --dark: #000000;
+        }
+
+        body { font-family: 'Inter', sans-serif; background-color: var(--cream); color: var(--primary); }
+
+        /* --- NAVIGATION --- */
+        .header { background: #000 !important; padding: 10px 0; position: fixed; top: 0; width: 100%; z-index: 1000; height: 80px; display: flex; align-items: center; }
+        .logo-img { height: 60px; width: auto; }
+        .nav-link-custom { color: #ffffff !important; text-decoration: none; margin: 0 15px; font-weight: 500; transition: 0.3s; }
+        .nav-link-custom:hover { color: var(--gold) !important; }
+
+        .dropdown-menu { background-color: #000 !important; border: 1px solid var(--gold) !important; }
+        .dropdown-item { color: #fff !important; }
+        .dropdown-item:hover { background-color: #1a1a1a !important; color: var(--gold) !important; }
+
+        /* --- MOBILE MENU --- */
+        .mobile-menu { position: fixed; top: 0; right: -100%; width: 80%; max-width: 350px; height: 100vh; background: #000; z-index: 2000; transition: 0.4s ease; padding: 20px; }
+        .mobile-menu.open { right: 0; }
+        .m-link { color: #fff !important; text-decoration: none; display: block; padding: 15px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .m-trigger { display: flex; justify-content: space-between; align-items: center; }
+        .m-submenu { display: none; background: rgba(255,255,255,0.05); padding-left: 20px; }
+        .m-submenu.active { display: block; }
+
+        /* --- BOOKING CONTENT --- */
+        .booking-hero { padding-top: 140px; padding-bottom: 40px; background-color: var(--white); border-bottom: 1px solid rgba(201,162,77,0.2); }
+        .section-title { font-family: 'Playfair Display', serif; position: relative; padding-bottom: 15px; display: inline-block; }
+        .section-title::after { content: ""; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 50px; height: 3px; background: var(--gold); }
+
+        .booking-card { background: #fff; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.08); overflow: hidden; border: 1px solid rgba(0,0,0,0.05); }
+        .booking-sidebar { background: linear-gradient(135deg, #0b1c2d 0%, #000 100%); color: white; padding: 40px; }
+        .form-area { padding: 40px; }
+
+        .client-type-btn { display: none; }
+        .client-type-label { display: block; padding: 12px; border: 2px solid #eee; border-radius: 12px; cursor: pointer; text-align: center; transition: 0.3s; font-weight: 600; }
+        .client-type-btn:checked + .client-type-label { border-color: var(--gold); background: rgba(201,162,77,0.05); color: var(--gold); }
+
+        .btn-gold { background-color: var(--gold); color: #000; font-weight: 700; padding: 15px; border-radius: 10px; width: 100%; border: none; transition: 0.3s; }
+        .btn-gold:hover { background-color: #b38f40; transform: translateY(-2px); }
+
+        .trust-item { display: flex; align-items: center; gap: 15px; margin-bottom: 25px; }
+        .trust-icon { width: 40px; height: 40px; border: 1px solid var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--gold); }
+        :root {
+                --primary: #3c3819;
+                --gold: #c9a24d;
+                --cream: #f9f7f3;
+                --white: #ffffff;
+            }
+
+            body {
+                font-family: 'Inter', sans-serif;
+                background-color: var(--white);
+                color: var(--primary);
+            }
+
+            /* Header Styling */
+            .header {
+                background: #000000 !important;
+                /* Pure Black as requested */
+                padding: 10px 0;
+                position: fixed;
+                top: 0;
+                width: 100%;
+                z-index: 1000;
+            }
+
+            .logo-img {
+                height: 60px;
+                width: auto;
+            }
+
+            .nav-link-custom {
+                color: #ffffff !important;
+                text-decoration: none;
+                font-weight: 500;
+                margin: 0 15px;
+                transition: color 0.3s;
+            }
+
+            .dropdown-item:hover,
+            .nav-link-custom:hover {
+                color: #c9a24d !important;
+                /* Gold hover */
+            }
+
+            .dropdown-menu {
+                background-color: #000000 !important;
+                border: 1px solid #c9a24d !important;
+                margin-top: 10px !important;
+            }
+
+            .dropdown-item {
+                color: #ffffff !important;
+                padding: 10px 20px;
+            }
+
+            .dropdown-item:hover {
+                background-color: #1a1a1a !important;
+            }
+
+            .mobile-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 350px;
+                height: 100vh;
+                background: #000000;
+                z-index: 2000;
+                transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+                padding: 20px;
+            }
+
+            .mobile-menu.open {
+                right: 0;
+            }
+
+            .mobile-link {
+                color: #ffffff;
+                text-decoration: none;
+                font-size: 1.1rem;
+                display: block;
+                padding: 15px 0;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+
+            .close-menu {
+                background: transparent;
+                border: none;
+                color: #ffffff;
+                font-size: 2rem;
+                float: right;
+                cursor: pointer;
+            }
+
+            .btn-gold {
+                background-color: #c9a24d;
+                color: #000;
+                font-weight: 600;
+                padding: 10px 20px;
+                border-radius: 8px;
+                border: none;
+                text-decoration: none;
+                display: inline-block;
+            }
+
+            .btn-gold:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 10px 20px rgba(201, 162, 77, 0.3);
+                background-color: #b38f40;
+            }
+
+            /* Main Content Styling */
+            .page-header-section {
+                padding-top: 60px !important;
+                padding-bottom: 40px;
+                text-align: center;
+            }
+
+            /* The Heading Container */
+            .section-title {
+                position: relative;
+                display: inline-block;
+                padding-bottom: 15px;
+                margin-bottom: 30px;
+                font-family: 'Playfair Display', serif;
+                font-weight: 600;
+            }
+
+            /* The Gradient Underline */
+            .section-title::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 60px;
+                height: 4px;
+                border-radius: 2px;
+                background: linear-gradient(to right, #0b1c2d, #c9a24d);
+            }
+
+            .eyebrow {
+                color: var(--gold);
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                font-weight: 700;
+                font-size: 0.85rem;
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            /* Card Styling */
+            .service-card {
+                background: var(--white);
+                border: 1px solid rgba(0,0,0,0.06);
+                border-radius: 15px;
+                padding: 25px 15px;
+                height: 100%;
+                transition: all 0.4s ease;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+                text-align: center;
+            }
+
+            .service-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            }
+
+            .service-icon {
+                font-size: 2rem;
+                color: var(--gold);
+                margin-bottom: 15px;
+            }
+
+            .service-card h3 {
+                font-size: 1.1rem;
+                font-weight: 700;
+                margin-bottom: 10px;
+            }
+
+            .service-card p {
+                font-size: 0.85rem;
+                color: #666;
+                line-height: 1.5;
+            }
+
+            /* Advocate Card Styling */
+            .advocate-card {
+                border-radius: 14px;
+                overflow: hidden;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+                background: var(--white);
+            }
+
+            .image-box img {
+                width: 100%;
+                height: 500px;
+                object-fit: fill;
+            }
+
+            .advocate-content {
+                padding: 20px;
+            }
+
+            .advocate-content h3 {
+                font-size: 1.2rem;
+                margin-bottom: 5px;
+                font-weight: 700;
+            }
+
+            .advocate-content span {
+                color: var(--gold);
+                font-weight: 600;
+                font-size: 0.9rem;
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            .advocate-content p {
+                font-size: 0.85rem;
+                color: #555;
+            }
+
+            :root {
+                --primary: #3c3819;
+                --gold: #c9a24d;
+                --cream: #f9f7f3;
+                --white: #ffffff;
+            }
+
+            body {
+                font-family: 'Inter', sans-serif;
+                background-color: var(--white);
+                color: var(--primary);
+            }
+
+            /* Header Styling */
+            .header {
+                background: #000000 !important;
+                /* Pure Black as requested */
+                padding: 10px 0;
+                position: fixed;
+                top: 0;
+                width: 100%;
+                z-index: 1000;
+            }
+
+            .logo-img {
+                height: 60px;
+                width: auto;
+            }
+
+            .nav-link-custom {
+                color: #ffffff !important;
+                text-decoration: none;
+                font-weight: 500;
+                margin: 0 15px;
+                transition: color 0.3s;
+            }
+
+            .dropdown-item:hover,
+            .nav-link-custom:hover {
+                color: #c9a24d !important;
+                /* Gold hover */
+            }
+
+            .dropdown-menu {
+                background-color: #000000 !important;
+                border: 1px solid #c9a24d !important;
+                margin-top: 10px !important;
+            }
+
+            .dropdown-item {
+                color: #ffffff !important;
+                padding: 10px 20px;
+            }
+
+            .dropdown-item:hover {
+                background-color: #1a1a1a !important;
+            }
+
+            .mobile-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 350px;
+                height: 100vh;
+                background: #000000;
+                z-index: 2000;
+                transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+                padding: 20px;
+            }
+
+            .mobile-menu.open {
+                right: 0;
+            }
+
+            .mobile-link {
+                color: #ffffff;
+                text-decoration: none;
+                font-size: 1.1rem;
+                display: block;
+                padding: 15px 0;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+
+            .close-menu {
+                background: transparent;
+                border: none;
+                color: #ffffff;
+                font-size: 2rem;
+                float: right;
+                cursor: pointer;
+            }
+
+            .btn-gold {
+                background-color: #c9a24d;
+                color: #000;
+                font-weight: 600;
+                padding: 10px 20px;
+                border-radius: 8px;
+                border: none;
+                text-decoration: none;
+                display: inline-block;
+            }
+
+            .btn-gold:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 10px 20px rgba(201, 162, 77, 0.3);
+                background-color: #b38f40;
+            }
+
+            /* Main Content Styling */
+            .page-header-section {
+                padding-top: 140px;
+                padding-bottom: 40px;
+                text-align: center;
+            }
+
+            /* The Heading Container */
+            .section-title {
+                position: relative;
+                display: inline-block;
+                padding-bottom: 15px;
+                margin-bottom: 30px;
+                font-family: 'Playfair Display', serif;
+                font-weight: 600;
+            }
+
+            /* The Gradient Underline */
+            .section-title::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 60px;
+                height: 4px;
+                border-radius: 2px;
+                background: linear-gradient(to right, #0b1c2d, #c9a24d);
+            }
+
+            .eyebrow {
+                color: var(--gold);
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                font-weight: 700;
+                font-size: 0.85rem;
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            /* Card Styling */
+            .service-card {
+                background: var(--white);
+                border: 1px solid rgba(0,0,0,0.06);
+                border-radius: 15px;
+                padding: 25px 15px;
+                height: 100%;
+                transition: all 0.4s ease;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+                text-align: center;
+            }
+
+            .service-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            }
+
+            .service-icon {
+                font-size: 2rem;
+                color: var(--gold);
+                margin-bottom: 15px;
+            }
+
+            .service-card h3 {
+                font-size: 1.1rem;
+                font-weight: 700;
+                margin-bottom: 10px;
+            }
+
+            .service-card p {
+                font-size: 0.85rem;
+                color: #666;
+                line-height: 1.5;
+            }
+
+            /* Advocate Card Styling */
+            .advocate-card {
+                border-radius: 14px;
+                overflow: hidden;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+                background: var(--white);
+            }
+
+            .image-box img {
+                width: 100%;
+                height: 500px;
+                object-fit: fill;
+            }
+
+            .advocate-content {
+                padding: 20px;
+            }
+
+            .advocate-content h3 {
+                font-size: 1.2rem;
+                margin-bottom: 5px;
+                font-weight: 700;
+            }
+
+            .advocate-content span {
+                color: var(--gold);
+                font-weight: 600;
+                font-size: 0.9rem;
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            .advocate-content p {
+                font-size: 0.85rem;
+                color: #555;
+            }
+
+            /* Footer */
+            /* Refined Footer Styles */
+            .footer {
+                background: linear-gradient(135deg, #081521, #0b1c2d);
+                padding: 80px 0 30px;
+                color: #ffffff;
+                width: 100%;
+                /* Ensure no bullets are inherited globally */
+                list-style: none;
+            }
+
+            .footer-contain {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 20px;
+            }
+
+            /* This creates the columns seen in the image */
+            .footer-grid {
+                display: grid;
+                grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+                /* Adjusts widths of columns */
+                gap: 50px;
+                margin-bottom: 50px;
+            }
+
+            /* RESET LISTS: This removes the bullets and indentation shown in your image */
+            .footer ul {
+                list-style: none !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+
+            .footer h4 {
+                color: #c9a24d;
+                font-size: 1.2rem;
+                margin-bottom: 25px;
+                font-weight: 600;
+                text-transform: none;
+                /* Keeps it professional */
+            }
+
+            .footer-text {
+                color: rgba(255, 255, 255, 0.7);
+                font-size: 0.95rem;
+                line-height: 1.7;
+                margin-top: 15px;
+            }
+
+            .footer li {
+                margin-bottom: 12px;
+            }
+
+            .footer a {
+                color: rgba(255, 255, 255, 0.7);
+                text-decoration: none !important;
+                transition: 0.3s ease;
+                font-size: 0.95rem;
+            }
+
+            .footer a:hover {
+                color: #c9a24d;
+                padding-left: 5px;
+                /* Subtle interaction effect */
+            }
+
+            /* Bottom Bar Styling */
+            .footer-bottom {
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+                padding-top: 25px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                color: rgba(255, 255, 255, 0.5);
+                font-size: 14px;
+            }
+
+            .legal-links a {
+                margin-left: 20px;
+                font-size: 13px;
+            }
+
+            /* Responsive Fixes */
+            @media (max-width: 992px) {
+                .footer-grid {
+                    grid-template-columns: 1fr 1fr;
+                    /* 2 columns on tablets */
+                }
+            }
+
+            @media (max-width: 768px) {
+                .footer-grid {
+                    grid-template-columns: 1fr;
+                    /* 1 column on phones */
+                    gap: 30px;
+                    text-align: left;
+                }
+                .footer-bottom {
+                    flex-direction: column;
+                    text-align: center;
+                    gap: 15px;
+                }
+                .legal-links a {
+                    margin: 0 10px;
+                }
+            }
+
+            /* Mobile specific adjustments */
+            @media (max-width: 768px) {
+                .image-box img {
+                    height: 180px;
+                }
+                .advocate-content h3 {
+                    font-size: 0.9rem;
+                }
+                .advocate-content p {
+                    font-size: 0.75rem;
+                }
+                .service-card {
+                    padding: 15px 10px;
+                }
+                .service-card h3 {
+                    font-size: 0.95rem;
+                }
+                .service-card p {
+                    font-size: 0.8rem;
+                }
+            }
+            @media (min-width: 992px) {
+                /* Show menu on hover */
+                .header .dropdown:hover > .dropdown-menu {
+                    display: block;
+                    margin-top: 0;
+                }
+
+                /* The Bridge: Prevents the menu from closing during diagonal movement */
+                .header .dropdown-menu::before {
+                    content: "";
+                    position: absolute;
+                    top: -20px; /* Covers the gap between button and menu */
+                    left: 0;
+                    width: 100%;
+                    height: 20px;
+                    background: transparent;
+                }
+                .nav-link-custom.dropdown-toggle::after {
+                    pointer-events: none; 
+                }
+            }
+            /* Custom Mobile Sidebar Styles */
+.m-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    display: block;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    width: 100%;
+    text-align: left;
+}
+
+.m-trigger {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.m-submenu {
+    display: none; /* Hidden by default */
+    background: rgba(255, 255, 255, 0.05);
+    padding-left: 20px;
+}
+
+.m-submenu.active {
+    display: block; /* Shown when toggled */
+}
+
+.m-sub-item {
+    display: block;
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    padding: 10px 0;
+    font-size: 0.95rem;
+}
+
+.m-sub-item:hover {
+    color: #c9a24d;
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 350px;
+    height: 100vh;
+    background: #000000;
+    z-index: 2000;
+    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 20px;
+    
+    /* FIX STARTS HERE */
+    overflow-y: auto;            /* Allows vertical scrolling */
+    overflow-x: hidden;          /* Prevents horizontal shaking */
+    display: flex;
+    flex-direction: column;
+    /* FIX ENDS HERE */
+}
+
+/* Optional: Make the scrollbar look cleaner on mobile */
+.mobile-menu::-webkit-scrollbar {
+    width: 5px;
+}
+.mobile-menu::-webkit-scrollbar-thumb {
+    background: var(--gold);
+    border-radius: 10px;
+}
+
+/* WhatsApp Floating Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 10px;
+    background-color: #25d366;
+    /* WhatsApp Green */
+    color: white;
+    padding: 12px 20px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    /* Pulsing effect */
+    animation: pulse-green 2s infinite;
+}
+
+.whatsapp-float i {
+    font-size: 24px;
+}
+
+.whatsapp-float:hover {
+    background-color: #128c7e;
+    /* Darker WhatsApp Green */
+    color: white;
+    transform: translateY(-5px);
+}
+/* Table Layout Visibility Engine */
+.table-responsive {
+    margin: 35px 0;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+    background-color: #ffffff;
+}
+
+.custom-table {
+    margin-bottom: 0;
+    border-collapse: collapse;
+}
+
+.custom-table thead {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+}
+
+.custom-table th {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 16px 15px;
+    text-align: left;
+    background-color: #000000 !important;
+    color: #ffffff !important;
+}
+
+.custom-table td {
+    padding: 16px 15px;
+    font-size: 0.95rem;
+    color: #444444;
+}
+
+/* Explicit class to force wrapping visibility on crowded viewports */
+.text-wrap-break {
+    white-space: normal !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+}
+
+.custom-table tbody tr:nth-of-type(even) {
+    background-color: #f9f7f3; /* RRC Soft Cream Accent */
+}
+    </style>
+
+
 </head>
 <body>
 
 <!-- Fixed Global Navigation Header -->
-<header class="header"> 
+    <header class="header"> 
     <nav class="container d-flex align-items-center justify-content-between">
         <a href="index.html">
             <img src="assets/images/rrclogo.png" alt="RRC Logo" class="logo-img">
         </a>
+
         <div class="d-none d-lg-flex align-items-center ms-auto">
-            <a class="nav-link-custom" href="index.html">Home</a>
             <div class="dropdown">
-                <a class="nav-link-custom dropdown-toggle" href="nri-services.html" role="button">NRI Services</a>
+                <a class="nav-link-custom border-0 bg-transparent p-0" href="index.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Home
+                </a>
+            </div>    
+            <div class="dropdown">
+                <a class="nav-link-custom dropdown-toggle border-0 bg-transparent p-0" href="nri-services.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    NRI Services
+                </a>
                 <ul class="dropdown-menu shadow-lg">
                     <li><a class="dropdown-item text-uppercase" style="font-size: 14px;" href="nri-property-disputes.html">Property Dispute</a></li>
                     <li><a class="dropdown-item text-uppercase" style="font-size: 14px;" href="nri-power-of-attorney.html">Power of Attorney</a></li>
@@ -215,7 +1526,9 @@
                 </ul>
             </div> 
             <div class="dropdown">
-                <a class="nav-link-custom dropdown-toggle" href="core-practice-areas.html" role="button">Core Practice Areas</a>
+                <a class="nav-link-custom dropdown-toggle border-0 bg-transparent p-0" href="core-practice-areas.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Core Practice Areas
+                </a>
                 <ul class="dropdown-menu shadow-lg">
                     <li><a class="dropdown-item text-uppercase" style="font-size: 14px;" href="family-law.html">Family Law Workspace</a></li>
                     <li><a class="dropdown-item text-uppercase" style="font-size: 14px;" href="intellectual-property.html">Intellectual Property Advisory</a></li>
@@ -226,17 +1539,99 @@
                     <li><a class="dropdown-item text-uppercase" style="font-size: 14px;" href="litigation-dispute-resolution.html">Litigation &amp; Dispute Resolution</a></li> 
                 </ul>
             </div>
-            <a class="nav-link-custom" href="partners.html">Partners</a>
-            <a class="nav-link-custom" href="lawfirm-blog.html">Blog</a>
-            <a class="nav-link-custom" href="index.html#contact">Contact</a>
+            <!-- <div class="dropdown">
+                <a class="nav-link-custom dropdown-toggle border-0 bg-transparent p-0" href="sectors.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Sectors
+                </a>
+                <ul class="dropdown-menu shadow-lg">
+                    <li><a class="dropdown-item" href="sectors.html#agri-sector">AGRICULTURE, RURAL &amp; AGRI-BUSINESS</a></li>
+                    <li><a class="dropdown-item" href="sectors.html#finance-sector">BANKING, FINANCE &amp; FINTECH</a></li>
+                    <li><a class="dropdown-item" href="sectors.html#realestate-sector">REAL ESTATE, INFRASTRUCTURE &amp; CONSTRUCTION</a></li>
+                    <li><a class="dropdown-item" href="sectors.html#healthcare-sector">HEALTHCARE, LIFE SCIENCES &amp; EDUCATION</a></li>
+                    <li><a class="dropdown-item" href="sectors.html#logistics-sector">TRANSPORTATION, LOGISTICS &amp; HOSPITALITY</a></li>
+                    <li><a class="dropdown-item" href="sectors.html#international-sector">INTERNATIONAL, NRI &amp; CROSS-BORDER</a></li>
+                </ul>
+            </div> -->
+            <div class="dropdown">
+                <a class="nav-link-custom border-0 bg-transparent p-0" href="index.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Partners
+                </a>
+            </div>
+            <div class="dropdown">
+                <a class="nav-link-custom border-0 bg-transparent p-0" href="lawfirm-blog.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Blog
+                </a>
+            </div>
+            <div class="dropdown">
+                <a class="nav-link-custom border-0 bg-transparent p-0" href="index.html#contact" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Contact
+                </a>
+            </div>
         </div>
+
         <div class="d-flex align-items-center gap-3">
             <div class="cta d-none d-sm-block">
                 <a href="./booking.html" class="btn btn-gold">Book Consultation</a>
             </div>
+            <button class="btn text-white d-lg-none fs-3 p-0" id="menuToggle">
+                <i class="fa fa-bars"></i>
+            </button>
         </div>
     </nav>
 </header>
+
+<div class="mobile-menu" id="mobileMenu">
+    <button class="close-menu" id="closeMenu">✕</button>
+    <div class="mt-5">
+         <a href="partners.html" class="m-link">Partners</a>
+        <a href="index.html" class="m-link">Home</a>
+        <div class="m-dropdown">
+            <a class="m-link m-trigger" href="nri-services.html">
+                NRI Services <i class="fa fa-chevron-down ms-2"></i>
+            </a>
+            <div class="m-submenu" id="mPracticeMenu">
+                <a class="m-sub-item" href="nri-property-disputes.html">Property Dispute</a>
+                <a class="m-sub-item" href="nri-power-of-attorney.html">Power of Attorney</a>
+                <a class="m-sub-item" href="nri-criminal-case.html">Criminal Case</a>
+                <a class="m-sub-item" href="nri-family-matrimonial.html">Family &amp; Matrimonial</a>
+            </div>
+        </div>
+        <div class="m-dropdown">
+            <a class="m-link m-trigger" href="core-practice-areas.html">
+                Core Practice Areas <i class="fa fa-chevron-down ms-2"></i>
+            </a>
+            <div class="m-submenu" id="mPracticeMenu">
+                <a class="m-sub-item" href="family-law.html">FAMILY, SUCCESSION &amp; PRIVATE CLIENT PRACTICE</a>
+                <a class="m-sub-item" href="intellectual-property.html">INTELLECTUAL PROPERTY &amp; INNOVATION PROTECTION</a>
+                <a class="m-sub-item" href="employment-law.html">LABOUR, EMPLOYMENT &amp; INDUSTRIAL RELATIONS</a>
+                <a class="m-sub-item" href="white-collar-crime.html">WHITE COLLAR CRIMES &amp; FINANCIAL INVESTIGATIONS</a>
+                <a class="m-sub-item" href="property-law.html">DOCUMENTATION, REGISTRATION &amp; DUE DILIGENCE</a>
+                <a class="m-sub-item" href="cyber-law.html">CYBER LAW, DATA PROTECTION &amp; DIGITAL EVIDENCE</a>
+                <a class="m-sub-item" href="litigation-dispute-resolution.html">LITIGATION &amp; DISPUTE RESOLUTION</a>
+            </div>
+        </div>
+        <!-- <div class="m-dropdown">
+            <a class="m-link m-trigger" href="sectors.html">
+                Sectors <i class="fa fa-chevron-down ms-2"></i>
+            </a>
+            <div class="m-submenu" id="mSectorMenu">
+                <a class="m-sub-item" href="sectors.html#agri-sector">AGRICULTURE, RURAL &amp; AGRI-BUSINESS</a>
+                <a class="m-sub-item" href="sectors.html#finance-sector">BANKING, FINANCE &amp; FINTECH</a>
+                <a class="m-sub-item" href="sectors.html#realestate-sector">REAL ESTATE, INFRASTRUCTURE &amp; CONSTRUCTION</a>
+                <a class="m-sub-item" href="sectors.html#healthcare-sector">HEALTHCARE, LIFE SCIENCES &amp; EDUCATION</a>
+                <a class="m-sub-item" href="sectors.html#logistics-sector">TRANSPORTATION, LOGISTICS &amp; HOSPITALITY</a>
+                <a class="m-sub-item" href="sectors.html#international-sector">INTERNATIONAL, NRI &amp; CROSS-BORDER</a>
+            </div>
+        </div> -->
+
+        <a href="lawfirm-blog.html" class="m-link">Blog</a>
+        <a href="index.html#contact" class="m-link">Contact</a>
+
+        <div class="mt-4">
+            <a href="./booking.html" class="btn btn-gold w-100 py-3 text-center">Book Consultation</a>
+        </div>
+    </div>
+</div>
 
 <main class="master-main-wrapper py-5 bg-white">
     <div class="container">
@@ -250,8 +1645,7 @@
                     <h1 class="display-6 fw-bold mb-3" style="color: #3c3819; font-family: 'Playfair Display', serif; line-height: 1.25;">Foreign Matrimonial Settlements and Foreign Judgments Affecting Indian Immovable Property – Part III</h1>
                     <p class="fs-5 text-muted">Proceedings Before Indian Courts, Litigation Strategy, Practical Remedies and Judicial Trends – A Senior Counsel's Perspective</p>
                     <div class="d-flex align-items-center text-muted small mt-3 gap-3">
-                        <span><i class="far fa-calendar-alt me-1"></i> July 8, 2026</span>
-                        <span><i class="far fa-clock me-1"></i> 9 Min Read</span>
+                        <span><i class="far fa-calendar-alt me-1"></i> July 2026</span>
                         <span><i class="fas fa-gavel me-1"></i> By RRC Law Associates</span>
                     </div>
                 </header>
@@ -509,5 +1903,82 @@
         </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const closeMenu = document.getElementById('closeMenu');
+
+    // 1. Mobile Menu Drawer State Handlers
+    if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            mobileMenu.classList.add('open');
+        });
+    }
+
+    if (closeMenu && mobileMenu) {
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.remove('open');
+        });
+    }
+
+    // Close mobile menu sidebar drawer on backdrop surface interaction hits
+    document.addEventListener('click', (e) => {
+        if (mobileMenu && mobileMenu.classList.contains('open')) {
+            if (!mobileMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+                mobileMenu.classList.remove('open');
+            }
+        }
+    });
+
+    // 2. Mobile Menu Dropdown Target Clamping
+    const mobileTriggers = document.querySelectorAll('.m-trigger');
+    mobileTriggers.forEach(trigger => {
+        trigger.addEventListener('click', function(e) {
+            const currentSubmenu = this.nextElementSibling;
+            if (currentSubmenu && currentSubmenu.classList.contains('m-submenu')) {
+                if (!currentSubmenu.classList.contains('active')) {
+                    e.preventDefault(); // Lock default asset route mapping transitions 
+                    
+                    // Close other submenus for cleaner UX
+                    document.querySelectorAll('.m-submenu').forEach(sub => sub.classList.remove('active'));
+                    document.querySelectorAll('.m-trigger i').forEach(icon => icon.style.transform = 'rotate(0deg)');
+                    
+                    currentSubmenu.classList.add('active');
+                    const icon = this.querySelector('i');
+                    if (icon) icon.style.transform = 'rotate(180deg)';
+                }
+            }
+        });
+    });
+
+    // 3. Global Redirection & Intercept Normalization 
+    const routingLinks = document.querySelectorAll('.nav-link-custom, .mobile-link, .m-link, .m-sub-item');
+    routingLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            const targetUrl = this.getAttribute('href');
+            if (targetUrl && targetUrl !== '#' && !this.classList.contains('m-trigger') && !this.classList.contains('dropdown-toggle')) {
+                window.location.href = targetUrl;
+            }
+        });
+    });
+
+    // 4. Desktop Navigation Framework Fixes
+    if (window.innerWidth > 992) {
+        const desktopDropdownToggles = document.querySelectorAll('.nav-link-custom.dropdown-toggle');
+        desktopDropdownToggles.forEach(toggle => {
+            toggle.addEventListener('click', function() {
+                const urlTarget = this.getAttribute('href');
+                if (urlTarget && urlTarget !== '#') {
+                    window.location.href = urlTarget;
+                }
+            });
+        });
+    }
+});
+    </script>
 </body>
 </html>
