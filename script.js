@@ -1,37 +1,371 @@
-const form = document.getElementById("contactForm");
-const toast = document.getElementById("toast");
-const btn = document.getElementById("submitBtn");
+const rrcAssistantOnly = document.currentScript?.hasAttribute('data-rrc-ai-only') === true;
 
-form.addEventListener("submit", function (e) {
-  e.preventDefault();
+function createLucideIcons() {
+  if (typeof window.lucide?.createIcons === 'function') {
+    window.lucide.createIcons();
+  }
+}
 
-  btn.innerText = "Submitting...";
-  btn.disabled = true;
+function initRrcAiAssistant() {
+  if (window.__rrcAiAssistantMounted === true) return;
+  const mount = document.querySelector('[data-rrc-ai-chat-root]');
+  if (!document.body || !mount) return;
+  if (mount.querySelector('.rrc-ai-chat') || document.querySelector('.rrc-ai-chat')) return;
 
-  setTimeout(() => {
-    toast.style.opacity = "1";
-    toast.innerText = "Consultation Request Submitted";
+  const host = document.createElement('div');
+  host.className = 'rrc-ai-chat';
+  // Immediate light-DOM positioning: keeps the host out of normal document
+  // flow even before the Shadow DOM stylesheet below has loaded.
+  host.style.position = 'fixed';
+  host.style.right = '18px';
+  host.style.bottom = 'calc(env(safe-area-inset-bottom, 0px) + 84px)';
+  host.style.width = '60px';
+  host.style.height = '60px';
+  host.style.margin = '0';
+  host.style.padding = '0';
+  host.style.zIndex = '1500';
+  host.style.display = 'block';
+  const root = host.attachShadow({ mode: 'open' });
+  // Synchronous critical fallback styles: applied instantly inside Shadow DOM
+  // so the toggle/panel are correctly positioned/hidden even while the full
+  // async stylesheet is still loading (or if it fails/stale-cached).
+  const critical = document.createElement('style');
+  critical.textContent = [
+    ':host{position:fixed !important;right:18px !important;',
+    'bottom:calc(env(safe-area-inset-bottom, 0px) + 84px) !important;',
+    'width:60px !important;height:60px !important;margin:0 !important;',
+    'padding:0 !important;display:block !important;z-index:1500 !important;}',
+    ':host(.rrc-ai-open){width:60px;height:60px;}',
+    '.rrc-ai-toggle{position:absolute !important;right:0 !important;bottom:0 !important;}',
+    '.rrc-ai-window{position:absolute !important;right:0 !important;bottom:74px !important;',
+    'visibility:hidden !important;pointer-events:none !important;}',
+    '.rrc-ai-window.rrc-ai-visible{visibility:visible !important;pointer-events:auto !important;}'
+  ].join('');
+  root.appendChild(critical);
+  const stylesheet = document.createElement('link');
+  stylesheet.rel = 'stylesheet';
+  // Keep the Shadow DOM stylesheet version in sync with the loaded script so
+  // a stale-cached/failed full stylesheet cannot leave fallback-only layout.
+  let aiStyleVersion = 'rrc-ai-chat-3';
+  try {
+    const scriptUrl = document.currentScript && document.currentScript.src
+      ? new URL(document.currentScript.src, document.baseURI)
+      : null;
+    const v = scriptUrl ? scriptUrl.searchParams.get('v') : null;
+    if (v) aiStyleVersion = v;
+  } catch { /* keep default version */ }
+  stylesheet.href = new URL(('style.css?v=' + aiStyleVersion), document.baseURI).href;
+  root.appendChild(stylesheet);
 
-    form.reset();
-    btn.innerText = "Submit Request";
-    btn.disabled = false;
+  const makeElement = (tag, className, text) => {
+    const element = document.createElement(tag);
+    if (className) element.className = className;
+    if (text !== undefined) element.textContent = text;
+    return element;
+  };
 
-    setTimeout(() => {
-      toast.style.opacity = "0";
-    }, 3000);
-  }, 1000);
-});
+  const toggle = makeElement('button', 'rrc-ai-toggle', 'AI');
+  toggle.type = 'button';
+  toggle.setAttribute('aria-label', 'Open RRC Law Associates AI Assistant');
+  toggle.setAttribute('aria-expanded', 'false');
+  toggle.setAttribute('aria-controls', 'rrc-ai-window');
+
+  const panel = makeElement('section', 'rrc-ai-window');
+  panel.id = 'rrc-ai-window';
+  panel.setAttribute('role', 'dialog');
+  panel.setAttribute('aria-label', 'RRC Law Associates AI Assistant');
+  panel.setAttribute('aria-hidden', 'true');
+  panel.inert = true;
+
+  const header = makeElement('header', 'rrc-ai-header');
+  const brandIcon = makeElement('img', 'rrc-ai-icon');
+  brandIcon.src = new URL('assets/images/logo.png', document.baseURI).href;
+  brandIcon.alt = '';
+  brandIcon.setAttribute('aria-hidden', 'true');
+
+  const headingGroup = makeElement('div', 'rrc-ai-heading-group');
+  headingGroup.append(
+    makeElement('strong', 'rrc-ai-title', 'RRC Law Associates AI Assistant')
+  );
+  const status = makeElement('span', 'rrc-ai-status', 'Online');
+  headingGroup.appendChild(status);
+  const refreshButton = makeElement('button', 'rrc-ai-refresh', '⟳');
+  refreshButton.type = 'button';
+  refreshButton.setAttribute('aria-label', 'Refresh conversation');
+  refreshButton.setAttribute('title', 'Refresh conversation');
+  const closeButton = makeElement('button', 'rrc-ai-close', '×');
+  closeButton.type = 'button';
+  closeButton.setAttribute('aria-label', 'Close AI Assistant');
+  header.append(brandIcon, headingGroup, refreshButton, closeButton);
+
+  const actions = makeElement('nav', 'rrc-ai-actions');
+  actions.setAttribute('aria-label', 'Contact and consultation links');
+  const bookingLink = makeElement('a', 'rrc-ai-action', 'Book Consultation');
+  bookingLink.href = './booking.html';
+  actions.append(bookingLink);
+
+  const WELCOME_LINES = [
+    'Hello! 👋',
+    'I’m the RRC Law Associates AI Assistant.',
+    '',
+    'I can help you learn more about:',
+    '• NRI legal services',
+    '• Property and family matters',
+    '• Child custody',
+    '• Power of Attorney',
+    '• Litigation and dispute resolution',
+    '• Cyber and employment matters',
+    '• Documentation and due diligence',
+    '• Booking a consultation',
+    '',
+    'How can I help you?'
+  ];
+  const QUICK_QUESTION_LABELS = [
+    'NRI Legal Services',
+    'Property Matters',
+    'Child Custody',
+    'Power of Attorney',
+    'Book Consultation'
+  ];
+
+  const messages = makeElement('div', 'rrc-ai-messages');
+  messages.setAttribute('role', 'log');
+  messages.setAttribute('aria-label', 'Chat messages');
+  messages.setAttribute('aria-live', 'polite');
+  messages.setAttribute('aria-relevant', 'additions');
+
+  const welcome = makeElement('p', 'rrc-ai-welcome');
+  welcome.textContent = WELCOME_LINES.join('\n');
+  messages.appendChild(welcome);
+
+  const quickQuestions = makeElement('div', 'rrc-ai-quick-questions');
+  quickQuestions.setAttribute('role', 'group');
+  quickQuestions.setAttribute('aria-label', 'Quick questions');
+  const quickQuestionLabels = QUICK_QUESTION_LABELS.slice();
+  const quickButtons = quickQuestionLabels.map((label) => {
+    const button = makeElement('button', 'rrc-ai-quick-question', label);
+    button.type = 'button';
+    quickQuestions.appendChild(button);
+    return button;
+  });
+  messages.appendChild(quickQuestions);
+
+  const liveStatus = makeElement('div', 'rrc-ai-live-status');
+  liveStatus.setAttribute('role', 'status');
+  liveStatus.setAttribute('aria-live', 'polite');
+
+  const form = makeElement('form', 'rrc-ai-form');
+  const inputLabel = makeElement('label', 'rrc-ai-sr-only', 'Your message');
+  inputLabel.htmlFor = 'rrc-ai-input';
+  const input = makeElement('textarea', 'rrc-ai-input');
+  input.id = 'rrc-ai-input';
+  input.rows = 2;
+  input.maxLength = 1200;
+  input.placeholder = 'Type your message...';
+  input.setAttribute('aria-label', 'Type your message');
+  const sendButton = makeElement('button', 'rrc-ai-send', 'Send');
+  sendButton.type = 'submit';
+  sendButton.setAttribute('aria-label', 'Send message');
+  form.append(inputLabel, input, sendButton);
+
+  const disclaimer = makeElement(
+    'p',
+    'rrc-ai-disclaimer',
+    'AI-generated responses are for general information only and are not legal advice. Do not share confidential or sensitive personal information through this chat.'
+  );
+
+  panel.append(header, actions, messages, liveStatus, form, disclaimer);
+  root.append(toggle, panel);
+  mount.appendChild(host);
+  window.__rrcAiAssistantMounted = true;
+
+  let isSending = false;
+  let isOpen = false;
+  let conversationResetToken = 0;
+
+  function resetConversation() {
+    // Start a fresh conversation: invalidate in-flight responses, clear
+    // transient loading/error state, drop rendered messages, and restore
+    // the initial welcome + quick questions. Frontend keeps no persisted
+    // chat history (no chat localStorage/sessionStorage), so clearing the
+    // DOM plus these flags fully resets client conversation state.
+    conversationResetToken += 1;
+    const activeToken = conversationResetToken;
+    isSending = false;
+    input.value = '';
+    input.disabled = false;
+    sendButton.disabled = false;
+    quickButtons.forEach((button) => { button.disabled = false; });
+    liveStatus.textContent = '';
+    messages.replaceChildren();
+    const freshWelcome = makeElement('p', 'rrc-ai-welcome');
+    freshWelcome.textContent = WELCOME_LINES.join('\n');
+    messages.appendChild(freshWelcome);
+    messages.appendChild(quickQuestions);
+    messages.scrollTop = 0;
+    liveStatus.textContent = 'Conversation refreshed. How can I help you?';
+    window.setTimeout(() => {
+      if (activeToken === conversationResetToken) liveStatus.textContent = '';
+    }, 2500);
+    if (isOpen) input.focus();
+  }
+
+  function setOpen(open) {
+    isOpen = open;
+    host.classList.toggle('rrc-ai-open', open);
+    panel.classList.toggle('rrc-ai-visible', open);
+    toggle.setAttribute('aria-label', open ? 'Close RRC Law Associates AI Assistant' : 'Open RRC Law Associates AI Assistant');
+    toggle.setAttribute('aria-expanded', String(open));
+    panel.setAttribute('aria-hidden', String(!open));
+    panel.inert = !open;
+    if (open) {
+      requestAnimationFrame(() => input.focus());
+    } else {
+      toggle.focus();
+    }
+  }
+
+  function addMessage(role, text) {
+    const message = makeElement('div', `rrc-ai-message rrc-ai-${role}`);
+    message.setAttribute('aria-label', role === 'user' ? 'You' : 'AI Assistant');
+    message.textContent = text;
+    messages.appendChild(message);
+    messages.scrollTop = messages.scrollHeight;
+    return message;
+  }
+
+  async function sendMessage(rawMessage, fromInput) {
+    const userMessage = rawMessage.trim();
+    if (!userMessage) {
+      liveStatus.textContent = 'Please enter a message.';
+      if (fromInput && isOpen) input.focus();
+      return;
+    }
+    if (isSending) return;
+    const requestToken = conversationResetToken;
+
+    isSending = true;
+    liveStatus.textContent = 'Sending your message.';
+    if (fromInput) input.value = '';
+    input.disabled = true;
+    sendButton.disabled = true;
+    quickButtons.forEach((button) => { button.disabled = true; });
+    addMessage('user', userMessage);
+    const thinking = addMessage('thinking', 'Thinking...');
+
+    try {
+      const hostname = window.location.hostname;
+      const usesProductionApi = ['localhost', '127.0.0.1', 'www.rrclawassociates.com'].includes(hostname);
+      const chatEndpoint = usesProductionApi
+        ? 'https://rrclawassociates.com/api/chat'
+        : '/api/chat';
+      const response = await fetch(chatEndpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: userMessage })
+      });
+      if (!response.ok) {
+        const messagesByStatus = {
+          400: 'Please check your message and try again.',
+          429: 'Too many requests. Please wait a moment and try again.',
+          500: 'The assistant is temporarily unavailable. Please try again later.',
+          502: 'The assistant could not complete your request. Please try again later.',
+          503: 'The assistant is temporarily unavailable. Please try again later.'
+        };
+        addMessage(
+          'assistant',
+          messagesByStatus[response.status] || 'Sorry, I’m unable to respond right now. Please try again later.'
+        );
+        return;
+      }
+      const result = await response.json();
+      if (requestToken !== conversationResetToken) return;
+      if (result?.success !== true || typeof result.message !== 'string' || !result.message.trim()) {
+        throw new Error('Assistant request failed');
+      }
+      addMessage('assistant', result.message);
+    } catch {
+      if (requestToken !== conversationResetToken) return;
+      addMessage(
+        'assistant',
+        'Sorry, I’m unable to respond right now. Please try again or contact RRC Law Associates directly.'
+      );
+    } finally {
+      if (requestToken !== conversationResetToken) return;
+      thinking.remove();
+      isSending = false;
+      input.disabled = false;
+      sendButton.disabled = false;
+      quickButtons.forEach((button) => { button.disabled = false; });
+      liveStatus.textContent = '';
+      if (isOpen) input.focus();
+    }
+  }
+
+  toggle.addEventListener('click', () => setOpen(!isOpen));
+  refreshButton.addEventListener('click', resetConversation);
+  closeButton.addEventListener('click', () => setOpen(false));
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    sendMessage(input.value, true);
+  });
+  input.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter' && !event.shiftKey && !event.isComposing) {
+      event.preventDefault();
+      form.requestSubmit();
+    }
+  });
+  quickButtons.forEach((button) => {
+    button.addEventListener('click', () => sendMessage(button.textContent, false));
+  });
+  window.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && isOpen) setOpen(false);
+  });
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initRrcAiAssistant, { once: true });
+} else {
+  initRrcAiAssistant();
+}
+
+if (!rrcAssistantOnly) {
+  const form = document.getElementById("contactForm");
+  const toast = document.getElementById("toast");
+  const btn = document.getElementById("submitBtn");
+
+  if (form && toast && btn) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      btn.innerText = "Submitting...";
+      btn.disabled = true;
+
+      setTimeout(() => {
+        toast.style.opacity = "1";
+        toast.innerText = "Consultation Request Submitted";
+
+        form.reset();
+        btn.innerText = "Submit Request";
+        btn.disabled = false;
+
+        setTimeout(() => {
+          toast.style.opacity = "0";
+        }, 3000);
+      }, 1000);
+    });
+  }
 
 // footer
 // Set current year
 document.getElementById("year").textContent = new Date().getFullYear();
 
 // Initialize Lucide icons
-lucide.createIcons();
+createLucideIcons();
 
 
 //header
-lucide.createIcons();
+createLucideIcons();
 
 document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.getElementById('menuToggle');
@@ -76,7 +410,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // hero section
-lucide.createIcons();
+createLucideIcons();
 
 // Smooth scroll
 document.querySelectorAll("[data-link]").forEach(btn => {
@@ -88,10 +422,10 @@ document.querySelectorAll("[data-link]").forEach(btn => {
   });
 });
 //ptactice section
-lucide.createIcons();
+createLucideIcons();
 
 //testimonial
-lucide.createIcons();
+createLucideIcons();
 
 const testimonials = [
   {
@@ -155,17 +489,25 @@ function render() {
   });
 }
 
-document.querySelector(".next").onclick = () => {
-  index = (index + 1) % testimonials.length;
-  render();
-};
+const nextButton = document.querySelector(".next");
+if (nextButton) {
+  nextButton.onclick = () => {
+    index = (index + 1) % testimonials.length;
+    render();
+  };
+}
 
-document.querySelector(".prev").onclick = () => {
-  index = (index - 1 + testimonials.length) % testimonials.length;
-  render();
-};
+const prevButton = document.querySelector(".prev");
+if (prevButton) {
+  prevButton.onclick = () => {
+    index = (index - 1 + testimonials.length) % testimonials.length;
+    render();
+  };
+}
 
-render();
+if (text && nameEl && locationEl && starsEl && dotsEl) {
+  render();
+}
 //stats scroll
 
 
@@ -252,7 +594,7 @@ reveals.forEach(el => observer.observe(el));
 
 
 //footer
-lucide.createIcons();
+createLucideIcons();
 
 // Dynamic year
 document.getElementById("year").textContent = new Date().getFullYear();
@@ -265,10 +607,13 @@ const icons = [
 ];
 
 let i = 0;
-setInterval(() => {
-  i = (i + 1) % icons.length;
-  document.getElementById("iconSwap").src = icons[i];
-}, 2000);
+const iconSwap = document.getElementById("iconSwap");
+if (iconSwap) {
+  setInterval(() => {
+    i = (i + 1) % icons.length;
+    iconSwap.src = icons[i];
+  }, 2000);
+}
 
 document.addEventListener("DOMContentLoaded", () => {
   const slider = document.querySelector(".testimonial-slider");
@@ -338,15 +683,15 @@ window.addEventListener("load", () => {
 
 
 // Function to accept disclaimer
-function acceptDisclaimer() {
+window.acceptDisclaimer = function acceptDisclaimer() {
     localStorage.setItem("disclaimerAccepted", "yes"); // store in localStorage
     document.getElementById("disclaimerOverlay").style.display = "none"; // hide popup
-}
+};
 
 // Function to close popup without accepting
-function closeDisclaimer() {
+window.closeDisclaimer = function closeDisclaimer() {
     document.getElementById("disclaimerOverlay").style.display = "none";
-}
+};
 
 document.addEventListener("DOMContentLoaded", () => {
     const grid = document.getElementById("advocatesGrid");
@@ -422,3 +767,4 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+        }
