@@ -49,8 +49,9 @@
 }
 
 @media (min-width: 992px) {
-    /* Show menu on hover */
-    .header .dropdown:hover > .dropdown-menu {
+    /* Show menu on hover and keyboard focus */
+    .header .dropdown:hover > .dropdown-menu,
+    .header .dropdown:focus-within > .dropdown-menu {
         display: block;
         margin-top: 0;
     }
