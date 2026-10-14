@@ -105,7 +105,7 @@
     <link rel="stylesheet" href="topbar.css?v=20261008-1">
 
     <!-- Scoped OCI Page Stylesheet -->
-    <link rel="stylesheet" href="oci-style.css?v=20261009-2">
+    <link rel="stylesheet" href="oci-style.css?v=20261014-final">
 
     <!-- Existing Header & Navigation Core Rules (Matches nri-services.html) -->
     <style>
@@ -421,6 +421,18 @@
              Starts immediately below the fixed header
              ========================================================== -->
         <section class="oci-hero-section" aria-labelledby="hero-heading">
+            <div class="oci-hero-video-media" aria-hidden="true">
+                <div class="oci-hero-video-wrapper is-active" id="ociHeroWrapper0">
+                    <video id="ociHeroVideo0" class="oci-hero-video" src="assets/videos/oci-scene-1.mp4" muted playsinline preload="auto" tabindex="-1"></video>
+                </div>
+                <div class="oci-hero-video-wrapper" id="ociHeroWrapper1">
+                    <video id="ociHeroVideo1" class="oci-hero-video" src="assets/videos/oci-scene-2.mp4" muted playsinline preload="metadata" tabindex="-1"></video>
+                </div>
+                <div class="oci-hero-video-wrapper" id="ociHeroWrapper2">
+                    <video id="ociHeroVideo2" class="oci-hero-video" src="assets/videos/oci-scene-3.mp4" muted playsinline preload="none" tabindex="-1"></video>
+                </div>
+                <div class="oci-hero-overlay"></div>
+            </div>
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-7">
@@ -1201,6 +1213,196 @@
     <!-- Existing Site Scripts -->
     <script src="script.js?v=20261008-1" defer></script>
     <script src="script2.js?v=20261008-1" defer></script>
+
+    <!-- OCI Hero Background Video Sequence & Smooth Crossfade -->
+    <script>
+    (function () {
+        'use strict';
+
+        // 1. Accessibility check: Respect prefers-reduced-motion
+        if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            return;
+        }
+
+        var mediaContainer = document.querySelector('.oci-hero-video-media');
+        var wrappers = [
+            document.getElementById('ociHeroWrapper0'),
+            document.getElementById('ociHeroWrapper1'),
+            document.getElementById('ociHeroWrapper2')
+        ];
+        var videos = [
+            document.getElementById('ociHeroVideo0'),
+            document.getElementById('ociHeroVideo1'),
+            document.getElementById('ociHeroVideo2')
+        ];
+
+        if (!mediaContainer || !wrappers[0] || !videos[0]) {
+            return;
+        }
+
+        var totalScenes = videos.length;
+        var currentScene = 0;
+        var isTransitioning = false;
+        var transitionTimer = null;
+
+        // Permanent mute enforcement across all clips
+        function enforceMute(v) {
+            if (!v) return;
+            v.muted = true;
+            v.defaultMuted = true;
+            try {
+                v.volume = 0;
+            } catch (e) {}
+            v.setAttribute('muted', '');
+            v.setAttribute('playsinline', '');
+        }
+
+        videos.forEach(function (v) {
+            if (v) {
+                enforceMute(v);
+                v.addEventListener('error', function () {
+                    fallbackToStatic();
+                });
+            }
+        });
+
+        function fallbackToStatic() {
+            if (mediaContainer) {
+                mediaContainer.style.display = 'none';
+            }
+            videos.forEach(function (v) {
+                if (v) {
+                    try {
+                        v.pause();
+                    } catch (e) {}
+                }
+            });
+        }
+
+        function advanceToNextScene() {
+            if (isTransitioning) return;
+            isTransitioning = true;
+
+            var outgoingIndex = currentScene;
+            var incomingIndex = (currentScene + 1) % totalScenes;
+
+            var outgoingWrapper = wrappers[outgoingIndex];
+            var incomingWrapper = wrappers[incomingIndex];
+            var outgoingVideo = videos[outgoingIndex];
+            var incomingVideo = videos[incomingIndex];
+
+            // Ensure incoming video starts cleanly from frame 0, fully muted
+            enforceMute(incomingVideo);
+            try {
+                incomingVideo.currentTime = 0;
+            } catch (e) {}
+
+            var playPromise = incomingVideo.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(function (err) {
+                    console.warn('Hero video playback error:', err);
+                    fallbackToStatic();
+                });
+            }
+
+            // Incoming video fades in at z-index 3 over the final frame of outgoing video at z-index 2
+            incomingWrapper.classList.add('is-incoming');
+            incomingWrapper.classList.add('is-active');
+
+            clearTimeout(transitionTimer);
+            transitionTimer = setTimeout(function () {
+                // Outgoing clip is now fully obscured by incoming clip
+                outgoingWrapper.classList.remove('is-active');
+                outgoingWrapper.classList.remove('is-incoming');
+                try {
+                    outgoingVideo.pause();
+                    outgoingVideo.currentTime = 0;
+                } catch (e) {}
+
+                // Incoming clip settles into standard active layer at z-index 2
+                incomingWrapper.classList.remove('is-incoming');
+
+                currentScene = incomingIndex;
+                isTransitioning = false;
+
+                // Preload subsequent clip on demand without downloading all 3 simultaneously
+                var nextToPreload = (incomingIndex + 1) % totalScenes;
+                if (videos[nextToPreload]) {
+                    enforceMute(videos[nextToPreload]);
+                    videos[nextToPreload].preload = 'auto';
+                    videos[nextToPreload].load();
+                }
+            }, 950);
+        }
+
+        // Each clip plays its entire duration before advancing
+        videos.forEach(function (v, idx) {
+            if (!v) return;
+
+            v.addEventListener('ended', function () {
+                if (idx === currentScene && !isTransitioning) {
+                    advanceToNextScene();
+                }
+            });
+
+            // Safety boundary check for browsers that might delay the 'ended' event
+            v.addEventListener('timeupdate', function () {
+                if (idx === currentScene && !isTransitioning) {
+                    if (v.duration && v.currentTime >= v.duration - 0.05) {
+                        advanceToNextScene();
+                    }
+                }
+            });
+        });
+
+        // Handle browser tab visibility changes
+        document.addEventListener('visibilitychange', function () {
+            if (!document.hidden && !isTransitioning) {
+                var active = videos[currentScene];
+                if (active && active.paused) {
+                    enforceMute(active);
+                    var p = active.play();
+                    if (p !== undefined) {
+                        p.catch(function () {});
+                    }
+                }
+            }
+        });
+
+        // Initialize playback of first scene
+        function initHeroAnimation() {
+            enforceMute(videos[0]);
+            var startPlay = videos[0].play();
+            if (startPlay !== undefined) {
+                startPlay.then(function () {
+                    wrappers[0].classList.add('is-active');
+                    // Preload scene 2 once scene 1 starts playing
+                    if (videos[1]) {
+                        enforceMute(videos[1]);
+                        videos[1].preload = 'auto';
+                        videos[1].load();
+                    }
+                }).catch(function (err) {
+                    console.warn('Initial hero video autoplay blocked or failed:', err);
+                    fallbackToStatic();
+                });
+            } else {
+                wrappers[0].classList.add('is-active');
+                if (videos[1]) {
+                    enforceMute(videos[1]);
+                    videos[1].preload = 'auto';
+                    videos[1].load();
+                }
+            }
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initHeroAnimation);
+        } else {
+            initHeroAnimation();
+        }
+    })();
+    </script>
 
 <div data-rrc-ai-chat-root></div>
 </body>
