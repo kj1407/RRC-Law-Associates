@@ -615,7 +615,7 @@
                     background: transparent;
                 }
                 .nav-link-custom.dropdown-toggle::after {
-                    pointer-events: none; 
+                    pointer-events: none;
                 }
             }
             /* Custom Mobile Sidebar Styles */
@@ -726,7 +726,7 @@
         background: transparent;
     }
     .nav-link-custom.dropdown-toggle::after {
-        pointer-events: none; 
+        pointer-events: none;
     }
 }
 /* Mega Menu Positioning */
@@ -773,7 +773,7 @@
         background-color: #1a1a1a !important;
         padding: 10px !important;
     }
-    
+
     .mega-menu .col-md-3 {
         width: 100%;
     }
@@ -875,7 +875,7 @@
 </div>
 
 
-                <header class="header"> 
+                <header class="header">
             <nav class="container d-flex align-items-center justify-content-between">
                 <a href="index.html">
                     <img src="assets/images/rrclogo.png" alt="RRC Logo" class="logo-img">
@@ -891,7 +891,7 @@
                             aria-expanded="false">
                             Home
                         </a>
-                    </div>    
+                    </div>
                     <div class="dropdown">
                         <a
                             class="nav-link-custom dropdown-toggle border-0 bg-transparent p-0"
@@ -918,7 +918,7 @@
                                 <a class="dropdown-item text-uppercase" style="font-size: 14px;" href="nri-family-matrimonial.html">Family & Matrimonial</a>
                             </li>
                         </ul>
-                    </div> 
+                    </div>
                     <div class="dropdown">
                         <a
                             class="nav-link-custom dropdown-toggle border-0 bg-transparent p-0"
@@ -949,7 +949,7 @@
                             </li>
                             <li>
                                 <a class="dropdown-item text-uppercase" style="font-size: 14px;" href="litigation-dispute-resolution.html">Litigation &amp; Dispute Resolution</a>
-                            </li> 
+                            </li>
                         </ul>
                     </div>
                     <!-- <div class="dropdown">
@@ -1164,7 +1164,7 @@
 
         <div class="advocates-slider-wrapper" style="overflow: hidden; position: relative;">
             <div class="advocates-grid" id="advocatesGrid" style="display: flex; transition: transform 0.5s ease; gap: 24px;">
-                
+
                 <div class="advocate-card" style="flex: 0 0 auto; width: calc(33.333% - 16px);">
                     <div class="image-box">
                         <img src="assets/images/advocate5.jpeg" alt="Advocate" style="width: 100%; height: 400px; object-fit: cover;">
@@ -1322,7 +1322,7 @@
                                 <a href="lawfirm-blog.html">Blog</a>
                             </li>
                             <li>
-                                <a href="#contact">Contact</a>
+                                <a href="index.html#contact">Contact</a>
                             </li>
                         </ul>
                     </div>
@@ -1407,7 +1407,7 @@ dr.kumar@rrclawassociates.com">
             const visible = getVisibleCards();
             // Loop back to start if we reach the end
             if (advIndex >= advCards.length - visible) {
-                advIndex = 0; 
+                advIndex = 0;
             } else {
                 advIndex++;
             }
@@ -1469,11 +1469,11 @@ const mobileTriggers = document.querySelectorAll('.m-trigger');
 mobileTriggers.forEach(trigger => {
     trigger.addEventListener('click', function(e) {
         const submenu = this.nextElementSibling; // Finds the m-submenu directly after this link
-        
+
         // If the clicked submenu is not active yet
         if (!submenu.classList.contains('active')) {
             e.preventDefault(); // Stop navigation
-            
+
             // OPTIONAL: Close other open submenus first (Accordion style)
             document.querySelectorAll('.m-submenu').forEach(m => m.classList.remove('active'));
             document.querySelectorAll('.m-trigger i').forEach(i => i.style.transform = 'rotate(0deg)');
@@ -1481,7 +1481,7 @@ mobileTriggers.forEach(trigger => {
             // Open this one
             submenu.classList.add('active');
             this.querySelector('i').style.transform = 'rotate(180deg)';
-        } 
+        }
         // If it is already active, the link (href) will follow normally on the next click
     });
 });
@@ -1531,7 +1531,7 @@ mobileTriggers.forEach(trigger => {
             }
         });
     });
-    
+
     // 4. Desktop Navigation (Clicking parent link)
     const practiceDropdown = document.getElementById('practiceDropdown');
     if (practiceDropdown) {
@@ -1566,15 +1566,15 @@ mobileTriggers.forEach(trigger => {
             // 2. THE ULTIMATE LINK FIX
             // Select all nav links that have an actual destination
             const allLinks = document.querySelectorAll('.nav-link-custom, .mobile-link');
-            
+
             allLinks.forEach(link => {
                 link.addEventListener('click', function (e) {
                     const destination = this.getAttribute('href');
-                    
+
                     // If it's a real URL (not just #) and not a mobile dropdown toggle
                     if (destination && destination !== '#' && !this.classList.contains('dropdown-toggle')) {
                         window.location.href = destination;
-                    } 
+                    }
                     // If it's the Practice Areas link on Desktop, force navigation
                     else if (this.id === 'practiceDropdown' && window.innerWidth > 992) {
                         window.location.href = destination;

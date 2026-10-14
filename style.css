@@ -140,7 +140,8 @@ html, body {
     padding: 20px;
 }
 
-.mobile-menu.open {
+.mobile-menu.open,
+.mobile-menu.active {
     right: 0;
 }
 
@@ -2546,7 +2547,7 @@ p {
    shadow CSS applied. No body/html overflow hiding is used. */
 [data-rrc-ai-chat-root] {
   position: fixed;
-  right: 18px;
+  right: 20px;
   bottom: calc(env(safe-area-inset-bottom, 0px) + 84px);
   width: 60px;
   height: 60px;
@@ -2559,7 +2560,7 @@ p {
 
 [data-rrc-ai-chat-root] .rrc-ai-chat {
   position: fixed;
-  right: 18px;
+  right: 20px;
   bottom: calc(env(safe-area-inset-bottom, 0px) + 84px);
   width: 60px;
   height: 60px;
@@ -2574,6 +2575,9 @@ p {
   [data-rrc-ai-chat-root],
   [data-rrc-ai-chat-root] .rrc-ai-chat {
     right: 16px;
+    bottom: calc(env(safe-area-inset-bottom, 0px) + 76px);
+    width: 52px;
+    height: 52px;
   }
 }
 
@@ -2581,7 +2585,7 @@ p {
 :host {
   all: initial;
   position: fixed;
-  right: 18px;
+  right: 20px;
   bottom: calc(env(safe-area-inset-bottom) + 84px);
   z-index: 1500; /* Above the site's fixed top stack: .rrc-topbar (1200) and .header (1190, top:42px) */
   display: block;
@@ -2936,6 +2940,15 @@ button:disabled,
 @media (max-width: 600px) {
   :host {
     right: 16px;
+    bottom: calc(env(safe-area-inset-bottom, 0px) + 76px);
+    width: 52px;
+    height: 52px;
+  }
+
+  .rrc-ai-toggle {
+    width: 52px;
+    height: 52px;
+    font-size: 15px;
   }
 
   .rrc-ai-title {
@@ -4005,20 +4018,22 @@ button:disabled,
 /* WhatsApp Floating Button */
 .whatsapp-float {
     position: fixed;
-    bottom: 20px;
-    right: 10px;
+    bottom: calc(env(safe-area-inset-bottom, 0px) + 20px);
+    right: 20px;
     background-color: #25d366;
     /* WhatsApp Green */
-    color: white;
+    color: #ffffff;
     padding: 12px 20px;
     border-radius: 50px;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
     text-decoration: none;
     font-weight: 600;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    font-size: 15px;
+    line-height: 1;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
     z-index: 1000;
     transition: all 0.3s ease;
     /* Pulsing effect */
@@ -4026,14 +4041,29 @@ button:disabled,
 }
 
 .whatsapp-float i {
-    font-size: 24px;
+    font-size: 22px;
+    line-height: 1;
 }
 
 .whatsapp-float:hover {
     background-color: #128c7e;
     /* Darker WhatsApp Green */
-    color: white;
-    transform: translateY(-5px);
+    color: #ffffff;
+    transform: translateY(-3px);
+}
+
+@media (max-width: 600px) {
+    .whatsapp-float {
+        right: 16px;
+        bottom: calc(env(safe-area-inset-bottom, 0px) + 16px);
+        padding: 10px 16px;
+        font-size: 14px;
+        gap: 8px;
+    }
+
+    .whatsapp-float i {
+        font-size: 20px;
+    }
 }
 
 /* Slider Wrapper */

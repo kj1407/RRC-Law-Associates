@@ -24,9 +24,9 @@
     <meta property="og:image" content="https://rrclawassociates.com/assets/images/justice.jpeg">
 
     <link rel="canonical" href="https://rrclawassociates.com/blog-nri-property-remedies.html">
-    
+
     <link rel="icon" type="image/png" href="assets/images/logo.png">
-    
+
     <meta name="twitter:card" content="summary_large_image">
 
     <meta name="twitter:title" content="NRI Property Rights & Remedies in India">
@@ -678,7 +678,7 @@
                     background: transparent;
                 }
                 .nav-link-custom.dropdown-toggle::after {
-                    pointer-events: none; 
+                    pointer-events: none;
                 }
             }
             /* Custom Mobile Sidebar Styles */
@@ -732,7 +732,7 @@
     z-index: 2000;
     transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     padding: 20px;
-    
+
     /* FIX STARTS HERE */
     overflow-y: auto;            /* Allows vertical scrolling */
     overflow-x: hidden;          /* Prevents horizontal shaking */
@@ -1007,7 +1007,7 @@
 </div>
 
 
-    <header class="header"> 
+    <header class="header">
             <nav class="container d-flex align-items-center justify-content-between">
                 <a href="index.html">
                     <img src="assets/images/rrclogo.png" alt="RRC Logo" class="logo-img">
@@ -1023,7 +1023,7 @@
                             aria-expanded="false">
                             Home
                         </a>
-                    </div>    
+                    </div>
                     <div class="dropdown">
                         <a
                             class="nav-link-custom dropdown-toggle border-0 bg-transparent p-0"
@@ -1050,7 +1050,7 @@
                                 <a class="dropdown-item text-uppercase" style="font-size: 14px;" href="nri-family-matrimonial.html">Family & Matrimonial</a>
                             </li>
                         </ul>
-                    </div> 
+                    </div>
                     <div class="dropdown">
                         <a
                             class="nav-link-custom dropdown-toggle border-0 bg-transparent p-0"
@@ -1081,7 +1081,7 @@
                             </li>
                             <li>
                                 <a class="dropdown-item text-uppercase" style="font-size: 14px;" href="litigation-dispute-resolution.html">Litigation &amp; Dispute Resolution</a>
-                            </li> 
+                            </li>
                         </ul>
                     </div>
                     <!-- <div class="dropdown">
@@ -1227,10 +1227,10 @@
 
     <div class="container my-5">
         <div class="row g-5">
-            
+
             <div class="col-lg-8 content-body">
                 <p class="lead text-muted">A Practical Legal Guide to NRI Property Disputes, Illegal Possession, Power of Attorney Fraud, and Available Remedies</p>
-                
+
                 <h3>Introduction</h3>
                 <p>NRI property disputes in India have become increasingly common in recent years. Many Non-Resident Indians own houses, flats, plots, or ancestral property in India, but because they live abroad, they often cannot personally monitor or protect their property. This creates risk. In many cases, property is:</p>
                 <ul>
@@ -1248,7 +1248,7 @@
                     <li><strong>Possession:</strong> means actual control or occupancy.</li>
                 </ul>
                 <p>A person may possess property without owning it, such as a tenant. Likewise, an owner may have title but not physical possession if someone else is occupying the property. Indian law protects lawful possession and does not permit forcible eviction without due process.</p>
-                
+
                 <h3>Difference Between Ownership and Possession</h3>
                 <p>This is one of the most important distinctions in NRI property law.</p>
 
@@ -1280,7 +1280,7 @@
                         </tbody>
                     </table>
                 </div>
-                
+
                 <p>If your property is occupied by someone else, you may still remain the owner. But to recover possession, you usually need to follow legal procedure.</p>
 
                 <h2>Common NRI Property Disputes in India</h2>
@@ -1528,7 +1528,7 @@
             <div class="logo-icon">
                 <a href="index.html">
                 <img src="assets/images/logo.png" alt="Law Firm Logo" class="logo-img">
-                
+
                 <div class="logo-text">
                     <strong>RRC</strong>
                     <strong>Law Associates</strong>
@@ -1542,8 +1542,8 @@
             </p>
 
             <div class="social">
-            
-            
+
+
             </div>
         </div>
 
@@ -1582,7 +1582,7 @@
             <li><a href="core-practice-areas.html">Practice Areas</a></li>
             <!--  -->
             <li><a href="lawfirm-blog.html">Blog</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
             </ul>
         </div>
 
@@ -1691,7 +1691,7 @@
             }
         });
     });
-    
+
     // 4. Desktop Navigation (Clicking parent link)
     const practiceDropdown = document.getElementById('practiceDropdown');
     if (practiceDropdown) {
@@ -1726,15 +1726,15 @@
     // 2. THE ULTIMATE LINK FIX
     // Select all nav links that have an actual destination
     const allLinks = document.querySelectorAll('.nav-link-custom, .mobile-link');
-    
+
     allLinks.forEach(link => {
         link.addEventListener('click', function (e) {
             const destination = this.getAttribute('href');
-            
+
             // If it's a real URL (not just #) and not a mobile dropdown toggle
             if (destination && destination !== '#' && !this.classList.contains('dropdown-toggle')) {
                 window.location.href = destination;
-            } 
+            }
             // If it's the Practice Areas link on Desktop, force navigation
             else if (this.id === 'practiceDropdown' && window.innerWidth > 992) {
                 window.location.href = destination;
@@ -1766,7 +1766,7 @@
             });
         }
 
-        
+
     }
 });
 </script>
@@ -1778,11 +1778,11 @@ const mobileTriggers = document.querySelectorAll('.m-trigger');
 mobileTriggers.forEach(trigger => {
     trigger.addEventListener('click', function(e) {
         const submenu = this.nextElementSibling; // Finds the m-submenu directly after this link
-        
+
         // If the clicked submenu is not active yet
         if (!submenu.classList.contains('active')) {
             e.preventDefault(); // Stop navigation
-            
+
             // OPTIONAL: Close other open submenus first (Accordion style)
             document.querySelectorAll('.m-submenu').forEach(m => m.classList.remove('active'));
             document.querySelectorAll('.m-trigger i').forEach(i => i.style.transform = 'rotate(0deg)');
@@ -1790,7 +1790,7 @@ mobileTriggers.forEach(trigger => {
             // Open this one
             submenu.classList.add('active');
             this.querySelector('i').style.transform = 'rotate(180deg)';
-        } 
+        }
         // If it is already active, the link (href) will follow normally on the next click
     });
 });
@@ -1845,9 +1845,9 @@ if (advGrid && advCards.length > 0) {
     let autoScrollInterval;
 
     function getVisibleCards() {
-        if (window.innerWidth > 968) 
+        if (window.innerWidth > 968)
             return 3;
-        if (window.innerWidth > 768) 
+        if (window.innerWidth > 768)
             return 2;
         return 1;
     }
@@ -1884,10 +1884,10 @@ if (advGrid && advCards.length > 0) {
     }
 
     function stopAdvAutoScroll() {
-        if (autoScrollInterval) 
+        if (autoScrollInterval)
             clearInterval(autoScrollInterval);
         }
-    
+
     advNextBtn
         ?.addEventListener("click", () => {
             moveAdvNext();
@@ -2100,7 +2100,7 @@ scrollTopBtn.addEventListener('click', function () {
 function initReveal() {
 const els = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
 
-if (!els.length) 
+if (!els.length)
     return;
 
 const observer = new IntersectionObserver((entries) => {

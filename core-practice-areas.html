@@ -10,7 +10,7 @@
         <meta name="keywords" content="legal core areas, property law, criminal defense, corporate lawyer, family advocate">
 
         <meta name="robots" content="index, follow">
-        
+
         <meta property="og:type" content="website">
 
         <meta property="og:title" content="Legal Core Areas | Property, Criminal & Corporate Law | RRC Law Associates">
@@ -24,15 +24,15 @@
         <meta property="og:image" content="https://rrclawassociates.com/assets/images/justice.jpeg">
 
         <link rel="canonical" href="https://rrclawassociates.com/core-practice-areas.html">
-        
+
         <link rel="icon" type="image/png" href="assets/images/logo.png">
-        
+
         <meta name="twitter:card" content="summary_large_image">
 
         <meta name="twitter:title" content="Legal Core Areas | Property, Criminal & Corporate Law | RRC Law Associates">
 
         <meta name="twitter:description" content="Explore our legal core areas including property law, family disputes, criminal defense, cyber crime, cheque bounce, and corporate law services.">
-        
+
         <link rel="stylesheet" href="style2.css?v=20261008-1">
         <script src="script2.js?v=20261008-1" defer="defer"></script>
         <link
@@ -638,7 +638,7 @@
         height: 350px;
         margin-top: 50px;
     }
-    
+
     /* Ensure the contact grid stacks correctly on iPads */
     .contact-grid {
         grid-template-columns: 1fr !important;
@@ -814,7 +814,7 @@
         });
     </script>
     <script src="script.js?v=20261008-1" defer="defer"></script>
-    
+
     <body>
 
 <!-- =========================================================
@@ -878,7 +878,7 @@
 
 
         <!-- Header -->
-                <header class="header"> 
+                <header class="header">
             <nav class="container d-flex align-items-center justify-content-between">
                 <a href="index.html">
                     <img src="assets/images/rrclogo.png" alt="RRC Logo" class="logo-img">
@@ -894,7 +894,7 @@
                             aria-expanded="false">
                             Partners
                         </a>
-                    </div> 
+                    </div>
                     <div class="dropdown">
                         <a
                             class="nav-link-custom border-0 bg-transparent p-0"
@@ -904,7 +904,7 @@
                             aria-expanded="false">
                             Home
                         </a>
-                    </div>    
+                    </div>
                     <div class="dropdown">
                         <a
                             class="nav-link-custom dropdown-toggle border-0 bg-transparent p-0"
@@ -931,7 +931,7 @@
                                 <a class="dropdown-item text-uppercase" style="font-size: 14px;" href="nri-family-matrimonial.html">Family & Matrimonial</a>
                             </li>
                         </ul>
-                    </div> 
+                    </div>
                     <div class="dropdown">
                         <a
                             class="nav-link-custom dropdown-toggle border-0 bg-transparent p-0"
@@ -962,7 +962,7 @@
                             </li>
                             <li>
                                 <a class="dropdown-item text-uppercase" style="font-size: 14px;" href="litigation-dispute-resolution.html">Litigation &amp; Dispute Resolution</a>
-                            </li> 
+                            </li>
                         </ul>
                     </div>
                     <!-- <div class="dropdown">
@@ -1365,7 +1365,7 @@
                                 <a href="lawfirm-blog.html">Blog</a>
                             </li>
                             <li>
-                                <a href="#contact">Contact</a>
+                                <a href="index.html#contact">Contact</a>
                             </li>
                         </ul>
                     </div>
@@ -1446,7 +1446,7 @@ dr.kumar@rrclawassociates.com">
         }
     }
 });
-        </script> 
+        </script>
         <script>
     document.addEventListener('DOMContentLoaded', function () {
     const menuToggle = document.getElementById('menuToggle');
@@ -1491,7 +1491,7 @@ dr.kumar@rrclawassociates.com">
             }
         });
     });
-    
+
     // 4. Desktop Navigation (Clicking parent link)
     const practiceDropdown = document.getElementById('practiceDropdown');
     if (practiceDropdown) {
@@ -1526,15 +1526,15 @@ dr.kumar@rrclawassociates.com">
             // 2. THE ULTIMATE LINK FIX
             // Select all nav links that have an actual destination
             const allLinks = document.querySelectorAll('.nav-link-custom, .mobile-link');
-            
+
             allLinks.forEach(link => {
                 link.addEventListener('click', function (e) {
                     const destination = this.getAttribute('href');
-                    
+
                     // If it's a real URL (not just #) and not a mobile dropdown toggle
                     if (destination && destination !== '#' && !this.classList.contains('dropdown-toggle')) {
                         window.location.href = destination;
-                    } 
+                    }
                     // If it's the Practice Areas link on Desktop, force navigation
                     else if (this.id === 'practiceDropdown' && window.innerWidth > 992) {
                         window.location.href = destination;
@@ -1566,7 +1566,7 @@ dr.kumar@rrclawassociates.com">
                 }
             }
         });
-        </script>   
+        </script>
         <script>
             // Loading Screen
             window.addEventListener('load', () => {
